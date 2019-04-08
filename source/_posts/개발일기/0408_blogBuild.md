@@ -50,6 +50,7 @@ tags: 개발일기
 1. javascript 개념정리한 것 수정
 2. vue 개념 정리 및 복습
 3. nomad api 복습 및 개념 정리
+4. ajax 공부했던거 다시 복습 및 정리
 
 > 
 
