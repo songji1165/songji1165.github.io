@@ -1,7 +1,7 @@
 ---
 title: 블로그 시작
 date: 2019-04-08 11:50:12
-tags: javascript
+tags: 개발일기
 ---
 
 #나의 개발 블로그 시작
