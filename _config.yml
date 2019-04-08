@@ -77,5 +77,7 @@ theme: vexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type:
+deploy: 
+  repo : https://github.com/songji1165/songji1165.github.io.git
+  type: git
+  branch : master
