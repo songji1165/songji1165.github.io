@@ -12,7 +12,7 @@ tags: 개발일기
  3. vue 개념 정리하기
  4. nomad 강의 듣기
 
- ### 1. 개발 블로그 만들기
+### 1. 개발 블로그 만들기
     - hexo를 이용하여 github 블로그를 만들었다.
         [Olaf's blog](https://appear.github.io/2018/12/09/ETC/hexo-blog/)를 참고하여 만들었다.
 
@@ -20,23 +20,27 @@ tags: 개발일기
       블로그 배포를 해주자! 
 
     > 1. **github에 프로젝트 올리기**
-        > - git init : 새로운 local repository 생성
+          - git init : 새로운 local repository 생성
           - git add : 변경된 파일 local repository에 추가
           - git commit : add한 파일을 local repository에 저장
           - git push : local repository를 remote repository(github repository)에 업로드
-        1.1 작업할 폴더로 이동한다 ! 
+        1. 작업할 폴더로 이동한다 ! 
             git 해당파일
-        1.2 git add . 
-        1.3 git commit -m "message"
-        1.4 git push origin build  ->branch이름 (일반적으로 master)
+        2. git add . 
+        3. git commit -m "message"
+        4. git push origin build  ->branch이름 (일반적으로 master)
 
     > 2. **gitblog에 글 올리기**
-        > - hexo-deployer-git : 블로그로 배포하기 위한 모듈
+          - hexo-deployer-git : 블로그로 배포하기  위한 모듈
           - hexo clean : 기존 파일 삭제
           - hexo genarate(=hexo g) : 파일 받아와서 파일 재생성
           - hexo deploy(=hexo d) : 파일 블로그에 배포
-        2.1 npm install hexo-deployer-git
-        2.2 hexo clean
-        2.3 hexo g
-        2.4 hexo d
+        1. npm install hexo-deployer-git
+        2. hexo clean
+        3. hexo g
+        4. hexo d
+
+    > git 버전관리와 프로젝트 올리는 방법에 대해 추가적인 공부가 필요할 것 같다
+
+    
 
