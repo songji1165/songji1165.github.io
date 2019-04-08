@@ -10,7 +10,7 @@
   
   <title>
     
-      SONG
+      자바스크립트 데이터타입과 변수 | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,57 +138,160 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <!-- <p class="post-date">文章归档</p> -->
+  <h2>자바스크립트 데이터타입과 변수</h2>
+  <p class="post-date">2019-04-08</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2019
-  </h1>
-  <div class="section-list">
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="1-데이터-타입"><a href="#1-데이터-타입" class="headerlink" title="1. 데이터 타입"></a>1. 데이터 타입</h1><ul>
+<li>프로그래밍 언어에서 사용할 수 있는 데이터의 종류.</li>
+<li>자바스크립트는 동적타입언어 : 변수의 타입 지정없이 값이할당되는 과정에서 자동으로 변수의 타입이 결정된다.</li>
+<li><p>javascript는 <strong>7개의 데이터 타입</strong>이 있다.</p>
+<ol>
+<li><p>원시타입 (primitive data type)</p>
+<ul>
+<li>number : 1, 2, 3</li>
+<li>string : ‘a’,’1’</li>
+<li>boolean : true, false</li>
+<li><p><strong>undefined</strong> : 의도되지 않게 값이 없다.(변수는 선언 되었지만 값이 없다)</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">alert(a); // undefined</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>null</strong> : “값이 없다”, 의도적으로 만든다.</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">alert(a); //null</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>symbol(ES6) : 고유한 값 , 상징적인 값</p>
+</li>
+</ul>
+</li>
+<li>객체타입 (object)<ul>
+<li>object : 원시 타입 외의 모든 값</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="2-변수"><a href="#2-변수" class="headerlink" title="2. 변수"></a>2. 변수</h1><ul>
+<li>변수는 <strong>식별자</strong>이다.</li>
+<li>변수는 문자,숫자 등을 담는 <strong>그릇</strong>같다.(특수문자 제외 모든 문자 가능)<blockquote>
+<p>값을 담아놓는 공간, 메모리상의 주소이다.</p>
+</blockquote>
+</li>
+<li><p>변수는 <strong>코드의 재활용성</strong>을 높인다.</p>
+</li>
+<li><p>변수의 생성과정</p>
+<ol>
+<li>선언 단계 : 변수객체에 변수를 등록한다.</li>
+<li>초기화 단계 : 변수객체에 등록된 변수를 메모리에 할당한다. (아직 메모리에는 값이 없기때문에 undefined로 초기화된다.)  </li>
+<li>할당 단계 : undefined로 초기화된 상태에서 값을 할당한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a; //선언 + 초기화(var는 초기화가 같이 이루어짐)</span><br><span class="line">a = &apos;hi&apos;;//할당</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</section>
+    <!-- Tags START -->
     
-    
-      <div class="section-list-item">
-        <a href="/2019/04/08/Javascript/javascript2/" class="archive-title">자바스크립트 데이터타입과 변수</a>
-        <p class="archive-date">04-08</p>
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#javascript">
+    <span class="tag-code">javascript</span>
+  </a>
+
       </div>
     
-      <div class="section-list-item">
-        <a href="/2019/04/08/Javascript/javacript1/" class="archive-title">자바스크립트 동작원리</a>
-        <p class="archive-date">04-08</p>
-      </div>
+    <!-- Tags END -->
+    <!-- NAV START -->
     
-      <div class="section-list-item">
-        <a href="/2019/04/08/개발일기/0408_blogBuild/" class="archive-title">0408</a>
-        <p class="archive-date">04-08</p>
-      </div>
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <div class="section-list-item">
-        <a href="/2019/04/08/개발일기/firts/" class="archive-title">블로그 시작</a>
-        <p class="archive-date">04-08</p>
-      </div>
+      <a class="nav-left" href="/2019/04/08/Javascript/javacript1/">
+        <span class="nav-arrow">← </span>
+        
+          자바스크립트 동작원리
+        
+      </a>
     
-      <div class="section-list-item">
-        <a href="/2019/04/08/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">04-08</p>
-      </div>
     
   </div>
-</section>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
   
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/archives/2019/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    var url = 'http://yoursite.com/2019/04/08/Javascript/javascript2/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
   })();
 </script>
+
+
+
+
+
+
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>

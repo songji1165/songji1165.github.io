@@ -10,7 +10,7 @@
   
   <title>
     
-      SONG
+      자바스크립트 동작원리 | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,57 +138,141 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <!-- <p class="post-date">文章归档</p> -->
+  <h2>자바스크립트 동작원리</h2>
+  <p class="post-date">2019-04-08</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2019
-  </h1>
-  <div class="section-list">
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="자바스크립트-동작원리"><a href="#자바스크립트-동작원리" class="headerlink" title="자바스크립트 동작원리"></a>자바스크립트 동작원리</h1><ol>
+<li><p>(html 마크업 -&gt; html파서) + (css 마크업 -&gt; css파서) =&gt; 렌더링 트리</p>
+<ul>
+<li>html파서 (html 문서 해석기 ) :<pre><code>html파서를 통해 html문서를 읽은 후 DOM트리를 형성 함.
+</code></pre></li>
+<li>css 파서 (css 문서 해석기 ) : <pre><code>css는 html에 시각적인 스타일을 입힘 
+</code></pre></li>
+<li>렌더링 트리 : 페이지에 렌더링  <pre><code>즉, html문서와 css문서를 시각적인 구성요소로 트리 내용 순서대로 페이지를 그려냄  
+</code></pre></li>
+</ul>
+</li>
+<li><strong> javascript는 렌더링 엔진이 아닌 javascript엔진에서 처리 됨 </strong><ul>
+<li>html파서가 중간에 javascript를 만나면 javascript엔진으로 넘어가서 DOM생성을   <pre><code>중지하게 됨 
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<p><img src="https://d2.naver.com/content/images/2015/06/helloworld-59361-3.png" alt="자바스트립트 동작 원리"></p>
+</section>
+    <!-- Tags START -->
     
-    
-      <div class="section-list-item">
-        <a href="/2019/04/08/Javascript/javascript2/" class="archive-title">자바스크립트 데이터타입과 변수</a>
-        <p class="archive-date">04-08</p>
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#javascript">
+    <span class="tag-code">javascript</span>
+  </a>
+
       </div>
     
-      <div class="section-list-item">
-        <a href="/2019/04/08/Javascript/javacript1/" class="archive-title">자바스크립트 동작원리</a>
-        <p class="archive-date">04-08</p>
-      </div>
+    <!-- Tags END -->
+    <!-- NAV START -->
     
-      <div class="section-list-item">
-        <a href="/2019/04/08/개발일기/0408_blogBuild/" class="archive-title">0408</a>
-        <p class="archive-date">04-08</p>
-      </div>
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <div class="section-list-item">
-        <a href="/2019/04/08/개발일기/firts/" class="archive-title">블로그 시작</a>
-        <p class="archive-date">04-08</p>
-      </div>
+      <a class="nav-left" href="/2019/04/08/개발일기/0408_blogBuild/">
+        <span class="nav-arrow">← </span>
+        
+          0408
+        
+      </a>
     
-      <div class="section-list-item">
-        <a href="/2019/04/08/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">04-08</p>
-      </div>
+    
+      <a class="nav-right" href="/2019/04/08/Javascript/javascript2/">
+        
+          자바스크립트 데이터타입과 변수
+        
+        <span class="nav-arrow"> →</span>
+      </a>
     
   </div>
-</section>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
   
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/archives/2019/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    var url = 'http://yoursite.com/2019/04/08/Javascript/javacript1/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
   })();
 </script>
+
+
+
+
+
+
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
