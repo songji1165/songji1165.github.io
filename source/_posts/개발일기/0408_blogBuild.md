@@ -12,7 +12,7 @@ tags: 개발일기
  3. vue 개념 정리하기
  4. nomad 강의 듣기
 
-### 1. 개발 블로그 만들기
+#### 1. 개발 블로그 만들기
 - hexo를 이용하여 github 블로그를 만들었다.
   [Olaf's blog](https://appear.github.io/2018/12/09/ETC/hexo-blog/)를 참고하여 만들었다.
 
@@ -45,6 +45,8 @@ tags: 개발일기
 
 > git 버전관리와 프로젝트 올리는 방법에 대해 추가적인 공부가 필요할 것 같다
 
+####2. javscript 개념 정리 
+> 한달정도 javascript 개념을 다시 정리하며 javascript 기본을 탄탄히 다지자! 
     
 ### 내일 할 일
 1. javascript 개념정리한 것 수정
