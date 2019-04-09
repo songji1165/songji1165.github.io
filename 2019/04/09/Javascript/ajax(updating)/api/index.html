@@ -152,7 +152,7 @@
 <li>응용프로그램에서 사용할 수 있도록, 운영체제나 프로그래밍언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스</li>
 <li><strong>다른 서버로부터 데이터를 손쉽게 가져올 수 있게 하는 수단</strong></li>
 </ul>
-<h2 id="fetch-API-비동기적-처리-방식"><a href="#fetch-API-비동기적-처리-방식" class="headerlink" title="fetch API : 비동기적 처리 방식"></a>fetch API : 비동기적 처리 방식</h2><ul>
+<h3 id="fetch-API-비동기적-처리-방식"><a href="#fetch-API-비동기적-처리-방식" class="headerlink" title="fetch API : 비동기적 처리 방식"></a>fetch API : 비동기적 처리 방식</h3><ul>
 <li>api를 더욱 쉽게 사용할 수 있게 해준다.<blockquote>
 <ul>
 <li>동기 : 요청사항이 완료될 때까지 다른 것을 실행하지 않는다.<ul>
@@ -174,7 +174,7 @@
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fetch(&apos;html&apos;).then(function(response)&#123;</span><br><span class="line">    return response.json</span><br><span class="line">        //response 일 경우 respose의 네트워크정보만 알 수 있다.(ex. status ...)</span><br><span class="line">        //response.json()을 통해 응답받은 데이터 즉, json파일의 데이터를 갖고옴 </span><br><span class="line">&#125;).then(function(json)&#123;</span><br><span class="line">    console.log(json)</span><br><span class="line">        //위의 then에서 json파일이 준비가 완료되면 두번째 then으로 넘어온다.</span><br><span class="line">        //json 데이터를 console에 출력해준다.</span><br><span class="line">&#125;).catch(function(err)&#123;</span><br><span class="line">    console.log(err)</span><br><span class="line">    //에러가 생기면 에러사항을 console에 출력해줌</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Geolocation-API"><a href="#Geolocation-API" class="headerlink" title="Geolocation API"></a>Geolocation API</h2><ul>
+<h3 id="Geolocation-API"><a href="#Geolocation-API" class="headerlink" title="Geolocation API"></a>Geolocation API</h3><ul>
 <li>사용자의 위치정보를 얻을 수 있다.</li>
 <li><p>사용자의 권한이 필요하다.</p>
 </li>
