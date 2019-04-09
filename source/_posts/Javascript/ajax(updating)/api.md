@@ -15,6 +15,7 @@ tags: javascript
 
 ### fetch API : 비동기적 처리 방식
 - api를 더욱 쉽게 사용할 수 있게 해준다.
+
 > - 동기 : 요청사항이 완료될 때까지 다른 것을 실행하지 않는다.
   - 비동기 : 다른 것을 실행하면서 요청사항을 기다린다.
 
@@ -31,13 +32,15 @@ tags: javascript
 
 ``` 
 
-
 1. fetch('a') : 웹브라우저가 'a'라는 파일을  서버에게 요청하는 메소드, 데이터를 얻을 수 있게 해준다.
-2. .then(실행할 코드) : 서버가 응답하는 과정이 모두 **끝나면**'실행할 코드(함수)'가 실행 된다 
+
+2. .then(실행할 코드) : 서버가 응답하는 과정이 모두 **끝나면**'실행할 코드(함수)'가 실행 된다.
+
 > fetch는 비동기적이기 때문에 fetch가 응답이 끝나지 않았더라도 다른 js기능들은 상관없이 실행되게 됨.
 -> 서버로부터 응답받는 과정이 끝날때 알아서 then메서드가 실행됨 
 
 ```text
+
     <input type="button" value="fetch" onclick="
     fetch('html').then(function(response){
         if(response.status === '404'){
@@ -54,13 +57,13 @@ tags: javascript
     // 1
     // 2
     // end
+    
 ```
 
 > response 객체 : 웹서버가 응답한 결과를 갖고있는 객체, 웹브라우저와 서버의 통신상태를 알 수 있다.
  - response 객체의 status 속성 (response.staus)
     - 200 : 파일 갖고오기 성공
     - 404 : 파일없음
-
 
 3. .catch(실행할 코드) : err일 경우 실행할 코드가 실행됨 
 
