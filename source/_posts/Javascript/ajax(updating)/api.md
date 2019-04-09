@@ -1,20 +1,18 @@
 ---
-title: Ajax $ API
-date: 2019-04-08 
+title: Ajax & API
+date: 2019-04-09 
 tags: javascript
 ---
 
 
-# api
 
-- **Ajax** : (Asynchronous) 비동기적 데이터 ;
+# **Ajax** : (Asynchronous) 비동기적 데이터 
     -   새로고침 없이 서버에서 자료를 받아와서 데이터를 추가 할 수 있음
-
-- **API**(application Programming Interface) 
+# **API** (application Programming Interface) 
     - 응용프로그램에서 사용할 수 있도록, 운영체제나 프로그래밍언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스
     - **다른 서버로부터 데이터를 손쉽게 가져올 수 있게 하는 수단**
 
-### 1. fetch API : 비동기적 처리 방식
+## fetch API : 비동기적 처리 방식
     - api를 더욱 쉽게 사용할 수 있게 해준다.
     > - 동기 : 요청사항이 완료될 때까지 다른 것을 실행하지 않는다.
       - 비동기 : 다른 것을 실행하면서 요청사항을 기다린다.
@@ -75,7 +73,7 @@ tags: javascript
     ```
 
 
-### 2. Geolocation API 
+## Geolocation API 
 - 사용자의 위치정보를 얻을 수 있다.
 - 사용자의 권한이 필요하다.
 
