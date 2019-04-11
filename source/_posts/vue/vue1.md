@@ -4,12 +4,12 @@ date: 2019.04.09
 tags: Vue
 ---
 
-## 1. 선언적 렌더링(1) : 텍스트보간법 {{}}
+## 1. 선언적 렌더링(1) : 텍스트보간법 
 - 데이터 바인딩의 기본 형태이다.
 ```text
     <p id="ex">{{message}}</p>
 ```
-```script
+```js
     new Vue({
         el : "#ex",
         data : {
@@ -24,33 +24,34 @@ tags: Vue
 - data : data 객체의 있는 것들은 프록시 처리 된다.
     - 프록시 : 클라이언트와 서버 사이에서 중계한다고 생각하면 된다. data를 거치고 나면 data 안의 속성들이 클란이언트 측으로 보여진다.
 
+
 ## 2. 디렉티브 : v-
 - 'v-' 접두사가 있는 특수 속성
-- 디렉티브 속성 값은 단일 javascript 표현식이다. (**v-for** 제외)
+- 디렉티브 속성 값은 단일 javajs 표현식이다. (**v-for** 제외)
 
 1. v-if 디렉티브 : 조건부 블록
     - v-if 값이 [TRUE - 보임] [FALSE - 안 보임]
-```text
-    <div id="ifEx">
-        <p v-if="seen">{{message}}</p>
-        <button @click="clickSeen">클릭</button>
-    </div>
-```
-```script
-    new Vue({
-        el : "#if",
-        data : {
-            message : 'v-on을 통한 클릭메서드 만들기(복수니까 methods)',
-            seen : true
-        },
-        methods : {
-            clickSeen : function(){
-                this.seen = !this.seen
+    ```text
+        <div id="ifEx">
+            <p v-if="seen">{{message}}</p>
+            <button @click="clickSeen">클릭</button>
+        </div>
+    ```
+    ```js
+        new Vue({
+            el : "#if",
+            data : {
+                message : 'v-on을 통한 클릭메서드 만들기(복수니까 methods)',
+                seen : true
+            },
+            methods : {
+                clickSeen : function(){
+                    this.seen = !this.seen
+                }
             }
-        }
-    })
-```
->  v-else, v-else-if도 가능하다. 단, v-if 바로 뒤에 있어야 기능이 가능하다.
+        })
+    ```
+    >  v-else, v-else-if도 가능하다. 단, v-if 바로 뒤에 있어야 기능이 가능하다.
 
 2. v-for 디렉티브 : 반복문 블록 
     - item in items 형태의 특별한 문법이 필요
@@ -59,7 +60,7 @@ tags: Vue
             <li v-for="i in items">{{i.text}}</li>
         </ul>
     ```
-    ```script
+    ```js
         new Vue = ({
             el : "#iter",
             data : {
@@ -80,7 +81,7 @@ tags: Vue
             </li>
         </ul>
     ```
-    ```script  
+    ```js  
         new Vue({
             el : "#iter",
             data : {
@@ -95,49 +96,52 @@ tags: Vue
 3. v-model 디렉티브 : 폼입력 바인딩
     - 양방향 데이터 바인딩을 생성
     - input type : text , textarea, checkbox, radio, select ...
-```text
-    <div id="bind">
-        <input type="text" v-model="message">
-        <p> {{message}} </p>
-    </div>
-```
-```script
-    new Vue({
-        el : "#bind",
-        data : {
-            message = ""
+    ```text
+        <div id="bind">
+            <input type="text" v-model="message">
+            <p> {{message}} </p>
+        </div>
+    ```
+    ```js
+        new Vue({
+            el : "#bind",
+            data : {
+                message = ""
+                }
             }
-        }
-    })
-```
+        })
+    ```
+
 
 ### 전달인자(:) : 일부 디렉트브는 전달인자(:)를 사용할 수 있다.
+
 1. v-bind:속성="a" : a라는 값을 받아 html 속성을 수정해준다.
     - 약어 : **:속성 = "a"**
-```text
-    <p id="ex" v-bind:title="message">마우스를 올리세요</p>
-```
-```script
-    new Vue({
-        el : "#ex",
-        data : {
-            message : 'v-bind:title title속성을 데이터렌더링한다 hover시 title'
-        }
-    })
-```
-- title속성은 message값과 바인드하여 <p title="message">로 수정된다.
-
-    1. v-bind 클래스 바인딩
-        - active 클래스 존재 여부는 isActive의 참 속성에 의해 결정된다.
     ```text
-        <div v-bind:class="{active:isActive}">
+        <p id="ex" v-bind:title="message">마우스를 올리세요</p>
     ```
-    ```script
-    data : {
-        isActive : true
-    }  
+    ```js
+        new Vue({
+            el : "#ex",
+            data : {
+                message : 'v-bind:title title속성을 데이터렌더링한다 hover시 title'
+            }
+        })
     ```
-    2. v-bind 인라인스타일 바인딩 
+    - title속성은 message값과 바인드하여 <p title="message">로 수정된다.
+
+
+    + 1. v-bind 클래스 바인딩
+        - active 클래스 존재 여부는 isActive의 참 속성에 의해 결정된다.
+        ```text
+            <div v-bind:class="{active:isActive}">
+        ```
+        ```js
+        data : {
+            isActive : true
+        }  
+        ```
+    + 2. v-bind 인라인스타일 바인딩 
         - 1) v-bind:style="{font-size:fontSize+'px', color:activeColor}"
             - data : {
                 fontSize : 10,
@@ -159,7 +163,7 @@ tags: Vue
 ```text
     <p id="ex" v-on:click="handleClick">클릭하세요{{message}}</p>
 ```
-```script
+```js
     new Vue({
         el : "#ex",
         data : {

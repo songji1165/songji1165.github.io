@@ -7,22 +7,24 @@ tags: javascript
 # 1. 데이터 타입
 - 프로그래밍 언어에서 사용할 수 있는 데이터의 종류.
 - 자바스크립트는 동적타입언어 : 변수의 타입 지정없이 값이할당되는 과정에서 자동으로 변수의 타입이 결정된다.
-- javascript는 **7개의 데이터 타입**이 있다.
+- javascript는 **원시타입과 객체참조타입**이 있다.
     1. 원시타입 (primitive data type)
         - number : 1, 2, 3
         - string : 'a','1'
         - boolean : true, false
-        - **undefined** : 의도되지 않게 값이 없다.(변수는 선언 되었지만 값이 없다)
+        - **undefined** : 값이 없다. -> 값이 선언 되었지만 값이 할당되지 않았다.
             ```text
             var a;
             alert(a); // undefined
             ```
-        - **null** : "값이 없다", 의도적으로 만든다.
+        - **null** : 값이 없다. -> 데이터 초기화(어떤한 값도 갖고 있지 않다.)
             ```text
-            var a;
+            var a = "a";
+            a = null; // 해당 값을 제거함 (데이터 초기화)
             alert(a); //null
             ```
         - symbol(ES6) : 고유한 값 , 상징적인 값
+        
     2. 객체타입 (object)
         - object : 원시 타입 외의 모든 값
 
