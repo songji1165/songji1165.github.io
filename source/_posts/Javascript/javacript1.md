@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 동작원리
+title: 브라우저 동작원리
 date: 
 tags: javascript
 ---

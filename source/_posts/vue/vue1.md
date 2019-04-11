@@ -1,8 +1,39 @@
 ---
-title: Vue 기본 문법 1
+title: Vue 기본 문법 1 
 date: 2019.04.09
 tags: Vue
 ---
+
+# Vue
+- 모든 Vue앱은 **Vue함수**로 새 **Vue 인스턴스**를 만든다.
+- 새 Vue 인스턴스 등록 : Vue앱은 **new Vue**를 통해 **루트 Vue 인스턴스**로 구성되어진다.
+```js
+    var vm = new Vue({
+        //루트 Vue 인스턴스
+    })
+```
+> 인스턴스란 .?
+- **java**
+    - 클래스(설계도)를 바탕으로 여러 개의 다른 모양의 인스턴스(제품)을 만들 수 있다!!
+
+    1. 클래스(Class) : 연관되었 있는 변수와 메소드의 집합이다. -> **설계도**
+        ```text
+            class Gruop {}
+        ```
+        - class 키워드로 그룹화하겠다고 선언
+        - 클래스 이름으로 그룹의 이름을 부여
+        - 중괄호 안에는 연관된 로직들이 들어감
+    2. 인스턴스(Instance) : 클래스를 사용하기 위한 제품(부품)정도로 이해하자. -> **제품**
+        ```js
+            Group g1 = new Group();
+            Group g2 = new Group();
+        ```    
+    - new Group() : 클래스Group을 구체적인 제품으로 만드는 명령어 => **인스턴스**
+    - new를 이용해 만든 인스턴스를 변수 g1에 담고 있다.
+        -> 변수가 데이터 타입을 담고 있듯이 g1에는 사용자 정의 타입을 담는다.
+            => **g1은 Group이라는 클래스를 담고 있다!!**
+
+
 
 ## 1. 선언적 렌더링(1) : 텍스트보간법 
 - 데이터 바인딩의 기본 형태이다.
@@ -51,7 +82,7 @@ tags: Vue
             }
         })
     ```
-    >  v-else, v-else-if도 가능하다. 단, v-if 바로 뒤에 있어야 기능이 가능하다.
+    > v-else, v-else-if도 가능하다. 단, v-if 바로 뒤에 있어야 기능이 가능하다.
 
 2. v-for 디렉티브 : 반복문 블록 
     - item in items 형태의 특별한 문법이 필요
@@ -131,7 +162,7 @@ tags: Vue
     - title속성은 message값과 바인드하여 <p title="message">로 수정된다.
 
 
-    + 1. v-bind 클래스 바인딩
+    - 1. v-bind 클래스 바인딩
         - active 클래스 존재 여부는 isActive의 참 속성에 의해 결정된다.
         ```text
             <div v-bind:class="{active:isActive}">
@@ -141,14 +172,14 @@ tags: Vue
             isActive : true
         }  
         ```
-    + 2. v-bind 인라인스타일 바인딩 
-        - 1) v-bind:style="{font-size:fontSize+'px', color:activeColor}"
+    - 2. v-bind 인라인스타일 바인딩 
+        - 1. v-bind:style="{font-size:fontSize+'px', color:activeColor}"
             - data : {
                 fontSize : 10,
                 activeColor : 'red'
                 }
 
-        - 2) v-bind:style="styleObject"
+        - 2. v-bind:style="styleObject"
             - data : {
                 styleObject : {
                     fontSize: '10px',

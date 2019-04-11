@@ -1,5 +1,5 @@
 ---
-title: 0410
+title: 0410 study
 date: 2019-04-10
 tags: 개발일기
 ---
