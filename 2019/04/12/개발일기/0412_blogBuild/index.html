@@ -10,7 +10,7 @@
   
   <title>
     
-      브라우저 동작원리 | SONG
+      0412 study | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>브라우저 동작원리</h2>
-  <p class="post-date">2019-04-08</p>
+  <h2>0412 study</h2>
+  <p class="post-date">2019-04-12</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,58 +147,14 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="브라우저의-동작원리"><a href="#브라우저의-동작원리" class="headerlink" title="브라우저의 동작원리"></a>브라우저의 동작원리</h1><ul>
-<li><p>참고 : <a href="http://d2.naver.com/helloworld/59361" target="_blank" rel="noopener">브라우저 동작 원리</a></p>
-</li>
-<li><p>브라우저의 주요 기능 : 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시</p>
-<ul>
-<li>자원 : 보통 <strong>HTML문서</strong>이지만 PDF나 이미지, 다른 형태일 수 도 있다.<ul>
-<li>HTML과 CSS명세에 따라 HTML파일을 해석해서 표시한다.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="브라우저의-기본-구조"><a href="#브라우저의-기본-구조" class="headerlink" title="브라우저의 기본 구조"></a>브라우저의 기본 구조</h3><p><img src="https://d2.naver.com/content/images/2015/06/helloworld-59361-1.png" alt="브라우저의 기본 구조"></p>
-<ol>
-<li>사용자 인터페이스 : HTML이 보여지는 화면을 제외 한 모든 부분(주소 표시줄, 이전/다음 페이지 등 ..)</li>
-<li>브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작 제어</li>
-<li>자료 저장소 : 모든 종류의 자원을 하드 디스크에 저장</li>
-<li>렌더링 엔진 : [rendering : 표현] 요청 받은 내용을 브라우저 화면에 표시해준다.</li>
-<li>통신 : HTTP요청과 같은 네트워크 호출에 사용</li>
-<li>자바스크립트 해석기 : 자바스크립트 코드를 해석하고 실행</li>
-<li>UI 백엔드 : 렌더트리의 형상을 만들어 내는 그리기 과정을 실행</li>
+    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
+<li>vue study 복습</li>
+<li>git hub, gitblog 정리</li>
 </ol>
-<blockquote>
-<p><strong>렌더링 엔진은</strong> </p>
-<ol>
-<li><strong>통신</strong>으로부터 요청한 문서를 얻어 </li>
-<li>렌더링 과정을 통해 <strong>렌더트리</strong>를 생성</li>
-<li>렌더트리를 통해 <strong>UI백엔드</strong>로 그리기 과정을 실행한다.<br><img src="https://d2.naver.com/content/images/2015/06/helloworld-59361-2.png" alt="렌더링엔진 동작 과정"> <ol>
-<li>렌더트리 : 스타일정보(CSS)와 HTML표시 규칙</li>
-</ol>
-</li>
-<li><strong>파싱</strong> : 렌더링 엔진에서 중요한 과정<pre><code>브라우저가 코드를 이해하고 사용할 수 있는 구조로 변환하는 것 
-</code></pre></li>
-</ol>
-</blockquote>
-<h3 id="브라우저-동작-과정"><a href="#브라우저-동작-과정" class="headerlink" title="브라우저 동작 과정"></a><strong>브라우저 동작 과정</strong></h3><p><img src="https://d2.naver.com/content/images/2015/06/helloworld-59361-3.png" alt="자바스트립트 동작 원리"></p>
-<ol>
-<li><p>(html문서 -&gt; html파서) + (css문서 -&gt; css파서) =&gt; 렌더링 트리</p>
-<ul>
-<li>html파서 (html 문서 해석기) :<pre><code>html파서를 통해 html문서를 읽은 후 DOM트리를 형성 함.
-</code></pre></li>
-<li>css 파서 (css 문서 해석기) : <pre><code>css는 html에 시각적인 스타일을 입히기 위한 파일로 css파서를 통해 브라우저용 스타일 데이터로 만들어 줌.
-</code></pre></li>
-<li>렌더링 트리 : 페이지에 렌더링  <pre><code>즉, html문서와 css문서를 시각적인 구성요소로 트리 내용 순서대로 페이지를 그려냄
-</code></pre></li>
-</ul>
-</li>
-<li><p><strong>javascript는 렌더링 엔진이 아닌 javascript엔진에서 처리 됨</strong></p>
-<ul>
-<li><strong>sctipt태그는 맨 끝에 위치하는 것이 좋은 이유</strong> : html파서가 중간에 javascript를 만나면 javascript엔진으로 넘어가서 DOM생성을 중지하게 된다!</li>
-</ul>
-</li>
+<h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><p>개념 정리는 시간이 오래 걸린담..</p>
+<h3 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h3><ol>
+<li>vue study 복습</li>
+<li>git hub, gitblog 정리</li>
 </ol>
 </section>
     <!-- Tags START -->
@@ -206,8 +162,8 @@
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#javascript">
-    <span class="tag-code">javascript</span>
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
   </a>
 
       </div>
@@ -218,20 +174,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/08/개발일기/0408_blogBuild/">
+      <a class="nav-left" href="/2019/04/12/vue/vue2/">
         <span class="nav-arrow">← </span>
         
-          0408 study
+          Vue 기본 문법 (컴포넌트)
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/08/Javascript/javascript2/">
-        
-          자바스크립트 데이터타입과 변수
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -254,7 +203,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/08/Javascript/javacript1/';
+    var url = 'http://yoursite.com/2019/04/12/개발일기/0412_blogBuild/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
