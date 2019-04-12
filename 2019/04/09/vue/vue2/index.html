@@ -10,7 +10,7 @@
   
   <title>
     
-      Vue의 기본 기능 | SONG
+      Vue의 기본 기능 1 | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>Vue의 기본 기능</h2>
+  <h2>Vue의 기본 기능 1</h2>
   <p class="post-date">2019-04-09</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -157,8 +157,10 @@
 </ol>
 </blockquote>
 <p><br></p>
-<h2 id="1-선언적-렌더링-1-텍스트보간법-데이터바인딩-v-bind-attribute-바인딩"><a href="#1-선언적-렌더링-1-텍스트보간법-데이터바인딩-v-bind-attribute-바인딩" class="headerlink" title="1. 선언적 렌더링(1) : 텍스트보간법 (데이터바인딩), v-bind (attribute 바인딩)"></a>1. 선언적 렌더링(1) : 텍스트보간법 (데이터바인딩), v-bind (attribute 바인딩)</h2><h4 id="1-텍스트보간법"><a href="#1-텍스트보간법" class="headerlink" title="1. 텍스트보간법"></a>1. <strong>텍스트보간법</strong></h4><pre><code>- ***데이터 바인딩***의 기본 형태이다.
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ex&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-선언적-렌더링-1-텍스트보간법-데이터바인딩-v-bind-attribute-바인딩"><a href="#1-선언적-렌더링-1-텍스트보간법-데이터바인딩-v-bind-attribute-바인딩" class="headerlink" title="1. 선언적 렌더링(1) : 텍스트보간법 (데이터바인딩), v-bind (attribute 바인딩)"></a>1. 선언적 렌더링(1) : 텍스트보간법 (데이터바인딩), v-bind (attribute 바인딩)</h2><h4 id="1-텍스트보간법"><a href="#1-텍스트보간법" class="headerlink" title="1. 텍스트보간법"></a>1. <strong>텍스트보간법</strong></h4><ul>
+<li><strong><em>데이터 바인딩</em></strong>의 기본 형태이다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ex&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#ex"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message : <span class="string">'데이터렌더링한다(el로 연동 후 data에 텍스트보간법으로 렌더링)'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hi</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -180,7 +182,7 @@
 <h4 id="2-v-bind-attribute-바인딩"><a href="#2-v-bind-attribute-바인딩" class="headerlink" title="2. v-bind (attribute 바인딩)"></a>2. <strong>v-bind</strong> (attribute 바인딩)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ex&quot; v-bind:title=&quot;message&quot;&gt;마우스를 올리세요&lt;/p&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#ex"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message : <span class="string">'v-bind:title title속성을 데이터렌더링한다 hover시 title'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>title속성은 message값과 바인드하여 </p><p title="message">로 수정된다.</p>
+<p>title속성은 message값과 바인드하여 <code>&lt;p title=&quot;message&quot;&gt;</code>로 수정된다.</p>
 </blockquote>
 <ul>
 <li><strong>v-bind:속성 = “a”</strong> : a라는 값을 받아 html 속성을 수정</li>
@@ -189,14 +191,18 @@
 <li><p>v-bind <strong>클래스 바인딩</strong></p>
 <ul>
 <li><p><u>active클래스</u> 존재여부는 <u>isActive</u>의 <strong>참 속성(true)</strong>에 의해 결정된다.</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:class=&quot;&#123;active:isActive&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data : &#123;</span><br><span class="line">    isActive : <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:class=&quot;&#123;active:isActive&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data : &#123;</span><br><span class="line">    isActive : <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
+</ol>
+</li>
+</ul>
+<ol start="2">
 <li><p>v-bind <strong>인라인스타일 바인딩</strong> </p>
 <ol>
-<li><p>:style=”{font-size:fontSize+’px’, color:activeColor}”<br>data : {</p>
+<li><p>:style=”{font-size:fontSize+’px’, color:activeColor}”<br> data : {</p>
 <pre><code>fontSize : 10,
 activeColor : &apos;red&apos;
 }
@@ -211,8 +217,6 @@ activeColor : &apos;red&apos;
 </ol>
 </li>
 </ol>
-</li>
-</ul>
 <h2 id="2-조건문과-반복문-v-if-v-for"><a href="#2-조건문과-반복문-v-if-v-for" class="headerlink" title="2. 조건문과 반복문 : v-if, v-for"></a>2. 조건문과 반복문 : v-if, v-for</h2><h4 id="1-조건부-블록-v-if-디렉티브"><a href="#1-조건부-블록-v-if-디렉티브" class="headerlink" title="1. 조건부 블록 : v-if 디렉티브"></a>1. 조건부 블록 : <strong>v-if</strong> 디렉티브</h4><ul>
 <li>v-if 값이 <strong>[TRUE - 보임] [FALSE - 안 보임]</strong></li>
 </ul>
@@ -234,10 +238,12 @@ activeColor : &apos;red&apos;
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#iter"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        patentText : <span class="string">'부모 범위 속성 모든 권한'</span>,</span><br><span class="line">        items = [</span><br><span class="line">            &#123;<span class="attr">text</span> : js&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span> : vue&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="3-폼입력-바인딩-v-model-v-on"><a href="#3-폼입력-바인딩-v-model-v-on" class="headerlink" title="3. 폼입력 바인딩 : v-model, v-on"></a>3. 폼입력 바인딩 : v-model, v-on</h2><h4 id="1-v-model-디렉티브"><a href="#1-v-model-디렉티브" class="headerlink" title="1. v-model 디렉티브"></a>1. <strong>v-model</strong> 디렉티브</h4><pre><code>- 폼입력 바인딩
-- 양방향 데이터 바인딩을 생성
-- input type : text , textarea, checkbox, radio, select ...
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;bind&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;</span><br><span class="line">    &lt;p&gt; &#123;&#123;message&#125;&#125; &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-사용자-입력-핸들링-v-model-v-on"><a href="#3-사용자-입력-핸들링-v-model-v-on" class="headerlink" title="3. 사용자 입력 핸들링 : v-model, v-on"></a>3. 사용자 입력 핸들링 : v-model, v-on</h2><h4 id="1-v-model-디렉티브"><a href="#1-v-model-디렉티브" class="headerlink" title="1. v-model 디렉티브"></a>1. <strong>v-model</strong> 디렉티브</h4><ul>
+<li>폼입력 바인딩</li>
+<li>양방향 데이터 바인딩을 생성</li>
+<li>input type : text , textarea, checkbox, radio, select …</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;bind&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;</span><br><span class="line">    &lt;p&gt; &#123;&#123;message&#125;&#125; &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el : <span class="string">"#bind"</span>,</span><br><span class="line">        data : &#123;</span><br><span class="line">            message = <span class="string">""</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">#### 2. **v-on** 디렉티브</span></span><br><span class="line"><span class="string">- v-on은 이벤트핸들링</span></span><br><span class="line"><span class="string">- **'v-on:이벤트'** 전달인자 뒤에 &lt;u&gt;이벤트값&lt;/u&gt;이 들어간다.</span></span><br><span class="line"><span class="string">    - 약어 : **@clcik=""**</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>text</span><br><span class="line">    &lt;p id=<span class="string">"ex"</span> v-on:click=<span class="string">"handleClick"</span>&gt;클릭하세요&#123;&#123;message&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#ex"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message : <span class="string">""</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods : &#123;</span><br><span class="line">        hadleClick : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.message = <span class="string">"클릭했다"</span> </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <hr>
@@ -271,17 +277,17 @@ activeColor : &apos;red&apos;
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/09/Javascript/ajax(updating)/api/">
+      <a class="nav-left" href="/2019/04/09/개발일기/0409_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          Ajax &amp; API
+          0409 study
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/10/개발일기/0410_blogBuild/">
+      <a class="nav-right" href="/2019/04/09/vue/vue1/">
         
-          0410 study
+          Vue
         
         <span class="nav-arrow"> →</span>
       </a>

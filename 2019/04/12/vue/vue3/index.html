@@ -10,7 +10,7 @@
   
   <title>
     
-      Vue 기본 문법 (컴포넌트) | SONG
+      Vue의 기본 기능 2(컴포넌트) | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>Vue 기본 문법 (컴포넌트)</h2>
+  <h2>Vue의 기본 기능 2(컴포넌트)</h2>
   <p class="post-date">2019-04-12</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -147,23 +147,29 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="Vue-컴포넌트"><a href="#Vue-컴포넌트" class="headerlink" title="Vue 컴포넌트"></a>Vue 컴포넌트</h1><ul>
-<li>컴포넌트 : 재사용 가능한 html엘리먼트를 캡슐화(부품화)</li>
+    <section class="markdown-content"><h1 id="Vue-컴포넌트"><a href="#Vue-컴포넌트" class="headerlink" title="Vue 컴포넌트"></a>Vue 컴포넌트</h1><p><img src="https://kr.vuejs.org/images/components.png" alt="컴포넌트"></p>
+<ul>
+<li>컴포넌트 : 재사용 가능한 html엘리먼트를 캡슐화(부품화)<ol>
+<li>유지보수가 쉽다.</li>
+<li>각 컴포넌트들을 첨부해서 사용할 수 있어 재활용성이 높다.</li>
+</ol>
+</li>
 <li>Vue 컴포넌트는 <strong>Vue</strong>인스턴스이다. -&gt; 모든 옵션 객체 사용 가능</li>
 <li>Vue 컴포넌트는 HTML과 독립적이다(아래 3번 참고)</li>
 </ul>
+<p><br></p>
 <h3 id="1-전역-컴포넌트-등록-Vue-component-tagName-options"><a href="#1-전역-컴포넌트-등록-Vue-component-tagName-options" class="headerlink" title="1. 전역 컴포넌트 등록 : Vue.component(tagName, options)"></a>1. 전역 컴포넌트 등록 : <strong>Vue.component(tagName, options)</strong></h3><ul>
 <li><p>Vue 컴포넌트에 사용자 지정 태그 이름은 <strong>케밥케이스</strong>로 사용!</p>
 </li>
 <li><p>컴포넌트가 등록 되면 <strong>인스턴스의 템플릿</strong>에서 <strong>커스텀 엘리먼트</strong>로 사용할 수 있다</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(***<span class="string">'my-component'</span>***, &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(***<span class="string">'my-component'</span>***, &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;ex&quot;&gt;</span><br><span class="line">    ***&lt;my-component&gt;&lt;/my-component&gt;***</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong><em>렌더링 과정</em></strong><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue component(<span class="string">'my-component'</span>,&#123;</span><br><span class="line">    templete: <span class="string">'&lt;div&gt;인스턴스 템플릿&lt;/div&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">'#ex'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong><em>렌더링 과정</em></strong></li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue component(<span class="string">'my-component'</span>,&#123;</span><br><span class="line">    templete: <span class="string">'&lt;div&gt;인스턴스 템플릿&lt;/div&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">'#ex'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//인스턴스화 후 &lt;my-component&gt;&lt;/my-component&gt;자리에 컴포넌트의 **인스턴스templete**으로 렌더링된다.</span><br><span class="line">    &lt;div id=&quot;ex&quot;&gt;</span><br><span class="line">        ***&lt;div&gt;인스턴스 템플릿&lt;/div&gt;***</span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="2-지역-등록-components"><a href="#2-지역-등록-components" class="headerlink" title="2. 지역 등록 : components"></a>2. 지역 등록 : components</h3><ul>
 <li>컴포넌트를 <strong>components 인스턴스 옵션</strong>으로 등록할 수 있다. -&gt; 해당 인스턴스/컴포넌트 범위에서만 사용할 수 있게 만들기 위함.<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Child = &#123;</span><br><span class="line">    templete: <span class="string">'&lt;div&gt;사용자 정의 컴포넌트&lt;/div&gt;'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">"#ex"</span>,</span><br><span class="line">    data: &#123;...&#125;,</span><br><span class="line">    components : &#123;</span><br><span class="line">        <span class="string">'my-component'</span> : Child</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -175,16 +181,16 @@
 <li><u>ul,ol,table,select</u>와 같은 일부 엘리먼트는 그 안에 <ul>li,tr,option</ul>등과 같은 꼭 필요한 자식 엘리먼트가 있어야하기 때문에 제한을 갖게 된다!</li>
 </ul>
 <blockquote>
-<p>문제점<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;my-component&gt;&lt;/my-component&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">// 렌더링시 에러가 발생함!!!</span><br></pre></td></tr></table></figure></p>
+<p>문제점</p>
 </blockquote>
-<blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;my-component&gt;&lt;/my-component&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">// 렌더링시 에러가 발생함!!!</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
 <p>해결 방법 </p>
-<ol>
-<li><strong>is</strong> 특수 속성 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tr is=&quot;my-component&quot;&gt;&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 </blockquote>
-<ol start="2">
+<ol>
+<li><p><strong>is</strong> 특수 속성 사용</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;tr is=&quot;my-component&quot;&gt;&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+</li>
 <li><script type="text/x-templete"></li>
 <li><strong><em>javascript 인라인 템플릿 문자열</em></strong> 가장 선호</li>
 <li>.vue 컴포넌트 </li>
@@ -195,7 +201,11 @@
 </ul>
 <h3 id="5-Vue-js의-부모-자식-컴포넌트-관계"><a href="#5-Vue-js의-부모-자식-컴포넌트-관계" class="headerlink" title="5. Vue.js의 부모-자식 컴포넌트 관계"></a>5. Vue.js의 부모-자식 컴포넌트 관계</h3><p><img src="https://kr.vuejs.org/images/props-events.png" alt="Vue"></p>
 <ul>
-<li>Props 데이터 전달 : 부모가 자식에게 데이터 전달</li>
+<li><p>Props 데이터 전달 : 부모가 자식에게 데이터 전달</p>
+<ul>
+<li>attribute데이터를 가져와서 template 내에 바인딩 될 수 있게 도와준다.</li>
+</ul>
+</li>
 <li></li>
 </ul>
 </script></li></ol></section>
