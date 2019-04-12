@@ -172,113 +172,38 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="comment">//루트 Vue 인스턴스</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
-<p>인스턴스란 .?</p>
+<h3 id="인스턴스란"><a href="#인스턴스란" class="headerlink" title="인스턴스란 .?"></a>인스턴스란 .?</h3><ul>
+<li><p><strong><em>java</em></strong></p>
 <ul>
-<li><strong><em>java</em></strong><ul>
-<li><strong><em>클래스(설계도)를 바탕으로 여러 개의 다른 모양의 인스턴스(제품)을 만들 수 있다</em></strong><ol>
-<li><strong>클래스(Class)</strong> : 연관되었 있는 변수와 메소드의 집합이다.  <strong><u>설계도</u></strong> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gruop</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<pre><code>    - **class키워드** : 그룹화하겠다고 선언
-    - **클래스 이름** : 그룹의 이름을 부여
-    - **중괄호** : 중괄호 안에는 연관된 로직들이 들어감
-2. **인스턴스(Instance)** : 클래스를 사용하기 위한 제품(부품)정도로 이해하자. **&lt;u&gt;제품&lt;/u&gt;**
-    <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">                Group g1 = <span class="keyword">new</span> Group();</span><br><span class="line">                Group g2 = <span class="keyword">new</span> Group();</span><br><span class="line">            <span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">            - **new Group()** : 클래스Group을 구체적인 제품으로 만드는 명령어. ***인스턴스***</span></span><br><span class="line"><span class="string">            - new를 이용해 만든 인스턴스를 변수 g1에 담고 있다.</span></span><br><span class="line"><span class="string">                - 변수가 데이터 타입을 담고 있듯이 g1에는 사용자 정의 타입을 담는다.</span></span><br><span class="line"><span class="string">                    - **g1은 Group이라는 클래스를 담고 있다!!**</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 1. 선언적 렌더링(1) : 텍스트보간법 </span></span><br><span class="line"><span class="string">- **데이터 바인딩**의 기본 형태이다.</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>text</span><br><span class="line">    &lt;p id=<span class="string">"ex"</span>&gt;&#123;&#123;message&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
-</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#ex"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message : <span class="string">'데이터렌더링한다(el로 연동 후 data에 텍스트보간법으로 렌더링)'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hi</span><br></pre></td></tr></table></figure>
-<ul>
-<li>el : css선택자처럼 vue선택자정도로 생각하면 된다.</li>
-<li>data : data 객체의 있는 것들은 프록시 처리 된다.<ul>
-<li>프록시 : 클라이언트와 서버 사이에서 중계한다고 생각하면 된다.<br>data를 거치고 나면 data 안의 속성들이 클란이언트 측으로 보여진다.</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-디렉티브-v"><a href="#2-디렉티브-v" class="headerlink" title="2. 디렉티브 : v-"></a>2. 디렉티브 : v-</h2><ul>
-<li>‘v-‘ 접두사가 있는 특수 속성</li>
-<li>디렉티브 속성 값은 단일 javajs 표현식이다. (<strong>v-for</strong> 제외)</li>
-</ul>
+<li><p><strong><em>클래스(설계도)를 바탕으로 여러 개의 다른 모양의 인스턴스(제품)을 만들 수 있다</em></strong></p>
 <ol>
-<li><p>v-if 디렉티브 : 조건부 블록</p>
+<li><p><strong>클래스(Class)</strong> : 연관되었 있는 변수와 메소드의 집합이다.  <strong><u>설계도</u></strong></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gruop</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>v-if 값이 [TRUE - 보임] [FALSE - 안 보임]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;ifEx&quot;&gt;</span><br><span class="line">    &lt;p v-if=&quot;seen&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;button @click=&quot;clickSeen&quot;&gt;클릭&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#if"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message : <span class="string">'v-on을 통한 클릭메서드 만들기(복수니까 methods)'</span>,</span><br><span class="line">        seen : <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods : &#123;</span><br><span class="line">        clickSeen : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.seen = !<span class="keyword">this</span>.seen</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>v-else, v-else-if도 가능하다. 단, v-if 바로 뒤에 있어야 기능이 가능하다.</p>
-</blockquote>
-</li>
+<li><strong>class키워드</strong> : 그룹화하겠다고 선언</li>
+<li><strong>클래스 이름</strong> : 그룹의 이름을 부여</li>
+<li><strong>중괄호</strong> : 중괄호 안에는 연관된 로직들이 들어감</li>
 </ul>
 </li>
-<li><p>v-for 디렉티브 : 반복문 블록 </p>
+<li><strong>인스턴스(Instance)</strong> : 클래스를 사용하기 위한 제품(부품)정도로 이해하자. <strong><u>제품</u></strong><pre><code class="js">Group g1 = <span class="keyword">new</span> Group();
+Group g2 = <span class="keyword">new</span> Group();
+</code></pre>
 <ul>
-<li><p>item in items 형태의 특별한 문법이 필요</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;iter&quot;&gt;</span><br><span class="line">    &lt;li v-for=&quot;i in items&quot;&gt;&#123;&#123;i.text&#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue = (&#123;</span><br><span class="line">    el : <span class="string">"#iter"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        items : [</span><br><span class="line">            &#123;<span class="attr">text</span> : <span class="number">1</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span> : <span class="number">2</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span> : <span class="number">3</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>현재 항목의 index를 부여할 수 있다.</p>
-</li>
-<li><p>v-for 블록 안에는 부모 범위 속성에 대한 모든 권한이 부여된다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;iter&quot;&gt;</span><br><span class="line">    &lt;li v-for=&quot;(i,index) in items&quot;&gt;</span><br><span class="line">        &#123;&#123;parentText&#125;&#125; - &#123;&#123;index&#125;&#125; - &#123;&#123;i.text&#125;&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#iter"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        patentText : <span class="string">'부모 범위 속성 모든 권한'</span>,</span><br><span class="line">        items = [</span><br><span class="line">            &#123;<span class="attr">text</span> : js&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span> : vue&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>new Group()</strong> : 클래스Group을 구체적인 제품으로 만드는 명령어. <strong><em>인스턴스</em></strong></li>
+<li>new를 이용해 만든 인스턴스를 변수 g1에 담고 있다.<ul>
+<li>변수가 데이터 타입을 담고 있듯이 g1에는 사용자 정의 타입을 담는다.<ul>
+<li><strong>g1은 Group이라는 클래스를 담고 있다!!</strong></li>
 </ul>
 </li>
-<li><p>v-model 디렉티브 : 폼입력 바인딩</p>
-<ul>
-<li>양방향 데이터 바인딩을 생성</li>
-<li><p>input type : text , textarea, checkbox, radio, select …</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;bind&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;</span><br><span class="line">    &lt;p&gt; &#123;&#123;message&#125;&#125; &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#bind"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message = <span class="string">""</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</ul>
 </li>
 </ul>
 </li>
 </ol>
-<h3 id="전달인자-일부-디렉트브는-전달인자-를-사용할-수-있다"><a href="#전달인자-일부-디렉트브는-전달인자-를-사용할-수-있다" class="headerlink" title="전달인자(:) : 일부 디렉트브는 전달인자(:)를 사용할 수 있다."></a>전달인자(:) : 일부 디렉트브는 전달인자(:)를 사용할 수 있다.</h3><ol>
-<li><p>v-bind:속성=”a” : a라는 값을 받아 html 속성을 수정해준다.</p>
-<ul>
-<li><p>약어 : <strong>:속성 = “a”</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ex&quot; v-bind:title=&quot;message&quot;&gt;마우스를 올리세요&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#ex"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message : <span class="string">'v-bind:title title속성을 데이터렌더링한다 hover시 title'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>title속성은 message값과 바인드하여 </p><p title="message">로 수정된다.</p>
 </li>
 </ul>
 </li>
-</ol>
-<pre><code>1. v-bind 클래스 바인딩
-    - active 클래스 존재 여부는 isActive의 참 속성에 의해 결정된다.
-    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:class=&quot;&#123;active:isActive&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-    <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data : &#123;</span><br><span class="line">    isActive : <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-2. v-bind 인라인스타일 바인딩 
-    1. v-bind:style=&quot;{font-size:fontSize+&apos;px&apos;, color:activeColor}&quot;
-        - data : {
-            fontSize : 10,
-            activeColor : &apos;red&apos;
-            }
-
-    2. v-bind:style=&quot;styleObject&quot;
-        - data : {
-            styleObject : {
-                fontSize: &apos;10px&apos;,
-                color: &apos;red&apos;,
-            }
-        }
-</code></pre><ol start="2">
-<li>v-on : v-on은 이벤트핸들링으로 ‘v-on:이벤트’ 전달인자 뒤에 이벤트값이 들어간다.<ul>
-<li>약어 : <strong>@clcik=””</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ex&quot; v-on:click=&quot;handleClick&quot;&gt;클릭하세요&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-</li>
 </ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#ex"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message : <span class="string">""</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods : &#123;</span><br><span class="line">        hadleClick : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.message = <span class="string">"클릭했다"</span> </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </section>
     <!-- Tags START -->
     
@@ -297,17 +222,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/08/Javascript/javascript3/">
+      <a class="nav-left" href="/2019/04/09/개발일기/0409_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          자바스크립트 연산자와 조건문, 반복문
+          0409 study
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/09/개발일기/0409_blogBuild/">
+      <a class="nav-right" href="/2019/04/09/Javascript/ajax(updating)/api/">
         
-          0409 study
+          Ajax &amp; API
         
         <span class="nav-arrow"> →</span>
       </a>
