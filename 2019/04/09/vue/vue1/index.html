@@ -10,7 +10,7 @@
   
   <title>
     
-      Vue 기본 문법 1 | SONG
+      Vue | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>Vue 기본 문법 1</h2>
+  <h2>Vue</h2>
   <p class="post-date">2019-04-09</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -147,17 +147,37 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><ul>
-<li>모든 Vue앱은 <strong>Vue함수</strong>로 새 <strong>Vue 인스턴스</strong>를 만든다.</li>
-<li>새 Vue 인스턴스 등록 : Vue앱은 <strong>new Vue</strong>를 통해 <strong>루트 Vue 인스턴스</strong>로 구성되어진다.<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="comment">//루트 Vue 인스턴스</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+    <section class="markdown-content"><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><blockquote>
+<p>Vue 장점</p>
+<pre><code>1. 학습곡선이 낮다.
+2. Vue의 핵심인 컴포넌트를 통해 유지보수와 재사용성이 높아진다.
+3. DOM조작인 jquery같이 쉬운 편이다.
+4. 요소를 실시간으로 반응시킬 수 있다. 
+</code></pre></blockquote>
+<h2 id="Vue-시작하기"><a href="#Vue-시작하기" class="headerlink" title="Vue 시작하기"></a>Vue 시작하기</h2><ul>
+<li>JS라이브러리 사용하듯 script를 붙여넣기하면 된다.</li>
+</ul>
+<ol>
+<li><p>도움되는 콘솔 경고를 포함한 개발 버전</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>상용버전, 속도와 용량이 최적화된 버전</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Vue-앱-사용하기"><a href="#Vue-앱-사용하기" class="headerlink" title="Vue 앱 사용하기"></a>Vue 앱 사용하기</h2><ul>
+<li><p><strong>Vue함수</strong> :  모든 Vue앱은 <strong>Vue함수</strong>로 새 <strong>Vue 인스턴스</strong>를 만든다.</p>
+</li>
+<li><p>새 Vue 인스턴스 등록 : Vue앱은 <strong>new Vue</strong>를 통해 <strong>루트 Vue 인스턴스</strong>로 구성되어진다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="comment">//루트 Vue 인스턴스</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
 <p>인스턴스란 .?</p>
 <ul>
-<li><strong>java</strong><ul>
-<li>클래스(설계도)를 바탕으로 여러 개의 다른 모양의 인스턴스(제품)을 만들 수 있다!!<ol>
-<li>클래스(Class) : 연관되었 있는 변수와 메소드의 집합이다.  <strong>설계도</strong> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Gruop &#123;&#125;</span><br></pre></td></tr></table></figure>
+<li><strong><em>java</em></strong><ul>
+<li><strong><em>클래스(설계도)를 바탕으로 여러 개의 다른 모양의 인스턴스(제품)을 만들 수 있다</em></strong><ol>
+<li><strong>클래스(Class)</strong> : 연관되었 있는 변수와 메소드의 집합이다.  <strong><u>설계도</u></strong> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gruop</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
@@ -165,11 +185,11 @@
 </li>
 </ul>
 </blockquote>
-<pre><code>    - class 키워드로 그룹화하겠다고 선언
-    - 클래스 이름으로 그룹의 이름을 부여
-    - 중괄호 안에는 연관된 로직들이 들어감
-2. 인스턴스(Instance) : 클래스를 사용하기 위한 제품(부품)정도로 이해하자. **제품**
-    <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">                Group g1 = <span class="keyword">new</span> Group();</span><br><span class="line">                Group g2 = <span class="keyword">new</span> Group();</span><br><span class="line">            <span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">            - new Group() : 클래스Group을 구체적인 제품으로 만드는 명령어. **인스턴스**</span></span><br><span class="line"><span class="string">            - new를 이용해 만든 인스턴스를 변수 g1에 담고 있다.</span></span><br><span class="line"><span class="string">                - 변수가 데이터 타입을 담고 있듯이 g1에는 사용자 정의 타입을 담는다.</span></span><br><span class="line"><span class="string">                    - **g1은 Group이라는 클래스를 담고 있다!!**</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 1. 선언적 렌더링(1) : 텍스트보간법 </span></span><br><span class="line"><span class="string">- **데이터 바인딩**의 기본 형태이다.</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>text</span><br><span class="line">    &lt;p id=<span class="string">"ex"</span>&gt;&#123;&#123;message&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>    - **class키워드** : 그룹화하겠다고 선언
+    - **클래스 이름** : 그룹의 이름을 부여
+    - **중괄호** : 중괄호 안에는 연관된 로직들이 들어감
+2. **인스턴스(Instance)** : 클래스를 사용하기 위한 제품(부품)정도로 이해하자. **&lt;u&gt;제품&lt;/u&gt;**
+    <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">                Group g1 = <span class="keyword">new</span> Group();</span><br><span class="line">                Group g2 = <span class="keyword">new</span> Group();</span><br><span class="line">            <span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">            - **new Group()** : 클래스Group을 구체적인 제품으로 만드는 명령어. ***인스턴스***</span></span><br><span class="line"><span class="string">            - new를 이용해 만든 인스턴스를 변수 g1에 담고 있다.</span></span><br><span class="line"><span class="string">                - 변수가 데이터 타입을 담고 있듯이 g1에는 사용자 정의 타입을 담는다.</span></span><br><span class="line"><span class="string">                    - **g1은 Group이라는 클래스를 담고 있다!!**</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 1. 선언적 렌더링(1) : 텍스트보간법 </span></span><br><span class="line"><span class="string">- **데이터 바인딩**의 기본 형태이다.</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>text</span><br><span class="line">    &lt;p id=<span class="string">"ex"</span>&gt;&#123;&#123;message&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
 </code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#ex"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message : <span class="string">'데이터렌더링한다(el로 연동 후 data에 텍스트보간법으로 렌더링)'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hi</span><br></pre></td></tr></table></figure>
 <ul>
@@ -277,17 +297,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/09/개발일기/0409_blogBuild/">
+      <a class="nav-left" href="/2019/04/08/Javascript/javascript3/">
         <span class="nav-arrow">← </span>
         
-          0409 study
+          자바스크립트 연산자와 조건문, 반복문
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/09/Javascript/ajax(updating)/api/">
+      <a class="nav-right" href="/2019/04/09/개발일기/0409_blogBuild/">
         
-          Ajax &amp; API
+          0409 study
         
         <span class="nav-arrow"> →</span>
       </a>
