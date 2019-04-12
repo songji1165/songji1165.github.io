@@ -1,99 +1,207 @@
 ---
-title: Vue 기본 문법 (컴포넌트)
-date: 2019-04-12
-tags: 개발일기
+title: Vue의 기본 기능 1
+date: 2019.04.09
+tags: Vue
 ---
 
-# Vue 컴포넌트
-- 컴포넌트 : 재사용 가능한 html엘리먼트를 캡슐화(부품화)
-- Vue 컴포넌트는 **Vue**인스턴스이다. -> 모든 옵션 객체 사용 가능
-- Vue 컴포넌트는 HTML과 독립적이다(아래 3번 참고)
+> Vue 기본기능
+  1. 선언적렌더링
+  2. 조건문과 반복문
+  3. 사용자 입력 핸들링
+  4. 컴포넌트
 
-### 1. 전역 컴포넌트 등록 : **Vue.component(tagName, options)**
-- Vue 컴포넌트에 사용자 지정 태그 이름은 **케밥케이스**로 사용!
+<br/>
 
-- 컴포넌트가 등록 되면 **인스턴스의 템플릿**에서 **커스텀 엘리먼트**로 사용할 수 있다
-```js
-    Vue.component(***'my-component'***, {
+## 1. 선언적 렌더링(1) : 텍스트보간법 (데이터바인딩), v-bind (attribute 바인딩)
+#### 1. **텍스트보간법**
+- ***데이터 바인딩***의 기본 형태이다.
 
-    })
-```
 ```text
-    <div id="ex">
-        ***<my-component></my-component>***
-    </div>
+    <p id="ex">{{message}}</p>
 ```
-
-- ***렌더링 과정***
 ```js
-    Vue component('my-component',{
-        templete: '<div>인스턴스 템플릿</div>'
-    })
-
     new Vue({
-        el : '#ex'
-    })
-```
-```text
-//인스턴스화 후 <my-component></my-component>자리에 컴포넌트의 **인스턴스templete**으로 렌더링된다.
-    <div id="ex">
-        ***<div>인스턴스 템플릿</div>***
-    </div>
-```
-
-### 2. 지역 등록 : components
-- 컴포넌트를 **components 인스턴스 옵션**으로 등록할 수 있다. -> 해당 인스턴스/컴포넌트 범위에서만 사용할 수 있게 만들기 위함.
-```js
-    var Child = {
-        templete: '<div>사용자 정의 컴포넌트</div>'
-    }
-
-    new Vue({
-        el: "#ex",
-        data: {...},
-        components : {
-            'my-component' : Child
+        el : "#ex",
+        data : {
+            message : '데이터렌더링한다(el로 연동 후 data에 텍스트보간법으로 렌더링)'
         }
     })
 ```
 ```text
+    hi
+```
+> 데이터와 DOM이 연결되어 모든 것이 **반응형**으로 작동한다.
+
+- **el** : HTML**엘리멘트ID**로 바인딩
+
+- **data** : 데이터와 함수가 담기는 공간
+    - <u>data에 있는 속성들</u>은 화면에 렌더링 될때 ***반응형***으로 나타난다.
+    - data 객체의 있는 것들은 프록시 처리 된다.
+        - 프록시 : 클라이언트와 서버 사이에서 중계한다고 생각하면 된다. (반응형)
+        data를 거치고 나면 data 안의 속성들이 클란이언트 측으로 보여진다.
+
+#### 2. **v-bind** (attribute 바인딩)
+```text
+    <p id="ex" v-bind:title="message">마우스를 올리세요</p>
+```
+```js
+    new Vue({
+        el : "#ex",
+        data : {
+            message : 'v-bind:title title속성을 데이터렌더링한다 hover시 title'
+        }
+    })
+```
+> title속성은 message값과 바인드하여 `<p title="message">`로 수정된다.
+
+- **v-bind:속성 = "a"** : a라는 값을 받아 html 속성을 수정
+- 약어  **:속성 = "a"**
+
+ 1. v-bind **클래스 바인딩**
+    - <u>active클래스</u> 존재여부는 <u>isActive</u>의 **참 속성(true)**에 의해 결정된다.
+        ```text
+            <div v-bind:class="{active:isActive}">
+        ```
+        ```js
+            data : {
+                isActive : true
+            }  
+        ```
+
+2. v-bind **인라인스타일 바인딩** 
+    1. :style="{font-size:fontSize+'px', color:activeColor}"
+        data : {
+            fontSize : 10,
+            activeColor : 'red'
+            }
+
+    2. :style="styleObject"
+        data : {
+            styleObject : {
+                fontSize: '10px',
+                color: 'red',
+            }
+        }
+
+
+## 2. 조건문과 반복문 : v-if, v-for
+#### 1. 조건부 블록 : **v-if** 디렉티브 
+- v-if 값이 **[TRUE - 보임] [FALSE - 안 보임]**
+
+```text
     <div id="ex">
-        <my-component></my-component>
+        <p v-if="seen">{{message}}</p>
+        <button @click="clickSeen">클릭</button>
     </div>
 ```
-
-### 3. <u>DOM 템플릿 주의사항</u>
-- DOM을 템플릿으로 사용할 때 (el옵션으로 엘리먼트를 마운트했을 때), Vue는 템플릿 콘텐츠만 가져올 수 있기 때문에 ***제한 사항***이 있다.
-- <ul>,<ol>,<table>,<select>와 같은 일부 엘리먼트는 그 안에 <li>,<tr>,<option>등과 같은 꼭 필요한 자식 엘리먼트가 있어야하기 때문에 제한을 갖게 된다!
-> 문제점
-    ```text
-        <table>
-            <my-component></my-component>
-        </table>
-        // 렌더링시 에러가 발생함!!!
-    ```
-> 해결 방법 
-  1. **is** 특수 속성 사용
-    ```text
-        <table>
-            <tr is="my-component"></tr>
-        </table>
-    ```
-  2. <script type="text/x-templete">
-  3. ***javascript 인라인 템플릿 문자열*** 가장 선호
-  4. .vue 컴포넌트 
-
-### 4. Vue component의 ***data는 함수***여야 한다!
-- Vue 생성자에 사용할 수 있는 대부분의 옵션은 컴포넌트에서 사용할 수 있다.
 ```js
-    Vue component('my-c',{
-        data : function(){
-            return  { ... }
+    new Vue({
+        el : "#ex",
+        data : {
+            message : 'v-on을 통한 클릭메서드 만들기(복수니까 methods)',
+            seen : true
+        },
+        methods : {
+            clickSeen : function(){
+                this.seen = !this.seen
+            }
+        }
+    })
+```
+> **v-else, v-else-if**도 가능하다. 
+    단, <u>v-if 바로 뒤</u>에 있어야 기능이 가능하다.
+
+#### 2. 반복문 블록 : **v-for** 디렉티브
+- v-for 블록 안에는 부모 범위 속성에 대한 모든 권한이 부여된다.
+
+- **<u>item in items</u>** 형태의 특별한 문법이 필요
+
+```text
+    <ul id="iter">
+        <li v-for="i in items">{{i.text}}</li>
+    </ul>
+```
+```js
+    new Vue = ({
+        el : "#iter",
+        data : {
+            items : [
+                {text : 1},
+                {text : 2},
+                {text : 3}
+            ]
         }
     })
 ```
 
-### 5. Vue.js의 부모-자식 컴포넌트 관계
-![Vue](https://kr.vuejs.org/images/props-events.png)
-- Props 데이터 전달 : 부모가 자식에게 데이터 전달
-- 
+- 현재 항목의 **index**를 부여할 수 있다. **<u>(i,index) in items</u>**
+```text
+    <ul id="iter">
+        <li v-for="(i,index) in items">
+            {{parentText}} - {{index}} - {{i.text}}
+        </li>
+    </ul>
+```
+```js  
+    new Vue({
+        el : "#iter",
+        data : {
+            patentText : '부모 범위 속성 모든 권한',
+            items = [
+                {text : js},
+                {text : vue}
+            ]
+        }
+    })
+```
+
+
+## 3. 사용자 입력 핸들링 : v-model, v-on
+#### 1. **v-model** 디렉티브
+- 폼입력 바인딩
+- 양방향 데이터 바인딩을 생성
+- input type : text , textarea, checkbox, radio, select ...
+
+```text
+    <div id="bind">
+        <input type="text" v-model="message">
+        <p> {{message}} </p>
+    </div>
+```
+```js
+    new Vue({
+        el : "#bind",
+        data : {
+            message = ""
+            }
+        }
+    })
+``` 
+    
+    
+#### 2. **v-on** 디렉티브
+- v-on은 이벤트핸들링
+- **'v-on:이벤트'** 전달인자 뒤에 <u>이벤트값</u>이 들어간다.
+    - 약어 : **@clcik=""**
+```text
+    <p id="ex" v-on:click="handleClick">클릭하세요{{message}}</p>
+```
+```js
+    new Vue({
+        el : "#ex",
+        data : {
+            message : ""
+        },
+        methods : {
+            hadleClick : function(){
+                this.message = "클릭했다" 
+            }
+        }
+    })
+```
+
+***
+> 1. **디렉티브 : v-**
+   - <u>'v-' 접두사</u>가 있는 특수 속성
+   - 디렉티브 속성 값은 단일 javajs 표현식이다. (**v-for 제외**)
+  2. **전달인자(:)** : 일부 디렉트브는 전달인자(:)를 사용할 수 있다.
