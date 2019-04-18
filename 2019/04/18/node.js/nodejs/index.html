@@ -10,7 +10,7 @@
   
   <title>
     
-      0408 study | SONG
+      node.js란 | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>0408 study</h2>
-  <p class="post-date">2019-04-08</p>
+  <h2>node.js란</h2>
+  <p class="post-date">2019-04-18</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,62 +147,62 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
-<li>개발 블로그 만들기</li>
-<li>javascript 개념 정리하기</li>
-<li>vue 개념 정리하기</li>
-<li>nomad 강의 듣기</li>
-</ol>
-<h3 id="To-Do"><a href="#To-Do" class="headerlink" title="To Do"></a>To Do</h3><h4 id="1-개발-블로그-만들기"><a href="#1-개발-블로그-만들기" class="headerlink" title="1. 개발 블로그 만들기"></a>1. 개발 블로그 만들기</h4><ul>
-<li><p>hexo를 이용하여 github 블로그를 만들었다.<br><a href="https://appear.github.io/2018/12/09/ETC/hexo-blog/" target="_blank" rel="noopener">Olaf’s blog</a>를 참고하여 만들었다.</p>
-</li>
-<li><p>블로그 글을 깃헙에 올려서 백업을 해주고<br>블로그 배포를 해주자!</p>
-<ol>
-<li><p><strong>github에 프로젝트 올리기</strong></p>
+    <section class="markdown-content"><p>웹브라우저 환경에서 html을 이용해서 웹 어플리케이션을 만든다.</p>
+<p>node.js환경에서 javascript를 이용해서 웹어플리케이션을 만든다.<br>(node.js를 사용해서 웹어플리케이션을 만든 것)</p>
+<h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><p>: 자바스크립트 런타임 환경<br>: 자바스트립트라는 언어로 node.js런타임 프로그램을 실행시켜 node.js 애플리케이션을 만든다</p>
+<p>: 자바스트립트를 이용해서 웹브라우저뿐만 아니라 웹서버를 조작할 수 있다.</p>
+<p>:자바스크립트를 통해서 node.js가 갖고 있는 기능을 실행하여 웹어플리케이션(웹브라우저)을  만든다. (즉, node.js로 웹어플리케이션을 만든것)</p>
+<p>:node.js홈페이지에서 파일 다운로드<br>그 후 node.js가 잘설치되있는지 확인</p>
+<p>cmd 터미널콘솔을 실행시키 </p>
+<p>node -v 후 버전정보가 뜨면 설치 성공</p>
+<p>node라고 친 후 node런타임환경을 이용해 javascrip를 입력할수 있다.</p>
+<p>console.log(1+1)을 써본후 화면 출력이 잘되는 지 실행해봄 </p>
+<p>node 런타임 환경을 나갈 때에는<br>ctrl+c 를 누르거나 .exit을 치면된다.</p>
+<p>cd (change directory) 후 이동하려는 파일경로를 써주면 된다.<br>(예 :  cd C:\Users\eumji\Desktop\vue-todo)</p>
+<p>dir 은 현재 디렉토리에 존재하는 파일들을 보여준다. </p>
+<p>node 파일이름.js 는 js파일의 명령어들을 실행시켜서 런타임 환경에서 보여준다.</p>
 <ul>
-<li>git init : 새로운 local repository 생성</li>
-<li>git add : 변경된 파일 local repository에 추가</li>
-<li>git commit : add한 파일을 local repository에 저장</li>
-<li>git push : local repository를 remote repository(github repository)에 업로드</li>
+<li>url<br><a href="http://opentutorials.org:3000/main?id=HTML&amp;page=12" target="_blank" rel="noopener">http://opentutorials.org:3000/main?id=HTML&amp;page=12</a></li>
 </ul>
 <ol>
-<li>작업할 폴더로 이동한다 !<br>git 해당파일</li>
-<li>git add .</li>
-<li>git commit -m “message”</li>
-<li>git push origin build -&gt;branch이름 (일반적으로 master)</li>
+<li>http </li>
 </ol>
-</li>
-<li><p><strong>gitblog에 글 올리기</strong></p>
 <ul>
-<li>hexo-deployer-git : 블로그로 배포하기 위한 모듈</li>
-<li>hexo clean : 기존 파일 삭제</li>
-<li>hexo genarate(=hexo g) : 파일 받아와서 파일 재생성</li>
-<li>hexo deploy(=hexo d) : 파일 블로그에 배포</li>
+<li>프로토콜 통시규칙 :  웹브라우저와 웹서버과 데이터를 주고받기 위한 통신 규칙</li>
 </ul>
-<ol>
-<li>npm install hexo-deployer-git</li>
-<li>hexo clean</li>
-<li>hexo g</li>
-<li>hexo d</li>
+<ol start="2">
+<li>opentutorials.org</li>
 </ol>
-</li>
-</ol>
-</li>
+<ul>
+<li>host(domain) : 특정한 인터넷에 연결되어 있는 컴퓨터를 가르키는 주소</li>
 </ul>
-<blockquote>
-<p>git 버전관리와 프로젝트 올리는 방법에 대해 추가적인 공부가 필요할 것 같다</p>
-</blockquote>
-<h4 id="2-javscript-개념-정리"><a href="#2-javscript-개념-정리" class="headerlink" title="2. javscript 개념 정리"></a>2. javscript 개념 정리</h4><blockquote>
-<p>한달정도 javascript 개념을 다시 정리하며 javascript 기본을 탄탄히 다지자!</p>
-</blockquote>
+<ol start="3">
+<li>3000</li>
+</ol>
+<ul>
+<li>port : 서버의 주소</li>
+<li>기본 port : 80 (기본 port값 생략 가능)</li>
+</ul>
+<ol start="4">
+<li>main</li>
+</ol>
+<ul>
+<li>path : 컴퓨터 안의 어떤 디렉토리의 어떤 파일을 나타냄</li>
+</ul>
+<ol start="5">
+<li><strong>?id=HTML&amp;page=12</strong></li>
+</ol>
+<ul>
+<li>qeury string : 웹서버에게 읽고싶은 데이터의 정보를 전달하는 역할</li>
+</ul>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#개발일기">
-    <span class="tag-code">개발일기</span>
+  <a href="/tags#node.js">
+    <span class="tag-code">node.js</span>
   </a>
 
       </div>
@@ -213,17 +213,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/08/개발일기/firts/">
+      <a class="nav-left" href="/2019/04/18/개발일기/0418_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          블로그 시작
+          0418 study
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/08/Javascript/javacript1/">
+      <a class="nav-right" href="/2019/04/19/개발일기/0419_blogBuild/">
         
-          브라우저 동작원리
+          0419 study
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -249,7 +249,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/08/개발일기/0408_blogBuild/';
+    var url = 'http://yoursite.com/2019/04/18/node.js/nodejs/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
