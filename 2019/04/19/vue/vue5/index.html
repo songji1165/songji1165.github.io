@@ -147,49 +147,37 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="Vue-CLI"><a href="#Vue-CLI" class="headerlink" title="Vue CLI"></a>Vue CLI</h1><ul>
-<li>vue cli : veu 개발환경</li>
-</ul>
-<h2 id="Vue-CLI-설치"><a href="#Vue-CLI-설치" class="headerlink" title="Vue CLI 설치"></a>Vue CLI 설치</h2><ol>
-<li><p>준비사항 <strong>node.js</strong> (node.js는 js를 터미널을 통해 실행)</p>
+    <section class="markdown-content"><h1 id="Vue-CLI"><a href="#Vue-CLI" class="headerlink" title="Vue CLI"></a>Vue CLI</h1><h4 id="vue-cli-veu-개발환경"><a href="#vue-cli-veu-개발환경" class="headerlink" title="vue cli : veu 개발환경"></a>vue cli : veu 개발환경</h4><h2 id="1-Vue-CLI-설치"><a href="#1-Vue-CLI-설치" class="headerlink" title="1. Vue CLI 설치"></a>1. Vue CLI 설치</h2><ol>
+<li><p>준비사항 <strong><em>node.js</em></strong> (node.js는 js를 터미널을 통해 실행할 수 있게 해준다.)</p>
 <ul>
-<li>설치 완료 후 - &gt; <code>node -v</code> : node 버전확인</li>
+<li>설치 완료 후<br><code>node -v</code><br>: node 버전확인</li>
 </ul>
 </li>
-<li><p><code>npm install -g @vue/cli</code></p>
-</li>
-</ol>
+<li><p><code>npm install -g @vue/cli</code><br>: cli 설치</p>
 <ul>
-<li>cli 설치<ul>
-<li>error발생 시 : 관리자 권한 필요<br>: <code>sudo npm install -g @vue/cli</code></li>
+<li>error발생 시 : 관리자 권한 필요<br><code>sudo npm install -g @vue/cli</code></li>
 </ul>
 </li>
-</ul>
-<ol start="3">
-<li><code>vue --version</code></li>
-</ol>
-<ul>
-<li>vue 버전 확인</li>
-</ul>
+<li><p><code>vue --version</code><br>: vue 버전 확인</p>
+</li>
+<li><p><code>vue create _vue-project_</code><br>: vue 프로젝트 생성(vue-project)</p>
 <blockquote>
 <p>cd 로 해당 경로로 이동 후 프로젝트를 생성해준다.</p>
 </blockquote>
-<ol start="4">
-<li><code>vue create</code> <em>vue-project</em></li>
-</ol>
 <ul>
-<li>vue 프로젝트 생성(vue-project)<ul>
 <li>cli플러그인 설정 : 개발환경에 대한 디테일을 설정할 수 있다<blockquote>
 <p>vuex,<br>css pre-processors,<br>linter/formatter,<br>babel -&gt; enter<br>less -&gt;enter<br>pretter<br>lint on save<br>packge.json<br>N.. 로 설정해주면 된다.</p>
 </blockquote>
 </li>
 </ul>
 </li>
+<li><p><code>npm run serve</code><br>: 런타임 서버 실행</p>
+<ul>
+<li><strong><em>localhost:8080</em></strong> 의 주소값을 받으면 실행 성공!</li>
 </ul>
-<ol start="5">
-<li><code>npm run serve</code><br>: 런타임 서버 실행이 된다<br>: <strong><em>localhost:8080</em></strong> 의 주소값을 받으면 실행 성공!</li>
+</li>
 </ol>
-<h2 id="CLI-플러그인-개발환경-디테일을-수정할-때-플러그인을-설치하면-된다"><a href="#CLI-플러그인-개발환경-디테일을-수정할-때-플러그인을-설치하면-된다" class="headerlink" title="CLI 플러그인 : 개발환경 디테일을 수정할 때 플러그인을 설치하면 된다"></a>CLI 플러그인 : 개발환경 디테일을 수정할 때 플러그인을 설치하면 된다</h2><ul>
+<h2 id="2-CLI-플러그인-개발환경-디테일을-수정할-때-플러그인을-설치하면-된다"><a href="#2-CLI-플러그인-개발환경-디테일을-수정할-때-플러그인을-설치하면-된다" class="headerlink" title="2. CLI 플러그인 : 개발환경 디테일을 수정할 때 플러그인을 설치하면 된다"></a>2. CLI 플러그인 : 개발환경 디테일을 수정할 때 플러그인을 설치하면 된다</h2><ul>
 <li>cli 3.0에서부터는 간단하게 플러그인을 설치하여 바로 적용할 수 있다.</li>
 <li><code>vue add vuetify</code> 같이 플러그인을 설치할 수 있다.</li>
 <li>플러그인 설치 완료 :<ol>
@@ -199,13 +187,13 @@
 </ol>
 </li>
 </ul>
-<h2 id="중요-파일"><a href="#중요-파일" class="headerlink" title="중요 파일"></a>중요 파일</h2><ol>
+<h2 id="3-중요-파일"><a href="#3-중요-파일" class="headerlink" title="3. 중요 파일"></a>3. 중요 파일</h2><ol>
 <li>main.js : 해당 프로젝트의 어플리케이션을 구동시켜주는 main</li>
 <li>router.js : 라우터 조절</li>
 <li>store.js : 전역상태 값을 조절</li>
 <li>App.vue : 기본 파일 (가장 껍데기)</li>
 </ol>
-<h3 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h3><ol>
+<h4 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h4><ol>
 <li><code>&lt;template&gt;&lt;/temlate&gt;</code><ul>
 <li>template속성 안에는 html속성이 들어가면 된다.</li>
 </ul>
@@ -220,7 +208,7 @@
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &#123;&#123;title&#125;&#125;</span><br><span class="line">        &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    export defualt &#123;</span></span><br><span class="line"><span class="regexp">        name:'app',</span></span><br><span class="line"><span class="regexp">        data () &#123;</span></span><br><span class="line"><span class="regexp">            return &#123;</span></span><br><span class="line"><span class="regexp">                title : 'hi'</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;,</span></span><br><span class="line"><span class="regexp">        methods : ....</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><ol>
+<h4 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h4><ol>
 <li><p><code>import 컴포넌트명 from &#39;./App.vue&#39;</code></p>
 <ul>
 <li>export된 값을 import한다. 즉, <strong>모듈값을 받아들인다.</strong></li>
@@ -238,11 +226,9 @@
 <blockquote>
 <ul>
 <li>export 컴포넌트명 from ‘파일경로’ : 모듈을 내보낸다.</li>
-</ul>
-</blockquote>
-<ul>
 <li>import 컴포넌트명 from ‘파일경로’ : 모듈을 받는다.</li>
 </ul>
+</blockquote>
 </section>
     <!-- Tags START -->
     
@@ -261,20 +247,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/19/개발일기/0419_blogBuild/">
+      <a class="nav-left" href="/2019/04/19/vue/vue6/">
         <span class="nav-arrow">← </span>
         
-          0419 study
+          Vue CLI Component
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/19/vue/vue6/">
-        
-          Vue CLI component
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
