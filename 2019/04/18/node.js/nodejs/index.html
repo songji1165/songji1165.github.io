@@ -147,54 +147,79 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>웹브라우저 환경에서 html을 이용해서 웹 어플리케이션을 만든다.</p>
-<p>node.js환경에서 javascript를 이용해서 웹어플리케이션을 만든다.<br>(node.js를 사용해서 웹어플리케이션을 만든 것)</p>
-<h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><p>: 자바스크립트 런타임 환경<br>: 자바스트립트라는 언어로 node.js런타임 프로그램을 실행시켜 node.js 애플리케이션을 만든다</p>
-<p>: 자바스트립트를 이용해서 웹브라우저뿐만 아니라 웹서버를 조작할 수 있다.</p>
-<p>:자바스크립트를 통해서 node.js가 갖고 있는 기능을 실행하여 웹어플리케이션(웹브라우저)을  만든다. (즉, node.js로 웹어플리케이션을 만든것)</p>
-<p>:node.js홈페이지에서 파일 다운로드<br>그 후 node.js가 잘설치되있는지 확인</p>
-<p>cmd 터미널콘솔을 실행시키 </p>
-<p>node -v 후 버전정보가 뜨면 설치 성공</p>
-<p>node라고 친 후 node런타임환경을 이용해 javascrip를 입력할수 있다.</p>
-<p>console.log(1+1)을 써본후 화면 출력이 잘되는 지 실행해봄 </p>
-<p>node 런타임 환경을 나갈 때에는<br>ctrl+c 를 누르거나 .exit을 치면된다.</p>
-<p>cd (change directory) 후 이동하려는 파일경로를 써주면 된다.<br>(예 :  cd C:\Users\eumji\Desktop\vue-todo)</p>
-<p>dir 은 현재 디렉토리에 존재하는 파일들을 보여준다. </p>
-<p>node 파일이름.js 는 js파일의 명령어들을 실행시켜서 런타임 환경에서 보여준다.</p>
+    <section class="markdown-content"><h1 id="node-js란"><a href="#node-js란" class="headerlink" title="node.js란"></a>node.js란</h1><blockquote>
+<p>웹브라우저 환경 &gt; html을 이용 &gt; <u>웹 어플리케이션</u>을 만든다.</p>
+</blockquote>
 <ul>
-<li>url<br><a href="http://opentutorials.org:3000/main?id=HTML&amp;page=12" target="_blank" rel="noopener">http://opentutorials.org:3000/main?id=HTML&amp;page=12</a></li>
+<li>node.js환경 &gt; javascript를 이용 &gt; <u>웹어플리케이션</u>을 만든다.</li>
+<li>(node.js를 사용해서 웹어플리케이션을 만든 것)</li>
 </ul>
+<h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><ul>
+<li><p><strong><em>자바스크립트 런타임 환경</em></strong></p>
+<ul>
+<li>런타임 : 프로그래밍 언어가 구동되는 환경</li>
+<li>런타임 환경 : 프로그램을 위한 소프트웨어 서비스를 제공하는 가상 머신의 상태</li>
+</ul>
+</li>
+<li><p><strong>javascript라는 언어</strong>로 <strong>node.js런타임 프로그램을 실행</strong>시켜 <strong>node.js 애플리케이션</strong>을 만든다</p>
+</li>
+<li><p>javasctipt를 통해서 node.js가 갖고 있는 기능을 실행하여 웹어플리케이션(웹브라우저)을 만든다. (즉, node.js로 웹어플리케이션을 만든것)</p>
+</li>
+<li><p>javascript를 이용해서 웹브라우저뿐만 아니라 웹서버를 조작할 수 있다.</p>
+</li>
+</ul>
+<h3 id="node-js-설치하기"><a href="#node-js-설치하기" class="headerlink" title="node.js 설치하기"></a>node.js 설치하기</h3><ol>
+<li><p>node.js홈페이지에서 파일 다운로드</p>
+</li>
+<li><p>그 후 node.js가 잘 설치되있는지 확인</p>
 <ol>
-<li>http </li>
+<li>cmd 터미널콘솔을 실행시키기</li>
+<li><code>node -v</code><br>후 <strong>버전정보</strong>가 뜨면 설치 성공!</li>
+<li><code>node</code><br>node런타임환경을 이용해 <strong>javascrip를 입력</strong>할수 있다.</li>
+<li>console.log(1+1) 을 써본 후 화면 출력이 잘되는 지 실행해 본다.</li>
+<li><u>node 런타임 환경을 나갈 때에는</u> <strong>ctrl+c</strong> 를 누르거나 <strong>.exit</strong>을 치면된다.</li>
 </ol>
-<ul>
-<li>프로토콜 통시규칙 :  웹브라우저와 웹서버과 데이터를 주고받기 위한 통신 규칙</li>
+</li>
+<li><p>javscript 파일 실행시키시기</p>
+<ol>
+<li><code>cd</code><br>(change directory) 후 이동하려는 파일경로를 써주면 된다.<ul>
+<li>(예 : cd C:\Users\eumji\Desktop\vue-todo)</li>
 </ul>
-<ol start="2">
-<li>opentutorials.org</li>
+</li>
+<li><code>dir</code><br>현재 디렉토리에 존재하는 파일들을 보여준다.</li>
+<li><code>node 파일이름.js</code><br>js파일을 실행시켜서 런타임 환경에서 보여준다.</li>
 </ol>
+</li>
+</ol>
+<h3 id="url-구조"><a href="#url-구조" class="headerlink" title="url 구조"></a>url 구조</h3><p><code>http://opentutorials.org:3000/main?id=HTML&amp;page=12</code></p>
+<ol>
+<li><p>http</p>
+<ul>
+<li>프로토콜 통신규칙 : 웹브라우저와 웹서버과 데이터를 주고받기 위한 통신 규칙</li>
+</ul>
+</li>
+<li><p>opentutorials.org</p>
 <ul>
 <li>host(domain) : 특정한 인터넷에 연결되어 있는 컴퓨터를 가르키는 주소</li>
 </ul>
-<ol start="3">
-<li>3000</li>
-</ol>
+</li>
+<li><p>3000</p>
 <ul>
 <li>port : 서버의 주소</li>
 <li>기본 port : 80 (기본 port값 생략 가능)</li>
 </ul>
-<ol start="4">
-<li>main</li>
-</ol>
+</li>
+<li><p>main</p>
 <ul>
 <li>path : 컴퓨터 안의 어떤 디렉토리의 어떤 파일을 나타냄</li>
 </ul>
-<ol start="5">
-<li><strong>?id=HTML&amp;page=12</strong></li>
-</ol>
+</li>
+<li><p><strong>?id=HTML&amp;page=12</strong></p>
 <ul>
 <li>qeury string : 웹서버에게 읽고싶은 데이터의 정보를 전달하는 역할</li>
 </ul>
+</li>
+</ol>
 </section>
     <!-- Tags START -->
     
@@ -221,9 +246,9 @@
       </a>
     
     
-      <a class="nav-right" href="/2019/04/19/vue/vue6/">
+      <a class="nav-right" href="/2019/04/19/vue/vue5(cli)/">
         
-          Vue CLI Component
+          Vue CLI
         
         <span class="nav-arrow"> →</span>
       </a>
