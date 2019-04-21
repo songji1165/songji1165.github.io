@@ -6,7 +6,7 @@ tags: Vue
 
 # Vue CLI
 
-#### vue cli : veu 개발환경
+#### vue cli : vue 개발환경
 
 ## 1. Vue CLI 설치
 
@@ -25,7 +25,7 @@ tags: Vue
 3. `vue --version`
    : vue 버전 확인
 
-4. `vue create _vue-project_`
+4. `vue create vue-project`
    : vue 프로젝트 생성(vue-project)
 
    > cd 로 해당 경로로 이동 후 프로젝트를 생성해준다.
