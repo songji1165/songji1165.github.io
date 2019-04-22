@@ -1,3 +1,9 @@
+---
+title: 자바스크립트 Scope
+date:
+tags: javascript
+---
+
 # 스코프 Scope
 
 - 스코프 : javascrip의 유효범위
@@ -73,5 +79,5 @@ console.log(innerValue);
 - (2) outter안에 value가 없기 때문에 global영역의 value값을 가져오게 된다.
 - (3) 전역변수 var value = **"global"** 의 값을 내뱉는다.
 
-> console.dir(변수,함수 명) =>
-> `[[Scope]]`에서 글로벌변수나 글로벌함수를 찾을 수 있다.
+> console.dir(변수,함수 명)
+> : `[[Scope]]`에서 글로벌변수나 글로벌함수를 찾을 수 있다.

@@ -1,3 +1,9 @@
+---
+title: 자바스크립트 Closure
+date:
+tags: javascript
+---
+
 # 클로저 Closure
 
 - 함수형 프로그래밍 언어에서 사용되는 중요한 특성
