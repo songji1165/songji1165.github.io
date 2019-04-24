@@ -10,7 +10,7 @@
   
   <title>
     
-      Vue | SONG
+      0424 study | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>Vue</h2>
-  <p class="post-date">2019-04-09</p>
+  <h2>0424 study</h2>
+  <p class="post-date">2019-04-24</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,67 +147,19 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><blockquote>
-<p>Vue 장점</p>
-<pre><code>1. 학습곡선이 낮다.
-2. Vue의 핵심인 컴포넌트를 통해 유지보수와 재사용성이 높아진다.
-3. DOM조작인 jquery같이 쉬운 편이다.
-4. 요소를 실시간으로 반응시킬 수 있다. 
-</code></pre><p><br></p>
-</blockquote>
-<h2 id="Vue-시작하기"><a href="#Vue-시작하기" class="headerlink" title="Vue 시작하기"></a>Vue 시작하기</h2><ul>
-<li>JS라이브러리 사용하듯 script를 붙여넣기하면 된다.</li>
-</ul>
-<ol>
-<li><p>도움되는 콘솔 경고를 포함한 개발 버전</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>상용버전, 속도와 용량이 최적화된 버전</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
+    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
+<li>vue cli 폼 만들기</li>
+<li>vue study</li>
+<li>javascript this, dom, 모듈패턴</li>
 </ol>
-<h2 id="Vue-앱-사용하기"><a href="#Vue-앱-사용하기" class="headerlink" title="Vue 앱 사용하기"></a>Vue 앱 사용하기</h2><ul>
-<li><p><strong>Vue함수</strong> :  모든 Vue앱은 <strong>Vue함수</strong>로 새 <strong>Vue 인스턴스</strong>를 만든다.</p>
-</li>
-<li><p>새 Vue 인스턴스 등록 : Vue앱은 <strong>new Vue</strong>를 통해 <strong>루트 Vue 인스턴스</strong>로 구성되어진다.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    <span class="comment">//루트 Vue 인스턴스</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="인스턴스란"><a href="#인스턴스란" class="headerlink" title="인스턴스란 .?"></a>인스턴스란 .?</h3><h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a><strong><em>Java</em></strong></h5><ul>
-<li><p><strong><em>클래스(설계도)를 바탕으로 여러 개의 다른 모양의 인스턴스(제품)을 만들 수 있다</em></strong></p>
-<ol>
-<li><p><strong>클래스(Class)</strong> : 연관되었 있는 변수와 메소드의 집합이다.  <strong><u>설계도</u></strong></p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Gruop</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>class키워드</strong> : 그룹화하겠다고 선언</li>
-<li><strong>클래스 이름</strong> : 그룹의 이름을 부여</li>
-<li><strong>중괄호</strong> : 중괄호 안에는 연관된 로직들이 들어감</li>
-</ul>
-</li>
-<li><p><strong>인스턴스(Instance)</strong> : 클래스를 사용하기 위한 제품(부품)정도로 이해하자. <strong><u>제품</u></strong></p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Group g1 = <span class="keyword">new</span> Group()</span><br><span class="line">Group g2 = <span class="keyword">new</span> Group()</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>new Group()</strong> : 클래스Group을 구체적인 제품으로 만드는 명령어. <strong><em>인스턴스</em></strong></li>
-<li>new를 이용해 만든 인스턴스를 변수 g1에 담고 있다.<ul>
-<li>변수가 데이터 타입을 담고 있듯이 g1에는 사용자 정의 타입을 담는다.<ul>
-<li><strong>g1은 Group이라는 클래스를 담고 있다!!</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-</section>
+<h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><h3 id="내일-할-것"><a href="#내일-할-것" class="headerlink" title="내일 할 것"></a>내일 할 것</h3></section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#Vue">
-    <span class="tag-code">Vue</span>
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
   </a>
 
       </div>
@@ -218,20 +170,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/09/vue/vue2/">
+      <a class="nav-left" href="/2019/04/23/개발일기/0423_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          Vue의 기본 기능 1
+          0423 study
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/10/개발일기/0410_blogBuild/">
-        
-          0410 study
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -254,7 +199,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/09/vue/vue1/';
+    var url = 'http://yoursite.com/2019/04/24/개발일기/0424_blogBuild/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
