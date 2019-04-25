@@ -10,7 +10,7 @@
   
   <title>
     
-      자바스크립트 This, DOM | SONG
+      자바스크립트 DOM | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>자바스크립트 This, DOM</h2>
+  <h2>자바스크립트 DOM</h2>
   <p class="post-date">2019-04-22</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -147,7 +147,116 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="This"><a href="#This" class="headerlink" title="This"></a>This</h1><p>- </p>
+    <section class="markdown-content"><h1 id="DOM-Document-Object-Model"><a href="#DOM-Document-Object-Model" class="headerlink" title="DOM (Document Object Model)"></a>DOM (Document Object Model)</h1><ul>
+<li>브라우저의 렌더링 엔진이 HTML을 브라우저가 이해할 수 있는 구조로 메모리에 적재</li>
+<li>브라우저의 렌더링 엔진이 HTML의 계층적 구조를 브라우저가 이해할 수 있는 <u>객체</u>로 만들어 <strong>트리구조(DOM TREE)</strong>로 구조화</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      .red  &#123; color: #ff0000; &#125;</span><br><span class="line">      .blue &#123; color: #0000ff; &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Cities&lt;/h1&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;li id=&quot;one&quot; class=&quot;red&quot;&gt;Seoul&lt;/li&gt;</span><br><span class="line">        &lt;li id=&quot;two&quot; class=&quot;red&quot;&gt;London&lt;/li&gt;</span><br><span class="line">        &lt;li id=&quot;three&quot; class=&quot;red&quot;&gt;Newyork&lt;/li&gt;</span><br><span class="line">        &lt;li id=&quot;four&quot;&gt;Tokyo&lt;/li&gt;</span><br><span class="line">      &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://poiemaweb.com/img/dom-tree.png" alt="DOMTREE"></p>
+<h2 id="1-DOM-tree"><a href="#1-DOM-tree" class="headerlink" title="1. DOM tree"></a>1. DOM tree</h2><blockquote>
+<p>Document Node, Element Node, Attribute Node, Text Node</p>
+</blockquote>
+<ol>
+<li><p>문서노드 (Document Node)</p>
+<ul>
+<li>트리의 최상위</li>
+<li>각각 요소, 어트리뷰트, 텍스트에 접근하려면 문서 노드를 통해야 한다.</li>
+<li><code>window</code></li>
+</ul>
+</li>
+<li><p>요소노드 (Element Node)</p>
+<ul>
+<li>HTML요소를 표현</li>
+<li>문서의 구조를 서술</li>
+<li>어트리뷰트, 텍스트는 요소별 특성을 표현하기 위해 HTML Element객체를 상속한 객체로 구성된다.</li>
+<li><code>window.document</code></li>
+</ul>
+</li>
+<li><p>어트리뷰트 노드(Attribute Node)</p>
+<ul>
+<li>HTML 요소의 어트리뷰트(속성)</li>
+<li>어트리뷰트 노드는 해당 요소의 일부</li>
+<li>해당 요소 노드를 찾아 접근하면 어트리뷰트를 참조, 수정 할 수 있다.</li>
+<li><code>window.document.getElementById</code></li>
+</ul>
+</li>
+<li><p>텍스트 노드(Text Node)</p>
+<ul>
+<li>HTML 요소의 텍스트 표현</li>
+<li>요소노드의 자식</li>
+<li>DOM tree의 최종단</li>
+<li><code>안녕하세요</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="2-DOM-접근"><a href="#2-DOM-접근" class="headerlink" title="2. DOM 접근"></a>2. DOM 접근</h2><blockquote>
+<ol>
+<li>조작하고자하는 요소를 선택, 탐색</li>
+<li>선택된 요소의 콘텐츠 또는 어트리뷰트를 조작</li>
+</ol>
+</blockquote>
+<h3 id="1-DOM-선택"><a href="#1-DOM-선택" class="headerlink" title="1. DOM 선택"></a>1. DOM 선택</h3><p><img src="https://poiemaweb.com/img/select-an-individual-element-node.png" alt="DOM"></p>
+<ol>
+<li>단일 선택<ol>
+<li><code>document.getElementById(&#39;id&#39;)</code></li>
+<li><code>document.querySelectio(&#39;cssSelector&#39;)</code></li>
+</ol>
+<ul>
+<li>여러 개의 요소가 있을 경우 가장 첫번째 요소 선택</li>
+</ul>
+</li>
+<li>다중 선택<ol>
+<li><code>document.getElementsByClassName(&#39;class&#39;)</code> (ie9)</li>
+<li><code>document.getElementsByTagName(&#39;TagName&#39;)</code></li>
+<li><code>document.querySelectorAll(Selector)</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="2-DOM-탐색"><a href="#2-DOM-탐색" class="headerlink" title="2. DOM 탐색"></a>2. DOM 탐색</h3><ul>
+<li>DOM 선택 후</li>
+</ul>
+<ol>
+<li><code>.parentNode</code></li>
+<li><code>.childNodes</code></li>
+<li><code>.firstChild</code>, <code>.lastChild</code></li>
+<li><code>.hasChildNodes()</code> : 자식 노드 있는지 확인 Boolean</li>
+<li><code>.children</code> : child노드의 자식 노드의 컬렉션 반환 (IE9)</li>
+<li><code>.previousSibling</code>, <code>.nextSibling</code> : 형제 노드 탐색(IE9)</li>
+</ol>
+<h3 id="3-DOM-조작"><a href="#3-DOM-조작" class="headerlink" title="3. DOM 조작"></a>3. DOM 조작</h3><ul>
+<li>DOM 선택/탐색 후</li>
+</ul>
+<ol>
+<li>어트리뷰트의 값을 취득 또는 변경할 수 있다.<ol>
+<li><code>.className = &quot;red&quot;</code></li>
+<li><code>.id = &quot;red&quot;</code></li>
+<li><code>.innerText = &#39;red&#39;</code></li>
+<li><code>.innerHTML = &#39;&lt;span&gt;red&lt;/span&gt;&#39;</code></li>
+</ol>
+</li>
+<li>어트리뷰트의 값을 검사, 취득, 설정, 제거<ol>
+<li><code>.hasAttribute(attribute)</code> : return boolean 값 검사</li>
+<li><code>.getAttribute(attribute)</code> : 값 취득</li>
+<li><code>.setAttribute(attribute, value)</code> : 값 설정</li>
+<li><code>.removeAttribute(attribute)</code> : 값 제거</li>
+</ol>
+</li>
+<li>DOM 직접 조작해서 새로운 요소 추가<ol>
+<li><code>document.createElement(&#39;tagName&#39;)</code></li>
+<li><code>document.createTextNode(&#39;text&#39;)</code></li>
+<li><code>document.appendchild(&#39;Node&#39;)</code></li>
+<li><code>document.removeChild(&#39;Node&#39;)</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="3-STYLE"><a href="#3-STYLE" class="headerlink" title="3. STYLE"></a>3. STYLE</h2><ul>
+<li>style 프로퍼티 : inline 스타일 선언을 생성, 지정</li>
+<li><code>document.getElementById(&#39;el&#39;).style.color = &#39;red&#39;</code></li>
+<li>style 프로퍼니 값 취득 <code>window.getComputedStyle</code><ul>
+<li><code>var width = window.getStyle(el, &#39;width&#39;)</code></li>
+</ul>
+</li>
+</ul>
 </section>
     <!-- Tags START -->
     
@@ -202,7 +311,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/22/Javascript/javascript10(This, DOM)/';
+    var url = 'http://yoursite.com/2019/04/22/Javascript/javascript10(DOM)/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
