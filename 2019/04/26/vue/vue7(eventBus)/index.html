@@ -10,7 +10,7 @@
   
   <title>
     
-      0415 study | SONG
+      Vue eventBus | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>0415 study</h2>
-  <p class="post-date">2019-04-15</p>
+  <h2>Vue eventBus</h2>
+  <p class="post-date">2019-04-26</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,20 +147,35 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
-<li>javascript prototype</li>
-<li>vue 이론 정리 마무리하기</li>
-<li>유튜브 클론 구상해보기</li>
+    <section class="markdown-content"><h1 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h1><ul>
+<li>형제 컴포넌트간 데이터 공유</li>
+</ul>
+<blockquote>
+<p><strong>EventBus</strong></p>
+<ul>
+<li>형제 컴포넌트를 이어주는 가상의 부모컴포넌트 역할 (이벤트 신호 받고 이벤트 신호로 받은 데이터 사용)</li>
+</ul>
+</blockquote>
+<ol>
+<li>이벤트버스 생성 (<strong>main.js</strong>)</li>
 </ol>
-<h3 id="To-Do"><a href="#To-Do" class="headerlink" title="To Do"></a>To Do</h3><p>vue 컴포넌트를 TODOLIST를 만들어보면서 이론을 다시 정리할 수 있었다.<br>vue의 원리가 굉장히 헤깔리는 것 같다. 수시로 이론을 봐야겠다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> eventBus = <span class="keyword">new</span> Vue();</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>이벤트 발생 (컴포넌트 .vue 파일)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;eventBus&#125; <span class="keyword">from</span> <span class="string">'파일경로'</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// sendEvent라는 이름으로 신호 보냄</span></span><br><span class="line">eventBus.$emit(<span class="string">'sendEvent'</span>,<span class="string">'helloWorld'</span>)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>이벤트 구독 (컴포넌트 .vue 파일)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;eventBus&#125; <span class="keyword">from</span> <span class="string">'파일경로'</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// $on == v-on과 같은 이벤트리스너</span></span><br><span class="line"><span class="comment">// sendEvent라는 데이터를 받아서 사용</span></span><br><span class="line">eventBus.$on(<span class="string">"sendEvent"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(text);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//콜백함수 : 애로우함수로 사용해야 this가 vue모델을 가리킴</span></span><br><span class="line">eventBus.$on(<span class="string">"sendEvent"</span>, text =&gt; &#123;</span><br><span class="line">  <span class="keyword">this</span>.editText = text;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#개발일기">
-    <span class="tag-code">개발일기</span>
+  <a href="/tags#Vue">
+    <span class="tag-code">Vue</span>
   </a>
 
       </div>
@@ -171,20 +186,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/15/vue/vue4/">
+      <a class="nav-left" href="/2019/04/26/Javascript/ajax(updating)/ajax/">
         <span class="nav-arrow">← </span>
         
-          Vue의 옵션
+          Ajax &amp; XMLHttpRequest
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/15/Javascript/javascript5(object)/">
-        
-          자바스크립트 객체 Object
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -207,7 +215,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/15/개발일기/0415_blogBuild/';
+    var url = 'http://yoursite.com/2019/04/26/vue/vue7(eventBus)/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
