@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 모듈패턴 (Module Pattern)
+title: 자바스크립트 Module Pattern
 date:
 tags: javascript
 ---
