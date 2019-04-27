@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="나만의 개발 블로그">
+  <meta name="keyword" content="javascript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Vue Router 사용하기 | SONG
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>SONG</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Vue Router 사용하기</h2>
+  <p class="post-date">2019-04-27</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Vue-router-사용하기"><a href="#Vue-router-사용하기" class="headerlink" title="Vue-router 사용하기"></a>Vue-router 사용하기</h1><ul>
+<li>Vue라우터는 Vue.js에서 제공하는 컴포넌트<ul>
+<li>기본 컴포넌트 사용은 <code>import Vue from &#39;vue&#39;</code> 기본</li>
+</ul>
+</li>
+<li>라우터에 컴포넌트 매핑 후, 어디에 렌더링할지만 작성하면 된다!</li>
+</ul>
+<h4 id="Vue라우터-컴포넌트"><a href="#Vue라우터-컴포넌트" class="headerlink" title="- Vue라우터 컴포넌트"></a>- Vue라우터 컴포넌트</h4><ol>
+<li><code>&lt;router-view&gt;&lt;/router-view&gt;</code> : 현재 라우터에 맞는 컴포넌트 렌더링, 요청 url에 따라 컴포넌트 렌더링</li>
+<li><code>&lt;router-link to=&quot;&quot;&gt;&lt;/router-link&gt;</code><ol>
+<li>vue-router에서 제공하는 컴포넌트</li>
+<li>주로 <strong><em>네비게이션</em></strong>을 위한 컴포넌트</li>
+<li><u>a태그</u> 대신 <code>&lt;router-link&gt;</code>로 <strong>링크</strong>를 건다.</li>
+<li><code>to</code> prop은 경우에 따라 v-bind <code>:to</code>로도 사용한다.</li>
+<li>장점<ol>
+<li>히스토리모드와 해시모드에서 모두 <u>동일한 방식</u>으로 작동하기 때문에 #를 붙이거나 삭제할 필요없다.</li>
+<li>히스토리 모드에서, 클릭 이벤트를 차단하여 페이지 로드를 막아준다. (<strong>prventDefalt()</strong>와 같은 기능)</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><br><br><br></p>
+<h2 id="1-Vue-router-설치"><a href="#1-Vue-router-설치" class="headerlink" title="1. Vue-router 설치"></a>1. Vue-router 설치</h2><ol>
+<li><code>npm i vue-router --save</code></li>
+<li>Vue router를 사용하기 위해서 <strong>import작업이 필요</strong><ul>
+<li>최상단 <strong>main.js</strong>에 import 시켜준다.</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue-router라이브러리를 가져온다.</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">"vue-router"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// vue-router라이브러리를 사용기 위해 미들웨어 작업을 해준다.</span></span><br><span class="line">Vue.use(VueRouter);</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="2-싱글-페이지-앱"><a href="#2-싱글-페이지-앱" class="headerlink" title="2. 싱글 페이지 앱"></a>2. 싱글 페이지 앱</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 라우터 컴포넌트 정의</span></span><br><span class="line"><span class="keyword">const</span> Login = &#123; <span class="attr">template</span> : <span class="string">`&lt;div&gt;Login Page&lt;/div&gt;`</span>&#125;</span><br><span class="line"><span class="keyword">const</span> NotFoud = &#123; <span class="attr">template</span> : <span class="string">`&lt;div&gt;Page Not Found&lt;/div&gt;`</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 라우터 정의</span></span><br><span class="line"><span class="comment">// 각 라우터는 반드시 컴포넌트와 매핑되어야 한다!</span></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">    &#123;<span class="attr">path</span> : <span class="string">'/'</span>, <span class="attr">component</span>:App&#125;,</span><br><span class="line">    &#123;<span class="attr">path</span> : <span class="string">'/login'</span>, <span class="attr">component</span>:Login&#125;,</span><br><span class="line">    &#123;<span class="attr">path</span> : <span class="string">'*'</span>, <span class="attr">component</span>:NotFound&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 'routes' 옵션과 함께 router 인스턴스 만들기</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes : routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 루트 인스턴스를 만들고 라우트 전달</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">"#app"</span>,</span><br><span class="line"></span><br><span class="line">  router, <span class="comment">//라우터 속성 전달</span></span><br><span class="line"></span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(&#123;</span><br><span class="line">    template: <span class="string">`&lt;router-view&gt;&lt;/router-view&gt;`</span></span><br><span class="line">  &#125;) <span class="comment">//html대신 렌더 함수를 통해 라우터 컴포넌트 렌더링</span></span><br><span class="line">&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="3-라우터-객체를-별도-파일로-분리"><a href="#3-라우터-객체를-별도-파일로-분리" class="headerlink" title="3. 라우터 객체를 별도 파일로 분리"></a>3. 라우터 객체를 별도 파일로 분리</h3><ul>
+<li>src에 폴더 만들기 ‘router’ =&gt; 폴더 안에 ‘index.js’ 만들기</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">"vue-router"</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">"../App.vue"</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Login = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;Login Page &lt;/div&gt;`</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> NotFound = &#123;</span><br><span class="line">  template: <span class="string">`&lt;div&gt;Page not found&lt;/div&gt;`</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">"/login"</span>, <span class="attr">component</span>: Login &#125;,</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">"*"</span>, <span class="attr">component</span>: NotFound &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">"history"</span>,</span><br><span class="line">  <span class="comment">// 브라우저에서 라우팅할 때 실행모드 #</span></span><br><span class="line">  <span class="comment">// 브라우저에 history API가 있을 때 #없이 쓸 수 있다.</span></span><br><span class="line">  <span class="comment">// mode를 history로 바꿔줌 (크롬에서 가능)</span></span><br><span class="line"></span><br><span class="line">  routes: routes</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br><span class="line"><span class="comment">// router를 내보낸다</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">"./router"</span>; <span class="comment">// index.js 자동 연결</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  router,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span></span><br><span class="line">    h(&#123;</span><br><span class="line">      template: <span class="string">`&lt;router-view&gt;&lt;/router-view&gt;`</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4-라우트-컴포넌트-파일-분리-작업이-많아-질수-있기-때문에-파일-분류를-잘하자"><a href="#4-라우트-컴포넌트-파일-분리-작업이-많아-질수-있기-때문에-파일-분류를-잘하자" class="headerlink" title="4. 라우트 컴포넌트 파일 분리!! (작업이 많아 질수 있기 때문에 파일 분류를 잘하자!)"></a>4. 라우트 컴포넌트 파일 분리!! (작업이 많아 질수 있기 때문에 파일 분류를 잘하자!)</h3><ul>
+<li>components 폴더 : 컴포넌트 정의 파일</li>
+<li>router 폴더 : 라우터 정의 파일</li>
+</ul>
+<ol>
+<li>src에 폴더 만들기 ‘components’ =&gt; 폴더 안에 ‘Home.vue’,’Login.vue’, ‘NotFound.vue’ 파일 만들기</li>
+<li><em>index.js</em>에 라우트 컴포넌트 삭제, 수정<ul>
+<li>라우팅에 관한 로직만 담겨진다.</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">"vue-router"</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">"../components/Home.vue"</span>;</span><br><span class="line"><span class="keyword">import</span> Login <span class="keyword">from</span> <span class="string">"../components/Login.vue"</span>;</span><br><span class="line"><span class="keyword">import</span> NotFound <span class="keyword">from</span> <span class="string">"../components/NotFound.vue"</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">"/"</span>, <span class="attr">component</span>: Home &#125;,</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">"/login"</span>, <span class="attr">component</span>: Login &#125;,</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">"*"</span>, <span class="attr">component</span>: NotFound &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">"history"</span>,</span><br><span class="line">  routes: routes</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><em>main.js</em> 수정</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">"./router"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">"./App.vue"</span>;</span><br><span class="line"><span class="comment">//루트컴포넌트 App.vue 연결!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  router, <span class="comment">//라우터 설정</span></span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">  <span class="comment">// 루트컴포넌트 App에 렌더링한다.</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="5-라우터-링크를-사용하여-비동기적-페이지-만들기"><a href="#5-라우터-링크를-사용하여-비동기적-페이지-만들기" class="headerlink" title="5. 라우터 링크를 사용하여 비동기적 페이지 만들기"></a>5. 라우터 링크를 사용하여 비동기적 페이지 만들기</h3><ul>
+<li><code>&lt;router-link&gt;</code>는 주로 네이게이션에서 주로 사용 된다!</li>
+</ul>
+<ol>
+<li>components 폴더에 <em>‘Navbar.vue’</em> 파일 만들기<ul>
+<li>네비게이션 컴포넌트 생성</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;router-link to=<span class="string">"/"</span>&gt;Home&lt;<span class="regexp">/router-link&gt;</span></span><br><span class="line"><span class="regexp">    &lt;router-link to="/</span>login<span class="string">"&gt;login&lt;/router-link&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/template&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><em>app.vue</em> 파일 수정</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;Navbar&gt;&lt;/Navbar&gt; <span class="comment">// 컴포넌트 사용</span></span><br><span class="line">        &lt;router-view&gt;&lt;/router-view&gt; // 라우터에 따라 해당 데이터로 변경 됨</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 네비게이션 컴포넌트 import 시켜줌</span></span><br><span class="line"><span class="regexp">    import Navbar from './</span>components/Navbar<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    export default &#123;</span></span><br><span class="line"><span class="string">    name: '</span>app<span class="string">',</span></span><br><span class="line"><span class="string">    components : &#123; Navbar &#125;, //컴포넌트 추가</span></span><br><span class="line"><span class="string">    data () &#123;</span></span><br><span class="line"><span class="string">        return &#123;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Vue">
+    <span class="tag-code">Vue</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/27/vue/vue8(router)/">
+        <span class="nav-arrow">← </span>
+        
+          Vue Router1
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/27/vue/vue9(router-library)/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

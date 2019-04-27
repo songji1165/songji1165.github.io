@@ -10,7 +10,7 @@
   
   <title>
     
-      Vue Router | SONG
+      Vue Router1 | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>Vue Router</h2>
+  <h2>Vue Router1</h2>
   <p class="post-date">2019-04-27</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -149,9 +149,11 @@
   <article class="post-article">
     <section class="markdown-content"><h1 id="router"><a href="#router" class="headerlink" title="router"></a>router</h1><h2 id="1-라우터"><a href="#1-라우터" class="headerlink" title="1. 라우터"></a>1. 라우터</h2><ol>
 <li>라우팅 : 각 페이지가 주소에 따라 식별.</li>
-<li>라우팅의 주체</li>
+<li>라우팅의 주체<ol>
 <li>서버 라우팅 (동기적) - 네이버, 구글</li>
 <li><strong>브라우저 라우팅</strong> (비동기적) - 구글메일, 트렐로</li>
+</ol>
+</li>
 <li><ul>
 <li>주소 요청 시 라우팅을 브라우저에서 처리,</li>
 <li>API를 서버로부터 받아온 후 그 데이터를 화면에 뿌림</li>
@@ -160,21 +162,28 @@
 <li><strong><em>Vue.js는 브라우저 라우팅 기능을 구현 할 수 있다!</em></strong></li>
 </ol>
 <blockquote>
-<p>라우터 라이브러리 (vue-router) 를 사용하면 복잡하고, 효율적인 화면을 다양하게 구현 할 수 있다.</p>
+<p><strong>라우터 라이브러리(vue-router)</strong>를 사용하면 복잡하고,다양한 화면을 효율적으로 구현 할 수 있다.</p>
 </blockquote>
-<h2 id="2-간단한-라우팅-만들기"><a href="#2-간단한-라우팅-만들기" class="headerlink" title="2. 간단한 라우팅 만들기"></a>2. 간단한 라우팅 만들기</h2><h4 id="1-webpack-config-js"><a href="#1-webpack-config-js" class="headerlink" title="1. ./webpack.config.js"></a>1. ./webpack.config.js</h4><ul>
-<li>webpack : 자바스크립드 모듈을 하나의 파일로 묶어내는 번들러</li>
+<p><br></p>
+<h2 id="2-라우터-직접-만들어보기-원리-이해"><a href="#2-라우터-직접-만들어보기-원리-이해" class="headerlink" title="2. 라우터 직접 만들어보기 (원리 이해)"></a>2. 라우터 직접 만들어보기 (원리 이해)</h2><h4 id="1-webpack-config-js"><a href="#1-webpack-config-js" class="headerlink" title="1. ./webpack.config.js"></a>1. ./webpack.config.js</h4><ul>
+<li><strong>webpack</strong> : 자바스크립드 모듈을 하나의 파일로 묶어내는 번들러</li>
 <li><strong>entry 속성</strong> : 각 모듈을 사용하고 있는 <strong>최상위 js파일</strong>을 알 수 있다.<br><img src="https://github.com/songji1165/songji1165.github.io/blob/build/source/_posts/vue/entry.jpg?raw=true" alt="webpack"></li>
 </ul>
 <h4 id="2-src-main-js"><a href="#2-src-main-js" class="headerlink" title="2. ./src/main.js"></a>2. ./src/main.js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">"./App.vue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Login = &#123; <span class="attr">template</span>: <span class="string">"&lt;div&gt;Login Page &lt;/div&gt;"</span> &#125;; <span class="comment">// 1.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = &#123;</span><br><span class="line">  <span class="comment">// 2.</span></span><br><span class="line">  <span class="string">"/"</span>: App,</span><br><span class="line">  <span class="string">"/login"</span>: Login</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line"></span><br><span class="line">  computed: &#123;</span><br><span class="line">    VueComponent() &#123;</span><br><span class="line">      <span class="comment">// 4.</span></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        routes[<span class="built_in">window</span>.location.pathname] || &#123;</span><br><span class="line">          template: <span class="string">"&lt;div&gt;Page not found. 404&lt;/div&gt;"</span></span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  render(h) &#123;</span><br><span class="line">    <span class="comment">// 3.</span></span><br><span class="line">    <span class="keyword">return</span> h(<span class="keyword">this</span>.VueComponent);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ol>
+<li>라우터 컴포넌트 정의<ul>
 <li><code>const Login</code> , <code>const routes</code> : 라우터에 쓰일 상수를 만들어 준다.</li>
-<li><ul>
+</ul>
+</li>
+<li>라우터 정의<ul>
 <li><code>routes . &quot;/&quot; : App</code> : <strong>루트 경로</strong>일때는 <u>앱 컴포넌트</u>로 라우팅</li>
 <li><code>routes . &quot;/ login&quot; : Login</code> : <strong>로그인 경로</strong>일때는 <u>로그인 컴포넌트</u>로 라우팅</li>
 </ul>
 </li>
-<li><code>render (h) { return h(this.VueComponent) }</code> || <code>render : h =&gt; h(this.VueComponent)</code><br>: render() 함수는 ViewComponent라는 속성을 인자로 전달해서 h() 함수를 호출한다.</li>
+<li>라우터 전달<ul>
+<li><code>render (h) { return h(this.VueComponent) }</code><br><code>render : h =&gt; h(this.VueComponent)</code><br>: render() 함수는 ViewComponent라는 속성을 인자로 전달해서 h() 함수를 호출한다.</li>
+</ul>
+</li>
 <li><code>VueComponent()</code> : 해당 경로에 따라 컴포넌트를 다르게 반환하기 위한 VueComponent함수를 만들어 준다.<ol>
 <li><code>routes[window.location.pathname]</code> : 라우트맵에서 패스네임에 해당하는 컴포넌트를 반환</li>
 <li><code>template: &quot;&lt;div&gt;Page not found. 404&lt;/div&gt;&quot;</code> : 패스네임이 없으면 해당 template를 반환<blockquote>
@@ -223,6 +232,13 @@
         
       </a>
     
+    
+      <a class="nav-right" href="/2019/04/27/vue/vue9(router-library)/">
+        
+          Vue Router 사용하기
+        
+        <span class="nav-arrow"> →</span>
+      </a>
     
   </div>
 
