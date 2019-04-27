@@ -10,7 +10,7 @@
   
   <title>
     
-      0419 study | SONG
+      Vue 동적 라우트 매칭 | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,8 +113,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>0419 study</h2>
-  <p class="post-date">2019-04-19</p>
+  <h2>Vue 동적 라우트 매칭</h2>
+  <p class="post-date">2019-04-27</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -122,17 +122,12 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
-<li>javascript component 이론 정리, javascript 문제 풀어보기</li>
-<li>vue cli 공부</li>
-</ol>
-<h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><ol>
-<li>javascript component에 대해 집중적으로 이론정리를 다시 했다. 여전히 완벽히 이해되지는 않지만 javascript의 component의 역할과 생성자 객체의 생성과정등에 대해서 어느정도 이해하게 된 것 같다.</li>
-<li>vue cli는 .vue를 실행할 수 있는 환경을 구축하는 것으로 .vue에서는 컴포넌트간의 통신을 더욱 응용하는 과정인 것 같다. 프로젝트를 만들어보며 cli를 이해하도록 해야겠다.</li>
-</ol>
-<h3 id="내일-할-것"><a href="#내일-할-것" class="headerlink" title="내일 할 것"></a>내일 할 것</h3><ol>
-<li>vue cli 계산기 만들기</li>
-<li>vue cli 설문조사 폼 만들기</li>
+    <section class="markdown-content"><h1 id="Dynamic-Route-Matching-동적-라우트-매칭"><a href="#Dynamic-Route-Matching-동적-라우트-매칭" class="headerlink" title="Dynamic Route Matching (동적 라우트 매칭)"></a>Dynamic Route Matching (동적 라우트 매칭)</h1><ul>
+<li>주어진 패턴을 가진 라우트를 동일한 컴포넌트에 매핑해야하는 경우</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const User = &#123;</span><br><span class="line">  template : `&lt;div&gt;User&lt;/div&gt;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  route : [</span><br><span class="line">    &#123;path : &apos;/user/:id&apos;, component : user&#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>동적 세그먼트 : <code>:id</code></li>
 </ol>
 </section>
     <!-- Tags START -->
@@ -140,8 +135,8 @@
       <div class="tags">
         <span>Tags:</span>
         
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
+<a href="/tags#Vue">
+  <span class="tag-code">Vue</span>
 </a>
 
       </div>
@@ -152,17 +147,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/18/node.js/nodejs/">
+      <a class="nav-left" href="/2019/04/27/vue/vue8(router)/">
         <span class="nav-arrow">← </span>
         
-          node.js란
+          Vue Router
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/19/vue/vue5(cli)/">
+      <a class="nav-right" href="/2019/04/28/vue/vue9(router-library).1/">
         
-          Vue CLI
+          Vue Router 사용하기
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -188,7 +183,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/19/개발일기/0419_blogBuild/';
+    var url = 'http://yoursite.com/2019/04/27/vue/vue10(Dynamic Route Matching)/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
