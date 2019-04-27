@@ -10,7 +10,7 @@
   
   <title>
     
-      Vue 동적 라우트 매칭 | SONG
+      0428 study | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,7 +113,7 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>Vue 동적 라우트 매칭</h2>
+  <h2>0428 study</h2>
   <p class="post-date">2019-04-28</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -122,37 +122,18 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="Dynamic-Route-Matching-동적-라우트-매칭"><a href="#Dynamic-Route-Matching-동적-라우트-매칭" class="headerlink" title="Dynamic Route Matching (동적 라우트 매칭)"></a>Dynamic Route Matching (동적 라우트 매칭)</h1><ul>
-<li>주어진 패턴을 가진 라우트를 동일한 컴포넌트에 매핑해야하는 경우</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 모든 사용자는 동일한 레이아웃을 가진다.</span></span><br><span class="line"><span class="comment">// 하지만 다른 사용자ID로 렌더링되어야 하는 User컴포넌트가 있을 수 있다.</span></span><br><span class="line"><span class="comment">// 이를, 동적 세그먼트로 해결!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> User = &#123; <span class="attr">template</span>: <span class="string">`&lt;div&gt;User&lt;/div&gt;`</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  route: [&#123; <span class="attr">path</span>: <span class="string">"/user/:id"</span>, <span class="attr">component</span>: User &#125;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="1-동적-세그먼트-id-id는-변수라고-생각하자-user-song와-user-lee은-모두-같은-경로에-매핑된다"><a href="#1-동적-세그먼트-id-id는-변수라고-생각하자-user-song와-user-lee은-모두-같은-경로에-매핑된다" class="headerlink" title="1. 동적 세그먼트 : :id (id는 변수라고 생각하자!) - /user/song와 /user/lee은 모두 같은 경로에 매핑된다."></a>1. 동적 세그먼트 : <code>:id</code> (id는 변수라고 생각하자!) - <code>/user/song</code>와 <code>/user/lee</code>은 모두 같은 경로에 매핑된다.</h2><ol>
-<li><strong><em>this.\$router</em></strong> : <strong>router</strong> 로 라우터에 관한 정보(API 레퍼런스)를 담고 있다.<ul>
-<li><u>Vue.use</u>로 라우터를 주입해줌으로써 this.\$router로 접근 가능하다.</li>
-</ul>
-</li>
-<li>\$route객체는 <code>$route.params</code>, <code>$route.query</code>(url에 쿼리가 있는 경우), <code>$route.hash</code> 등 유용한 정보를 제공</li>
-<li><strong><em>this.\$route.params</em></strong> : id의 정보를 얻을 수 있다.<blockquote>
-<p>user컴포넌트에서 id에 대한 정보를 조회하여, id를 통해 백엔드 데이터를 얻는 것!</p>
-</blockquote>
-</li>
+    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
+<li>javascript Study</li>
+<li>vue trello 강의 보기</li>
 </ol>
-<h2 id="2-Params-변경-사항에-반응하기-컴포넌트에-해당"><a href="#2-Params-변경-사항에-반응하기-컴포넌트에-해당" class="headerlink" title="2. Params 변경 사항에 반응하기 (컴포넌트에 해당)"></a>2. Params 변경 사항에 반응하기 (컴포넌트에 해당)</h2><ol>
-<li>라우트는 <strong>id</strong>가 변경될 때 <strong>동일한 컴포넌트 인스턴스가 재사용</strong>된다.<ul>
-<li>이 때문에 라이프 사이클 훅이 호출되지 않는다.</li>
-</ul>
-</li>
-<li>created(){}, watch 옵션을 사용하자!</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">  template : ...,</span><br><span class="line"></span><br><span class="line">  watch : &#123;</span><br><span class="line">    <span class="string">`$route`</span> () &#123;</span><br><span class="line">      <span class="comment">//경로 변경에 반응</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</section>
+<h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><h3 id="내일-할-것"><a href="#내일-할-것" class="headerlink" title="내일 할 것"></a>내일 할 것</h3></section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-<a href="/tags#Vue">
-  <span class="tag-code">Vue</span>
+<a href="/tags#개발일기">
+  <span class="tag-code">개발일기</span>
 </a>
 
       </div>
@@ -163,13 +144,20 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/28/vue/vue9(router-library).1/">
+      <a class="nav-left" href="/2019/04/27/vue/vue13(Nested Routes)/">
         <span class="nav-arrow">← </span>
         
-          Vue Router 사용하기
+          Vue 중첩된 라우트
         
       </a>
     
+    
+      <a class="nav-right" href="/2019/04/28/vue/vue9(router-basic)/">
+        
+          Vue Router 라이브러리 사용하기
+        
+        <span class="nav-arrow"> →</span>
+      </a>
     
   </div>
 
@@ -192,7 +180,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/28/vue/vue10(Dynamic Route Matching).1/';
+    var url = 'http://yoursite.com/2019/04/28/개발일기/0428_blogBuild/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({

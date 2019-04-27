@@ -10,7 +10,7 @@
   
   <title>
     
-      0419 study | SONG
+      Vue Router 기본 컴포넌트 | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,8 +113,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>0419 study</h2>
-  <p class="post-date">2019-04-19</p>
+  <h2>Vue Router 기본 컴포넌트</h2>
+  <p class="post-date">2019-04-28</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -122,26 +122,41 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
-<li>javascript component 이론 정리, javascript 문제 풀어보기</li>
-<li>vue cli 공부</li>
+    <section class="markdown-content"><h1 id="Vue-라우터-컴포넌트"><a href="#Vue-라우터-컴포넌트" class="headerlink" title="Vue 라우터 컴포넌트"></a>Vue 라우터 컴포넌트</h1><h2 id="1-Props"><a href="#1-Props" class="headerlink" title="1.  Props"></a>1. <router-view> Props</router-view></h2><ul>
+<li>현재 라우터에 맞는 컴포넌트를 렌더링 해준다.<br>요청 url에 따라 컴포넌트 렌더링</li>
+</ul>
+<h2 id="2"><a href="#2" class="headerlink" title="2. "></a>2. <router-link></router-link></h2><ol>
+<li><code>&lt;router-link to=&quot;&quot;&gt;&lt;/router-link&gt;</code></li>
+<li>주로 <strong><em>네비게이션</em></strong>을 위한 컴포넌트<ul>
+<li><u>a태그</u> 대신 <code>&lt;router-link&gt;</code>로 <strong>링크</strong>를 건다.</li>
+</ul>
+</li>
+<li><strong>to</strong> prop: 링크 지정<ul>
+<li>경우에 따라 v-bind <code>:to</code>로도 사용한다.</li>
+</ul>
+</li>
+<li>장점<ul>
+<li>히스토리모드와 해시모드에서 모두 <u>동일한 방식</u>으로 작동하기 때문에 #를 붙이거나 삭제할 필요없다.</li>
+<li>히스토리 모드에서, 클릭 이벤트를 차단하여 페이지 로드를 막아준다. (<strong>prventDefalt()</strong>와 같은 기능)</li>
+</ul>
+</li>
 </ol>
-<h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><ol>
-<li>javascript component에 대해 집중적으로 이론정리를 다시 했다. 여전히 완벽히 이해되지는 않지만 javascript의 component의 역할과 생성자 객체의 생성과정등에 대해서 어느정도 이해하게 된 것 같다.</li>
-<li>vue cli는 .vue를 실행할 수 있는 환경을 구축하는 것으로 .vue에서는 컴포넌트간의 통신을 더욱 응용하는 과정인 것 같다. 프로젝트를 만들어보며 cli를 이해하도록 해야겠다.</li>
+<h2 id="3-라우터-링크를-사용하여-비동기적-페이지-만들기"><a href="#3-라우터-링크를-사용하여-비동기적-페이지-만들기" class="headerlink" title="3. 라우터 링크를 사용하여 비동기적 페이지 만들기"></a>3. 라우터 링크를 사용하여 비동기적 페이지 만들기</h2><ol>
+<li>components 폴더에 <em>‘Navbar.vue’</em> 파일 만들기</li>
 </ol>
-<h3 id="내일-할-것"><a href="#내일-할-것" class="headerlink" title="내일 할 것"></a>내일 할 것</h3><ol>
-<li>vue cli 계산기 만들기</li>
-<li>vue cli 설문조사 폼 만들기</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;router-link to=<span class="string">"/"</span>&gt;Home&lt;<span class="regexp">/router-link&gt;</span></span><br><span class="line"><span class="regexp">    &lt;router-link to="/</span>login<span class="string">"&gt;login&lt;/router-link&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/template&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><em>app.vue</em> 파일 수정</li>
 </ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;Navbar&gt;&lt;/Navbar&gt; <span class="comment">// 컴포넌트 사용</span></span><br><span class="line">        &lt;router-view&gt;&lt;/router-view&gt; // 라우터에 따라 해당 데이터로 변경 됨</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 네비게이션 컴포넌트 import 시켜줌</span></span><br><span class="line"><span class="regexp">    import Navbar from './</span>components/Navbar<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    export default &#123;</span></span><br><span class="line"><span class="string">    name: '</span>app<span class="string">',</span></span><br><span class="line"><span class="string">    components : &#123; Navbar &#125;, //컴포넌트 추가</span></span><br><span class="line"><span class="string">    data () &#123;</span></span><br><span class="line"><span class="string">        return &#123;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
+<a href="/tags#Vue">
+  <span class="tag-code">Vue</span>
 </a>
 
       </div>
@@ -152,20 +167,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/18/node.js/nodejs/">
+      <a class="nav-left" href="/2019/04/28/vue/vue10(router-compo)/">
         <span class="nav-arrow">← </span>
         
-          node.js란
+          Vue Router 관리하기
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/19/vue/vue6(cli)/">
-        
-          Vue CLI Component
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -188,7 +196,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/19/개발일기/0419_blogBuild/';
+    var url = 'http://yoursite.com/2019/04/28/vue/vue11(router-link)/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
