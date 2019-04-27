@@ -10,7 +10,7 @@
   
   <title>
     
-      node.js란 | SONG
+      Vue Router | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>node.js란</h2>
-  <p class="post-date">2019-04-18</p>
+  <h2>Vue Router</h2>
+  <p class="post-date">2019-04-27</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,87 +147,65 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="node-js란"><a href="#node-js란" class="headerlink" title="node.js란"></a>node.js란</h1><blockquote>
-<p>웹브라우저 환경 &gt; html을 이용 &gt; <u>웹 어플리케이션</u>을 만든다.</p>
+    <section class="markdown-content"><h1 id="router"><a href="#router" class="headerlink" title="router"></a>router</h1><h2 id="1-라우터"><a href="#1-라우터" class="headerlink" title="1. 라우터"></a>1. 라우터</h2><ol>
+<li>라우팅 : 각 페이지가 주소에 따라 식별.</li>
+<li>라우팅의 주체</li>
+<li>서버 라우팅 (동기적) - 네이버, 구글</li>
+<li><strong>브라우저 라우팅</strong> (비동기적) - 구글메일, 트렐로</li>
+<li><ul>
+<li>주소 요청 시 라우팅을 브라우저에서 처리,</li>
+<li>API를 서버로부터 받아온 후 그 데이터를 화면에 뿌림</li>
+</ul>
+</li>
+<li><strong><em>Vue.js는 브라우저 라우팅 기능을 구현 할 수 있다!</em></strong></li>
+</ol>
+<blockquote>
+<p>라우터 라이브러리 (vue-router) 를 사용하면 복잡하고, 효율적인 화면을 다양하게 구현 할 수 있다.</p>
 </blockquote>
-<ul>
-<li>node.js환경 &gt; javascript를 이용 &gt; <u>웹어플리케이션</u>을 만든다.</li>
-<li>(node.js를 사용해서 웹어플리케이션을 만든 것)</li>
+<h2 id="2-간단한-라우팅-만들기"><a href="#2-간단한-라우팅-만들기" class="headerlink" title="2. 간단한 라우팅 만들기"></a>2. 간단한 라우팅 만들기</h2><h4 id="1-webpack-config-js"><a href="#1-webpack-config-js" class="headerlink" title="1. ./webpack.config.js"></a>1. ./webpack.config.js</h4><ul>
+<li>webpack : 자바스크립드 모듈을 하나의 파일로 묶어내는 번들러</li>
+<li><strong>entry 속성</strong> : 각 모듈을 사용하고 있는 <strong>최상위 js파일</strong>을 알 수 있다.<br><img src="https://github.com/songji1165/songji1165.github.io/blob/build/source/_posts/vue/entry.jpg?raw=true" alt="webpack"></li>
 </ul>
-<h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><ul>
-<li><p><strong><em>자바스크립트 런타임 환경</em></strong></p>
-<ul>
-<li>런타임 : 프로그래밍 언어가 구동되는 환경</li>
-<li>런타임 환경 : 프로그램을 위한 소프트웨어 서비스를 제공하는 가상 머신의 상태</li>
-</ul>
-</li>
-<li><p><strong>javascript라는 언어</strong>로 <strong>node.js런타임 프로그램을 실행</strong>시켜 <strong>node.js 애플리케이션</strong>을 만든다</p>
-</li>
-<li><p>javasctipt를 통해서 node.js가 갖고 있는 기능을 실행하여 웹어플리케이션(웹브라우저)을 만든다. (즉, node.js로 웹어플리케이션을 만든것)</p>
-</li>
-<li><p>javascript를 이용해서 웹브라우저뿐만 아니라 웹서버를 조작할 수 있다.</p>
-</li>
-</ul>
-<h3 id="node-js-설치하기"><a href="#node-js-설치하기" class="headerlink" title="node.js 설치하기"></a>node.js 설치하기</h3><ol>
-<li><p>node.js홈페이지에서 파일 다운로드</p>
-</li>
-<li><p>그 후 node.js가 잘 설치되있는지 확인</p>
+<h4 id="2-src-main-js"><a href="#2-src-main-js" class="headerlink" title="2. ./src/main.js"></a>2. ./src/main.js</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">"./App.vue"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Login = &#123; <span class="attr">template</span>: <span class="string">"&lt;div&gt;Login Page &lt;/div&gt;"</span> &#125;; <span class="comment">// 1.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = &#123;</span><br><span class="line">  <span class="comment">// 2.</span></span><br><span class="line">  <span class="string">"/"</span>: App,</span><br><span class="line">  <span class="string">"/login"</span>: Login</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line"></span><br><span class="line">  computed: &#123;</span><br><span class="line">    VueComponent() &#123;</span><br><span class="line">      <span class="comment">// 4.</span></span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        routes[<span class="built_in">window</span>.location.pathname] || &#123;</span><br><span class="line">          template: <span class="string">"&lt;div&gt;Page not found. 404&lt;/div&gt;"</span></span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  render(h) &#123;</span><br><span class="line">    <span class="comment">// 3.</span></span><br><span class="line">    <span class="keyword">return</span> h(<span class="keyword">this</span>.VueComponent);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ol>
-<li>cmd 터미널콘솔을 실행시키기</li>
-<li><code>node -v</code><br>후 <strong>버전정보</strong>가 뜨면 설치 성공!</li>
-<li><code>node</code><br>node런타임환경을 이용해 <strong>javascrip를 입력</strong>할수 있다.</li>
-<li>console.log(1+1) 을 써본 후 화면 출력이 잘되는 지 실행해 본다.</li>
-<li><u>node 런타임 환경을 나갈 때에는</u> <strong>ctrl+c</strong> 를 누르거나 <strong>.exit</strong>을 치면된다.</li>
+<li><code>const Login</code> , <code>const routes</code> : 라우터에 쓰일 상수를 만들어 준다.</li>
+<li><ul>
+<li><code>routes . &quot;/&quot; : App</code> : <strong>루트 경로</strong>일때는 <u>앱 컴포넌트</u>로 라우팅</li>
+<li><code>routes . &quot;/ login&quot; : Login</code> : <strong>로그인 경로</strong>일때는 <u>로그인 컴포넌트</u>로 라우팅</li>
+</ul>
+</li>
+<li><code>render (h) { return h(this.VueComponent) }</code> || <code>render : h =&gt; h(this.VueComponent)</code><br>: render() 함수는 ViewComponent라는 속성을 인자로 전달해서 h() 함수를 호출한다.</li>
+<li><code>VueComponent()</code> : 해당 경로에 따라 컴포넌트를 다르게 반환하기 위한 VueComponent함수를 만들어 준다.<ol>
+<li><code>routes[window.location.pathname]</code> : 라우트맵에서 패스네임에 해당하는 컴포넌트를 반환</li>
+<li><code>template: &quot;&lt;div&gt;Page not found. 404&lt;/div&gt;&quot;</code> : 패스네임이 없으면 해당 template를 반환<blockquote>
+<p><em>window.location.pathname</em></p>
+<ul>
+<li>window의 location 객체 : URL 정보를 가져온다.</li>
+<li>location의 pathname 속성: URL에서 pathname을 가져온다.</li>
+</ul>
+</blockquote>
+</li>
 </ol>
 </li>
-<li><p>javscript 파일 실행시키시기</p>
-<ol>
-<li><code>cd</code><br>(change directory) 후 이동하려는 파일경로를 써주면 된다.<ul>
-<li>(예 : cd C:\Users\eumji\Desktop\vue-todo)</li>
-</ul>
-</li>
-<li><code>dir</code><br>현재 디렉토리에 존재하는 파일들을 보여준다.</li>
-<li><code>node 파일이름.js</code><br>js파일을 실행시켜서 런타임 환경에서 보여준다.</li>
 </ol>
-</li>
-</ol>
-<h3 id="url-구조"><a href="#url-구조" class="headerlink" title="url 구조"></a>url 구조</h3><p><code>http://opentutorials.org:3000/main?id=HTML&amp;page=12</code></p>
-<ol>
-<li><p>http</p>
+<hr>
+<blockquote>
+<p><strong><em>render 함수</em></strong></p>
 <ul>
-<li>프로토콜 통신규칙 : 웹브라우저와 웹서버과 데이터를 주고받기 위한 통신 규칙</li>
+<li>뷰인스턴스의 객체 el, data 뿐만 아니라, render속성(render함수)이 있다.</li>
+<li><strong>render()</strong> : <strong>DOM 생성 함수</strong> (createElement같은 역할)</li>
+<li><strong>함수 h()</strong> : 컴포넌트 설정 객체를 넘겨준다. 즉, h함수를 통해서 인자로 받은 컴포넌트를 구현한다.</li>
+<li><strong>render (h) { return h(a) }</strong> : render함수는 a인자를 전달받은 h함수를 호출 =&gt; 요청경로에 따라 다른 화면을 구현하는 것</li>
 </ul>
-</li>
-<li><p>opentutorials.org</p>
-<ul>
-<li>host(domain) : 특정한 인터넷에 연결되어 있는 컴퓨터를 가르키는 주소</li>
-</ul>
-</li>
-<li><p>3000</p>
-<ul>
-<li>port : 서버의 주소</li>
-<li>기본 port : 80 (기본 port값 생략 가능)</li>
-</ul>
-</li>
-<li><p>main</p>
-<ul>
-<li>path : 컴퓨터 안의 어떤 디렉토리의 어떤 파일을 나타냄</li>
-</ul>
-</li>
-<li><p><strong>?id=HTML&amp;page=12</strong></p>
-<ul>
-<li>qeury string : 웹서버에게 읽고싶은 데이터의 정보를 전달하는 역할</li>
-</ul>
-</li>
-</ol>
+</blockquote>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#node.js">
-    <span class="tag-code">node.js</span>
+  <a href="/tags#Vue">
+    <span class="tag-code">Vue</span>
   </a>
 
       </div>
@@ -238,20 +216,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/18/개발일기/0418_blogBuild/">
+      <a class="nav-left" href="/2019/04/27/개발일기/0427_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          0418 study
+          0427 study
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/19/개발일기/0419_blogBuild/">
-        
-          0419 study
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -274,7 +245,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/18/node.js/nodejs/';
+    var url = 'http://yoursite.com/2019/04/27/vue/vue8(router)/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
