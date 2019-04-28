@@ -133,10 +133,10 @@
 <li>string : ‘a’,’1’</li>
 <li>boolean : true, false</li>
 <li><p><strong>undefined</strong> : 값이 없다. -&gt; 값이 선언 되었지만 값이 할당되지 않았다.</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">alert(a); // undefined</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">alert(a); // undefined</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>null</strong> : 값이 없다. -&gt; 데이터 초기화(어떤한 값도 갖고 있지 않다.)</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;a&quot;;</span><br><span class="line">a = null; // 해당 값을 제거함 (데이터 초기화)</span><br><span class="line">alert(a); //null</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;a&quot;;</span><br><span class="line">a = null; // 해당 값을 제거함 (데이터 초기화)</span><br><span class="line">alert(a); //null</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>symbol(ES6) : 고유한 값 , 상징적인 값</p>
 </li>
@@ -159,15 +159,13 @@
 <li><p>변수는 <strong>코드의 재활용성</strong>을 높인다.</p>
 </li>
 <li><p>변수의 생성과정</p>
-<ol>
-<li>선언 단계 : 변수객체에 변수를 등록한다.</li>
-<li>초기화 단계 : 변수객체에 등록된 변수를 메모리에 할당한다. (아직 메모리에는 값이 없기때문에 undefined로 초기화된다.)  </li>
-<li>할당 단계 : undefined로 초기화된 상태에서 값을 할당한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a; //선언 + 초기화(var는 초기화가 같이 이루어짐)</span><br><span class="line">a = &apos;hi&apos;;//할당</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 </li>
 </ul>
-</section>
+<pre><code>1. 선언 단계 : 변수객체에 변수를 등록한다.
+2. 초기화 단계 : 변수객체에 등록된 변수를 메모리에 할당한다. (아직 메모리에는 값이 없기때문에 undefined로 초기화된다.)
+2. 할당 단계 : undefined로 초기화된 상태에서 값을 할당한다.
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a; //선언 + 초기화(var는 초기화가 같이 이루어짐)</span><br><span class="line">a = &apos;hi&apos;;//할당</span><br></pre></td></tr></table></figure>
+</code></pre></section>
     <!-- Tags START -->
     
       <div class="tags">
@@ -193,9 +191,9 @@
       </a>
     
     
-      <a class="nav-right" href="/2019/04/08/Javascript/javascript3/">
+      <a class="nav-right" href="/2019/04/08/개발일기/firts/">
         
-          자바스크립트 연산자와 조건문, 반복문
+          블로그 시작
         
         <span class="nav-arrow"> →</span>
       </a>

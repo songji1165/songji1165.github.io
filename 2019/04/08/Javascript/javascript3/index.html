@@ -128,7 +128,7 @@
 <li>% 나머지 : 2%1 = 0</li>
 </ul>
 </li>
-<li><p>비교연산자 </p>
+<li><p>비교연산자</p>
 <ul>
 <li>== (equal operator) : 데이터타입은 달라도 실질적 의미만 같으면 true</li>
 <li>=== (strict operator) : 데이터타입, 실질적의 모두 같아야 true</li>
@@ -140,7 +140,7 @@
 </li>
 <li><p>NOT연산자 !</p>
 <ul>
-<li>true, false를 반대로 출력해줌 !, !! </li>
+<li>true, false를 반대로 출력해줌 !, !!</li>
 </ul>
 </li>
 <li><p>증감연산자 (++ –)</p>
@@ -160,25 +160,25 @@
 </li>
 </ol>
 <h1 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h1><ol>
-<li><p>if(<strong>조건-boolean</strong>){} : 만족하는 데이터가 여러개일 경우   </p>
+<li><p>if(<strong>조건-boolean</strong>){} : 만족하는 데이터가 여러개일 경우</p>
 <ul>
 <li>if(조건){true} else {false}</li>
 <li>if(){} else if {} else {} : 조건문을 좀더 풍부하게 사용할 수 있다.</li>
 </ul>
 </li>
 <li><p>switch(선택문) : 여러 경우의 값 중 일치하는 데이터를 찾아 그 해당하는 코드를 실행</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">switch()&#123;</span><br><span class="line">    case 값1 : 코드값;</span><br><span class="line">    break;</span><br><span class="line">    case 값2 : 코드값; </span><br><span class="line">    break;</span><br><span class="line">    default: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">switch()&#123;</span><br><span class="line">    case 값1 : 코드값;</span><br><span class="line">    break;</span><br><span class="line">    case 값2 : 코드값;</span><br><span class="line">    break;</span><br><span class="line">    default: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h1 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h1><ol>
 <li><p>while(조건){ 반복 실행할 코드}</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i = 0;</span><br><span class="line"></span><br><span class="line">while(i&lt;10)&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">    i = i+1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var i = 0;</span><br><span class="line"></span><br><span class="line">while(i&lt;10)&#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">    i = i+1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>for</strong>(초기화; 조건 검사; 증감코드){ 반복 실행할 코드 }</p>
 <ul>
-<li>초기화 -&gt; 조건검사 -&gt; 실행 -&gt; 증감 과정을 거친다 <strong>=&gt;</strong> while문보다 느리다! <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0; i&lt;10; i+=1)&#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>초기화 -&gt; 조건검사 -&gt; 실행 -&gt; 증감 과정을 거친다 <strong>=&gt;</strong> while문보다 느리다!</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i=0; i&lt;10; i+=1)&#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>do{ 반복 실행할 코드 } while (조건) : do가 무조건 한번 실행이 된후 조건에 따라 반복실행이 된다.</p>
 </li>
@@ -201,10 +201,10 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/08/Javascript/javascript2/">
+      <a class="nav-left" href="/2019/04/08/개발일기/firts/">
         <span class="nav-arrow">← </span>
         
-          자바스크립트 데이터타입과 변수
+          블로그 시작
         
       </a>
     
