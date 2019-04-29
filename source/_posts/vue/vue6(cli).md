@@ -1,6 +1,6 @@
 ---
 title: Vue CLI Component
-date: 2019-04-19
+date: 2019-04-19 16:07:12
 tags: Vue
 ---
 
@@ -62,7 +62,7 @@ tags: Vue
 
 ## 2. CLI Component 등록 방법 : **_전역_** component 등록
 
-- 전역 Component의 사용 : <u>footer나 navigation 부분 등 공통적으로</u> 여러 파일에 넣어줘야 할 때, 일일이 import를 작성하기 번거롭기 때문에 *전역으로 한번만 등록*
+- 전역 Component의 사용 : <u>footer나 navigation 부분 등 공통적으로</u> 여러 파일에 넣어줘야 할 때, 일일이 import를 작성하기 번거롭기 때문에 _전역으로 한번만 등록_
 
 1. 새로운 파일 추가 (**Home.vue**)
 

@@ -1,6 +1,6 @@
 ---
 title: 자바스크립트 Closure
-date:
+date: 2019-04-24 16:07:12
 tags: javascript
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Vue CLI
-date: 2019-04-19
+date: 2019-04-19 16:07:12
 tags: Vue
 ---
 

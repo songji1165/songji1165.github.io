@@ -1,6 +1,6 @@
 ---
 title: Vue의 기본 기능 2(컴포넌트)
-date: 2019-04-14
+date: 2019-04-14 16:07:12
 tags: Vue
 ---
 
@@ -186,6 +186,7 @@ new Vue({
 ```
 
 > `v-bind : modal-show = "modalShow"`
+
 - <u>부모의 modalShow(true)값</u>을 <u>컴포넌트의 modalShow가 받게 한다.</u>라는 뜻
 - props:['modalShow'] => HTML에서는 <u>modal-show</u>로 표현해 준 것이다.
 

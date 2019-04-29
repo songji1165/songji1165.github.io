@@ -1,17 +1,18 @@
 ---
 title: Vue Router 기본 컴포넌트
-date:
+date: 2019-04-28 16:07:12
 tags: Vue
 ---
 
 # Vue 라우터 컴포넌트
 
-## 1. <router-view> Props
+## 1. router-view Props
 
+- `<router-view> </router-view>`
 - 현재 라우터에 맞는 컴포넌트를 렌더링 해준다.
   요청 url에 따라 컴포넌트 렌더링
 
-## 2. <router-link>
+## 2. router-link
 
 1. `<router-link to=""></router-link>`
 2. 주로 **_네비게이션_**을 위한 컴포넌트
