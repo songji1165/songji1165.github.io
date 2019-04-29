@@ -114,7 +114,7 @@
 </header>
     <div id="article-banner">
   <h2>API</h2>
-  <p class="post-date">2019-04-09</p>
+  <p class="post-date">2019-04-26</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -122,19 +122,11 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><blockquote>
-<ul>
-<li><strong>Ajax</strong> : (Asynchronous) 비동기적 데이터<ul>
-<li>새로고침 없이 서버에서 자료를 받아와서 데이터를 추가 할 수 있음</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h1 id="API-application-Programming-Interface"><a href="#API-application-Programming-Interface" class="headerlink" title="API (application Programming Interface)"></a><strong>API</strong> (application Programming Interface)</h1><ul>
+    <section class="markdown-content"><h1 id="API-application-Programming-Interface"><a href="#API-application-Programming-Interface" class="headerlink" title="API (application Programming Interface)"></a><strong>API</strong> (application Programming Interface)</h1><ul>
 <li>응용프로그램에서 사용할 수 있도록, 운영체제나 프로그래밍언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스</li>
 <li><strong>다른 서버로부터 데이터를 손쉽게 가져올 수 있게 하는 수단</strong></li>
 </ul>
-<h3 id="1-fetch-API-비동기적-처리-방식"><a href="#1-fetch-API-비동기적-처리-방식" class="headerlink" title="1. fetch API : 비동기적 처리 방식"></a>1. fetch API : 비동기적 처리 방식</h3><ul>
+<h2 id="1-fetch-API-비동기적-처리-방식"><a href="#1-fetch-API-비동기적-처리-방식" class="headerlink" title="1. fetch API : 비동기적 처리 방식"></a>1. fetch API : 비동기적 처리 방식</h2><ul>
 <li>api를 더욱 쉽게 사용할 수 있게 해준다.</li>
 </ul>
 <blockquote>
@@ -145,13 +137,13 @@
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span></span><br><span class="line">   value=<span class="string">"fetch"</span></span><br><span class="line">   onclick=<span class="string">"</span></span><br><span class="line"><span class="string">       fetch('파일이름').then(function(response)&#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           response.text().then(function(text)&#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">               // 모든 작없이 끝난 후 함수안에 코드가 작동함</span></span><br><span class="line"><span class="string">               // text라는 변수 안에 서버가 응답한 데이터가 들어있다.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">               document.querySelector('article').innerHTML = text</span></span><br><span class="line"><span class="string">           &#125;)</span></span><br><span class="line"><span class="string">       &#125;)</span></span><br><span class="line"><span class="string">   "</span>&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="1-fetch-‘a’-웹브라우저가-‘a’라는-파일을-서버에게-요청하는-메소드-데이터를-얻을-수-있게-해준다"><a href="#1-fetch-‘a’-웹브라우저가-‘a’라는-파일을-서버에게-요청하는-메소드-데이터를-얻을-수-있게-해준다" class="headerlink" title="1. fetch(‘a’) : 웹브라우저가 ‘a’라는 파일을 서버에게 요청하는 메소드, 데이터를 얻을 수 있게 해준다."></a>1. <strong>fetch(‘a’)</strong> : 웹브라우저가 <u>‘a’라는 파일을 <strong>서버에게 요청</strong>하는 메소드</u>, 데이터를 얻을 수 있게 해준다.</h4><h4 id="2-then-실행할-코드-서버가-응답하는-과정이-모두-끝나면-‘실행할-코드-함수-’가-실행-된다"><a href="#2-then-실행할-코드-서버가-응답하는-과정이-모두-끝나면-‘실행할-코드-함수-’가-실행-된다" class="headerlink" title="2. .then(실행할 코드) : 서버가 응답하는 과정이 모두 끝나면 ‘실행할 코드(함수)’가 실행 된다."></a>2. <strong>.then(실행할 코드)</strong> : 서버가 응답하는 과정이 모두 <strong>끝나면</strong> <u>‘실행할 코드(함수)’가 실행</u> 된다.</h4><blockquote>
-<p>fetch는 비동기적이기 때문에 fetch가 응답이 끝나지 않았더라도 다른 js기능들은 상관없이 실행되게 됨.<br>-&gt; <strong>서버로부터 응답받는 과정이 끝날때 알아서 then메서드가 실행됨 </strong></p>
+<p>fetch는 비동기적이기 때문에 fetch가 응답이 끝나지 않았더라도 다른 js기능들은 상관없이 실행되게 됨.<br>=&gt; <strong>서버로부터 응답받는 과정이 끝날때 알아서 then메서드가 실행됨</strong></p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"button"</span></span><br><span class="line">    value=<span class="string">"fetch"</span></span><br><span class="line">    onclick=<span class="string">"</span></span><br><span class="line"><span class="string">        fetch('html').then(function(response)&#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            if(response.status === '404')&#123;</span></span><br><span class="line"><span class="string">                alert('NOT found')</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &#125;else &#123;</span></span><br><span class="line"><span class="string">                console.log(reponse.status)</span></span><br><span class="line"><span class="string">                // 파일 갖고오기 성공 시 **200**이 출력됨</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        console.log('1');</span></span><br><span class="line"><span class="string">        console.log('2');</span></span><br><span class="line"><span class="string">"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// end</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>response 객체</strong> : <u>웹서버가 응답한 결과를 갖고있는 객체</u>, 웹브라우저와 서버의 <strong>통신상태</strong>를 알 수 있다.</p>
+<p><strong>response 객체</strong> : <u>웹서버가 응답한 <strong>결과</strong>를 갖고있는 객체</u>, 웹브라우저와 서버의 <strong>통신상태</strong>를 알 수 있다.</p>
 <ul>
-<li>response 객체의 status 속성 (response.staus)<ul>
+<li>response 객체의 status 속성 (<strong><em>response.staus</em></strong>)<ul>
 <li><strong>200</strong> : 파일 갖고오기 성공</li>
 <li>404 : 파일없음</li>
 </ul>
@@ -214,17 +206,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/08/Javascript/javascript3/">
+      <a class="nav-left" href="/2019/04/26/Javascript/ajax(updating)/ajax/">
         <span class="nav-arrow">← </span>
         
-          자바스크립트 연산자와 조건문, 반복문
+          Ajax &amp; XMLHttpRequest
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/09/개발일기/0409_blogBuild/">
+      <a class="nav-right" href="/2019/04/27/vue/vue13(Nested Routes)/">
         
-          0409 study
+          Vue 중첩된 라우트
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -250,7 +242,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/09/Javascript/ajax(updating)/api/';
+    var url = 'http://yoursite.com/2019/04/26/Javascript/ajax(updating)/api/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
