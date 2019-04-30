@@ -10,7 +10,7 @@
   
   <title>
     
-      Vue | SONG
+      1. Vue | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,7 +113,7 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>Vue</h2>
+  <h2>1. Vue</h2>
   <p class="post-date">2019-04-09</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -123,15 +123,19 @@
   <!-- Article START -->
   <article class="post-article">
     <section class="markdown-content"><h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><blockquote>
-<p>Vue 장점</p>
+<ul>
+<li>Vue 장점</li>
+</ul>
+<ol>
+<li>학습곡선이 낮다.</li>
+<li>Vue의 핵심인 컴포넌트를 통해 유지보수와 재사용성이 높아진다.</li>
+<li>DOM조작인 jquery같이 쉬운 편이다.</li>
+<li>요소를 실시간으로 반응시킬 수 있다.</li>
+</ol>
 </blockquote>
-<pre><code>1. 학습곡선이 낮다.
-2. Vue의 핵심인 컴포넌트를 통해 유지보수와 재사용성이 높아진다.
-3. DOM조작인 jquery같이 쉬운 편이다.
-4. 요소를 실시간으로 반응시킬 수 있다.
-</code></pre><p><br></p>
-<h2 id="Vue-시작하기"><a href="#Vue-시작하기" class="headerlink" title="Vue 시작하기"></a>Vue 시작하기</h2><ul>
-<li>JS라이브러리 사용하듯 script를 붙여넣기하면 된다.</li>
+<p><br></p>
+<h2 id="1-Vue-시작하기"><a href="#1-Vue-시작하기" class="headerlink" title="1. Vue 시작하기"></a>1. Vue 시작하기</h2><ul>
+<li>CDN 복붙</li>
 </ul>
 <ol>
 <li><p>도움되는 콘솔 경고를 포함한 개발 버전</p>
@@ -141,14 +145,16 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span> /&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Vue-앱-사용하기"><a href="#Vue-앱-사용하기" class="headerlink" title="Vue 앱 사용하기"></a>Vue 앱 사용하기</h2><ul>
-<li><p><strong>Vue함수</strong> : 모든 Vue앱은 <strong>Vue함수</strong>로 새 <strong>Vue 인스턴스</strong>를 만든다.</p>
-</li>
-<li><p>새 Vue 인스턴스 등록 : Vue앱은 <strong>new Vue</strong>를 통해 <strong>루트 Vue 인스턴스</strong>로 구성되어진다.</p>
-</li>
+<h2 id="2-Vue-앱-사용하기"><a href="#2-Vue-앱-사용하기" class="headerlink" title="2. Vue 앱 사용하기"></a>2. Vue 앱 사용하기</h2><ul>
+<li><strong>Vue 함수</strong> : 모든 Vue앱은 <strong>Vue함수</strong>로 새 <strong>Vue 인스턴스</strong>를 만든다.</li>
 </ul>
+<ol>
+<li>Vue Instance 생성자 : Vue앱은 <strong>new Vue</strong>를 통해 <strong>루트 Vue 인스턴스</strong>로 구성되어진다.</li>
+<li>Vue 옵션 : data, template, el, methods, life cylcle callback ..</li>
+</ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">//루트 Vue 인스턴스</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="인스턴스란"><a href="#인스턴스란" class="headerlink" title="인스턴스란 .?"></a>인스턴스란 .?</h3><h5 id="Java"><a href="#Java" class="headerlink" title="Java"></a><strong><em>Java</em></strong></h5><ul>
+<hr>
+<h3 id="인스턴스란-JAVA"><a href="#인스턴스란-JAVA" class="headerlink" title="인스턴스란 .? (JAVA)"></a>인스턴스란 .? (JAVA)</h3><ul>
 <li><p><strong><em>클래스(설계도)를 바탕으로 여러 개의 다른 모양의 인스턴스(제품)을 만들 수 있다</em></strong></p>
 <ol>
 <li><p><strong>클래스(Class)</strong> : 연관되었 있는 변수와 메소드의 집합이다. <strong><u>설계도</u></strong></p>
@@ -175,6 +181,7 @@
 </ol>
 </li>
 </ul>
+<hr>
 </section>
     <!-- Tags START -->
     
@@ -185,6 +192,7 @@
   <span class="tag-code">Vue</span>
 </a>
 
+
       </div>
     
     <!-- Tags END -->
@@ -193,17 +201,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/08/Javascript/javascript3/">
+      <a class="nav-left" href="/2019/04/08/Javascript/javacript1/">
         <span class="nav-arrow">← </span>
         
-          자바스크립트 연산자와 조건문, 반복문
+          브라우저 동작원리
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/09/vue/vue2/">
+      <a class="nav-right" href="/2019/04/09/개발일기/0409_blogBuild/">
         
-          Vue의 기본 기능 1
+          0409 study
         
         <span class="nav-arrow"> →</span>
       </a>
