@@ -1,6 +1,6 @@
 ---
-title: Vue CLI Component
-date: 2019-04-19 16:07:12
+title: 8. Vue CLI Component
+date: 2019-04-19 16:17:12
 tags: Vue
 ---
 

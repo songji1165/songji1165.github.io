@@ -1,5 +1,5 @@
 ---
-title: Vue 기본 기능 2(컴포넌트)
+title: 4. Vue Component
 date: 2019-04-14 16:07:12
 tags: Vue
 ---

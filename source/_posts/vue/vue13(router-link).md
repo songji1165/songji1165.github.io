@@ -1,5 +1,5 @@
 ---
-title: Vue Router 기본 컴포넌트
+title: 13. Vue Router 기본 컴포넌트
 date: 2019-04-28 16:07:12
 tags: Vue
 ---

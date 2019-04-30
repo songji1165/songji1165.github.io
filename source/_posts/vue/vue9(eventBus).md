@@ -1,5 +1,5 @@
 ---
-title: Vue eventBus
+title: 9. Vue eventBus
 date: 2019-04-26 16:07:12
 tags: Vue
 ---

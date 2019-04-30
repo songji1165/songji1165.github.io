@@ -1,5 +1,5 @@
 ---
-title: Vue 동적 라우트 매칭
+title: 14. Vue 동적 라우트 매칭
 date: 2019-04-28 16:07:12
 tags: Vue
 ---

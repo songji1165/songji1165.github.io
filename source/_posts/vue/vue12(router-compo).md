@@ -1,5 +1,5 @@
 ---
-title: Vue Router 관리하기
+title: 12. Vue Router 관리하기
 date: 2019-04-28 16:07:12
 tags: Vue
 ---

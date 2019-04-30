@@ -1,5 +1,5 @@
 ---
-title: Vue 중첩된 라우트
+title: 15. Vue 중첩된 라우트
 date: 2019-04-27 16:07:12
 tags: Vue
 ---
