@@ -170,7 +170,7 @@ todo 모듈패턴
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2019/04/28/vue/vue14(Dynamic Route Matching)/">14. Vue 동적 라우트 매칭</a>
+        <a href="/2019/04/28/vue/vue13(router-link)/">13. Vue Router 기본 컴포넌트</a>
       </h2>
       <p class="article-date">April 28, 2019</p>
       
@@ -183,13 +183,15 @@ todo 모듈패턴
       
       <div class="article-summary">
         
-          Dynamic Route Matching (동적 라우트 매칭)
-주어진 패턴을 가진 라우트를 동일한 컴포넌트에 매핑해야하는 경우
+          Vue 라우터 컴포넌트1. router-view Props
+&lt;router-view&gt; &lt;/router-view&gt;
+현재 라우터에 맞는 컴포넌트를 렌더링 해준다.요청 url에 따라 컴포넌트 렌더링
 
-123456789// 모든 사용자는 동일한 레이아웃을 가진다.// 하지만 다른 사용자ID로 렌더링되어야 하는 User컴포넌트가 있을  ...
+2. router-link
+&lt;router- ...
         
       </div>
-      <a class="more" href="/2019/04/28/vue/vue14(Dynamic Route Matching)/">Read more</a>
+      <a class="more" href="/2019/04/28/vue/vue13(router-link)/">Read more</a>
     </article>
   
     <article class="article-card">
@@ -224,7 +226,7 @@ todo를 프로토타입과 모듈을 활 ...
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2019/04/28/vue/vue13(router-link)/">13. Vue Router 기본 컴포넌트</a>
+        <a href="/2019/04/28/vue/vue12(router-compo)/">12. Vue Router 관리하기</a>
       </h2>
       <p class="article-date">April 28, 2019</p>
       
@@ -237,15 +239,37 @@ todo를 프로토타입과 모듈을 활 ...
       
       <div class="article-summary">
         
-          Vue 라우터 컴포넌트1. router-view Props
-&lt;router-view&gt; &lt;/router-view&gt;
-현재 라우터에 맞는 컴포넌트를 렌더링 해준다.요청 url에 따라 컴포넌트 렌더링
+          라우터 효율적으로 관리하기1. 라우터 객체를 별도 파일로 분리
+src에 폴더 만들기 ‘router’ =&gt; 폴더 안에 ‘index.js’ 만들기
 
-2. router-link
-&lt;router- ...
+12345678910111213141516171819202122232425262728293031// index. ...
         
       </div>
-      <a class="more" href="/2019/04/28/vue/vue13(router-link)/">Read more</a>
+      <a class="more" href="/2019/04/28/vue/vue12(router-compo)/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/04/28/vue/vue14(Dynamic Route Matching)/">14. Vue 동적 라우트 매칭</a>
+      </h2>
+      <p class="article-date">April 28, 2019</p>
+      
+        
+<a href="/tags#Vue">
+  <span class="tag-code">Vue</span>
+</a>
+
+
+      
+      <div class="article-summary">
+        
+          Dynamic Route Matching (동적 라우트 매칭)
+주어진 패턴을 가진 라우트를 동일한 컴포넌트에 매핑해야하는 경우
+
+123456789// 모든 사용자는 동일한 레이아웃을 가진다.// 하지만 다른 사용자ID로 렌더링되어야 하는 User컴포넌트가 있을  ...
+        
+      </div>
+      <a class="more" href="/2019/04/28/vue/vue14(Dynamic Route Matching)/">Read more</a>
     </article>
   
     <article class="article-card">
@@ -280,26 +304,29 @@ Vue라우터는 Vue.js에서 제공하는 컴포넌트
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2019/04/28/vue/vue12(router-compo)/">12. Vue Router 관리하기</a>
+        <a href="/2019/04/27/개발일기/0427_blogBuild/">0427 study</a>
       </h2>
-      <p class="article-date">April 28, 2019</p>
+      <p class="article-date">April 27, 2019</p>
       
         
-<a href="/tags#Vue">
-  <span class="tag-code">Vue</span>
+<a href="/tags#개발일기">
+  <span class="tag-code">개발일기</span>
 </a>
 
 
       
       <div class="article-summary">
         
-          라우터 효율적으로 관리하기1. 라우터 객체를 별도 파일로 분리
-src에 폴더 만들기 ‘router’ =&gt; 폴더 안에 ‘index.js’ 만들기
+          오늘 할 것
+vue trello 강의 보기
+vue 이론 정리
 
-12345678910111213141516171819202122232425262728293031// index. ...
+공부한 것
+확실히 프로젝트를 만들면서 공부하니 이해도 빠르고 진도도 빠른 느낌이다.라우터에 관해서 쉽게 이해할 수 있었다. 앞으로 어떤 프로젝트이던 유용하게 쓸 수 있을 것 같다.
+vue trello ...
         
       </div>
-      <a class="more" href="/2019/04/28/vue/vue12(router-compo)/">Read more</a>
+      <a class="more" href="/2019/04/27/개발일기/0427_blogBuild/">Read more</a>
     </article>
   
     <article class="article-card">
@@ -354,33 +381,6 @@ API를 서버로부터 받아온 후 그 데이터를 ...
         
       </div>
       <a class="more" href="/2019/04/27/vue/vue15(Nested Routes)/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2019/04/27/개발일기/0427_blogBuild/">0427 study</a>
-      </h2>
-      <p class="article-date">April 27, 2019</p>
-      
-        
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-
-
-      
-      <div class="article-summary">
-        
-          오늘 할 것
-vue trello 강의 보기
-vue 이론 정리
-
-공부한 것
-확실히 프로젝트를 만들면서 공부하니 이해도 빠르고 진도도 빠른 느낌이다.라우터에 관해서 쉽게 이해할 수 있었다. 앞으로 어떤 프로젝트이던 유용하게 쓸 수 있을 것 같다.
-vue trello ...
-        
-      </div>
-      <a class="more" href="/2019/04/27/개발일기/0427_blogBuild/">Read more</a>
     </article>
   
 
