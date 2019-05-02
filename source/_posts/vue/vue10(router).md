@@ -1,6 +1,6 @@
 ---
 title: 10. Vue Router
-date: 2019-04-27 16:07:12
+date: 2019-04-27 13:07:12
 tags: Vue
 ---
 
