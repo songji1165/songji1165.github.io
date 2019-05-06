@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="나만의 개발 블로그">
+  <meta name="keyword" content="javascript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      1단계) 자릿수 더하기 | SONG
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>SONG</span>
+    </a>
+    <ul class="right-list">
+      
+      <li class="list-item">
+        
+        <a href="/tags/" class="item-link">Menu</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/archives/" class="item-link">Archives</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/about/" class="item-link">About</a>
+        
+      </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+        <li class="menu-item">
+          
+          <a href="/tags/" class="menu-link">Menu</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/archives/" class="menu-link">Archives</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/about/" class="menu-link">About</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>1단계) 자릿수 더하기</h2>
+  <p class="post-date">2019-05-06</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h1><ul>
+<li><p>출처 : <img src="https://programmers.co.kr/learn/courses/30/lessons/12931" alt="프로그래머스"></p>
+</li>
+<li><p>자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.<br>예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.</p>
+<ul>
+<li>제한사항 : N의 범위는 100,000,000 이하의 자연수</li>
+</ul>
+</li>
+</ul>
+<h2 id="나의-Solution-javascript"><a href="#나의-Solution-javascript" class="headerlink" title="나의 Solution (javascript)"></a>나의 Solution (javascript)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> num = <span class="built_in">String</span>(n);</span><br><span class="line">  <span class="keyword">var</span> ch = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num.length; i++) &#123;</span><br><span class="line">    ch.push(num.charAt(i));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; ch.length; j++) &#123;</span><br><span class="line">    answer += <span class="built_in">Number</span>(ch[j]);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="추천-Solution-javascript"><a href="#추천-Solution-javascript" class="headerlink" title="추천 Solution (javascript)"></a>추천 Solution (javascript)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n</span><br><span class="line">    .toString()</span><br><span class="line">    .split(<span class="string">""</span>)</span><br><span class="line">    .reduce(<span class="function">(<span class="params">prev, cur</span>) =&gt;</span> prev + <span class="built_in">parseInt</span>(cur), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="사용된-문법"><a href="#사용된-문법" class="headerlink" title="사용된 문법"></a>사용된 문법</h1><ol>
+<li><p><strong>split(‘’)</strong></p>
+<ul>
+<li>문자열 분할 메서드</li>
+<li><code>&#39;12,3&#39;.split(&quot;,&quot;)</code> =&gt; [‘12’,’3’]</li>
+</ul>
+</li>
+<li><p><strong>chatAt(인수)</strong></p>
+<ul>
+<li>인수번째 문자 추출 메서드</li>
+<li><code>&#39;hello&#39;.charAt(1)</code> =&gt; ‘e’</li>
+</ul>
+</li>
+<li><p><strong>parseInt(string)</strong></p>
+<ul>
+<li>String =&gt; Number로 변환</li>
+<li><code>parseInt(&#39;123hi&#39;)</code> =&gt; 123</li>
+<li><code>parseInt(&#39;hi123&#39;)</code> =&gt; NaN</li>
+</ul>
+</li>
+<li><p><strong>reduce( f, n )</strong></p>
+<ul>
+<li>배열.reduce(( 누적값, 현잿값, 인덱스, 요소 ) =&gt; {return 결과}, 초기값 )</li>
+<li>f : callback함수, n : initValue(두번째 인자로 생략가능)</li>
+<li>callback함수에는 4개의 인자를 지정할 수 있다.<ol>
+<li>accumlated : 누적값</li>
+<li>currentValue : 현재의 값</li>
+<li>cuurentIndex : 현재 값의 index</li>
+<li>array(context) : 배열 (numberList)</li>
+</ol>
+</li>
+<li><strong>배열의 합계</strong>로 많이 쓰인다!!<ul>
+<li><code>arr.reduce((a,b) =&gt; a+b)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="느낀점"><a href="#느낀점" class="headerlink" title="느낀점"></a>느낀점</h2><ul>
+<li>문법을 활용할 수록 코드의 가독성이 높아진다.</li>
+<li>알고리즘을 통해 자바스크립트 문법 연습을 해야겠다.</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+<a href="/tags#알고리즘">
+  <span class="tag-code">알고리즘</span>
+</a>
+
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/05/개발일기/0505_blogBuild/">
+        <span class="nav-arrow">← </span>
+        
+          0505 study
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/06/개발일기/0506_blogBuild/">
+        
+          0506 study
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/05/06/알고리즘/알고리즘1/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
