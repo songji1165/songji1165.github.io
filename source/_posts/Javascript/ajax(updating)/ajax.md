@@ -1,7 +1,9 @@
 ---
 title: Ajax & XMLHttpRequest
 date: 2019-04-26 16:07:12
-tags: javascript
+tags:
+  - javascript
+  - 네트워크통신
 ---
 
 # 비동기식 처리 모델과 Ajax
