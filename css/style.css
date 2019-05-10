@@ -702,6 +702,7 @@ h2.article-head {
 .tag-preview {
   font-size: 1.1em;
   padding-left: 1em;
+  list-style: none;
 }
 .tag-preview li {
   cursor: pointer;
