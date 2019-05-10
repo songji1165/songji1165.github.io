@@ -10,7 +10,7 @@
   
   <title>
     
-      API | SONG
+      Fetch API | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,8 +113,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>API</h2>
-  <p class="post-date">2019-04-26</p>
+  <h2>Fetch API</h2>
+  <p class="post-date">2019-05-10</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -122,35 +122,48 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="API-application-Programming-Interface"><a href="#API-application-Programming-Interface" class="headerlink" title="API (application Programming Interface)"></a><strong>API</strong> (application Programming Interface)</h1><ul>
-<li>응용프로그램에서 사용할 수 있도록, 운영체제나 프로그래밍언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스</li>
+    <section class="markdown-content"><blockquote>
+<p><strong>API</strong> (application Programming Interface)</p>
+<ul>
+<li>프로그램이 동작하는 환경을 제어하기 위해서 환경에서 제공되는 조작 장치</li>
+<li>프로그래밍 언어를 통해 조작 할 수 있다.</li>
 <li><strong>다른 서버로부터 데이터를 손쉽게 가져올 수 있게 하는 수단</strong></li>
 </ul>
-<h2 id="1-fetch-API-비동기적-처리-방식"><a href="#1-fetch-API-비동기적-처리-방식" class="headerlink" title="1. fetch API : 비동기적 처리 방식"></a>1. fetch API : 비동기적 처리 방식</h2><ul>
-<li>api를 더욱 쉽게 사용할 수 있게 해준다.</li>
-</ul>
+</blockquote>
+<p><br></p>
 <blockquote>
 <ul>
 <li>동기 : 요청사항이 완료될 때까지 다른 것을 실행하지 않는다.</li>
-<li>비동기 : 다른 것을 실행하면서 요청사항을 기다린다.</li>
+<li>비동기 : 다른 것을 실행하면서 요청사항을 기다린다.<br><br></li>
 </ul>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span></span><br><span class="line">   value=<span class="string">"fetch"</span></span><br><span class="line">   onclick=<span class="string">"</span></span><br><span class="line"><span class="string">       fetch('파일이름').then(function(response)&#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           response.text().then(function(text)&#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">               // 모든 작없이 끝난 후 함수안에 코드가 작동함</span></span><br><span class="line"><span class="string">               // text라는 변수 안에 서버가 응답한 데이터가 들어있다.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">               document.querySelector('article').innerHTML = text</span></span><br><span class="line"><span class="string">           &#125;)</span></span><br><span class="line"><span class="string">       &#125;)</span></span><br><span class="line"><span class="string">   "</span>&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="1-fetch-‘a’-웹브라우저가-‘a’라는-파일을-서버에게-요청하는-메소드-데이터를-얻을-수-있게-해준다"><a href="#1-fetch-‘a’-웹브라우저가-‘a’라는-파일을-서버에게-요청하는-메소드-데이터를-얻을-수-있게-해준다" class="headerlink" title="1. fetch(‘a’) : 웹브라우저가 ‘a’라는 파일을 서버에게 요청하는 메소드, 데이터를 얻을 수 있게 해준다."></a>1. <strong>fetch(‘a’)</strong> : 웹브라우저가 <u>‘a’라는 파일을 <strong>서버에게 요청</strong>하는 메소드</u>, 데이터를 얻을 수 있게 해준다.</h4><h4 id="2-then-실행할-코드-서버가-응답하는-과정이-모두-끝나면-‘실행할-코드-함수-’가-실행-된다"><a href="#2-then-실행할-코드-서버가-응답하는-과정이-모두-끝나면-‘실행할-코드-함수-’가-실행-된다" class="headerlink" title="2. .then(실행할 코드) : 서버가 응답하는 과정이 모두 끝나면 ‘실행할 코드(함수)’가 실행 된다."></a>2. <strong>.then(실행할 코드)</strong> : 서버가 응답하는 과정이 모두 <strong>끝나면</strong> <u>‘실행할 코드(함수)’가 실행</u> 된다.</h4><blockquote>
-<p>fetch는 비동기적이기 때문에 fetch가 응답이 끝나지 않았더라도 다른 js기능들은 상관없이 실행되게 됨.<br>=&gt; <strong>서버로부터 응답받는 과정이 끝날때 알아서 then메서드가 실행됨</strong></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"button"</span></span><br><span class="line">    value=<span class="string">"fetch"</span></span><br><span class="line">    onclick=<span class="string">"</span></span><br><span class="line"><span class="string">        fetch('html').then(function(response)&#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            if(response.status === '404')&#123;</span></span><br><span class="line"><span class="string">                alert('NOT found')</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            &#125;else &#123;</span></span><br><span class="line"><span class="string">                console.log(reponse.status)</span></span><br><span class="line"><span class="string">                // 파일 갖고오기 성공 시 **200**이 출력됨</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        console.log('1');</span></span><br><span class="line"><span class="string">        console.log('2');</span></span><br><span class="line"><span class="string">"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// end</span></span><br></pre></td></tr></table></figure>
+<h1 id="fetch-API-비동기적-처리-방식"><a href="#fetch-API-비동기적-처리-방식" class="headerlink" title="fetch API : 비동기적 처리 방식"></a>fetch API : 비동기적 처리 방식</h1><ul>
+<li><code>XMLHttpRequest</code> API를 더욱 유연하고, 분명하게 손쉽게 사용할 수 있다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span></span><br><span class="line">   value=<span class="string">"fetch"</span></span><br><span class="line">   onclick=<span class="string">"</span></span><br><span class="line"><span class="string">       fetch('파일이름').then(function(response)&#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           response.text()</span></span><br><span class="line"><span class="string">                 .then(function(data)&#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">               // 모든 작없이 끝난 후 함수 안에 코드가 작동함</span></span><br><span class="line"><span class="string">               // data 변수 안에 서버가 응답한 데이터가 들어있다.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                   document.querySelector('article').innerHTML = data</span></span><br><span class="line"><span class="string">               &#125;)</span></span><br><span class="line"><span class="string">       &#125;)</span></span><br><span class="line"><span class="string">   "</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="1-fetch-‘a’"><a href="#1-fetch-‘a’" class="headerlink" title="1. fetch(‘a’)"></a>1. <strong>fetch(‘a’)</strong></h3><ul>
+<li>웹브라우저가 <u>‘a’라는 파일을 <strong>서버에게 요청</strong>하는 메소드</u>, 데이터를 얻을 수 있게 해준다.</li>
+</ul>
+<h3 id="2-then-실행할-코드"><a href="#2-then-실행할-코드" class="headerlink" title="2. .then(실행할 코드)"></a>2. <strong>.then(실행할 코드)</strong></h3><ul>
+<li>서버가 응답하는 과정이 모두 <strong>끝나면</strong> <u>‘실행할 코드(함수)’가 실행</u> 된다.</li>
+</ul>
 <blockquote>
-<p><strong>response 객체</strong> : <u>웹서버가 응답한 <strong>결과</strong>를 갖고있는 객체</u>, 웹브라우저와 서버의 <strong>통신상태</strong>를 알 수 있다.</p>
-<ul>
-<li>response 객체의 status 속성 (<strong><em>response.staus</em></strong>)<ul>
-<li><strong>200</strong> : 파일 갖고오기 성공</li>
+<p>fetch는 비동기적이기 때문에 fetch가 응답이 끝나지 않았더라도 다른 js기능들은 상관없이 실행되게 됨.<br>=&gt; <strong>서버로부터 응답받는 과정이 끝날 때 알아서 then메서드가 실행됨</strong></p>
+</blockquote>
+<h3 id="3-response-객체"><a href="#3-response-객체" class="headerlink" title="3. response 객체"></a>3. <strong>response 객체</strong></h3><ul>
+<li><p><u>웹서버가 응답한 <strong>결과</strong>를 갖고있는 객체</u>, 웹브라우저와 서버의 <strong>통신상태</strong>를 알 수 있다.</p>
+</li>
+<li><p>response 객체의 status 속성 (<strong><em>response.staus</em></strong>)</p>
+<ol>
+<li>200 : 파일 갖고오기 성공</li>
 <li>404 : 파일없음</li>
-</ul>
+</ol>
 </li>
 </ul>
-</blockquote>
-<h4 id="3-catch-실행할-코드-err일-경우-실행할-코드가-실행됨"><a href="#3-catch-실행할-코드-err일-경우-실행할-코드가-실행됨" class="headerlink" title="3. .catch(실행할 코드) : err일 경우 실행할 코드가 실행됨"></a>3. <strong>.catch(실행할 코드)</strong> : <strong>err</strong>일 경우 실행할 코드가 실행됨</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"html"</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> response.json;</span><br><span class="line">    <span class="comment">//response 일 경우 respose의 네트워크정보만 알 수 있다.(ex. status ...)</span></span><br><span class="line">    <span class="comment">//response.json()을 통해 응답받은 데이터 즉, json파일의 데이터를 갖고옴</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">json</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(json);</span><br><span class="line">    <span class="comment">//위의 then에서 json파일이 준비가 완료되면 두번째 then으로 넘어온다.</span></span><br><span class="line">    <span class="comment">//json 데이터를 console에 출력해준다.</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="comment">//에러가 생기면 에러사항을 console에 출력해줌</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4-catch-실행할-코드"><a href="#4-catch-실행할-코드" class="headerlink" title="4. .catch(실행할 코드)"></a>4. <strong>.catch(실행할 코드)</strong></h3><ul>
+<li><strong>err</strong>일 경우 실행할 코드가 실행됨</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">"html"</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> response.json;</span><br><span class="line">    <span class="comment">//response : respose의 네트워크정보만 알 수 있다.(ex. status ...)</span></span><br><span class="line">    <span class="comment">//response.json()을 통해 응답받은 데이터 즉, json파일의 데이터를 갖고옴</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//위의 then에서 json파일이 준비가 완료되면, 두번째 then으로 넘어온다.</span></span><br><span class="line">    <span class="comment">// data 인자에는 response.json 데이터가 담겨 있다.</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    <span class="comment">//json 데이터를 console에 출력해준다.</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="comment">//에러가 생기면 에러사항을 console에 출력해줌</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="API-예"><a href="#API-예" class="headerlink" title="API 예 )"></a>API 예 )</h2><h3 id="Geolocation-API"><a href="#Geolocation-API" class="headerlink" title="Geolocation API"></a>Geolocation API</h3><ul>
 <li>사용자의 위치정보를 얻을 수 있다.</li>
@@ -193,10 +206,12 @@
     
       <div class="tags">
         <span>Tags:</span>
-        
+        <!--  -->
+
 <a href="/tags#javascript">
   <span class="tag-code">javascript</span>
 </a>
+<!-- <span class="tag-code"></span> -->
 
 
       </div>
@@ -207,20 +222,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/26/개발일기/0426_blogBuild/">
+      <a class="nav-left" href="/2019/05/10/Javascript/ajax(updating)/JSON/">
         <span class="nav-arrow">← </span>
         
-          0426 study
+          JSON
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/27/vue/vue10(router)/">
-        
-          10. Vue Router
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -243,7 +251,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/26/Javascript/ajax(updating)/api/';
+    var url = 'http://yoursite.com/2019/05/10/Javascript/ajax(updating)/api/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({

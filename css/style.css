@@ -708,6 +708,11 @@ h2.article-head {
   cursor: pointer;
   margin: 10px 0;
 }
+.tag-date {
+  color: rgba(157,200,153,0.7);
+  font-size: 0.7em;
+  margin-left: 10px;
+}
 #archives:before {
   position: absolute;
   top: 2em;
