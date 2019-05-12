@@ -16,9 +16,11 @@ tags:
 1. 자바스크립트를 이용해서 비동기적으로 서버와 브라우저가 데이터를 주고 받는 방식
 2. **서버와 통신**하기 위해 `XMLHttpRequest` API를 사용
 3. 페이지 전체를 로드하지 않아도 **페이지의 일부만 로드**하여 갱신한다 => 빠르다, 부드러운 화면표시효과
-   ![ajax](https://poiemaweb.com/img/ajax-webpage-lifecycle.png){: width="400px" height=""}
+   <img src="https://poiemaweb.com/img/ajax-webpage-lifecycle.png" width="400px%">
 
-   <br/>
+      <!-- ![ajax](https://poiemaweb.com/img/ajax-webpage-lifecycle.png){: width="400px" height=""} -->
+
+      <br/>
 
 ## 4. XMLHttpRequest 객체
 

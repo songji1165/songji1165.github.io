@@ -1,7 +1,9 @@
 ---
 title: Fetch API
 date: 2019-05-10 16:17:20
-tags: javascript
+tags:
+  - javascript
+  - 네트워크통신
 ---
 
 > **API** (application Programming Interface)
