@@ -119,37 +119,61 @@
   </div>
   <h3>SONG</h3>
   
-    <p class="description">최선을 다하자</p>
+  <p class="description">최선을 다하자</p>
   
   <section class="share-icons">
-    
-    
-    
-      <a class="icon-github" href="https://github.com/songji1165" target="_blank">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-    
-    
-    
+      
+    <a class="icon-github" href="https://github.com/songji1165" target="_blank">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+      
+    <a class="icon-zhihu" href="https://www.facebook.com/songji1165" target="_blank">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-facebook-f fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+     
+    <!-- <a
+      class="icon-douban"
+      href="https://www.douban.com/people/songji1165@gmail.com"
+      target="_blank"
+    > -->
+    <span class="fa-stack fa-lg email" onclick="emailClip()" style="cursor: pointer;">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-envelope-square fa-stack-1x fa-inverse add" title="songji1165@gmail.com"></i>
+    </span>
+    <!-- </a> -->
     
   </section>
 </div>
 
 <script>
-  (function () {
-    $('.header').removeClass('fixed-header')
+  (function() {
+    $(".header").removeClass("fixed-header");
     var windowH = $(window).height();
-    var author = $('.author')
+    var author = $(".author");
     var bodyH = author.offset().top + author[0].offsetHeight + 71;
     if (bodyH < windowH) {
       author.css({
-        'margin-bottom': windowH - bodyH
-      })
+        "margin-bottom": windowH - bodyH
+      });
     }
   })();
+</script>
+<script>
+  function emailClip(email) {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = "songji1165@gmail.com";
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    alert("Email 주소가 클립보드에 복사되었습니다");
+  }
 </script>
 
     <div class="scroll-top">
