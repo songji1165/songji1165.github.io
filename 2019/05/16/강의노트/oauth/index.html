@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="나만의 개발 블로그">
+  <meta name="keyword" content="javascript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      OAUTH | SONG
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>SONG</span>
+    </a>
+    <ul class="right-list">
+      
+      <li class="list-item">
+        
+        <a href="/tags/" class="item-link">Menu</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/archives/" class="item-link">Archives</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/about/" class="item-link">About</a>
+        
+      </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+        <li class="menu-item">
+          
+          <a href="/tags/" class="menu-link">Menu</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/archives/" class="menu-link">Archives</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/about/" class="menu-link">About</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>OAUTH</h2>
+  <p class="post-date">2019-05-16</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><blockquote>
+<p>‘egoing’님의 ‘OAuth 인증’ 기술 세미나</p>
+<ul>
+<li>구글 연동을 통해 Oauth인증을 학습할 수 있었다.</li>
+<li>학습을 위해 가상의 서버가 필요 <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" target="_blank" rel="noopener">Web Server for Chrome</a></li>
+</ul>
+</blockquote>
+<h1 id="OAUTH"><a href="#OAUTH" class="headerlink" title="OAUTH"></a>OAUTH</h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/OpenIDvs.Pseudo-AuthenticationusingOAuth.svg/768px-OpenIDvs.Pseudo-AuthenticationusingOAuth.svg.png" alt="img"></p>
+<ul>
+<li>‘나의 사용자’의 인증을 통해 그들의 서비스를 대신 사용</li>
+</ul>
+<ol>
+<li>일반적 인증의 문제점 : ‘사용자’의 id,pwd =&gt; ‘나’의 db에 저장 =&gt; 사용자 대신 ‘그들의 서비스’ 사용 (ex. 구글캘린더에 사용자의 일정을 올림))<ul>
+<li>심플하지만 보안이 취약!!<ol>
+<li>‘서비스제공자’ 입장에서 보안이 뚫렸다고 인식이 될 수 있다.</li>
+<li>만약 ‘나’에서 정보 유출이 되면 큰일난다!</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><mark>해결책 <oauth></oauth></mark><ul>
+<li>id,pw 대신 서비스의 일부를 일정시간동안만 허용할 수 있는 <strong>권한을 부여</strong>해줌</li>
+<li><strong><em>임시 비밀번호 Access Token</em></strong> : ‘<strong>사용자</strong>‘가 id,pwd로 ‘<strong>서비스제공자</strong>‘에게 인증을 하면 ‘서비스제공자’는 ‘<strong>나</strong>‘에게 <u>임시 비밀번호</u>를 발급해줌</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>OAuth</p>
+<ul>
+<li>인터넷 사용자들이 비밀번호를 제공하지 않고 다른 웹사이트 상의 자신들의 정보에 대해 웹사이트나 애플리케이션의 접근 권한을 부여할 수 있는 공통적인 수단으로서 사용되는, 접근 위임을 위한 개방형 표준 (위키백과)</li>
+</ul>
+</blockquote>
+<p><br></p>
+<h3 id="1-장점"><a href="#1-장점" class="headerlink" title="1. 장점"></a>1. 장점</h3><ol>
+<li><p><strong>ACESS TOKEN</strong> : 임시 비밀번호를 발급해줌</p>
+<ul>
+<li>기능이 제한적 =&gt; 혹시 누출된다해도 문제가 크지 않음</li>
+<li>but, 보안에 대해서는 항상 중시해야 함 (ex. 서비스는 https를 사용을 지양)</li>
+</ul>
+</li>
+<li><p><strong>자동화</strong> : 사용자 모르게 자동적으로 처리해줌</p>
+<ul>
+<li>제3자의 서비스를 사용할 수 있는 과정을 자동화로 처리<br><br></li>
+</ul>
+</li>
+</ol>
+<h3 id="2-OAUTH-용어"><a href="#2-OAUTH-용어" class="headerlink" title="2. OAUTH 용어"></a>2. OAUTH 용어</h3><ul>
+<li>Resource : 서비스 자원</li>
+</ul>
+<ol>
+<li>Resorce Owner : 소비자(Consumer)</li>
+<li>Resourse Server : 제 3자의 서비스</li>
+<li><mark>Client : 서비스를 소비하는 ‘나’(User)</mark></li>
+<li>Client ID : 나의 서비스를 그들의 사이트에 등록 후 발급 받는 ID (사업자번호와 같은것)</li>
+<li>Client SECRET : Client ID처럼 나의 비밀번호.<br> (공인인증서 같은것 - 절대 노출 되면 안됨!)<blockquote>
+<p>프론트에서 활용시 Client Secret을 사용하면 안된다!! 노출되기 쉽기 때문!</p>
+</blockquote>
+</li>
+</ol>
+<p><br></p>
+<h3 id="3-OAuth-인증-방법-3가지"><a href="#3-OAuth-인증-방법-3가지" class="headerlink" title="3. OAuth 인증 방법 3가지"></a>3. OAuth 인증 방법 3가지</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">방식</th>
+<th style="text-align:left">난이도</th>
+<th>활용도</th>
+<th>보안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">widget</td>
+<td style="text-align:left">배우기 쉬움</td>
+<td>자유롭지 않음</td>
+<td>안전</td>
+</tr>
+<tr>
+<td style="text-align:center">raw</td>
+<td style="text-align:left">배우기 쉬움</td>
+<td>완전 자유로움</td>
+<td>안전 X</td>
+</tr>
+<tr>
+<td style="text-align:center">library</td>
+<td style="text-align:left">배우기 어려움</td>
+<td>비교적 자유로움</td>
+<td>완전 안전</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="API-키"><a href="#API-키" class="headerlink" title="API 키"></a>API 키</h1><ul>
+<li><u>클라이언트(나)</u>와 <u>서비스 제공자</u> 사이에서 행해지는 것</li>
+<li>수동으로 ‘<strong>클라이언트인 내</strong>‘가 ‘<strong>서비스 제공자</strong>‘에게 키(패스워드)를 받아와서 사용함</li>
+<li>oauth 보다 훨씬 간편</li>
+<li>사용에 있어 제한적이고 보안이 취약하다!</li>
+</ul>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        <!--  -->
+
+<a href="/tags#강의노트">
+  <span class="tag-code">강의노트</span>
+</a>
+<!-- <span class="tag-code"></span> -->
+
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/15/etc/makdown/">
+        <span class="nav-arrow">← </span>
+        
+          Markdown
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/16/개발일기/0516_blogBuild/">
+        
+          0516 study
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/05/16/강의노트/oauth/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
