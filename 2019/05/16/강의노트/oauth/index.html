@@ -129,12 +129,14 @@
 <li>학습을 위해 가상의 서버가 필요 <a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb" target="_blank" rel="noopener">Web Server for Chrome</a></li>
 </ul>
 </blockquote>
+<hr>
 <h1 id="OAUTH"><a href="#OAUTH" class="headerlink" title="OAUTH"></a>OAUTH</h1><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/OpenIDvs.Pseudo-AuthenticationusingOAuth.svg/768px-OpenIDvs.Pseudo-AuthenticationusingOAuth.svg.png" alt="img"></p>
 <ul>
 <li>‘나의 사용자’의 인증을 통해 그들의 서비스를 대신 사용</li>
 </ul>
 <ol>
-<li>일반적 인증의 문제점 : ‘사용자’의 id,pwd =&gt; ‘나’의 db에 저장 =&gt; 사용자 대신 ‘그들의 서비스’ 사용 (ex. 구글캘린더에 사용자의 일정을 올림))<ul>
+<li><strong>일반적 인증의 문제점</strong> : ‘사용자’의 id,pwd -&gt; <em>‘나’의 db에 저장</em> -&gt; 사용자 대신 ‘그들의 서비스’ 사용<ul>
+<li>ex) 구글캘린더에 사용자의 일정을 올림</li>
 <li>심플하지만 보안이 취약!!<ol>
 <li>‘서비스제공자’ 입장에서 보안이 뚫렸다고 인식이 될 수 있다.</li>
 <li>만약 ‘나’에서 정보 유출이 되면 큰일난다!</li>
@@ -142,9 +144,9 @@
 </li>
 </ul>
 </li>
-<li><mark>해결책 <oauth></oauth></mark><ul>
-<li>id,pw 대신 서비스의 일부를 일정시간동안만 허용할 수 있는 <strong>권한을 부여</strong>해줌</li>
-<li><strong><em>임시 비밀번호 Access Token</em></strong> : ‘<strong>사용자</strong>‘가 id,pwd로 ‘<strong>서비스제공자</strong>‘에게 인증을 하면 ‘서비스제공자’는 ‘<strong>나</strong>‘에게 <u>임시 비밀번호</u>를 발급해줌</li>
+<li><mark><strong>해결책 OAuth</strong></mark><ul>
+<li>id,pw 대신 서비스의 일부를 일정 시간동안만 허용할 수 있는 <strong>권한을 부여</strong>해줌</li>
+<li><strong>임시 비밀번호 Access Token</strong> : ‘<strong>사용자</strong>‘가 id,pwd로 ‘<strong>서비스제공자</strong>‘에게 인증을 하면 ‘서비스제공자’는 ‘<strong>나</strong>‘에게 <u>임시 비밀번호</u>를 발급해줌</li>
 </ul>
 </li>
 </ol>
@@ -155,11 +157,11 @@
 </ul>
 </blockquote>
 <p><br></p>
-<h3 id="1-장점"><a href="#1-장점" class="headerlink" title="1. 장점"></a>1. 장점</h3><ol>
+<h3 id="1-OAuth-장점"><a href="#1-OAuth-장점" class="headerlink" title="1. OAuth 장점"></a>1. OAuth 장점</h3><ol>
 <li><p><strong>ACESS TOKEN</strong> : 임시 비밀번호를 발급해줌</p>
 <ul>
-<li>기능이 제한적 =&gt; 혹시 누출된다해도 문제가 크지 않음</li>
-<li>but, 보안에 대해서는 항상 중시해야 함 (ex. 서비스는 https를 사용을 지양)</li>
+<li>기능이 제한적 -&gt; 혹시 노출된다해도 문제가 크지 않음</li>
+<li>but, 보안에 대해서는 항상 중요시해야 함 (ex. 서비스는 https를 사용을 지향)</li>
 </ul>
 </li>
 <li><p><strong>자동화</strong> : 사용자 모르게 자동적으로 처리해줌</p>
@@ -176,17 +178,17 @@
 <li>Resourse Server : 제 3자의 서비스</li>
 <li><mark>Client : 서비스를 소비하는 ‘나’(User)</mark></li>
 <li>Client ID : 나의 서비스를 그들의 사이트에 등록 후 발급 받는 ID (사업자번호와 같은것)</li>
-<li>Client SECRET : Client ID처럼 나의 비밀번호.<br> (공인인증서 같은것 - 절대 노출 되면 안됨!)<blockquote>
-<p>프론트에서 활용시 Client Secret을 사용하면 안된다!! 노출되기 쉽기 때문!</p>
-</blockquote>
-</li>
+<li>Client SECRET : 나의 서비스를 그들의 사이트에 등록 후 발급 받는 비밀번호.<br>(공인인증서 같은것 -&gt; 절대 노출 되면 안됨!)</li>
 </ol>
+<blockquote>
+<p>프론트에서 활용시 <strong>Client Secret</strong>을 사용하면 안된다!! <u>노출되기 쉽기 때문!</u></p>
+</blockquote>
 <p><br></p>
 <h3 id="3-OAuth-인증-방법-3가지"><a href="#3-OAuth-인증-방법-3가지" class="headerlink" title="3. OAuth 인증 방법 3가지"></a>3. OAuth 인증 방법 3가지</h3><table>
 <thead>
 <tr>
 <th style="text-align:center">방식</th>
-<th style="text-align:left">난이도</th>
+<th>난이도</th>
 <th>활용도</th>
 <th>보안</th>
 </tr>
@@ -194,24 +196,25 @@
 <tbody>
 <tr>
 <td style="text-align:center">widget</td>
-<td style="text-align:left">배우기 쉬움</td>
+<td>배우기 쉬움</td>
 <td>자유롭지 않음</td>
 <td>안전</td>
 </tr>
 <tr>
 <td style="text-align:center">raw</td>
-<td style="text-align:left">배우기 쉬움</td>
+<td>배우기 쉬움</td>
 <td>완전 자유로움</td>
 <td>안전 X</td>
 </tr>
 <tr>
 <td style="text-align:center">library</td>
-<td style="text-align:left">배우기 어려움</td>
+<td>배우기 어려움</td>
 <td>비교적 자유로움</td>
 <td>완전 안전</td>
 </tr>
 </tbody>
 </table>
+<hr>
 <hr>
 <h1 id="API-키"><a href="#API-키" class="headerlink" title="API 키"></a>API 키</h1><ul>
 <li><u>클라이언트(나)</u>와 <u>서비스 제공자</u> 사이에서 행해지는 것</li>
@@ -240,10 +243,10 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/05/15/개발일기/0515_blogBuild/">
+      <a class="nav-left" href="/2019/05/15/Javascript/ajax(updating)/API/">
         <span class="nav-arrow">← </span>
         
-          0515 study
+          API
         
       </a>
     

@@ -122,27 +122,23 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="모듈패턴-Module-Pattern"><a href="#모듈패턴-Module-Pattern" class="headerlink" title="모듈패턴 (Module Pattern)"></a>모듈패턴 (Module Pattern)</h1><ul>
-<li>변수가 섞일 수 있기 때문에 전역변수는 지양한다! =&gt; 지역변수로 만들자!</li>
-</ul>
+    <section class="markdown-content"><h1 id="모듈패턴-Module-Pattern"><a href="#모듈패턴-Module-Pattern" class="headerlink" title="모듈패턴 (Module Pattern)"></a>모듈패턴 (Module Pattern)</h1><blockquote>
+<p>변수가 섞일 수 있기 때문에 전역변수는 지양한다! -&gt; 지역변수로 만들자!</p>
+</blockquote>
 <h2 id="1-네임-스페이스-Name-Space"><a href="#1-네임-스페이스-Name-Space" class="headerlink" title="1. 네임 스페이스 (Name Space)"></a>1. 네임 스페이스 (Name Space)</h2><ul>
 <li>누구나 접근이 가능하다. <strong>(Public)</strong></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>; <span class="comment">//전역변수</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// obj 네임스페이스</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  x: <span class="string">"local"</span>,</span><br><span class="line">  y: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x); <span class="comment">// x = local</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// 5</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.x); <span class="comment">// local</span></span><br><span class="line"></span><br><span class="line">obj.x = <span class="string">"global"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.x); <span class="comment">// global</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>누구나 PUBLIC하게 접근이 가능하기 때문에 값을 맘대로 바꿀 수 있다!<br>=&gt; 캡슐화로 해결</p>
-</blockquote>
+<p><code>누구나 PUBLIC하게 접근이 가능하기 때문에 값을 맘대로 바꿀 수 있다!</code><br><code>-&gt; 캡슐화로 해결</code><br><br></p>
 <h2 id="2-캡슐화-Private"><a href="#2-캡슐화-Private" class="headerlink" title="2. 캡슐화(Private)"></a>2. 캡슐화(Private)</h2><ul>
-<li>클로저, 스코프를 이용하자<ul>
+<li>클로저, 스코프를 이용하자!<ul>
 <li>외부 스코프는 내부 수코프에 접근하지 못한다.</li>
 </ul>
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">phone</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 변수 power : 지역 변수</span></span><br><span class="line">  <span class="keyword">var</span> power = <span class="string">"on"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">checkPower</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(power);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">playMusic</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"노래 실행"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// return을 통해 밖에서 checkPower와 playMusic을 사용할 수 있다.</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    checkPower: checkPower,</span><br><span class="line">    playMusic: playMusic</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> iphone = phone(); <span class="comment">//return 값</span></span><br><span class="line"></span><br><span class="line">iphone.playMusic(); <span class="comment">// '노래실행'</span></span><br><span class="line">iphone.checkPower(); <span class="comment">// on</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>power라는 변수를 모르더라도 던져준 함수만으로 power의 값을 확인 할 수 있다!</p>
-</blockquote>
-<h4 id="즉시실행함수"><a href="#즉시실행함수" class="headerlink" title="즉시실행함수"></a>즉시실행함수</h4><ul>
+<p><code>power라는 변수를 모르더라도 던져준 함수만으로 power의 값을 확인 할 수 있다!</code><br><br></p>
+<h3 id="3-즉시실행함수"><a href="#3-즉시실행함수" class="headerlink" title="3. 즉시실행함수"></a>3. 즉시실행함수</h3><ul>
 <li>phone의 기능들을 사용하기 위해 위의 코드와 같이 한번 return을 받은 후에 사용하는 단계를 <strong>즉시 실행 함수</strong>를 이용하면 줄일 수 있다!</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pF = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="string">"local"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getX</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    getX: getX</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pF); <span class="comment">// &#123;getX : f&#125;</span></span><br></pre></td></tr></table></figure>
@@ -176,9 +172,9 @@
       </a>
     
     
-      <a class="nav-right" href="/2019/04/26/vue/vue9(eventBus)/">
+      <a class="nav-right" href="/2019/04/26/개발일기/0426_blogBuild/">
         
-          9. Vue eventBus
+          0426 study
         
         <span class="nav-arrow"> →</span>
       </a>

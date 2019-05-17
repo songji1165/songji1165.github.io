@@ -122,50 +122,61 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="1-데이터-타입"><a href="#1-데이터-타입" class="headerlink" title="1. 데이터 타입"></a>1. 데이터 타입</h1><ul>
-<li>프로그래밍 언어에서 사용할 수 있는 데이터의 종류.</li>
-<li>자바스크립트는 동적타입언어 : 변수의 타입 지정없이 값이할당되는 과정에서 자동으로 변수의 타입이 결정된다.</li>
-<li><p>javascript는 <strong>원시타입과 객체참조타입</strong>이 있다.</p>
+    <section class="markdown-content"><h1 id="데이터-타입과-변수"><a href="#데이터-타입과-변수" class="headerlink" title="데이터 타입과 변수"></a>데이터 타입과 변수</h1><h3 id="1-데이터-타입"><a href="#1-데이터-타입" class="headerlink" title="1. 데이터 타입"></a>1. 데이터 타입</h3><blockquote>
 <ol>
-<li><p>원시타입 (primitive data type)</p>
-<ul>
+<li>프로그래밍 언어에서 사용할 수 있는 데이터의 종류.</li>
+<li>자바스크립트는 동적타입언어<ul>
+<li>변수의 타입 지정없이 값이 할당되는 과정에서 <strong>자동으로 변수의 타입이 결정</strong>된다.</li>
+</ul>
+</li>
+<li>javascript는 <strong>원시타입과 객체참조타입</strong>이 있다.</li>
+</ol>
+</blockquote>
+<h5 id="1-원시타입-primitive-data-type"><a href="#1-원시타입-primitive-data-type" class="headerlink" title="1. 원시타입 (primitive data type)"></a>1. 원시타입 (primitive data type)</h5><ol>
 <li>number : 1, 2, 3</li>
 <li>string : ‘a’,’1’</li>
 <li>boolean : true, false</li>
-<li><p><strong>undefined</strong> : 값이 없다. -&gt; 값이 선언 되었지만 값이 할당되지 않았다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line">alert(a); // undefined</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>null</strong> : 값이 없다. -&gt; 데이터 초기화(어떤한 값도 갖고 있지 않다.)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;a&quot;;</span><br><span class="line">a = null; // 해당 값을 제거함 (데이터 초기화)</span><br><span class="line">alert(a); //null</span><br></pre></td></tr></table></figure>
-</li>
+<li><strong>undefined</strong> : 값이 없다. -&gt; 값이 선언 되었지만 값이 할당되지 않았다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">alert(a); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><strong>null</strong> : 값이 없다. -&gt; 데이터 초기화(어떤한 값도 갖고 있지 않다.)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"a"</span>;</span><br><span class="line">a = <span class="literal">null</span>; <span class="comment">// 해당 값을 제거함 (데이터 초기화)</span></span><br><span class="line">alert(a); <span class="comment">//null</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
 <li><p>symbol(ES6) : 고유한 값 , 상징적인 값</p>
-</li>
-</ul>
 </li>
 <li><p>객체타입 (object)</p>
 <ul>
-<li>object : 원시 타입 외의 모든 값</li>
+<li>object : 원시 타입 외의 모든 값<br><br></li>
 </ul>
 </li>
 </ol>
-</li>
-</ul>
-<h1 id="2-변수"><a href="#2-변수" class="headerlink" title="2. 변수"></a>2. 변수</h1><ul>
+<h3 id="2-변수"><a href="#2-변수" class="headerlink" title="2. 변수"></a>2. 변수</h3><blockquote>
+<ol>
 <li>변수는 <strong>식별자</strong>이다.</li>
-<li>변수는 문자,숫자 등을 담는 <strong>그릇</strong>같다.(특수문자 제외 모든 문자 가능)<blockquote>
-<p>값을 담아놓는 공간, 메모리상의 주소이다.</p>
-</blockquote>
-</li>
-<li><p>변수는 <strong>코드의 재활용성</strong>을 높인다.</p>
-</li>
-<li><p>변수의 생성과정</p>
-</li>
+<li>변수는 문자,숫자 등을 담는 <strong>그릇</strong>같다</li>
+</ol>
+<ul>
+<li>특수문자 제외 모든 문자 가능</li>
+<li>값을 담아놓는 공간, 메모리상의 주소</li>
 </ul>
-<pre><code>1. 선언 단계 : 변수객체에 변수를 등록한다.
-2. 초기화 단계 : 변수객체에 등록된 변수를 메모리에 할당한다. (아직 메모리에는 값이 없기때문에 undefined로 초기화된다.)
-2. 할당 단계 : undefined로 초기화된 상태에서 값을 할당한다.
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a; //선언 + 초기화(var는 초기화가 같이 이루어짐)</span><br><span class="line">a = &apos;hi&apos;;//할당</span><br></pre></td></tr></table></figure>
-</code></pre></section>
+<ol start="3">
+<li>변수는 <strong>코드의 재활용성</strong>을 높인다.</li>
+</ol>
+</blockquote>
+<h5 id="1-변수의-생성과정"><a href="#1-변수의-생성과정" class="headerlink" title="1. 변수의 생성과정"></a>1. 변수의 생성과정</h5><ol>
+<li><strong>선언 단계</strong> : 변수객체에 변수를 등록한다.</li>
+<li><strong>초기화 단계</strong> : 변수객체에 등록된 변수를 메모리에 할당한다.</li>
+</ol>
+<ul>
+<li>아직 메모리에는 값이 없기때문에 undefined로 초기화된다.</li>
+</ul>
+<ol start="3">
+<li><strong>할당 단계</strong> : undefined로 초기화된 상태에서 값을 할당한다.</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a; <span class="comment">//선언 + 초기화(var는 초기화가 같이 이루어짐)</span></span><br><span class="line">a = <span class="string">"hi"</span>; <span class="comment">//할당</span></span><br></pre></td></tr></table></figure>
+</section>
     <!-- Tags START -->
     
       <div class="tags">
@@ -186,10 +197,10 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/08/Javascript/javacript1/">
+      <a class="nav-left" href="/2019/04/08/개발일기/0408_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          브라우저 동작원리
+          0408 study
         
       </a>
     

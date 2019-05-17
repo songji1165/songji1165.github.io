@@ -10,7 +10,7 @@
   
   <title>
     
-      0424 study | SONG
+      API | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,8 +113,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>0424 study</h2>
-  <p class="post-date">2019-04-24</p>
+  <h2>API</h2>
+  <p class="post-date">2019-05-15</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -122,19 +122,49 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
-<li>vue cli 폼 만들기</li>
-<li>vue study</li>
-<li>javascript this, dom, 모듈패턴</li>
+    <section class="markdown-content"><h1 id="API-application-Programming-Interface"><a href="#API-application-Programming-Interface" class="headerlink" title="API (application Programming Interface)"></a>API (application Programming Interface)</h1><blockquote>
+<ul>
+<li>프로그램이 동작하는 환경을 제어하기 위해서 환경에서 제공되는 조작 장치</li>
+<li>프로그래밍 언어를 통해 조작 할 수 있다.</li>
+<li><strong>다른 서버로부터 데이터를 손쉽게 가져올 수 있게 하는 수단</strong></li>
+</ul>
+</blockquote>
+<h2 id="API-예"><a href="#API-예" class="headerlink" title="- API 예"></a>- API 예</h2><h3 id="Geolocation-API"><a href="#Geolocation-API" class="headerlink" title="Geolocation API"></a>Geolocation API</h3><ul>
+<li>사용자의 위치정보를 얻을 수 있다.</li>
+<li><p>사용자의 권한이 필요하다.</p>
+</li>
+<li><p><strong>navigator.geolocation</strong> 객체 : .geolocation 객체를 통해 지오로케이션서비스를 사용할 수 있다.</p>
+</li>
+</ul>
+<ol>
+<li>.getCurrentPosition() : 사용자의 현재 위치를 알 수 있다.<ul>
+<li>사용자의 현재 위치를 탐지하는 비동기적 요청</li>
+<li>파라미터는 기복적인것과 추가로 2가지를 선택적으로 입력할 수 있다.<ol>
+<li><strong>첫번째 파라미터</strong> : 위치 탐지 성공 시 정의된 콜백함수 실행</li>
+<li>두번째 파라미터 : 위치 탐지 에러가 생길 경우 정의된 콜백함수 실행</li>
+<li>세번째 파라미터 : 옵션 객체<ul>
+<li>위치값이 반환된 최대 시간과 요청을 대기할 시간, 그리고 높은 정확도를 사용할 지 여부를 지정</li>
+</ul>
+</li>
 </ol>
-<h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><ol>
-<li>vue cli를 설문조사 폼을 완성하였다. input radio는 js의 원리를 이해하니 크게 어려운 부분이 아니었다.</li>
-<li>vue 계산기를 만들었던 것을 다른 사람들이 만든 것과 비교해보았다. 내가 만든 계산기는 재사용성이나 유지보수면에서는 좋지 않았던것 같다. Vue 컴포넌트는 이런 측면에서 장점이 더욱 높아지는 것이기 때문에 계산기를 다시 만들어보면서 연습해야겠다. 그리고 더욱 재사용성, 유지보수가 좋은 로직을 구성할 수 있도록 신중히 코딩을 해야겠다.</li>
+</li>
+</ul>
+</li>
 </ol>
-<h3 id="내일-할-것"><a href="#내일-할-것" class="headerlink" title="내일 할 것"></a>내일 할 것</h3><ol>
-<li>javascript 이론</li>
-<li>vue cli 계산기, 두더지 게임</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">geoSucess</span>) </span>&#123;&#125;,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">geoErr</span>) </span>&#123;&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>Coordinates.Position 객체 : 사용자의 위치는 position객체의 프로퍼티를 갖는다.<ul>
+<li>.coords : 현재 위치를 정의하는 객체(Coordinates 객체)</li>
+<li>position 객체<ul>
+<li>.coords.latitude : 위도 (소수점으로 표현)</li>
+<li>.coords.longitude : 경도 (소수점으로 표현)</li>
+<li>altitude,accuracy …</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(geoSuccess, geoErr);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">geoSuccess</span>(<span class="params">position</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(position.coords.latitude);</span><br><span class="line">  <span class="built_in">console</span>.log(position.coords.longitude);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">geoErr</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"err"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </section>
     <!-- Tags START -->
     
@@ -142,8 +172,8 @@
         <span>Tags:</span>
         <!--  -->
 
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
+<a href="/tags#javascript">
+  <span class="tag-code">javascript</span>
 </a>
 <!-- <span class="tag-code"></span> -->
 
@@ -156,17 +186,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/24/Javascript/javascript9(closure)/">
+      <a class="nav-left" href="/2019/05/15/개발일기/0515_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          자바스크립트 Closure
+          0515 study
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/25/개발일기/0425_blogBuild/">
+      <a class="nav-right" href="/2019/05/16/강의노트/oauth/">
         
-          0425 study
+          OAUTH
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -192,7 +222,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/24/개발일기/0424_blogBuild/';
+    var url = 'http://yoursite.com/2019/05/15/Javascript/ajax(updating)/API/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({

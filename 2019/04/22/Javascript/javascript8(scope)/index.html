@@ -122,23 +122,25 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="스코프-Scope"><a href="#스코프-Scope" class="headerlink" title="스코프 Scope"></a>스코프 Scope</h1><ul>
-<li>스코프 : javascrip의 유효범위</li>
-</ul>
+    <section class="markdown-content"><h1 id="스코프-Scope"><a href="#스코프-Scope" class="headerlink" title="스코프 Scope"></a>스코프 Scope</h1><blockquote>
+<p>스코프 : javascrip의 유효범위</p>
+</blockquote>
+<p><br></p>
 <h2 id="1-전역스코프-지역스코프"><a href="#1-전역스코프-지역스코프" class="headerlink" title="1. 전역스코프, 지역스코프"></a>1. 전역스코프, 지역스코프</h2><ul>
-<li>전역 스코프 ( 전역변수 , 전역함수 ) (Global) : 자바스크립트 어디에서나 사용 가능</li>
-<li>지역 스코프 ( 지역변수 , 지역함수 ) (Local) : <u>함수 코드 블록이 만든 스코프 영역에서만</u> 사용 가능</li>
+<li><strong>전역 스코프 ( 전역변수 , 전역함수 ) (Global)</strong> : 자바스크립트 어디에서나 사용 가능</li>
+<li><strong>지역 스코프 ( 지역변수 , 지역함수 ) (Local)</strong> : <u>함수 코드 블록이 만든 스코프 영역에서만</u> 사용 가능</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outerFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> inner = <span class="string">"var"</span>; <span class="comment">// 지역 변수</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">innerFuction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 지역 함수</span></span><br><span class="line">    코드;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="comment">//  outerFunction 함수 안에서 선언된 변수, 함수 : 지역변수, 지역함수</span></span><br><span class="line"></span><br><span class="line">outerFunction();</span><br><span class="line"><span class="comment">// outerFunction이 호출됨으로써 스코프 안의 지역 변수, 함수도 호출됨!</span></span><br><span class="line"></span><br><span class="line">innerFunction();</span><br><span class="line"><span class="comment">// 스코프 안의 지역변수, 지역함수는 그 안에서만 존재!!!</span></span><br><span class="line"><span class="comment">// innerFunction을 호출하지 못함</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
 <h2 id="2-스코프체인"><a href="#2-스코프체인" class="headerlink" title="2. 스코프체인"></a>2. 스코프체인</h2><ul>
-<li>프로토타입 체인과 같은 방식 : 아래에서 위로 찾아 나간다.</li>
+<li>프로토타입 체인과 같은 방식 : <strong>아래에서 위로</strong> 찾아 나간다.</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="string">"global"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 이때의 value는 local영역의 value가 없기 때문에 global 의 value 를 참조합니다.</span></span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">innerFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 이때도 마찬가지로 local에 value가 없기 때문에 global 의 value 를 참조합니다.</span></span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">    <span class="comment">// innerValue 라는 지역 변수 선언합니다.</span></span><br><span class="line">    <span class="keyword">var</span> innerValue = <span class="string">"local"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  innerFunc();</span><br><span class="line">&#125;</span><br><span class="line">outFunc();</span><br><span class="line"><span class="comment">// error: innerValue is not defined</span></span><br><span class="line"><span class="comment">// 외부에서 내부 스코프의 값을 참조할 수 없습니다. global 에서는 innerValue가 선언된 줄도 모르고 있습니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(innerValue);</span><br><span class="line"><span class="comment">//(3)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">  <span class="comment">// (2)</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">    <span class="comment">// (1)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> innerValue = <span class="string">"local"</span>;</span><br><span class="line">    <span class="comment">//inner함수 안에서만 참조 가능</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outter();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(innerValue);</span><br><span class="line"><span class="comment">// error : 지역변수는 스코프안에 갇혀 있기 때문에 참조 할 수 없다</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>(1) inner안에 value가 없기 때문에 위의 스코프 단위의 value를 찾는다.</li>
-<li>(2) outter안에 value가 없기 때문에 global영역의 value값을 가져오게 된다.</li>
-<li>(3) 전역변수 var value = <strong>“global”</strong> 의 값을 내뱉는다.</li>
-</ul>
+<ol>
+<li>inner안에 value가 없기 때문에 위의 스코프 단위의 value를 찾는다.</li>
+<li>outter안에 value가 없기 때문에 global영역의 value값을 가져오게 된다.</li>
+<li>전역변수 var value = <strong>“global”</strong> 의 값을 내뱉는다.<br><br></li>
+</ol>
 <blockquote>
 <p>console.dir(변수,함수 명)<br>: <code>[[Scope]]</code>에서 글로벌변수나 글로벌함수를 찾을 수 있다.</p>
 </blockquote>
@@ -163,10 +165,10 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/22/Javascript/javascript7(hoisting)/">
+      <a class="nav-left" href="/2019/04/22/Javascript/javascript10(DOM)/">
         <span class="nav-arrow">← </span>
         
-          자바스크립트 Hoisting
+          자바스크립트 DOM
         
       </a>
     
