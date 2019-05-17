@@ -6,16 +6,22 @@ tags: javascript
 
 # DOM (Document Object Model)
 
-- 브라우저의 렌더링 엔진이 HTML을 브라우저가 이해할 수 있는 구조로 메모리에 적재
-- 브라우저의 렌더링 엔진이 HTML의 계층적 구조를 브라우저가 이해할 수 있는 <u>객체</u>로 만들어 **트리구조(DOM TREE)**로 구조화
+> 1. 브라우저의 렌더링 엔진이 HTML을 브라우저가 이해할 수 있는 구조로 메모리에 적재
+> 2. 브라우저의 렌더링 엔진이 HTML의 계층적 구조를 브라우저가 이해할 수 있는 <u>객체</u>로 만들어 **트리구조(DOM TREE)**로 구조화
 
-```text
+<br>
+
+```html
 <!DOCTYPE html>
 <html>
   <head>
     <style>
-      .red  { color: #ff0000; }
-      .blue { color: #0000ff; }
+      .red {
+        color: #ff0000;
+      }
+      .blue {
+        color: #0000ff;
+      }
     </style>
   </head>
   <body>
@@ -34,9 +40,11 @@ tags: javascript
 
 ![DOMTREE](https://poiemaweb.com/img/dom-tree.png)
 
+<br>
+
 ## 1. DOM tree
 
-> Document Node, Element Node, Attribute Node, Text Node
+`Document Node, Element Node, Attribute Node, Text Node`
 
 1. 문서노드 (Document Node)
 
@@ -64,12 +72,14 @@ tags: javascript
    - DOM tree의 최종단
    - `안녕하세요`
 
+<br>
+
 ## 2. DOM 접근
 
 > 1. 조작하고자하는 요소를 선택, 탐색
 > 2. 선택된 요소의 콘텐츠 또는 어트리뷰트를 조작
 
-### 1. DOM 선택
+#### 1. DOM 선택
 
 ![DOM](https://poiemaweb.com/img/select-an-individual-element-node.png)
 
@@ -81,19 +91,21 @@ tags: javascript
    1. `document.getElementsByClassName('class')` (ie9)
    2. `document.getElementsByTagName('TagName')`
    3. `document.querySelectorAll(Selector)`
+      <br>
 
-### 2. DOM 탐색
+#### 2. DOM 탐색
 
 - DOM 선택 후
 
-1. `.parentNode`
-2. `.childNodes`
-3. `.firstChild`, `.lastChild`
-4. `.hasChildNodes()` : 자식 노드 있는지 확인 Boolean
-5. `.children` : child노드의 자식 노드의 컬렉션 반환 (IE9)
-6. `.previousSibling`, `.nextSibling` : 형제 노드 탐색(IE9)
+  1. `.parentNode`
+  2. `.childNodes`
+  3. `.firstChild`, `.lastChild`
+  4. `.hasChildNodes()` : 자식 노드 있는지 확인 Boolean
+  5. `.children` : child노드의 자식 노드의 컬렉션 반환 (IE9)
+  6. `.previousSibling`, `.nextSibling` : 형제 노드 탐색(IE9)
+     <br>
 
-### 3. DOM 조작
+#### 3. DOM 조작
 
 - DOM 선택/탐색 후
 
@@ -112,10 +124,11 @@ tags: javascript
    2. `document.createTextNode('text')`
    3. `document.appendchild('Node')`
    4. `document.removeChild('Node')`
+      <br>
 
 ## 3. STYLE
 
-- style 프로퍼티 : inline 스타일 선언을 생성, 지정
-- `document.getElementById('el').style.color = 'red'`
-- style 프로퍼니 값 취득 `window.getComputedStyle`
-  - `var width = window.getStyle(el, 'width')`
+1. style 프로퍼티 : inline 스타일 선언을 생성, 지정
+2. `document.getElementById('el').style.color = 'red'`
+3. style 프로퍼니 값 취득 `window.getComputedStyle`
+   - `var width = window.getStyle(el, 'width')`

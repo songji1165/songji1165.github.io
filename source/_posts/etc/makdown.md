@@ -6,7 +6,7 @@ tags: etc
 
 # Markdown
 
-> [마크다운 참고 링크 (클릭!)](https://support.squarespace.com/hc/en-us/articles/206543587-Markdown-cheat-sheet) > <br>
+> [마크다운 참고 링크 (클릭!)](https://support.squarespace.com/hc/en-us/articles/206543587-Markdown-cheat-sheet) <br>
 
 ## 1. 마크다운
 
@@ -103,7 +103,7 @@ sub도 사용가능!
 - [ ] 체크박스
 - [x] 체크박스
 
-      <br>
+<br>
 
 #### 7. 줄바꿈
 

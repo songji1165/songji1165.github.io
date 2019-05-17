@@ -6,12 +6,14 @@ tags: javascript
 
 # 스코프 Scope
 
-- 스코프 : javascrip의 유효범위
+> 스코프 : javascrip의 유효범위
+
+<br>
 
 ## 1. 전역스코프, 지역스코프
 
-- 전역 스코프 ( 전역변수 , 전역함수 ) (Global) : 자바스크립트 어디에서나 사용 가능
-- 지역 스코프 ( 지역변수 , 지역함수 ) (Local) : <u>함수 코드 블록이 만든 스코프 영역에서만</u> 사용 가능
+- **전역 스코프 ( 전역변수 , 전역함수 ) (Global)** : 자바스크립트 어디에서나 사용 가능
+- **지역 스코프 ( 지역변수 , 지역함수 ) (Local)** : <u>함수 코드 블록이 만든 스코프 영역에서만</u> 사용 가능
 
 ```js
 function outerFunction() {
@@ -31,9 +33,11 @@ innerFunction();
 // innerFunction을 호출하지 못함
 ```
 
+<br>
+
 ## 2. 스코프체인
 
-- 프로토타입 체인과 같은 방식 : 아래에서 위로 찾아 나간다.
+- 프로토타입 체인과 같은 방식 : **아래에서 위로** 찾아 나간다.
 
 ```js
 var value = "global";
@@ -75,9 +79,10 @@ console.log(innerValue);
 // error : 지역변수는 스코프안에 갇혀 있기 때문에 참조 할 수 없다
 ```
 
-- (1) inner안에 value가 없기 때문에 위의 스코프 단위의 value를 찾는다.
-- (2) outter안에 value가 없기 때문에 global영역의 value값을 가져오게 된다.
-- (3) 전역변수 var value = **"global"** 의 값을 내뱉는다.
+1. inner안에 value가 없기 때문에 위의 스코프 단위의 value를 찾는다.
+2. outter안에 value가 없기 때문에 global영역의 value값을 가져오게 된다.
+3. 전역변수 var value = **"global"** 의 값을 내뱉는다.
+   <br>
 
 > console.dir(변수,함수 명)
 > : `[[Scope]]`에서 글로벌변수나 글로벌함수를 찾을 수 있다.

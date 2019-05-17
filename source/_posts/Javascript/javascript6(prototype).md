@@ -6,25 +6,25 @@ tags: javascript
 
 # Prototype
 
-## 프로토타입이란
+> 1. Parent를 통해 만들어질 Child객체들에게 **정보를 전달**해주는 <u>연결에 대한 속성</u> (prototype property)
+> 2. Child객체를 만든 <u>Parent객체와 연결된 링크</u>를 알려주는 역할(prototype link)
 
-1. Parent를 통해 만들어질 Child객체들에게 **정보를 전달**해주는 <u>연결에 대한 속성</u> (prototype property)
-2. Child객체를 만든 <u>Parent객체와 연결된 링크</u>를 알려주는 역할(prototype link)
-
-> 프로토타입 => 자바스크립트가 **객체지향언어**라는 것에 중요한 역할
+`프로토타입 => 자바스크립트가 **객체지향언어**라는 것에 중요한 역할`
 
 > `_proto_` : 자신이 물려받은 prototype 속성
 
-### 상속 : 부모객체가 갖고 있는 속성(변수, 메소드)등을 물려받아 새로운 객체를 만들 수 있다.
+<br>
 
-- 자식 객체
+### 1. 상속 : 부모객체가 갖고 있는 속성(변수, 메소드)등을 물려받아 새로운 객체를 만들 수 있다.
 
-  - 부모 객체의 속성을 물려받을 수 있다.
-  - 자식 객체는 자신만의 새로운 속성을 갖을 수 있다.
+1. 자식 객체
 
-- 자바스크립트의 모든 객체는 자신의 부모 역할을 담당하는 객체와 prototype을 통해 연결되어 있다!
+- 부모 객체의 속성을 물려받을 수 있다.
+- 자식 객체는 자신만의 새로운 속성을 갖을 수 있다.
 
-> 모든 함수의 최상위 객체는 Object이다!!
+`자바스크립트의 모든 객체는 자신의 부모 역할을 담당하는 객체와 prototype을 통해 연결되어 있다!`
+
+`모든 함수의 최상위 객체는 Object이다!!`
 
 ```js
 // Person이라는 생성자 생성
@@ -61,10 +61,11 @@ document.write(p1.introduce());
 ```
 
 > 생성자 new : 생성자함수를 갖게 된다.
+> 생성자의 역할 : 생성자함수의 프로퍼티를 갖게 해준다.
 
-- 생성자의 역할 : 생성자함수의 프로퍼티를 갖게 해준다.
+<br>
 
-## prototyoe Chain
+## 2. prototyoe Chain
 
 ```js
 function Grand() {}
@@ -84,7 +85,7 @@ var song = new Child();
 console.log(song.exist);
 ```
 
-#### prototype chain 과정
+#### 1. prototype chain 과정
 
 - child -> parent -> grand -> Object
 
@@ -92,19 +93,19 @@ console.log(song.exist);
 
 2. 없다면 , new Child를 통해 부모가 Child라는 것을 알아낸다.
 
-- 이제, **부모의 속성을 상속받아 부모의 prototype에 접근**할 수 있다.
+   - 이제, **부모의 속성을 상속받아 부모의 prototype에 접근**할 수 있다.
 
 3. Child.prototype.exist를 찾는다.
 
 4. 없다면, new Parent를 통해 부모가 Parent라는 것을 알아낸다.
 
-- 이제, 부모의 속성을 상속받아 부모의 prototype에 접근할 수 있다.
+   - 이제, 부모의 속성을 상속받아 부모의 prototype에 접근할 수 있다.
 
 5. Parent.prototype.exist를 찾는다.
 
 6. 없다면, new Grand를 통해 부모가 Grand라는 것을 알아낸다.
 
-- 이제, 부모의 속성을 상속받아 부모의 prototype에 접근할 수 있다.
+   - 이제, 부모의 속성을 상속받아 부모의 prototype에 접근할 수 있다.
 
 7. Grand.prototyoe.exist를 찾는다.
 
