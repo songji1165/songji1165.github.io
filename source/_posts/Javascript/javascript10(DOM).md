@@ -129,6 +129,6 @@ tags: javascript
 ## 3. STYLE
 
 1. style 프로퍼티 : inline 스타일 선언을 생성, 지정
-2. `document.getElementById('el').style.color = 'red'`
-3. style 프로퍼니 값 취득 `window.getComputedStyle`
+    - `document.getElementById('el').style.color = 'red'`
+3. style 프로퍼티 값 취득 : `window.getComputedStyle`
    - `var width = window.getStyle(el, 'width')`
