@@ -126,9 +126,10 @@
 <ol>
 <li>원시타입을 제외한 모든 것은 객체이다.</li>
 <li><strong>키(key)</strong>와 <strong>값(value)</strong>로 구성된 속성(property)의 집합이다.</li>
-<li>데이터를 한 곳에 <strong>모으고 구조화</strong>하는데 유용하다.<br><br></li>
+<li>데이터를 한 곳에 <strong>모으고 구조화</strong>하는데 유용하다.</li>
 </ol>
 </blockquote>
+<p><br></p>
 <h3 id="1-객체의-속성-Property-과-메서드"><a href="#1-객체의-속성-Property-과-메서드" class="headerlink" title="1. 객체의 속성(Property)과 메서드"></a>1. 객체의 속성(Property)과 메서드</h3><ol>
 <li><strong>속성(property)</strong> : 데이터를 의미한다.<ul>
 <li><strong>key(속성명)</strong>와 <strong>value(속성값)</strong>으로 표현</li>
@@ -136,7 +137,7 @@
 </ul>
 </li>
 <li><strong>메서드(method)</strong> : 데이터를 참조하고 조작할 수 있는 동작을 의미한다.<ul>
-<li>객체에 제한되어 있는 <strong><em>함수 프로퍼티</em></strong>이다.</li>
+<li>객체에 제한되어 있는 <strong>함수 프로퍼티</strong>이다.</li>
 </ul>
 </li>
 </ol>
@@ -145,10 +146,11 @@
 <h3 id="2-객체-생성법"><a href="#2-객체-생성법" class="headerlink" title="2. 객체 생성법"></a>2. 객체 생성법</h3><blockquote>
 <ol>
 <li>리터럴방식 {}</li>
-<li>생성자 함수(사용자 정의 함수) =&gt; <strong>es6이전에 많이 사용 되었음</strong></li>
-<li>생성자 new Object() =&gt; 비추</li>
+<li>생성자 함수(사용자 정의 함수)<br>=&gt; <strong>es6이전에 많이 사용 되었음</strong></li>
+<li>생성자 new Object()<br>=&gt; 비추</li>
 </ol>
 </blockquote>
+<p><br></p>
 <h4 id="1-리터럴방식"><a href="#1-리터럴방식" class="headerlink" title="1. 리터럴방식"></a>1. 리터럴방식</h4><ul>
 <li>가장 일반적인 객체 생성 방식</li>
 <li>가독성이 좋고, 오류발생이 적다.</li>
@@ -156,7 +158,8 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;; <span class="comment">//빈 객체 생성</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">"song"</span>;</span><br><span class="line">obj.age = <span class="string">"20"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> obj); <span class="comment">// Object</span></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name:'song', age:'20'&#125;</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h4 id="2-생성자-함수-사용자-정의-함수"><a href="#2-생성자-함수-사용자-정의-함수" class="headerlink" title="2. 생성자 함수 (사용자 정의 함수)"></a>2. 생성자 함수 (사용자 정의 함수)</h4><ul>
-<li>모듈화에 많이 쓰인다 -&gt; 프로퍼티가 동일한 여러개의 객체를 간평하게 생성할 수 있다!<blockquote>
+<li><p>모듈화에 많이 쓰인다 -&gt; 프로퍼티가 동일한 여러개의 객체를 간평하게 생성할 수 있다!</p>
+<blockquote>
 <p>생성자 함수 특징</p>
 <ol>
 <li>생성자 함수 이름은 <strong><em>대문자</em></strong>로 시작 (생성자함수로 인식함)</li>
@@ -223,17 +226,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/14/vue/vue6(vueDirective)/">
+      <a class="nav-left" href="/2019/04/15/개발일기/0415_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          6. Vue 디렉티브
+          0415 study
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/15/개발일기/0415_blogBuild/">
+      <a class="nav-right" href="/2019/04/18/node.js/nodejs/">
         
-          0415 study
+          node.js란
         
         <span class="nav-arrow"> →</span>
       </a>

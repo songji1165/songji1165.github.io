@@ -138,12 +138,12 @@
 <li>i++ 후위증감연산자 : i이후 1을 더해 나감</li>
 <li>++i 전위증감연산자 : i+1을 해준 이후 1을 더해 나감<br><br></li>
 </ol>
-<h5 id="7-false로-간주되는-값"><a href="#7-false로-간주되는-값" class="headerlink" title="7. false로 간주되는 값"></a>7. <strong>false로 간주되는 값</strong></h5><ol>
-<li>‘’ : 빈 값</li>
-<li>undefined ,var a;(=undefined)</li>
-<li>null</li>
-<li>NaN (Not a Number)</li>
-<li>0<br><br></li>
+<h5 id="7-false로-간주되는-값"><a href="#7-false로-간주되는-값" class="headerlink" title="7. false로 간주되는 값"></a>7. <strong><mark>false로 간주되는 값</mark></strong></h5><ol>
+<li><strong>‘’</strong> : 빈 값</li>
+<li><strong>undefined ,var a;(=undefined)</strong></li>
+<li><strong>null</strong></li>
+<li><strong>NaN</strong> (Not a Number)</li>
+<li><strong>0</strong><br><br></li>
 </ol>
 <h3 id="2-조건문"><a href="#2-조건문" class="headerlink" title="2. 조건문"></a>2. 조건문</h3><h5 id="1-if-조건-boolean-만족하는-데이터가-여러개일-경우"><a href="#1-if-조건-boolean-만족하는-데이터가-여러개일-경우" class="headerlink" title="1. if(조건-boolean){} : 만족하는 데이터가 여러개일 경우"></a>1. if(<strong>조건-boolean</strong>){} : 만족하는 데이터가 여러개일 경우</h5><ul>
 <li>if(조건){true} else {false}</li>
@@ -151,14 +151,17 @@
 </ul>
 <h5 id="2-switch-선택문-여러-경우의-값-중-일치하는-데이터를-찾아-그-해당하는-코드를-실행"><a href="#2-switch-선택문-여러-경우의-값-중-일치하는-데이터를-찾아-그-해당하는-코드를-실행" class="headerlink" title="2. switch(선택문) : 여러 경우의 값 중 일치하는 데이터를 찾아 그 해당하는 코드를 실행"></a>2. switch(선택문) : 여러 경우의 값 중 일치하는 데이터를 찾아 그 해당하는 코드를 실행</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>()&#123;</span><br><span class="line">    <span class="keyword">case</span> 값<span class="number">1</span> : 코드값;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 값<span class="number">2</span> : 코드값;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h3 id="3-반복문"><a href="#3-반복문" class="headerlink" title="3. 반복문"></a>3. 반복문</h3><h5 id="1-while-조건-반복-실행할-코드"><a href="#1-while-조건-반복-실행할-코드" class="headerlink" title="1. while(조건){ 반복 실행할 코드}"></a>1. while(조건){ 반복 실행할 코드}</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i = i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-반복문"><a href="#3-반복문" class="headerlink" title="3. 반복문"></a>3. 반복문</h3><h5 id="1-while-조건-반복-실행할-코드"><a href="#1-while-조건-반복-실행할-코드" class="headerlink" title="1. while(조건){ 반복 실행할 코드}"></a>1. <code>while(조건){ 반복 실행할 코드}</code></h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i = i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h5 id="2-for-초기화-조건-검사-증감코드-반복-실행할-코드"><a href="#2-for-초기화-조건-검사-증감코드-반복-실행할-코드" class="headerlink" title="2. for(초기화; 조건 검사; 증감코드){ 반복 실행할 코드 }"></a>2. <strong>for</strong>(초기화; 조건 검사; 증감코드){ 반복 실행할 코드 }</h5><ul>
-<li>초기화 -&gt; 조건검사 -&gt; 실행 -&gt; 증감 과정을 거친다 <strong>=&gt;</strong> while문보다 느리다!</li>
+<h5 id="2-for-초기화-조건-검사-증감코드-반복-실행할-코드"><a href="#2-for-초기화-조건-검사-증감코드-반복-실행할-코드" class="headerlink" title="2. for( 초기화; 조건 검사; 증감코드; ){ 반복 실행할 코드 }"></a>2. <code>for( 초기화; 조건 검사; 증감코드; ){ 반복 실행할 코드 }</code></h5><ul>
+<li>초기화 -&gt; 조건검사 -&gt; 실행 -&gt; 증감 과정<br><strong>=&gt;</strong> while문보다 느리다!</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h5 id="3-do-반복-실행할-코드-while-조건-do가-무조건-한번-실행이-된후-조건에-따라-반복실행이-된다"><a href="#3-do-반복-실행할-코드-while-조건-do가-무조건-한번-실행이-된후-조건에-따라-반복실행이-된다" class="headerlink" title="3. do{ 반복 실행할 코드 } while (조건) : do가 무조건 한번 실행이 된후 조건에 따라 반복실행이 된다."></a>3. do{ 반복 실행할 코드 } while (조건) : do가 무조건 한번 실행이 된후 조건에 따라 반복실행이 된다.</h5></section>
+<h5 id="3-do-반복-실행할-코드-while-조건"><a href="#3-do-반복-실행할-코드-while-조건" class="headerlink" title="3. do{ 반복 실행할 코드 } while (조건)"></a>3. <code>do{ 반복 실행할 코드 } while (조건)</code></h5><ul>
+<li>do가 무조건 한번 실행이 된후 조건에 따라 반복실행</li>
+</ul>
+</section>
     <!-- Tags START -->
     
       <div class="tags">
@@ -187,9 +190,9 @@
       </a>
     
     
-      <a class="nav-right" href="/2019/04/08/Javascript/javacript1/">
+      <a class="nav-right" href="/2019/04/09/vue/vue1/">
         
-          브라우저 동작원리
+          1. Vue
         
         <span class="nav-arrow"> →</span>
       </a>

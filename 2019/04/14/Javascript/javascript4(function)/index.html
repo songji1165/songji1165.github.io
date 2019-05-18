@@ -127,42 +127,40 @@
 <li>어떠한 작업을 실행하기 위해 그룹화한 것</li>
 <li>함수를 쓰는 이유<ul>
 <li>코드의 재사용</li>
-<li>코드의 그룹화, 모듈화 -&gt; 가독성, 유지보수 또한 좋음<br><br></li>
+<li>코드의 그룹화, 모듈화 -&gt; 가독성, 유지보수 또한 좋음</li>
 </ul>
 </li>
 </ol>
 </blockquote>
-<h2 id="1-함수-선언문"><a href="#1-함수-선언문" class="headerlink" title="1. 함수 선언문"></a>1. 함수 선언문</h2><h4 id="1-함수-선언식-함수명을-써야-한다"><a href="#1-함수-선언식-함수명을-써야-한다" class="headerlink" title="1. 함수 선언식 : 함수명을 써야 한다."></a>1. 함수 선언식 : <u>함수명</u>을 써야 한다.</h4><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">name</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    name() <span class="comment">//자기자신을 호출할 수 있다.(재귀함수)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><p><br></p>
-<h4 id="2-함수-표현식-함수리터럴-다른-방법으로-함수를-표현한다"><a href="#2-함수-표현식-함수리터럴-다른-방법으로-함수를-표현한다" class="headerlink" title="2. 함수 표현식 ( 함수리터럴 ) : 다른 방법으로 함수를 표현한다."></a>2. 함수 표현식 ( 함수리터럴 ) : 다른 방법으로 함수를 표현한다.</h4><ul>
-<li><p><strong>변수</strong>에 함수를 넣음</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">// 익명함수 :함수명이 없는 것</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'함수리터럴'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="1-함수-선언문"><a href="#1-함수-선언문" class="headerlink" title="1. 함수 선언문"></a>1. 함수 선언문</h2><h4 id="1-함수-선언식"><a href="#1-함수-선언식" class="headerlink" title="1. 함수 선언식"></a>1. 함수 선언식</h4><ul>
+<li><p><u>함수명</u>을 써야 한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">name</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  name();</span><br><span class="line">  <span class="comment">// 자기자신을 호출할 수 있다. (재귀함수)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<h4 id="2-함수-표현식-함수리터럴"><a href="#2-함수-표현식-함수리터럴" class="headerlink" title="2. 함수 표현식 ( 함수리터럴 )"></a>2. 함수 표현식 ( 함수리터럴 )</h4><ul>
+<li><p><strong>변수</strong>에 함수를 넣는다.</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 익명함수 : 함수명이 없는 것</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'함수리터럴'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><br></p>
 <h4 id="3-Function-생산자-함수-잘-사용하지-않음"><a href="#3-Function-생산자-함수-잘-사용하지-않음" class="headerlink" title="3. Function 생산자 함수 (잘 사용하지 않음!)"></a>3. Function 생산자 함수 (잘 사용하지 않음!)</h4><p><br></p>
-<h1 id="2-자바스크립트-함수는-객체이다-일급객체"><a href="#2-자바스크립트-함수는-객체이다-일급객체" class="headerlink" title="2. 자바스크립트 함수는 객체이다. 일급객체!"></a>2. 자바스크립트 함수는 객체이다. <strong><em>일급객체</em></strong>!</h1><blockquote>
+<h2 id="2-자바스크립트-함수는-객체이다-일급객체"><a href="#2-자바스크립트-함수는-객체이다-일급객체" class="headerlink" title="2. 자바스크립트 함수는 객체이다. 일급객체!"></a>2. 자바스크립트 함수는 객체이다. 일급객체!</h2><blockquote>
 <p>일급객체</p>
 <ul>
-<li>생성, 대입, 연산, 인자 또는 반환값으로서의 전달 등 <u>프로그래밍언어의 기본적 조작을 제한없이 사용</u>할 수 있는 대상<br><br></li>
+<li>생성, 대입, 연산, 인자 또는 반환값으로서의 전달 등 <u>프로그래밍언어의 기본적 조작을 제한없이 사용</u>할 수 있는 대상</li>
 </ul>
 </blockquote>
-<h4 id="1-일급객체-특징"><a href="#1-일급객체-특징" class="headerlink" title="1. 일급객체 특징"></a>1. <strong>일급객체</strong> 특징</h4><ol>
-<li><u>함수리터럴</u>로 표현이 가능하다.</li>
-<li><u>변수나 자료구조(객체, 배열 등)에 저장</u>할 수 있다.</li>
-<li>함수의 <u>매개변수(Parameter)</u>에 전달할 수 있다.</li>
-<li><u>반환값(<strong>return</strong>)</u>으로 사용할 수 있다.</li>
+<p><br></p>
+<h4 id="1-일급객체-특징"><a href="#1-일급객체-특징" class="headerlink" title="1. 일급객체 특징"></a>1. 일급객체 특징</h4><ol>
+<li><strong>함수리터럴</strong>로 표현이 가능하다.</li>
+<li><strong>변수나 자료구조(객체, 배열 등)에 저장</strong>할 수 있다.</li>
+<li>함수의 <strong>매개변수(Parameter)</strong>에 전달할 수 있다.</li>
+<li><strong>반환값(return)</strong>으로 사용할 수 있다.</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 무명의 리터럴로 표현이 가능하다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 변수나 자료구조에 함수를 저장할 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"변수안에 함수 담았다."</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"메서드 : 객체 안에 담긴 함수."</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 함수를 매개변수로 전달할 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo2 = <span class="function"><span class="keyword">function</span>(<span class="params">para</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// para : 매개변수</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">console</span>.log(para);</span><br><span class="line">&#125;; <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">foo2(<span class="number">1</span>); <span class="comment">// foo2는 1이라는 인수(argument)를 통해 1이라는 값을 매개변수(Parameter)로 받게 된다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. return으로 사용할 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span> + <span class="number">1</span>;</span><br><span class="line">&#125;; <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ol>
-<li>파라미터는 <u>3개 이하</u>가 좋다!</li>
-<li><strong><em>Return</em></strong> : 함수는 return을 만나면 함수 밖으로 값을 내보낸다!</li>
-</ol>
-<ul>
-<li><u>함수에서 받아낸 값을 다시 사용해야하는 경우 return을 사용!!!</u></li>
-</ul>
-</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 무명의 리터럴로 표현이 가능하다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 변수나 자료구조에 함수를 저장할 수 있다.</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"변수안에 함수 담았다."</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"메서드 : 객체 안에 담긴 함수."</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 함수를 매개변수로 전달할 수 있다.</span></span><br><span class="line"><span class="keyword">var</span> foo2 = <span class="function"><span class="keyword">function</span>(<span class="params">para</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// para : 매개변수</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">console</span>.log(para);</span><br><span class="line">&#125;; <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">foo2(<span class="number">1</span>); <span class="comment">// foo2는 1이라는 인수(argument)를 통해 1이라는 값을 매개변수(Parameter)로 받게 된다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. return으로 사용할 수 있다.</span></span><br><span class="line"><span class="keyword">var</span> foo3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span> + <span class="number">1</span>;</span><br><span class="line">&#125;; <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p><code>1. 파라미터는 &lt;u&gt;3개 이하&lt;/u&gt;가 좋다!</code><br><code>2. **_Return_** : 함수는 return을 만나면 함수 밖으로 값을 내보낸다!</code><br><u><code>- 함수에서 받아낸 값을 다시 사용해야하는 경우 return을 사용!!!</code></u></p>
 <p><br></p>
 <h2 id="3-매개변수-Parameter-인자-vs-인수-Argument"><a href="#3-매개변수-Parameter-인자-vs-인수-Argument" class="headerlink" title="3. 매개변수(Parameter, 인자) vs 인수(Argument)"></a>3. 매개변수(Parameter, 인자) vs 인수(Argument)</h2><h4 id="1-매개변수-Paramenter"><a href="#1-매개변수-Paramenter" class="headerlink" title="1. 매개변수(Paramenter)"></a>1. 매개변수(Paramenter)</h4><ol>
 <li>함수에게 추가적인 정보가 필요할 경우 매개변수 사용</li>
@@ -178,12 +176,11 @@
 <li>함수에서 넘겨받는 실제 값</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params">p1, p2</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(p1, p2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 undefined</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>인수를 전달받지 못한 매개변수 : 값이 할당 되지않은 <strong>undefined</strong>가 됨<br><br></p>
-</blockquote>
-<h2 id="4-인수-Argument-vs-Rest-Parameter-ES6"><a href="#4-인수-Argument-vs-Rest-Parameter-ES6" class="headerlink" title="4. 인수 (Argument) vs Rest Parameter (ES6)"></a>4. 인수 (Argument) vs Rest Parameter (ES6)</h2><h4 id="1-인수-Argument-는-유사배열이다"><a href="#1-인수-Argument-는-유사배열이다" class="headerlink" title="1. 인수(Argument)는 유사배열이다"></a>1. 인수(Argument)는 <strong><em>유사배열</em></strong>이다</h4><ul>
+<p><code>인수를 전달받지 못한 매개변수 : 값이 할당 되지않은 **undefined**가 됨</code></p>
+<p><br></p>
+<h2 id="4-인수-Argument-vs-Rest-Parameter-ES6"><a href="#4-인수-Argument-vs-Rest-Parameter-ES6" class="headerlink" title="4. 인수 (Argument) vs Rest Parameter (ES6)"></a>4. 인수 (Argument) vs Rest Parameter (ES6)</h2><h4 id="1-인수-Argument-는-유사배열이다"><a href="#1-인수-Argument-는-유사배열이다" class="headerlink" title="1. 인수(Argument)는 유사배열이다"></a>1. 인수(Argument)는 <u>유사배열</u>이다</h4><ul>
 <li><strong>유사배열 객체</strong>(Array-like Object) : 일반 객체에 <strong>length</strong>라는 프로퍼티를 가진 객체</li>
-<li>하지만, <u>배열은 아니다</u> =&gt; .push()같은 배열 메소드는 사용할 수 없다!</li>
+<li>하지만, <u>배열은 아니다!!</u><br><code>=&gt; .push()같은 배열 메소드는 사용할 수 없다!</code></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i += <span class="number">1</span>) &#123;</span><br><span class="line">    result += argumnets[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// argument가 유사배열이기 때문에 .length와 arguments[i]를 사용할 수 있다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">// Arguments(5) [1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -222,9 +219,9 @@
       </a>
     
     
-      <a class="nav-right" href="/2019/04/14/vue/vue5(vueDOM).1/">
+      <a class="nav-right" href="/2019/04/14/개발일기/0414_blogBuild/">
         
-          5. Vue DOM
+          0414 study
         
         <span class="nav-arrow"> →</span>
       </a>

@@ -10,7 +10,7 @@
   
   <title>
     
-      브라우저 동작원리 | SONG
+      자바스크립트 특징 | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,7 +113,7 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>브라우저 동작원리</h2>
+  <h2>자바스크립트 특징</h2>
   <p class="post-date">2019-04-08</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -122,46 +122,54 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="브라우저의-동작원리"><a href="#브라우저의-동작원리" class="headerlink" title="브라우저의 동작원리"></a>브라우저의 동작원리</h1><ul>
-<li><p>참고 : <a href="http://d2.naver.com/helloworld/59361" target="_blank" rel="noopener">브라우저 동작 원리</a></p>
-</li>
-<li><p>브라우저의 주요 기능 : 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시</p>
+    <section class="markdown-content"><h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><h2 id="1-Javascript-기능"><a href="#1-Javascript-기능" class="headerlink" title="1. Javascript 기능"></a>1. Javascript 기능</h2><h5 id="1-웹-브라우저-제어"><a href="#1-웹-브라우저-제어" class="headerlink" title="1. 웹 브라우저 제어"></a>1. 웹 브라우저 제어</h5><ol>
+<li>window 인터페이스 제어</li>
+<li>DOM 제어</li>
+<li>서버와 비동기통신 제어(XMLHttpRequest)</li>
+<li>이벤트 처리</li>
+</ol>
+<h5 id="2-웹-서버-제어"><a href="#2-웹-서버-제어" class="headerlink" title="2. 웹 서버 제어"></a>2. 웹 서버 제어</h5><ol>
+<li>Node.js : 자바스크립트 실행 환경</li>
+</ol>
+<p><br></p>
+<h2 id="2-Javascript-특징"><a href="#2-Javascript-특징" class="headerlink" title="2. Javascript 특징"></a>2. Javascript 특징</h2><h4 id="1-인터프리터-언어이다"><a href="#1-인터프리터-언어이다" class="headerlink" title="1. 인터프리터 언어이다."></a>1. 인터프리터 언어이다.</h4><ol>
+<li><p><strong>인터프리터 언어</strong> : 소스코드를 한 줄씩 기계어로 번역해서 실행하는 프로그래밍 언어 ( Ruby, Python 등 ..)</p>
 <ul>
-<li>자원 : 보통 <strong>HTML문서</strong>이지만 PDF나 이미지, 다른 형태일 수 도 있다. - HTML과 CSS명세에 따라 HTML파일을 해석해서 표시한다.<br><br></li>
+<li>장점 : 프로그램을 바로 실행하고 동작을 확인 할 수 있다.</li>
+<li>단점 : 프로그램 실행시 컴파일 언어보다 느리다.<br><code>=&gt; JIT 컴파일러로 실행 속도가 향상 되어짐!!!</code></li>
 </ul>
 </li>
-</ul>
-<h3 id="1-브라우저의-기본-구조"><a href="#1-브라우저의-기본-구조" class="headerlink" title="1. 브라우저의 기본 구조"></a>1. 브라우저의 기본 구조</h3><p><img src="https://d2.naver.com/content/images/2015/06/helloworld-59361-1.png" alt="브라우저의 기본 구조"></p>
-<ol>
-<li>사용자 인터페이스 : HTML이 보여지는 화면을 제외 한 모든 부분(주소 표시줄, 이전/다음 페이지 등 ..)</li>
-<li>브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작 제어</li>
-<li>자료 저장소 : 모든 종류의 자원을 하드 디스크에 저장</li>
-<li>렌더링 엔진 : [rendering : 표현] 요청 받은 내용을 브라우저 화면에 표시해준다.</li>
-<li>통신 : HTTP요청과 같은 네트워크 호출에 사용</li>
-<li>자바스크립트 해석기 : 자바스크립트 코드를 해석하고 실행</li>
-<li>UI 백엔드 : 렌더트리의 형상을 만들어 내는 그리기 과정을 실행<br><br></li>
-</ol>
-<h3 id="2-렌더링-엔진은"><a href="#2-렌더링-엔진은" class="headerlink" title="2. 렌더링 엔진은"></a>2. <strong>렌더링 엔진은</strong></h3><ol>
-<li><strong>통신</strong>으로부터 요청한 문서를 얻어</li>
-<li>렌더링 과정을 통해 <strong>렌더트리</strong>를 생성</li>
-<li>렌더트리를 통해 <strong>UI백엔드</strong>로 그리기 과정을 실행한다.<br><img src="https://d2.naver.com/content/images/2015/06/helloworld-59361-2.png" alt="렌더링엔진 동작 과정"><br><code>렌더트리 : 스타일정보(CSS)와 HTML표시 규칙</code></li>
-<li><strong>파싱</strong> : 렌더링 엔진에서 중요한 과정<br>브라우저가 코드를 이해하고 사용할 수 있는 구조로 변환하는 것<br><br></li>
-</ol>
-<h3 id="3-브라우저-동작-과정"><a href="#3-브라우저-동작-과정" class="headerlink" title="3. 브라우저 동작 과정"></a>3. <strong>브라우저 동작 과정</strong></h3><p><img src="https://d2.naver.com/content/images/2015/06/helloworld-59361-3.png" alt="자바스트립트 동작 원리"></p>
-<ol>
-<li><p>(html문서 -&gt; html파서) + (css문서 -&gt; css파서) =&gt; 렌더링 트리</p>
-<ol>
-<li><strong>html파서 (html 문서 해석기)</strong> :<br>html파서를 통해 html문서를 읽은 후 DOM트리를 형성 함.</li>
-<li><strong>css 파서 (css 문서 해석기)</strong> :<br>css는 html에 시각적인 스타일을 입히기 위한 파일로 css파서를 통해 브라우저용 스타일 데이터로 만들어 줌.</li>
-<li><strong>렌더링 트리</strong> : 페이지에 렌더링<br>즉, html문서와 css문서를 시각적인 구성요소로 트리 내용 순서대로 페이지를 그려냄</li>
-</ol>
-</li>
-<li><p><strong><em>javascript는 렌더링 엔진이 아닌 javascript엔진에서 처리 됨</em></strong></p>
+<li><p>컴파일 언어 : 기계어로 번역 후 실행하는 프로그래밍 언어 (C, C++, Java 등..)</p>
 <ul>
-<li><strong>sctipt태그는 맨 끝에 위치하는 것이 좋은 이유</strong> : html파서가 중간에 javascript를 만나면 javascript엔진으로 넘어가서 DOM생성을 중지하게 된다!</li>
+<li>장점 : 실행 속도가 빠르다.</li>
+<li>단점 : 컴파일 속도가 느리다.<br><br></li>
 </ul>
 </li>
 </ol>
+<h4 id="2-프로토타입기반-객체-지향-언어이다"><a href="#2-프로토타입기반-객체-지향-언어이다" class="headerlink" title="2. 프로토타입기반 객체 지향 언어이다."></a>2. 프로토타입기반 객체 지향 언어이다.</h4><ol>
+<li>프로토타입을 상속하는 프로토 타입 기반 객체 지향 언어</li>
+<li>객체 생성 후에도 프로퍼티, 메서드를 동적으로 추가, 삭제 가능<blockquote>
+<ol>
+<li>절차 지향 언어 : 순서대로 데이터 처리</li>
+<li>객체 지향 언어 : 객체 단위로 데이터 처리</li>
+<li>함수형 언어 : 함수를 조합하여 구현</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<p><br></p>
+<h4 id="3-동적-타입-언어이다"><a href="#3-동적-타입-언어이다" class="headerlink" title="3. 동적 타입 언어이다."></a>3. 동적 타입 언어이다.</h4><ol>
+<li>변수 타입이 없다.</li>
+<li>변수 할당 과정에서 데이터 타입이 결정된다. <ul>
+<li>자바스크립트에서 변수 타입은 동적으로 바뀔 수 있다.<br><br><h4 id="4-일급객체-함수이다"><a href="#4-일급객체-함수이다" class="headerlink" title="4. 일급객체 함수이다."></a>4. 일급객체 함수이다.</h4></li>
+</ul>
+</li>
+<li>자바스크립트 함수는 객체이다.</li>
+<li>함수에 다른 함수를 인수로 넘길 수 있다  -&gt; <u>고차 함수 구현 가능</u><br><br><h4 id="5-함수가-클로져를-정의한다"><a href="#5-함수가-클로져를-정의한다" class="headerlink" title="5. 함수가 클로져를 정의한다."></a>5. 함수가 클로져를 정의한다.</h4></li>
+</ol>
+<ul>
+<li>함수가 입력될 때!  <strong>SCOPE(범위)가 지정</strong>된다.</li>
+</ul>
 </section>
     <!-- Tags START -->
     
@@ -183,17 +191,10 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/08/Javascript/javascript3/">
-        <span class="nav-arrow">← </span>
-        
-          자바스크립트 연산자와 조건문, 반복문
-        
-      </a>
     
-    
-      <a class="nav-right" href="/2019/04/09/개발일기/0409_blogBuild/">
+      <a class="nav-right" href="/2019/04/08/개발일기/firts/">
         
-          0409 study
+          블로그 시작
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -219,7 +220,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/08/Javascript/javacript1/';
+    var url = 'http://yoursite.com/2019/04/08/Javascript/javascript0/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
