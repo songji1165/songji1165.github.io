@@ -79,8 +79,10 @@ sub도 사용가능!
 ![gif](/images/연습.gif)
 
 ==============
-이미지에 링크
+1. 이미지 크기조절
+<img src="링크" width="300" height="300">
 
+2.이미지에 링크
 [![Vue](/images/vue.png)](https://kr.vuejs.org/)
 ```
 

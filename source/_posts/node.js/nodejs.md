@@ -46,7 +46,7 @@ tags: node.js
    3. `node 파일이름.js`
       js파일을 실행시켜서 런타임 환경에서 보여준다.
 
-### url 구조
+### rest API : url 구조
 
 `http://opentutorials.org:3000/main?id=HTML&page=12`
 
