@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 Module Pattern
+title: Javascript Module Pattern
 date: 2019-04-25 16:07:12
 tags: javascript
 ---

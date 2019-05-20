@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 Scope
+title: Javascript Scope
 date: 2019-04-22 16:07:12
 tags: javascript
 ---

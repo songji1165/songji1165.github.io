@@ -1,6 +1,6 @@
 ---
-title: 자바스크립트 특징
-date: 2019-04-08 06:07:12
+title: Javascript 특징
+date: 2019-04-08 06:27:12
 tags: javascript
 ---
 

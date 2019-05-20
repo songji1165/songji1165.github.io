@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 데이터타입과 변수
+title: Javascript 데이터타입과 변수
 date: 2019-04-08 16:07:12
 tags: javascript
 ---

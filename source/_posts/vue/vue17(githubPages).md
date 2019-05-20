@@ -24,7 +24,7 @@ tags: Vue
 
 `github 저장소에 소스코드가 올려진 repositories 기준`
 
-<img src="../../images/vueclipages.jpg" width="300">
+<img src="/images/vueclipages.jpg" width="300">
 
 <br>
 
@@ -51,7 +51,7 @@ module.exports = {
 #### 4. .gitignore 파일에서 <mark>/dist</makr>를 주석 처리
 
 - dist 파일을 버전관리하기 위함
-  <img src="../../images/pagesdist.jpg" width="200">
+  <img src="/images/pagesdist.jpg" width="200">
   > dist (distribute) 파일
   >
   > - 배포될 파일들이 들어 있는 디렉토리
@@ -93,6 +93,6 @@ git subtree push --prefix dist origin gh-pages
 
 #### 8. 밑으로 스크롤 하여 '_GitHub Pages_'의 source를 <mark>'gh-pages branch'</mark>로 변경
 
-<img src="../../images/distsucc.jpg" width="300">
+<img src="/images/distsucc.jpg" width="300">
 
 #### gh-pages branch로 변경하면 (2)에 url이 나타나면 배포 성공!

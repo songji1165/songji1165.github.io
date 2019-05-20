@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 연산자와 조건문, 반복문
+title: Javascript 연산자와 조건문, 반복문
 date: 2019-04-08 16:17:12
 tags: javascript
 ---

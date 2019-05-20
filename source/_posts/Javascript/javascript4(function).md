@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 함수 Function
+title: Javascript 함수 Function
 date: 2019-04-14 16:07:12
 tags: javascript
 ---

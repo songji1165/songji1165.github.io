@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트 객체 Object
+title: Javascript 객체 Object
 date: 2019-04-15 16:07:12
 tags: javascript
 ---
