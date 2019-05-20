@@ -10,7 +10,7 @@
   
   <title>
     
-      0515 study | SONG
+      16. Vue Cli Github Pages | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,8 +113,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>0515 study</h2>
-  <p class="post-date">2019-05-15</p>
+  <h2>16. Vue Cli Github Pages</h2>
+  <p class="post-date">2019-05-19</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -122,28 +122,72 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
-<li>OAUTH 세미나</li>
-<li>vue study</li>
+    <section class="markdown-content"><h1 id="Vue-Cli-Github-Pages"><a href="#Vue-Cli-Github-Pages" class="headerlink" title="Vue Cli Github Pages"></a>Vue Cli Github Pages</h1><blockquote>
+<p><a href="https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd" target="_blank" rel="noopener">Vue Cli Github Pages </a>(참고)</p>
+</blockquote>
+<p><br></p>
+<h2 id="1-Github-Pages"><a href="#1-Github-Pages" class="headerlink" title="1. Github Pages"></a>1. Github Pages</h2><ol>
+<li>github에서 제공하는 사이트 호스팅 서비스<ul>
+<li>github repositories의 소스코드를 기반으로 웹사이트 생성</li>
+</ul>
+</li>
+<li>커스텀 url을 무료 제공<ul>
+<li>웹사이트 기본 url : <code>https://UserName.github.io</code></li>
+</ul>
+</li>
+<li>서버쪽 코드는 제공되지 않음!</li>
 </ol>
-<h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><ol>
-<li>세미나 참석 전에는 api를 사용하기 위해서 필요한게 oauth구나라고 막연한게만 생각하였는데, 내가 사용하는 인증방식인 api키와 oauth인증 방식이 다르다는 것을 세미나를 통해 확실히 알게 되었다.</li>
-<li>스터디 프로젝트 일차 피드백을 통해 단순 레이아웃 컴포넌트 분리만이 아닌 기능별 컴포넌트 분리가 필요하다는 것을 알게 되었다. 특히 트렐로는 중복되는 버튼 등이 많기 때문에 이를 하나의 컴포넌트로 만든다면 유용하고 편리하게 쓰일 수 있을 것이다.</li>
+<p><br></p>
+<h2 id="2-Vue-Cli-프로젝트를-Github-Pages로-배포하기"><a href="#2-Vue-Cli-프로젝트를-Github-Pages로-배포하기" class="headerlink" title="2. Vue Cli 프로젝트를 Github Pages로 배포하기"></a>2. Vue Cli 프로젝트를 Github Pages로 배포하기</h2><p><code>github 저장소에 소스코드가 올려진 repositories 기준</code></p>
+<p><img src="../../images/vueclipages.jpg" width="300"></p>
+<p><br></p>
+<h4 id="1-Vue-Cli-프로젝트에-새로운-브랜치-‘gh-pages’-생성"><a href="#1-Vue-Cli-프로젝트에-새로운-브랜치-‘gh-pages’-생성" class="headerlink" title="1. Vue Cli 프로젝트에 새로운 브랜치 ‘gh-pages’ 생성"></a>1. Vue Cli 프로젝트에 새로운 브랜치 ‘gh-pages’ 생성</h4><pre><code>`git checkout -b gh-pages`
+</code></pre><p><br></p>
+<h4 id="2-프로젝트-루트-디렉토리에-새로운-파일-‘vue-config-js’-추가"><a href="#2-프로젝트-루트-디렉토리에-새로운-파일-‘vue-config-js’-추가" class="headerlink" title="2. 프로젝트 루트 디렉토리에 새로운 파일 ‘vue.config.js’ 추가"></a>2. 프로젝트 루트 디렉토리에 새로운 파일 <mark>‘vue.config.js’</mark> 추가</h4><p><br></p>
+<h4 id="3-vue-config-js에-다음과-같이-작성"><a href="#3-vue-config-js에-다음과-같이-작성" class="headerlink" title="3. vue.config.js에 다음과 같이 작성"></a>3. vue.config.js에 다음과 같이 작성</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  publicPath: <span class="string">"/pages"</span></span><br><span class="line">  <span class="comment">// 프로젝트 이름 쓰기</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="4-gitignore-파일에서-dist를-주석-처리"><a href="#4-gitignore-파일에서-dist를-주석-처리" class="headerlink" title="4. .gitignore 파일에서 /dist를 주석 처리"></a>4. .gitignore 파일에서 <mark>/dist를 주석 처리</mark></h4><ul>
+<li>dist 파일을 버전관리하기 위함<br><img src="../../images/pagesdist.jpg" width="200"><blockquote>
+<p>dist (distribute) 파일</p>
+<ul>
+<li>배포될 파일들이 들어 있는 디렉토리</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><br></p>
+<h4 id="5-dist-파일-생성"><a href="#5-dist-파일-생성" class="headerlink" title="5. dist 파일 생성"></a>5. dist 파일 생성</h4><p><code>npm run dist</code></p>
+<p><br></p>
+<h4 id="6-subtree로-작업하기"><a href="#6-subtree로-작업하기" class="headerlink" title="6. subtree로 작업하기"></a>6. subtree로 작업하기</h4><blockquote>
+<p><a href="https://select995.netlify.com/git/git-subtree" target="_blank" rel="noopener">subtree참고 페이지</a></p>
+<ul>
+<li><strong>subtree</strong> : 한 저장소에 여러 저장소를 통합하는 개념<ul>
+<li>장점 : 한 저장소에서 여러 저장소를 통합 관리할 수 있다.</li>
+<li>단점 : Subtree Push를 하려면 –prefix 옵션을 사용해야 한다. (하위 저장소의 경로를 기억해야 한다.)</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ol>
+<li><p>dist 파일의 존재를 git에게 알리기 1. <code>git add dist</code> 2. <code>git commit -m &quot;Initial dist subtree commit&quot;</code><br><br></p>
+</li>
+<li><p><strong>git subtree 추가</strong></p>
+</li>
 </ol>
-<h3 id="내일-할-것"><a href="#내일-할-것" class="headerlink" title="내일 할 것"></a>내일 할 것</h3><ol>
-<li>프로젝트(VueStudy Trello)</li>
-<li>프로젝트(weather)</li>
-<li>OAUTH 이론 정리</li>
-</ol>
-</section>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git subtree push --prefix dist origin gh-pages</span><br><span class="line"></span><br><span class="line"> // -&gt; dist 디렉토리를 gh-pages브랜치에 push 함</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="7-github-저장소에서-‘settings‘으로-이동"><a href="#7-github-저장소에서-‘settings‘으로-이동" class="headerlink" title="7. github 저장소에서 ‘settings‘으로 이동"></a>7. github 저장소에서 ‘<em>settings</em>‘으로 이동</h4><p><img src="https://cdn-images-1.medium.com/max/1200/1*OtBpNJyBls1kEjQIDDXhqA.png" alt="img"></p>
+<p><br></p>
+<h4 id="8-밑으로-스크롤-하여-‘GitHub-Pages‘의-source를-‘gh-pages-branch’로-변경"><a href="#8-밑으로-스크롤-하여-‘GitHub-Pages‘의-source를-‘gh-pages-branch’로-변경" class="headerlink" title="8. 밑으로 스크롤 하여 ‘GitHub Pages‘의 source를 ‘gh-pages branch’로 변경"></a>8. 밑으로 스크롤 하여 ‘<em>GitHub Pages</em>‘의 source를 <mark>‘gh-pages branch’</mark>로 변경</h4><p><img src="../../images/distsucc.jpg" width="300"></p>
+<h4 id="gh-pages-branch로-변경하면-2-에-url이-나타나면-배포-성공"><a href="#gh-pages-branch로-변경하면-2-에-url이-나타나면-배포-성공" class="headerlink" title="gh-pages branch로 변경하면 (2)에 url이 나타나면 배포 성공!"></a>gh-pages branch로 변경하면 (2)에 url이 나타나면 배포 성공!</h4></section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         <!--  -->
 
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
+<a href="/tags#Vue">
+  <span class="tag-code">Vue</span>
 </a>
 <!-- <span class="tag-code"></span> -->
 
@@ -156,17 +200,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/05/15/etc/makdown/">
+      <a class="nav-left" href="/2019/05/18/node.js/환경변수/">
         <span class="nav-arrow">← </span>
         
-          Markdown
+          환경변수관리 dotenv
         
       </a>
     
     
-      <a class="nav-right" href="/2019/05/15/Javascript/ajax(updating)/API/">
+      <a class="nav-right" href="/2019/05/19/개발일기/0519_blogBuild/">
         
-          API
+          0519 study
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -192,7 +236,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/05/15/개발일기/0515_blogBuild/';
+    var url = 'http://yoursite.com/2019/05/19/vue/vue17(githubPages)/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
