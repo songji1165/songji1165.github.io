@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="나만의 개발 블로그">
+  <meta name="keyword" content="javascript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Javascript Promise (es6) | SONG
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>SONG</span>
+    </a>
+    <ul class="right-list">
+      
+      <li class="list-item">
+        
+        <a href="/tags/" class="item-link">Menu</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/archives/" class="item-link">Archives</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/about/" class="item-link">About</a>
+        
+      </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+        <li class="menu-item">
+          
+          <a href="/tags/" class="menu-link">Menu</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/archives/" class="menu-link">Archives</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/about/" class="menu-link">About</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>Javascript Promise (es6)</h2>
+  <p class="post-date">2019-05-20</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Promise-ES6"><a href="#Promise-ES6" class="headerlink" title="Promise ( ES6 )"></a>Promise ( ES6 )</h1><blockquote>
+<p><mark>비동기 처리를 동기적으로 처리할 수 있게 한다!</mark></p>
+</blockquote>
+<p><br></p>
+<h3 id="1-비동기-처리의-예"><a href="#1-비동기-처리의-예" class="headerlink" title="1. 비동기 처리의 예"></a>1. 비동기 처리의 예</h3><ol>
+<li><strong>setTimeout</strong></li>
+<li><strong>addEventLitener</strong></li>
+<li><strong>XMLHttpRequest</strong></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"1"</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"2"</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"3"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>콘솔 창에는 1 , 3 , 2 가 찍힌다!</code></p>
+<h5 id="gt-비동기-처리의-실행-순서를-제어하기-위해-콜백함수-중첩-실행"><a href="#gt-비동기-처리의-실행-순서를-제어하기-위해-콜백함수-중첩-실행" class="headerlink" title="=&gt; 비동기 처리의 실행 순서를 제어하기 위해 콜백함수 중첩 실행"></a>=&gt; 비동기 처리의 실행 순서를 제어하기 위해 <u>콜백함수 중첩</u> 실행</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hell</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hell(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"1"</span>);</span><br><span class="line"></span><br><span class="line">  hell(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"2"</span>);</span><br><span class="line"></span><br><span class="line">    hell(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"3"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1 , 2 , 3</span></span><br></pre></td></tr></table></figure>
+<p><code>콜백 헬 : 콜백함수를 여러개 중첩하면 작업 내용 이해가 어려움! 에러시 예외 처리가 어려움!</code></p>
+<hr>
+<h2 id="2-Promise"><a href="#2-Promise" class="headerlink" title="2. Promise"></a>2. Promise</h2><ul>
+<li>콜백 헬를 해결할 수 있다!</li>
+<li><mark>비동기 처리를 동기적으로 처리하기 위한 라이브러리</mark><ul>
+<li>Promise에서 비동기 처리를 실행하고, 그 처리가 끝난 후 다음 처리를 실행할 수 있게 한다!(resolve, reject)</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-Promise-객체-생성"><a href="#1-Promise-객체-생성" class="headerlink" title="1. Promise 객체 생성"></a>1. Promise 객체 생성</h4><p><code>var promise = new Promise( resolve, reject ) { ... }</code></p>
+<ul>
+<li>Promise를 종료시키는 콜백함수<ol>
+<li>resolve : 함수 안의 처리가 성공적으로 끝났을 때 호출되는 콜백함수</li>
+<li>reject : 함수 안의 처리가 실패했을 때 호출되는 콜백함수</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-resolve-함수-then-메서드"><a href="#2-resolve-함수-then-메서드" class="headerlink" title="2. resolve 함수 + then 메서드"></a>2. resolve 함수 + then 메서드</h4><ul>
+<li>resolve 함수의 인수 값은 then 메서드에 인수로 전달되어 처리한다.</li>
+</ul>
+<h4 id="3-reject-함수-catch-메서드"><a href="#3-reject-함수-catch-메서드" class="headerlink" title="3. reject 함수 + catch 메서드"></a>3. reject 함수 + catch 메서드</h4><ul>
+<li>reject 함수의 인수 값은 catch 메서드에 인수로 전달되어 처리한다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(resolve, reject)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="built_in">parseInt</span>(prompt(<span class="string">"5미만의 숫자 입력"</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">5</span>)&#123;</span><br><span class="line">      resolve(num)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      reject(<span class="string">`숫자 <span class="subst">$&#123;num&#125;</span>은 오류입니다. 5미만으로 입력해주세요.`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promise</span><br><span class="line">.then(</span><br><span class="line">  funtion(num)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>catch</strong> 메서드 대신 <strong>.then에 두번째 인자</strong>로 사용할 수 있다!</p>
+</blockquote>
+<p><br></p>
+<h4 id="4-Promise의-콜백함수에-새로운-인수-넣기"><a href="#4-Promise의-콜백함수에-새로운-인수-넣기" class="headerlink" title="4. Promise의 콜백함수에 새로운 인수 넣기"></a>4. Promise의 콜백함수에 새로운 인수 넣기</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// money에 다양한 인자를 넣을 수 있다!!</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">buy</span>(<span class="params">money</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">res, rej</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pay = <span class="built_in">parseInt</span>(prompt(<span class="string">"지불할 금액"</span>));</span><br><span class="line">    <span class="keyword">var</span> balance = money - pay;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (balance &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      res(balance);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      rej(<span class="string">`잔액은 <span class="subst">$&#123;money&#125;</span>입니다. 구매할 수 없습니다.`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">buy(<span class="number">500</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">balance</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`잔액은 <span class="subst">$&#123;balance&#125;</span>입니다.`</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="5-Promise-all-메서드"><a href="#5-Promise-all-메서드" class="headerlink" title="5. Promise.all 메서드"></a>5. Promise.all 메서드</h4><ul>
+<li>Primise.all 안의 <strong>모든 비동기 처리가 성공적으로 끝나야</strong> Promise가 종료되고 <strong>다음 작업</strong>이 이루어진다!</li>
+<li><code>Promise.all([Array])</code><ol>
+<li><strong>resolve</strong> : Array의 value가 담긴 <strong>response 배열</strong>을 받음</li>
+<li><strong>reject</strong> : <strong>가장 먼저 실패한</strong> reject 함수의 인수를 받음</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">3000</span>)),</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>), <span class="number">2000</span>)),</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>), <span class="number">1000</span>))</span><br><span class="line">])</span><br><span class="line">  .then(<span class="built_in">console</span>.log) <span class="comment">// 3초 뒤에 resolved [ 1, 2, 3 ]</span></span><br><span class="line">  .catch(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+<p><mark>3초 뒤에 resolved [ 1, 2, 3 ]</mark></p>
+<p><br></p>
+<h4 id="6-Promise-race-메서드"><a href="#6-Promise-race-메서드" class="headerlink" title="6. Promise.race 메서드"></a>6. Promise.race 메서드</h4><ul>
+<li><strong>가장 먼저 종료</strong>한 Promise 객체의 결과만 반환</li>
+<li><code>Promise.race([Array])</code><ol>
+<li><strong>resolve</strong> : <strong>가장 먼저 종료된</strong> value만 받음</li>
+<li><strong>reject</strong> : <strong>가장 먼저 실패한</strong> reject 함수의 인수를 받음</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.race([</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">1</span>), <span class="number">3000</span>)),</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">2</span>), <span class="number">2000</span>)),</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="number">3</span>), <span class="number">1000</span>))</span><br><span class="line">])</span><br><span class="line">  .then(<span class="built_in">console</span>.log) <span class="comment">// 1초 뒤에 resolved  3</span></span><br><span class="line">  .catch(<span class="built_in">console</span>.log);</span><br></pre></td></tr></table></figure>
+<p><mark>1초 뒤에 resolved 3</mark></p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        <!--  -->
+
+<a href="/tags#javascript">
+  <span class="tag-code">javascript</span>
+</a>
+<!-- <span class="tag-code"></span> -->
+
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/19/개발일기/0519_blogBuild/">
+        <span class="nav-arrow">← </span>
+        
+          0519 study
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/20/개발일기/0520_blogBuild/">
+        
+          0520 study
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/05/20/Javascript/javascript13(Promise).1/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
