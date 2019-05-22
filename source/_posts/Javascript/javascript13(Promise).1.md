@@ -6,7 +6,8 @@ tags: javascript
 
 # Promise ( ES6 )
 
-> <mark>비동기 처리를 동기적으로 처리할 수 있게 한다!</mark>
+> 동기 : 순차적으로 실행
+> 비동기 : 병렬적으로 실행 ()
 
 <br>
 

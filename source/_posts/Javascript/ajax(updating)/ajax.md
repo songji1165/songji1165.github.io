@@ -16,7 +16,7 @@ tags:
 
 1. 자바스크립트를 이용해서 비동기적으로 서버와 브라우저가 데이터를 주고 받는 방식
    <br>
-2. **서버와 통신**하기 위해 `XMLHttpRequest` API를 사용
+2. **서버와 통신**하기 위해 `XMLHttpRequest` 객체를 사용
    <br>
 3. 페이지 전체를 로드하지 않아도 **페이지의 일부만 로드**하여 갱신한다 => 빠르다, 부드러운 화면표시효과
    <img src="https://poiemaweb.com/img/ajax-webpage-lifecycle.png" width="400px%">
@@ -28,18 +28,14 @@ tags:
 ## 2. XMLHttpRequest 객체
 
 - **통신**
-  1.  브라우저는 *XMLHttpRequest객체*를 이용해 **Ajax요청(비동기적)**을 생성하고 전송
+  1.  브라우저는 *XMLHttpRequest객체*를 이용해 **Ajax요청**을 생성하고 전송
   2.  서버에게서 받은 응답을 *XMLHttpRequest객체*가 처리
 
 ```js
 // 1. XMLHttpRequest 객체 생성
 var xhr = new XMLHttpRequest();
 
-// 2. 비동기식 방식으로 requet 오픈
-xhr.open("GET", "/users");
-
-// 3. 서버와의 통신이 끝났을 때 호출되는 이벤트
-//response가 클라이언트에 도달하면 함수 호출
+// 2. 서버와 통신할 때 사용할 처리 방법 등록
 xhr.onreadystatechange = function(e) {
   //XMLHttpRequest.readyState 프로퍼티가 변경(이벤트 발생)될 때마다 콜백함수(이벤트 핸들러)를 호출
   if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -56,7 +52,11 @@ xhr.onreadystatechange = function(e) {
   }
 };
 
-// 4. Requeset 전송 : data인자로 전송할 데이터 전달
+// 3. open 메서드로 요청 초기화 (서버에 요청을 준비)
+// .open( method, url, [,async, [,user [,password]]])
+xhr.open("GET", "/users");
+
+// 4. send메서드로 요청 보내기 (서버와 통신 시작)
 xhr.send(data);
 ```
 
