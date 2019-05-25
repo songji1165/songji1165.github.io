@@ -10,7 +10,7 @@
   
   <title>
     
-      5. Vue DOM | SONG
+      0525 study | SONG
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -113,8 +113,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>5. Vue DOM</h2>
-  <p class="post-date">2019-04-14</p>
+  <h2>0525 study</h2>
+  <p class="post-date">2019-05-25</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -122,18 +122,24 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="1-Vue-옵션-DOM"><a href="#1-Vue-옵션-DOM" class="headerlink" title="1. Vue 옵션 DOM"></a>1. Vue 옵션 DOM</h1><h2 id="1-el"><a href="#1-el" class="headerlink" title="1. el"></a>1. el</h2><ol>
-<li><strong>new</strong>를 이용한 인스턴스 생성때만 사용</li>
-<li>css선택자로 Vue 인스턴스와 DOM 마운트</li>
+    <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
+<li>hexo 오류 해결  -&gt; node 재설치 </li>
 </ol>
-<h2 id="2-template"><a href="#2-template" class="headerlink" title="2. template"></a>2. template</h2><ul>
-<li>문자열 템플릿 : Vue 인스턴스의 마크업</li>
+<h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><ol>
+<li>하루하고 반나절을 예상치 못한 버그로 삽질을 했다. 얼추 버그에 원인으로는 버전의 꼬임이었던 것 같다.. 아직도 어디서 내가 잘못 건드린지는 모르겟으나 무분별한 패치나 버전 업그레이드로 인해 각 라이브러리에서 필요로 하는 버전과 맞지 않다는 것 같다.. 언제부터 버저이 꼬인건지 모르기 때문에 node를 삭제하고 재설치하는 것이 더 빠를거라 판단되어 최종 선택지로 재설치를 해보았다. 한방에 해결 되었다. 생각보다 너무나 간단하게 해결되었다.<ul>
+<li>글로벌 install : 용량 차지, 새로운 버전 설치시 이미 존재하는 패키치들의 버전과 꼬일 수 있다. 등의 문제가 생길 수 있다 -&gt; <strong>npx 활용하자</strong><blockquote>
+<p><img src="https://geonlee.tistory.com/32" alt="npm 글로벌 설치 문제 참고"> </p>
+</blockquote>
+</li>
 </ul>
-<h2 id="3-render"><a href="#3-render" class="headerlink" title="3. render"></a>3. render</h2><ul>
-<li>문자열 템플릿 대신 완전한 javascript프로그래밍이 필요할 때</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt; &#123;&#123; blogTitle &#125;&#125; &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"> ...</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"> render : function (createElement) &#123;</span></span><br><span class="line"><span class="regexp">   return createElement('h1', this.blogTitle)</span></span><br><span class="line"><span class="regexp"> &#125;</span></span><br></pre></td></tr></table></figure>
-
+</li>
+</ol>
+<h3 id="내일-할-것"><a href="#내일-할-것" class="headerlink" title="내일 할 것"></a>내일 할 것</h3><ol>
+<li>자바스크립트 이론 공부</li>
+<li>프로젝트(Vue study Trello)</li>
+<li>자소서 정리</li>
+<li>알고리즘</li>
+</ol>
 </section>
     <!-- Tags START -->
     
@@ -141,8 +147,8 @@
         <span>Tags:</span>
         <!--  -->
 
-<a href="/tags#Vue">
-  <span class="tag-code">Vue</span>
+<a href="/tags#개발일기">
+  <span class="tag-code">개발일기</span>
 </a>
 <!-- <span class="tag-code"></span> -->
 
@@ -155,20 +161,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/14/Javascript/javascript4(function)/">
+      <a class="nav-left" href="/2019/05/24/개발일기/0524_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          Javascript 함수 Function
+          0524 study
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/14/vue/vue6(vueDirective)/">
-        
-          6. Vue 디렉티브
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -191,7 +190,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/14/vue/vue5(vueDOM).1/';
+    var url = 'http://yoursite.com/2019/05/25/개발일기/0525_blogBuild/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
