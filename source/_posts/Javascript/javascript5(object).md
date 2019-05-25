@@ -52,7 +52,6 @@ obj2.key();
 ![img](/images/object.jpg)
 <br>
 
-
 ### 2. 객체 생성법
 
 > 1. 리터럴방식 {}
