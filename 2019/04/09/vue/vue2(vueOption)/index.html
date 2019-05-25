@@ -135,6 +135,7 @@
 <li>반드시 <strong>객체 형태</strong>.</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// vue컴포넌트의 data는 모조건 함수!</span></span><br><span class="line">Vue.component(<span class="string">"compo"</span>, &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h2 id="2-computed-watch-methods"><a href="#2-computed-watch-methods" class="headerlink" title="2. computed / watch / methods"></a>2. computed / watch / methods</h2><h4 id="1-computed-속성"><a href="#1-computed-속성" class="headerlink" title="1. computed (속성)"></a>1. computed (속성)</h4><ol>
 <li>타입 : Object <code>{key:Funtion}</code></li>
 <li>복잡한 로직은 data대신 computed에서 처리</li>
@@ -144,12 +145,14 @@
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//&#123;&#123;message&#125;&#125;</span></span><br><span class="line"><span class="comment">//&#123;&#123;reversedMessage&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">"hello"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// message가 바뀔 때마다 연산됨</span></span><br><span class="line"></span><br><span class="line">    reversedMessage: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message</span><br><span class="line">        .split(<span class="string">""</span>)</span><br><span class="line">        .reverse()</span><br><span class="line">        .join(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h4 id="2-watch-감시자"><a href="#2-watch-감시자" class="headerlink" title="2. watch (감시자)"></a>2. watch (감시자)</h4><ol>
 <li>타입 : Object <code>{key : String | Function | Object | Array }</code></li>
 <li>키와 값(콜백)</li>
 <li>데이터 변화 감지 시 로직 수행 =&gt; 사용자가 만든 감시자(연산을 제어할 수 있음)</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// &lt;input v-model="question"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    question: <span class="string">""</span></span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="comment">// input변경 될 때마다 수행</span></span><br><span class="line"></span><br><span class="line">    question: <span class="function"><span class="keyword">function</span>(<span class="params">newQ</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.getAnswer();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    getAnswer() &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Computed vs Watch</p>
 <ul>
@@ -176,6 +179,7 @@
 <li>부모한테 데이터를 받기 위함</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 기본</span></span><br><span class="line">props : [ <span class="string">'Message'</span> ]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 타입 체크</span></span><br><span class="line">props : &#123; <span class="attr">Message</span> : <span class="built_in">String</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 타입 체크, 유효성 검사</span></span><br><span class="line">props : &#123;</span><br><span class="line">  Message : &#123;</span><br><span class="line">    type : <span class="built_in">String</span>,</span><br><span class="line">    validator : <span class="function"><span class="keyword">function</span> (<span class="params">value &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">      return value &gt;= <span class="number">0</span></span></span></span><br><span class="line"><span class="function"><span class="params">    &#125;</span>), ..</span></span><br><span class="line"><span class="function">  &#125;</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
 </section>
     <!-- Tags START -->
     
@@ -197,10 +201,10 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/09/개발일기/0409_blogBuild/">
+      <a class="nav-left" href="/2019/04/09/vue/vue1/">
         <span class="nav-arrow">← </span>
         
-          0409 study
+          1. Vue
         
       </a>
     

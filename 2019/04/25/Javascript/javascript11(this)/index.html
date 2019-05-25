@@ -126,26 +126,36 @@
 <p>함수를 호출할 때, <u>함수가 어떻게 호출되었는지에 따라</u> <strong>this</strong>에 바인딩할 객체가 동적으로 결정된다.</p>
 </blockquote>
 <p><code>렉시컬스코프 : 함수를 선언할 때 함수의 스코프를 결정</code></p>
-<p><br></p>
+<br>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">number</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> number * number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">square(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://github.com/songji1165/songji1165.github.io/blob/build/source/_posts/Javascript/this.jpg?raw=true" alt="this"><br><code>자바스크립트 함수는 호출 될 떄, 매개변수로 전달되는 인자값 이외에, arguments객체와 this를 암묵적으로 전달 받는다.</code><br><br></p>
 <h3 id="1-함수-호출-패턴"><a href="#1-함수-호출-패턴" class="headerlink" title="1. 함수 호출 패턴"></a>1. 함수 호출 패턴</h3><ul>
 <li>전역함수 내부함수 모두 this는 <strong><em>window(전역객체)</em></strong>이다.</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">  <span class="comment">// this 무조건 window</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> inner = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">// this는 무조건 window</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  inner();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outFunc();</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="2-메소드-호출-패턴"><a href="#2-메소드-호출-패턴" class="headerlink" title="2. 메소드 호출 패턴"></a>2. 메소드 호출 패턴</h3><ul>
+
+<br>
+### 2. 메소드 호출 패턴
+
+<ul>
 <li>함수가 객체의 프로퍼티 값이면 메소드로서 호출된다. <strong>this</strong>는 <u>해당 메소드를 호출한 객체이다</u></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"song"</span>,</span><br><span class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// person</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name); <span class="comment">//song</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// window</span></span><br><span class="line">      <span class="comment">// inner는 단지, 내부함수이므로 this는 전역객체인 window를 가리킴</span></span><br><span class="line">    &#125;</span><br><span class="line">    inner();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.getName();</span><br></pre></td></tr></table></figure>
-<p><br></p>
+
+<br>
+
 <h3 id="3-생성자-호출-패턴"><a href="#3-생성자-호출-패턴" class="headerlink" title="3. 생성자 호출 패턴"></a>3. 생성자 호출 패턴</h3><ul>
 <li>생성자 함수 : 기존 함수에 new연산자를 붙여서 호출하면 해당 함수</li>
 <li>생성자함수를 호출하면 this 바인딩이 메소드나 함수 호출때와 다르게 동작</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="comment">// this는 자신 (Person)</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  <span class="comment">// Person.prototype이기 때문에 프로토타입 내에서도 this는 Person</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// window (내부함수!!!)</span></span><br><span class="line">  &#125;</span><br><span class="line">  inner();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"song"</span>);</span><br><span class="line">p.getName();</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="4-apply-call-bind-호출"><a href="#4-apply-call-bind-호출" class="headerlink" title="4. apply / call / bind 호출"></a>4. apply / call / bind 호출</h3><ul>
+
+<br>
+### 4. apply / call / bind 호출
+
+<ul>
 <li>this를 특정 객체에 명시적으로 바인딩할 수 있게 한다.</li>
 <li>Function.prototype객체의 메소드 : .apply, .call, .call</li>
 </ul>
@@ -170,17 +180,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/25/개발일기/0425_blogBuild/">
+      <a class="nav-left" href="/2019/04/25/Javascript/javascript12(module).1/">
         <span class="nav-arrow">← </span>
         
-          0425 study
+          Javascript Module Pattern
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/25/Javascript/javascript12(module).1/">
+      <a class="nav-right" href="/2019/04/25/개발일기/0425_blogBuild/">
         
-          Javascript Module Pattern
+          0425 study
         
         <span class="nav-arrow"> →</span>
       </a>

@@ -123,44 +123,63 @@
   <!-- Article START -->
   <article class="post-article">
     <section class="markdown-content"><h1 id="연산자와-조건문-반복문"><a href="#연산자와-조건문-반복문" class="headerlink" title="연산자와 조건문, 반복문"></a>연산자와 조건문, 반복문</h1><h3 id="1-연산자"><a href="#1-연산자" class="headerlink" title="1. 연산자"></a>1. 연산자</h3><h5 id="1-사칙연산"><a href="#1-사칙연산" class="headerlink" title="1. 사칙연산 (+-*/%)"></a>1. 사칙연산 (+-*/%)</h5><ul>
-<li>% 나머지 : 2%1 = 0<br><br></li>
+<li>% 나머지 : 2%1 = 0<br>
+
+</li>
 </ul>
 <h5 id="2-비교연산자"><a href="#2-비교연산자" class="headerlink" title="2. 비교연산자"></a>2. 비교연산자</h5><ol>
 <li>== (equal operator) : 데이터타입은 달라도 실질적 의미만 같으면 true</li>
-<li>=== (strict operator) : 데이터타입, 실질적의 모두 같아야 true<br><br></li>
+<li>=== (strict operator) : 데이터타입, 실질적의 모두 같아야 true<br>
+
+</li>
 </ol>
-<h5 id="3-크기-비교-연산자-부등호-gt-lt-gt-lt"><a href="#3-크기-비교-연산자-부등호-gt-lt-gt-lt" class="headerlink" title="3. 크기 비교 연산자 (부등호 &gt; &lt; &gt;= &lt;=)"></a>3. 크기 비교 연산자 (부등호 &gt; &lt; &gt;= &lt;=)</h5><p><br></p>
-<h5 id="4-and-amp-amp-or-연산자"><a href="#4-and-amp-amp-or-연산자" class="headerlink" title="4. and(&amp;&amp;) or(||)연산자"></a>4. and(&amp;&amp;) or(||)연산자</h5><p><br></p>
-<h5 id="5-NOT연산자"><a href="#5-NOT연산자" class="headerlink" title="5. NOT연산자 !"></a>5. NOT연산자 !</h5><ul>
-<li>true, false를 반대로 출력해줌 !, !!<br><br><h5 id="6-증감연산자-–"><a href="#6-증감연산자-–" class="headerlink" title="6. 증감연산자 (++ –)"></a>6. 증감연산자 (++ –)</h5></li>
-</ul>
+<h5 id="3-크기-비교-연산자-부등호-gt-lt-gt-lt"><a href="#3-크기-비교-연산자-부등호-gt-lt-gt-lt" class="headerlink" title="3. 크기 비교 연산자 (부등호 &gt; &lt; &gt;= &lt;=)"></a>3. 크기 비교 연산자 (부등호 &gt; &lt; &gt;= &lt;=)</h5><br>
+##### 4. and(&&) or(||)연산자
+<br>
+##### 5. NOT연산자 !
+- true, false를 반대로 출력해줌 !, !!
+<br>
+##### 6. 증감연산자 (++ --)
+
 <ol>
 <li>i++ 후위증감연산자 : i이후 1을 더해 나감</li>
-<li>++i 전위증감연산자 : i+1을 해준 이후 1을 더해 나감<br><br></li>
+<li>++i 전위증감연산자 : i+1을 해준 이후 1을 더해 나감<br>
+
+</li>
 </ol>
 <h5 id="7-false로-간주되는-값"><a href="#7-false로-간주되는-값" class="headerlink" title="7. false로 간주되는 값"></a>7. <strong><mark>false로 간주되는 값</mark></strong></h5><ol>
 <li><strong>‘’</strong> : 빈 값</li>
 <li><strong>undefined ,var a;(=undefined)</strong></li>
 <li><strong>null</strong></li>
 <li><strong>NaN</strong> (Not a Number)</li>
-<li><strong>0</strong><br><br></li>
+<li><strong>0</strong><br>
+
+</li>
 </ol>
 <h3 id="2-조건문"><a href="#2-조건문" class="headerlink" title="2. 조건문"></a>2. 조건문</h3><h5 id="1-if-조건-boolean-만족하는-데이터가-여러개일-경우"><a href="#1-if-조건-boolean-만족하는-데이터가-여러개일-경우" class="headerlink" title="1. if(조건-boolean){} : 만족하는 데이터가 여러개일 경우"></a>1. if(<strong>조건-boolean</strong>){} : 만족하는 데이터가 여러개일 경우</h5><ul>
 <li>if(조건){true} else {false}</li>
-<li>if(){} else if {} else {} : 조건문을 좀더 풍부하게 사용할 수 있다.<br><br></li>
+<li>if(){} else if {} else {} : 조건문을 좀더 풍부하게 사용할 수 있다.<br>
+
+</li>
 </ul>
 <h5 id="2-switch-선택문-여러-경우의-값-중-일치하는-데이터를-찾아-그-해당하는-코드를-실행"><a href="#2-switch-선택문-여러-경우의-값-중-일치하는-데이터를-찾아-그-해당하는-코드를-실행" class="headerlink" title="2. switch(선택문) : 여러 경우의 값 중 일치하는 데이터를 찾아 그 해당하는 코드를 실행"></a>2. switch(선택문) : 여러 경우의 값 중 일치하는 데이터를 찾아 그 해당하는 코드를 실행</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>()&#123;</span><br><span class="line">    <span class="keyword">case</span> 값<span class="number">1</span> : 코드값;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 값<span class="number">2</span> : 코드값;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="3-반복문"><a href="#3-반복문" class="headerlink" title="3. 반복문"></a>3. 반복문</h3><h5 id="1-while-조건-반복-실행할-코드"><a href="#1-while-조건-반복-실행할-코드" class="headerlink" title="1. while(조건){ 반복 실행할 코드}"></a>1. <code>while(조건){ 반복 실행할 코드}</code></h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i = i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h5 id="2-for-초기화-조건-검사-증감코드-반복-실행할-코드"><a href="#2-for-초기화-조건-검사-증감코드-반복-실행할-코드" class="headerlink" title="2. for( 초기화; 조건 검사; 증감코드; ){ 반복 실행할 코드 }"></a>2. <code>for( 초기화; 조건 검사; 증감코드; ){ 반복 실행할 코드 }</code></h5><ul>
+
+<br>
+### 3. 반복문
+
+<h5 id="1-while-조건-반복-실행할-코드"><a href="#1-while-조건-반복-실행할-코드" class="headerlink" title="1. while(조건){ 반복 실행할 코드}"></a>1. <code>while(조건){ 반복 실행할 코드}</code></h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">  i = i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+##### 2. `for( 초기화; 조건 검사; 증감코드; ){ 반복 실행할 코드 }`
+
+<ul>
 <li>초기화 -&gt; 조건검사 -&gt; 실행 -&gt; 증감 과정<br><strong>=&gt;</strong> while문보다 느리다!</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h5 id="3-do-반복-실행할-코드-while-조건"><a href="#3-do-반복-실행할-코드-while-조건" class="headerlink" title="3. do{ 반복 실행할 코드 } while (조건)"></a>3. <code>do{ 반복 실행할 코드 } while (조건)</code></h5><ul>
-<li>do가 무조건 한번 실행이 된후 조건에 따라 반복실행</li>
-</ul>
+
+<br>
+##### 3. `do{ 반복 실행할 코드 } while (조건)` 
+- do가 무조건 한번 실행이 된후 조건에 따라 반복실행
 </section>
     <!-- Tags START -->
     
@@ -190,9 +209,9 @@
       </a>
     
     
-      <a class="nav-right" href="/2019/04/09/vue/vue1/">
+      <a class="nav-right" href="/2019/04/09/개발일기/0409_blogBuild/">
         
-          1. Vue
+          0409 study
         
         <span class="nav-arrow"> →</span>
       </a>

@@ -130,8 +130,11 @@
 <li><strong><code>VUE_APP_</code></strong> 로 시작하는 변수 사용!</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// .env</span><br><span class="line"></span><br><span class="line">VUE_APP_DB_USERNAME = song</span><br><span class="line">VUE_APP_DB_PASSWORD = 1165</span><br></pre></td></tr></table></figure>
+
 <h4 id="2-gitignore에-env-추가"><a href="#2-gitignore에-env-추가" class="headerlink" title="2. .gitignore에 .env 추가"></a>2. <mark>.gitignore에 .env 추가</mark></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .gitignore</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"># local env files</span><br><span class="line">.env.local</span><br><span class="line">.env.*.local</span><br><span class="line">.env    <span class="comment">// .env 추가</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="3-환경변수-접근"><a href="#3-환경변수-접근" class="headerlink" title="3. 환경변수 접근"></a>3. 환경변수 접근</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; VUE_APP_DB_USERNAME, VUE_APP_DB_PASSWORD &#125; = process.env;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
 </section>
     <!-- Tags START -->
     

@@ -129,6 +129,11 @@
 <li>변수의 타입 지정없이 값이 할당되는 과정에서 <strong>자동으로 변수의 타입이 결정</strong>된다.</li>
 </ul>
 </li>
+</ol>
+<ul>
+<li>데이터 타입 : 변수에 저장하는 데이터 종류</li>
+</ul>
+<ol start="3">
 <li>javascript는 <strong>원시타입과 객체참조타입</strong>이 있다.</li>
 </ol>
 </blockquote>
@@ -139,30 +144,36 @@
 <li><strong>undefined</strong> : 값이 없다. -&gt; 값이 선언 되었지만 값이 할당되지 않았다.</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">alert(a); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
 <ol start="5">
 <li><strong>null</strong> : 값이 없다. -&gt; 데이터 초기화(어떤한 값도 갖고 있지 않다.)</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"a"</span>;</span><br><span class="line">a = <span class="literal">null</span>; <span class="comment">// 해당 값을 제거함 (데이터 초기화)</span></span><br><span class="line">alert(a); <span class="comment">//null</span></span><br></pre></td></tr></table></figure>
+
 <ol start="6">
-<li><p>symbol(ES6) : 고유한 값 , 상징적인 값</p>
-</li>
-<li><p>객체타입 (object)</p>
-<ul>
-<li>object : 원시 타입 외의 모든 값<br><br></li>
-</ul>
-</li>
+<li>symbol(ES6) : 고유한 값 , 상징적인 값</li>
 </ol>
+<h5 id="2-객체타입-object"><a href="#2-객체타입-object" class="headerlink" title="2. 객체타입 (object)"></a>2. 객체타입 (object)</h5><ul>
+<li><p><strong>object</strong> : 원시 타입 외의 모든 값</p>
+<ul>
+<li>변수 여러 개가 모여 만들어진 복합 데이터 타입</li>
+</ul>
+<br>
+
+</li>
+</ul>
 <h3 id="2-변수"><a href="#2-변수" class="headerlink" title="2. 변수"></a>2. 변수</h3><blockquote>
 <ol>
-<li>변수는 <strong>식별자</strong>이다.</li>
-<li>변수는 문자,숫자 등을 담는 <strong>그릇</strong>같다</li>
-</ol>
+<li><p>변수는 <strong>식별자</strong>이다.</p>
+</li>
+<li><p>변수는 문자,숫자 등을 담는 <strong>그릇</strong>같다</p>
 <ul>
 <li>특수문자 제외 모든 문자 가능</li>
 <li>값을 담아놓는 공간, 메모리상의 주소</li>
 </ul>
-<ol start="3">
-<li>변수는 <strong>코드의 재활용성</strong>을 높인다.</li>
+</li>
+<li><p>변수는 <strong>코드의 재활용성</strong>을 높인다.</p>
+</li>
 </ol>
 </blockquote>
 <h5 id="1-변수의-생성과정"><a href="#1-변수의-생성과정" class="headerlink" title="1. 변수의 생성과정"></a>1. 변수의 생성과정</h5><ol>
@@ -176,6 +187,8 @@
 <li><strong>할당 단계</strong> : undefined로 초기화된 상태에서 값을 할당한다.</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a; <span class="comment">//선언 + 초기화(var는 초기화가 같이 이루어짐)</span></span><br><span class="line">a = <span class="string">"hi"</span>; <span class="comment">//할당</span></span><br></pre></td></tr></table></figure>
+
+<p><mark>변수 선언문은 호이스팅 되지만 변수 할당문은 호이스팅 되지 않는다!</mark></p>
 </section>
     <!-- Tags START -->
     

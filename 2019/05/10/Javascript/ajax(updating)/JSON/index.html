@@ -134,14 +134,17 @@
 <li>XML포맷보다 가볍고 사용하기 간편하며 가독성도 좋다.</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span> : <span class="string">"song"</span>,</span><br><span class="line">    <span class="string">"gender"</span> : <span class="string">"female"</span>,</span><br><span class="line">    <span class="string">"hasDog"</span> : <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 키는 반드시 큰따옴표! (작은따옴표 사용불가!)</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="2-1-JSON-strigify"><a href="#2-1-JSON-strigify" class="headerlink" title="2.1 JSON.strigify"></a>2.1 JSON.strigify</h4><ul>
 <li>객체를 <strong>JSON형식의 문자열로 변환</strong></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  name: <span class="string">"song"</span>,</span><br><span class="line">  gender: <span class="string">"female"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> strObj = <span class="built_in">JSON</span>.strigify(o);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> strObj, strObj);</span><br><span class="line"><span class="comment">// String &#123;"name":"song", "gender":"female"&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="2-2-JSON-parse"><a href="#2-2-JSON-parse" class="headerlink" title="2.2 JSON.parse"></a>2.2 JSON.parse</h4><ul>
 <li>JSON데이터를 가진 문자열을 <strong>객체로 변환</strong> (역직렬화 (Deserializing))</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(strObj);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> obj, obj);</span><br><span class="line"><span class="comment">// Object &#123;name:'song', gender: 'female'&#125;</span></span><br></pre></td></tr></table></figure>
+
 </section>
     <!-- Tags START -->
     
@@ -168,17 +171,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/05/10/Javascript/ajax(updating)/ajax/">
+      <a class="nav-left" href="/2019/05/10/개발일기/0510_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          Ajax &amp; XMLHttpRequest
+          0510 study
         
       </a>
     
     
-      <a class="nav-right" href="/2019/05/10/개발일기/0510_blogBuild/">
+      <a class="nav-right" href="/2019/05/10/Javascript/ajax(updating)/fetchAPI/">
         
-          0510 study
+          Fetch API
         
         <span class="nav-arrow"> →</span>
       </a>

@@ -128,10 +128,13 @@
 <li>브라우저의 렌더링 엔진이 HTML의 계층적 구조를 브라우저가 이해할 수 있는 <u>객체</u>로 만들어 <strong>트리구조(DOM TREE)</strong>로 구조화</li>
 </ol>
 </blockquote>
-<p><br></p>
+<br>
+
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      .red &#123;</span></span><br><span class="line"><span class="undefined">        color: #ff0000;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      .blue &#123;</span></span><br><span class="line"><span class="undefined">        color: #0000ff;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Cities<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"one"</span> <span class="attr">class</span>=<span class="string">"red"</span>&gt;</span>Seoul<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"two"</span> <span class="attr">class</span>=<span class="string">"red"</span>&gt;</span>London<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"three"</span> <span class="attr">class</span>=<span class="string">"red"</span>&gt;</span>Newyork<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"four"</span>&gt;</span>Tokyo<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><img src="https://poiemaweb.com/img/dom-tree.png" alt="DOMTREE"></p>
-<p><br></p>
+<br>
+
 <h2 id="1-DOM-tree"><a href="#1-DOM-tree" class="headerlink" title="1. DOM tree"></a>1. DOM tree</h2><p><code>Document Node, Element Node, Attribute Node, Text Node</code></p>
 <ol>
 <li><p>문서노드 (Document Node)</p>
@@ -166,7 +169,8 @@
 </ul>
 </li>
 </ol>
-<p><br></p>
+<br>
+
 <h2 id="2-DOM-접근"><a href="#2-DOM-접근" class="headerlink" title="2. DOM 접근"></a>2. DOM 접근</h2><blockquote>
 <ol>
 <li>조작하고자하는 요소를 선택, 탐색</li>
@@ -186,7 +190,9 @@
 <li>다중 선택<ol>
 <li><code>document.getElementsByClassName(&#39;class&#39;)</code> (ie9)</li>
 <li><code>document.getElementsByTagName(&#39;TagName&#39;)</code></li>
-<li><code>document.querySelectorAll(Selector)</code><br><br></li>
+<li><code>document.querySelectorAll(Selector)</code><br>
+
+</li>
 </ol>
 </li>
 </ol>
@@ -198,7 +204,9 @@
 <li><code>.firstChild</code>, <code>.lastChild</code></li>
 <li><code>.hasChildNodes()</code> : 자식 노드 있는지 확인 Boolean</li>
 <li><code>.children</code> : child노드의 자식 노드의 컬렉션 반환 (IE9)</li>
-<li><code>.previousSibling</code>, <code>.nextSibling</code> : 형제 노드 탐색(IE9)<br><br></li>
+<li><code>.previousSibling</code>, <code>.nextSibling</code> : 형제 노드 탐색(IE9)<br>
+
+</li>
 </ol>
 </li>
 </ul>
@@ -224,7 +232,9 @@
 <li><code>document.createElement(&#39;tagName&#39;)</code></li>
 <li><code>document.createTextNode(&#39;text&#39;)</code></li>
 <li><code>document.appendchild(&#39;Node&#39;)</code></li>
-<li><code>document.removeChild(&#39;Node&#39;)</code><br><br></li>
+<li><code>document.removeChild(&#39;Node&#39;)</code><br>
+
+</li>
 </ol>
 </li>
 </ol>
@@ -259,17 +269,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/22/Javascript/javascript8(scope)/">
+      <a class="nav-left" href="/2019/04/22/Javascript/javascript7(hoisting)/">
         <span class="nav-arrow">← </span>
         
-          Javascript Scope
+          Javascript Hoisting
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/22/Javascript/javascript7(hoisting)/">
+      <a class="nav-right" href="/2019/04/22/개발일기/0422_blogBuild/">
         
-          Javascript Hoisting
+          0422 study
         
         <span class="nav-arrow"> →</span>
       </a>

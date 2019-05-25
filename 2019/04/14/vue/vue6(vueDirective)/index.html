@@ -133,13 +133,17 @@
 <li>컴포넌트</li>
 </ol>
 </blockquote>
-<p><br></p>
+<br>
+
 <h2 id="1-선언적-렌더링-1-텍스트보간법-데이터바인딩-v-bind-attribute-바인딩"><a href="#1-선언적-렌더링-1-텍스트보간법-데이터바인딩-v-bind-attribute-바인딩" class="headerlink" title="1. 선언적 렌더링(1) : 텍스트보간법 (데이터바인딩), v-bind (attribute 바인딩)"></a>1. 선언적 렌더링(1) : 텍스트보간법 (데이터바인딩), v-bind (attribute 바인딩)</h2><h4 id="1-텍스트보간법"><a href="#1-텍스트보간법" class="headerlink" title="1. 텍스트보간법"></a>1. <strong>텍스트보간법</strong></h4><ul>
 <li><strong><em>데이터 바인딩</em></strong>의 기본 형태이다.</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ex&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#ex"</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">"데이터렌더링한다(el로 연동 후 data에 텍스트보간법으로 렌더링)"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hi</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>데이터와 DOM이 연결되어 모든 것이 <strong>반응형</strong>으로 작동한다.</p>
 </blockquote>
@@ -157,7 +161,9 @@
 </li>
 </ul>
 <h4 id="2-v-bind-attribute-바인딩"><a href="#2-v-bind-attribute-바인딩" class="headerlink" title="2. v-bind (attribute 바인딩)"></a>2. <strong>v-bind</strong> (attribute 바인딩)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ex&quot; v-bind:title=&quot;message&quot;&gt;마우스를 올리세요&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#ex"</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">"v-bind:title title속성을 데이터렌더링한다 hover시 title"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>title속성은 message값과 바인드하여 <code>&lt;p title=&quot;message&quot;&gt;</code>로 수정된다.</p>
 </blockquote>
@@ -170,6 +176,7 @@
 <ul>
 <li><p><u>active클래스</u> 존재여부는 <u>isActive</u>의 <strong>참 속성(true)</strong>에 의해 결정된다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:class=&quot;&#123;active:isActive&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  isActive: <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -178,7 +185,8 @@
 <ol>
 <li><p>:style=”{font-size:fontSize+’px’, color:activeColor}”<br>data : {<br>fontSize : 10,<br>activeColor : ‘red’<br>}</p>
 </li>
-<li><p>:style=”styleObject”<br>data : {<br>styleObject : {<br>fontSize: ‘10px’,<br>color: ‘red’,<br>}<br>}</p>
+<li><p>:style=”styleObject”<br>data : {<br>styleObject : {<br>fontSize: ‘10px’,<br>color: ‘red’,<br>}
+}</p>
 </li>
 </ol>
 </li>
@@ -187,7 +195,9 @@
 <li>v-if 값이 <strong>[TRUE - 보임][false - 안 보임]</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;ex&quot;&gt;</span><br><span class="line">    &lt;p v-if=&quot;seen&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;button @click=&quot;clickSeen&quot;&gt;클릭&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#ex"</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">"v-on을 통한 클릭메서드 만들기(복수니까 methods)"</span>,</span><br><span class="line">    seen: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    clickSeen: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.seen = !<span class="keyword">this</span>.seen;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong>v-else, v-else-if</strong>도 가능하다.<br>단, <u>v-if 바로 뒤</u>에 있어야 기능이 가능하다.</p>
 </blockquote>
@@ -198,7 +208,9 @@
 <li><strong><u>item in items</u></strong> 형태의 특별한 문법이 필요</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;iter&quot;&gt;</span><br><span class="line">    &lt;li v-for=&quot;i in items&quot;&gt;&#123;&#123;i.text&#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue = (&#123;</span><br><span class="line">    el : <span class="string">"#iter"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        items : [</span><br><span class="line">            &#123;<span class="attr">text</span> : <span class="number">1</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span> : <span class="number">2</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span> : <span class="number">3</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li><p>현재 항목의 <strong>index</strong>를 부여할 수 있다. <strong><u>( i , index ) in items</u></strong></p>
 <ul>
@@ -207,14 +219,18 @@
 </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;iter&quot;&gt;</span><br><span class="line">    &lt;li v-for=&quot;(i,index) in items&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">        &#123;&#123;parentText&#125;&#125; - &#123;&#123;index&#125;&#125; - &#123;&#123;i.text&#125;&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#iter"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        patentText : <span class="string">'부모 범위 속성 모든 권한'</span>,</span><br><span class="line">        items = [</span><br><span class="line">            &#123;<span class="attr">text</span> : js&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span> : vue&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <h2 id="3-사용자-입력-핸들링-v-model-v-on"><a href="#3-사용자-입력-핸들링-v-model-v-on" class="headerlink" title="3. 사용자 입력 핸들링 : v-model, v-on"></a>3. 사용자 입력 핸들링 : v-model, v-on</h2><h4 id="1-v-model-디렉티브"><a href="#1-v-model-디렉티브" class="headerlink" title="1. v-model 디렉티브"></a>1. <strong>v-model</strong> 디렉티브</h4><ul>
 <li>폼입력 바인딩</li>
 <li>양방향 데이터 바인딩을 생성</li>
 <li>input type : text , textarea, checkbox, radio, select …</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;bind&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;</span><br><span class="line">    &lt;p&gt; &#123;&#123;message&#125;&#125; &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el : <span class="string">"#bind"</span>,</span><br><span class="line">    data : &#123;</span><br><span class="line">        message = <span class="string">""</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <h4 id="2-v-on-디렉티브"><a href="#2-v-on-디렉티브" class="headerlink" title="2. v-on 디렉티브"></a>2. <strong>v-on</strong> 디렉티브</h4><ul>
 <li>v-on은 이벤트핸들링</li>
 <li><strong>‘v-on:이벤트’</strong> 전달인자 뒤에 <u>이벤트값</u>이 들어간다.<ul>
@@ -223,7 +239,9 @@
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ex&quot; v-on:click=&quot;handleClick&quot;&gt;클릭하세요&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#ex"</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">""</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    hadleClick: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.message = <span class="string">"클릭했다"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <hr>
 <blockquote>
 <ol>

@@ -128,15 +128,19 @@
 <li>함수나 변수 선언문을 어디에 쓰더라도 실행 단계에서 Scope 맨 위로 끌어올린다. =&gt; 어디선든 순서 상관없이 호출 가능</li>
 </ol>
 </blockquote>
-<p><br></p>
+<br>
+
 <h3 id="1-변수-호이스팅"><a href="#1-변수-호이스팅" class="headerlink" title="1. 변수 호이스팅"></a>1. 변수 호이스팅</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 변수의 생성단계는 호이스팅과 관련이 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 선언단계 &amp; 초기화단계</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 할당단계</span></span><br><span class="line">a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"><span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
+
 <ol>
 <li>변수는 선언 &amp; 초기화, 할당단계로 나뉘어졌있다.</li>
 <li><strong>변수의 호이스팅은 변수 선언문</strong>을 호이스팅한다.</li>
 <li>값이 할당 되기 전에 변수를 호출하면<br>-&gt; 저장공간은 참조되고 있지만 <strong>값이 없다</strong> : <strong><u>undefined</u>가 출력</strong>되는 것</li>
 </ol>
-<p><br></p>
+<br>
+
 <h3 id="2-함수-호이스팅"><a href="#2-함수-호이스팅" class="headerlink" title="2. 함수 호이스팅"></a>2. 함수 호이스팅</h3><ol>
 <li>함수 선언식, 함수 표현식, function 생성자 함수 중 <strong><em>함수선언식</em></strong>만 호이스팅 된다.</li>
 </ol>
@@ -147,6 +151,7 @@
 <li>함수는 선언되면 함수 전체가 호이스팅 된다.</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sum(<span class="number">1</span>, <span class="number">3</span>); <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 선언식</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">console</span>.log(num1 + num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result(<span class="number">3</span>); <span class="comment">// Uncaught TypeError: result is not a function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 함수 표현식 (var result 는 빈 값을 먼저 참조하고 있다 undefined)</span></span><br><span class="line"><span class="keyword">var</span> result = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p><code>호이스팅으로 인해 오류가 날 수 있다!</code><br><code>함수나 변수는 항상 먼저 선언해 두도록 하자!</code></p>
 </section>
@@ -170,17 +175,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/22/Javascript/javascript10(DOM)/">
+      <a class="nav-left" href="/2019/04/22/Javascript/javascript8(scope)/">
         <span class="nav-arrow">← </span>
         
-          Javascript DOM
+          Javascript Scope
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/22/개발일기/0422_blogBuild/">
+      <a class="nav-right" href="/2019/04/22/Javascript/javascript10(DOM)/">
         
-          0422 study
+          Javascript DOM
         
         <span class="nav-arrow"> →</span>
       </a>

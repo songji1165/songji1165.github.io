@@ -129,7 +129,8 @@
 <li>데이터를 한 곳에 <strong>모으고 구조화</strong>하는데 유용하다.</li>
 </ol>
 </blockquote>
-<p><br></p>
+<br>
+
 <h3 id="1-객체의-속성-Property-과-메서드"><a href="#1-객체의-속성-Property-과-메서드" class="headerlink" title="1. 객체의 속성(Property)과 메서드"></a>1. 객체의 속성(Property)과 메서드</h3><ol>
 <li><strong>속성(property)</strong> : 데이터를 의미한다.<ul>
 <li><strong>key(속성명)</strong>와 <strong>value(속성값)</strong>으로 표현</li>
@@ -137,12 +138,22 @@
 </ul>
 </li>
 <li><strong>메서드(method)</strong> : 데이터를 참조하고 조작할 수 있는 동작을 의미한다.<ul>
-<li>객체에 제한되어 있는 <strong>함수 프로퍼티</strong>이다.</li>
+<li>프로퍼티에 저장되어 있는 값의 타입이 <strong>함수</strong>이다!</li>
 </ul>
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 프로퍼티</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  key1: <span class="string">"value1"</span>,</span><br><span class="line">  key2: <span class="string">"value2"</span>,</span><br><span class="line">  key1: <span class="string">"value3"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.key1); <span class="comment">// key1의 값은 value3이 된다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 메서드</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  key: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"객체의 값이 함수면 메서드이다."</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj2.key();</span><br></pre></td></tr></table></figure>
-<p><br></p>
+
+<br>
+### 2. 객체 : 참조 타입
+- 변수 : 일정한 메모리에 값을 저장 
+- 객체 : 한 덩어리로 메모리 영역에 저장
+- 변수 = 객체 타입 
+    - 객체 타입을 변수에 대입(저장)
+      - 변수는 객체가 저장되어 있는 메모리 영역의 참조(위치 정보)가 저장된다.
+![img](/images/object.jpg)
+<br>
+
 <h3 id="2-객체-생성법"><a href="#2-객체-생성법" class="headerlink" title="2. 객체 생성법"></a>2. 객체 생성법</h3><blockquote>
 <ol>
 <li>리터럴방식 {}</li>
@@ -150,13 +161,16 @@
 <li>생성자 new Object()<br>=&gt; 비추</li>
 </ol>
 </blockquote>
-<p><br></p>
+<br>
+
 <h4 id="1-리터럴방식"><a href="#1-리터럴방식" class="headerlink" title="1. 리터럴방식"></a>1. 리터럴방식</h4><ul>
 <li>가장 일반적인 객체 생성 방식</li>
 <li>가독성이 좋고, 오류발생이 적다.</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;; <span class="comment">//빈 객체 생성</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">"song"</span>;</span><br><span class="line">obj.age = <span class="string">"20"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> obj); <span class="comment">// Object</span></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name:'song', age:'20'&#125;</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
+
+<br>
+
 <h4 id="2-생성자-함수-사용자-정의-함수"><a href="#2-생성자-함수-사용자-정의-함수" class="headerlink" title="2. 생성자 함수 (사용자 정의 함수)"></a>2. 생성자 함수 (사용자 정의 함수)</h4><ul>
 <li><p>모듈화에 많이 쓰인다 -&gt; 프로퍼티가 동일한 여러개의 객체를 간평하게 생성할 수 있다!</p>
 <blockquote>
@@ -172,18 +186,24 @@
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// name매개변수를 받는 Person 생성자 함수 생성</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// this는 자기자신 즉, Person</span></span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>._age = name; <span class="comment">// _ : 외부로 노출이 안될 값</span></span><br><span class="line">  <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"my name is"</span> + <span class="keyword">this</span>.name);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">"song"</span>, <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">p.say(); <span class="comment">// my name is song</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
+
+<br>
+
 <h4 id="3-생성자-new-Object"><a href="#3-생성자-new-Object" class="headerlink" title="3. 생성자 new Object"></a>3. 생성자 new Object</h4><ul>
 <li>가독성이 떨어지고 인자로 원시적 타입등이 들어가는 경우 오류가 발생하기 쉽다. -&gt; 비추!!!!</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">// Object 선언</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.constructor === <span class="built_in">Object</span>); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// constroctor은 해당 Object가 어떤 상태인지 알려준다.</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">"song"</span>;</span><br><span class="line">obj.age = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;name: 'song', age: 20&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p><code>**_constroctor_**은 해당 Object가 어떤 상태인지 알려준다.</code></p>
-<p><br></p>
+<br>
+
 <h3 id="3-객체-속성을-추가-갱신-삭제-탐색"><a href="#3-객체-속성을-추가-갱신-삭제-탐색" class="headerlink" title="3. 객체 속성을 추가, 갱신, 삭제, 탐색"></a>3. 객체 속성을 <u>추가, 갱신, 삭제, 탐색</u></h3><ol>
 <li>추가, 갱신, <u>삭제 <strong>delete</strong></u></li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">"song"</span>; <span class="comment">// 객체 속성 추가</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">"eunji"</span>; <span class="comment">// 객체 속성 갱신</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// Object&#123;name : 'eunji'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> obj.name; <span class="comment">// 객체 속성 삭제 delete</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// Object &#123;&#125;</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
+
+<br>
+
 <ol start="2">
 <li>탐색<ol>
 <li>마침표 표기법 <strong>obj.name</strong></li>
@@ -205,6 +225,7 @@
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">"song"</span>,</span><br><span class="line">  age: <span class="number">20</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> person) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(key + <span class="string">":"</span> + person[key]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//name : song, age : 20</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> value <span class="keyword">of</span> person) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// song, 20</span></span><br></pre></td></tr></table></figure>
+
 </section>
     <!-- Tags START -->
     

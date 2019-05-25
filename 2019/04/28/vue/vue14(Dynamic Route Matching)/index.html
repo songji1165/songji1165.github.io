@@ -126,19 +126,20 @@
 <li>주어진 패턴을 가진 라우트를 동일한 컴포넌트에 매핑해야하는 경우</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 모든 사용자는 동일한 레이아웃을 가진다.</span></span><br><span class="line"><span class="comment">// 하지만 다른 사용자ID로 렌더링되어야 하는 User컴포넌트가 있을 수 있다.</span></span><br><span class="line"><span class="comment">// 이를, 동적 세그먼트로 해결!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> User = &#123; <span class="attr">template</span>: <span class="string">`&lt;div&gt;User&lt;/div&gt;`</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  route: [&#123; <span class="attr">path</span>: <span class="string">"/user/:id"</span>, <span class="attr">component</span>: User &#125;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h2 id="1-동적-세그먼트"><a href="#1-동적-세그먼트" class="headerlink" title="1. 동적 세그먼트"></a>1. 동적 세그먼트</h2><ul>
 <li><code>:id</code> (id는 변수라고 생각하자!) - <code>/user/song</code>와 <code>/user/lee</code>은 모두 같은 경로에 매핑된다.</li>
 </ul>
 <ol>
-<li><strong><em>this.\$router</em></strong> : <strong>router</strong> 로 라우터에 관한 정보(API 레퍼런스)를 담고 있다.<ul>
-<li><u>Vue.use</u>로 라우터를 주입해줌으로써 this.\$router로 접근 가능하다.</li>
+<li><strong><em>this.$router</em></strong> : <strong>router</strong> 로 라우터에 관한 정보(API 레퍼런스)를 담고 있다.<ul>
+<li><u>Vue.use</u>로 라우터를 주입해줌으로써 this.$router로 접근 가능하다.</li>
 </ul>
 </li>
-<li><strong>this.\$route</strong> : 현재 활성화된 Route<ul>
+<li><strong>this.$route</strong> : 현재 활성화된 Route<ul>
 <li><code>$route.params</code>, <code>$route.query</code>(url에 쿼리가 있는 경우), <code>$route.hash</code> 등 유용한 정보를 제공</li>
 </ul>
 </li>
-<li><strong><em>this.\$route.params</em></strong> : <u>id의 정보를</u> 얻을 수 있다.<blockquote>
+<li><strong><em>this.$route.params</em></strong> : <u>id의 정보를</u> 얻을 수 있다.<blockquote>
 <p>user컴포넌트에서 id에 대한 정보를 조회하여, id를 통해 백엔드 데이터를 얻는 것!</p>
 </blockquote>
 </li>
@@ -151,6 +152,7 @@
 <li>created(){}, watch 옵션을 사용하자!</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> User = &#123;</span><br><span class="line">  template : ...,</span><br><span class="line"></span><br><span class="line">  watch : &#123;</span><br><span class="line">    <span class="string">`$route`</span> () &#123;</span><br><span class="line">      <span class="comment">//경로 변경에 반응</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </section>
     <!-- Tags START -->
     

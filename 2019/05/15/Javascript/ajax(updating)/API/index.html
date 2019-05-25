@@ -130,7 +130,8 @@
 </ul>
 </blockquote>
 <h2 id="API-예"><a href="#API-예" class="headerlink" title="- API 예"></a>- API 예</h2><h3 id="Geolocation-API"><a href="#Geolocation-API" class="headerlink" title="Geolocation API"></a>Geolocation API</h3><ul>
-<li>사용자의 위치정보를 얻을 수 있다.</li>
+<li><p>사용자의 위치정보를 얻을 수 있다.</p>
+</li>
 <li><p>사용자의 권한이 필요하다.</p>
 </li>
 <li><p><strong>navigator.geolocation</strong> 객체 : .geolocation 객체를 통해 지오로케이션서비스를 사용할 수 있다.</p>
@@ -152,6 +153,7 @@
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">geoSucess</span>) </span>&#123;&#125;,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">geoErr</span>) </span>&#123;&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>Coordinates.Position 객체 : 사용자의 위치는 position객체의 프로퍼티를 갖는다.<ul>
 <li>.coords : 현재 위치를 정의하는 객체(Coordinates 객체)</li>
@@ -165,6 +167,7 @@
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(geoSuccess, geoErr);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">geoSuccess</span>(<span class="params">position</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(position.coords.latitude);</span><br><span class="line">  <span class="built_in">console</span>.log(position.coords.longitude);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">geoErr</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"err"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </section>
     <!-- Tags START -->
     
@@ -186,10 +189,10 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/05/15/개발일기/0515_blogBuild/">
+      <a class="nav-left" href="/2019/05/15/etc/makdown/">
         <span class="nav-arrow">← </span>
         
-          0515 study
+          Markdown
         
       </a>
     

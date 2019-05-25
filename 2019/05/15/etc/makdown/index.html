@@ -128,75 +128,101 @@
 <h2 id="1-마크다운"><a href="#1-마크다운" class="headerlink" title="1. 마크다운"></a>1. 마크다운</h2><ul>
 <li>일반 텍스트 문서의 양식을 편집하는 문법</li>
 <li>읽고 쓰기 쉽다.</li>
-<li>확장자 : .md<br><br></li>
+<li>확장자 : .md<br>
+
+</li>
 </ul>
 <h2 id="2-사용법"><a href="#2-사용법" class="headerlink" title="2. 사용법"></a>2. 사용법</h2><h4 id="1-제목"><a href="#1-제목" class="headerlink" title="1. 제목"></a>1. 제목</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h1 = # 제목1</span><br><span class="line">h2 = ## 제목2</span><br><span class="line">h3 = ### 제목3</span><br><span class="line">...</span><br><span class="line">h6 = ###### 제목6</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="2-강조"><a href="#2-강조" class="headerlink" title="2. 강조"></a>2. 강조</h4><ol>
+
+<br>
+#### 2. 강조
+
+<ol>
 <li>기울임 : <code>*italic*</code>, <code>_italic_</code></li>
 <li>두껍게 : <code>**bold**</code>, <code>__bold__</code></li>
 <li>이탤릭+bold : <code>***기울임,bold***</code></li>
-<li>highlight : <code>&lt;mark&gt;&lt;/mark&gt;</code><br><mark><strong><em>강조부분</em></strong></mark><br><br></li>
+<li>highlight : <code>&lt;mark&gt;&lt;/mark&gt;</code><br><mark><strong><em>강조부분</em></strong></mark><br>
+
+</li>
 </ol>
 <h4 id="3-리스트"><a href="#3-리스트" class="headerlink" title="3. 리스트"></a>3. 리스트</h4><ol>
 <li>ol</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 순서있는 리스트</span><br><span class="line">2. 순서있는 리스트</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>ul</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- 순서없는 리스트</span><br><span class="line">* 순서없는 리스트</span><br><span class="line">+ 순서없는 리스트</span><br><span class="line"></span><br><span class="line">===============</span><br><span class="line">sub도 사용가능!</span><br><span class="line"></span><br><span class="line">- 상위목차</span><br><span class="line">    1.하위목차</span><br><span class="line">        * 최하위목차</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="3-링크"><a href="#3-링크" class="headerlink" title="3. 링크"></a>3. 링크</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[naver](https://naver.com)</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="4-이미지"><a href="#4-이미지" class="headerlink" title="4. 이미지"></a>4. 이미지</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. 이미지</span><br><span class="line">![img](이미지링크 또는 이미지파일위치)</span><br><span class="line"></span><br><span class="line">2. gif파일</span><br><span class="line">![gif](/images/연습.gif)</span><br><span class="line"></span><br><span class="line">==============</span><br><span class="line">1. 이미지 크기조절</span><br><span class="line">&lt;img src=&quot;링크&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;</span><br><span class="line"></span><br><span class="line">2.이미지에 링크</span><br><span class="line">[![Vue](/images/vue.png)](https://kr.vuejs.org/)</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="5-인용문-Blockquotes"><a href="#5-인용문-Blockquotes" class="headerlink" title="5. 인용문(Blockquotes)"></a>5. 인용문(Blockquotes)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 인용문을 쓸 수 있다.</span><br><span class="line">&gt;&gt; 하위 인용문도 가능하다.</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="6-체크박스"><a href="#6-체크박스" class="headerlink" title="6. 체크박스"></a>6. 체크박스</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 체크박스</span><br><span class="line">- [x] 체크박스</span><br></pre></td></tr></table></figure>
+
+<br>
+#### 3. 링크
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[naver](https://naver.com)</span><br></pre></td></tr></table></figure>
+
+<br>
+#### 4. 이미지
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. 이미지</span><br><span class="line">![img](이미지링크 또는 이미지파일위치)</span><br><span class="line"></span><br><span class="line">2. gif파일</span><br><span class="line">![gif](/images/연습.gif)</span><br><span class="line"></span><br><span class="line">==============</span><br><span class="line">1. 이미지 크기조절</span><br><span class="line">&lt;img src=&quot;링크&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;</span><br><span class="line"></span><br><span class="line">2.이미지에 링크</span><br><span class="line">[![Vue](/images/vue.png)](https://kr.vuejs.org/)</span><br></pre></td></tr></table></figure>
+
+<br>
+#### 5. 인용문(Blockquotes)
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 인용문을 쓸 수 있다.</span><br><span class="line">&gt;&gt; 하위 인용문도 가능하다.</span><br></pre></td></tr></table></figure>
+
+<br>
+#### 6. 체크박스
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 체크박스</span><br><span class="line">- [x] 체크박스</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li style="list-style: none"><input type="checkbox"> 체크박스</li>
-<li style="list-style: none"><input type="checkbox" checked> 체크박스</li>
+<li><input disabled type="checkbox"> 체크박스</li>
+<li><input checked disabled type="checkbox"> 체크박스</li>
 </ul>
-<p><br></p>
+<br>
+
 <h4 id="7-줄바꿈"><a href="#7-줄바꿈" class="headerlink" title="7. 줄바꿈"></a>7. 줄바꿈</h4><ul>
-<li><code>&lt;br&gt;</code> html 태그 사용, 엔터 두번<br><br></li>
+<li><code>&lt;br&gt;</code> html 태그 사용, 엔터 두번<br>
+
+</li>
 </ul>
 <h4 id="8-수평선"><a href="#8-수평선" class="headerlink" title="8. 수평선"></a>8. 수평선</h4><ul>
 <li>각 기호 3개 이상</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
-<p><br></p>
+
+<br>
+
 <h3 id="9-표-Table"><a href="#9-표-Table" class="headerlink" title="9. 표(Table)"></a>9. 표(Table)</h3><ul>
 <li>header셀 구분은 <code>---</code></li>
 <li>정렬 : <code>---</code>, <code>:---:</code>, <code>---:</code></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">header | header | header</span><br><span class="line">---|:---:|---:</span><br><span class="line">1 | 테이블 내용 | 주석</span><br><span class="line">2 | 테이블 내용 |</span><br><span class="line">3 | 테이블 내용 | 주석</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
 <th>header</th>
-<th style="text-align:center">header</th>
-<th style="text-align:right">header</th>
+<th align="center">header</th>
+<th align="right">header</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>1</td>
-<td style="text-align:center">테이블 내용</td>
-<td style="text-align:right">주석</td>
+<td align="center">테이블 내용</td>
+<td align="right">주석</td>
 </tr>
 <tr>
 <td>2</td>
-<td style="text-align:center">테이블 내용</td>
+<td align="center">테이블 내용</td>
+<td align="right"></td>
 </tr>
 <tr>
 <td>3</td>
-<td style="text-align:center">테이블 내용</td>
-<td style="text-align:right">주석</td>
+<td align="center">테이블 내용</td>
+<td align="right">주석</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 </section>
     <!-- Tags START -->
     
@@ -218,17 +244,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/05/14/개발일기/0514_blogBuild/">
+      <a class="nav-left" href="/2019/05/15/개발일기/0515_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          0514 study
+          0515 study
         
       </a>
     
     
-      <a class="nav-right" href="/2019/05/15/개발일기/0515_blogBuild/">
+      <a class="nav-right" href="/2019/05/15/Javascript/ajax(updating)/API/">
         
-          0515 study
+          API
         
         <span class="nav-arrow"> →</span>
       </a>

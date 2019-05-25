@@ -128,13 +128,15 @@
 <li>사용법이 간단하고, 직관적</li>
 </ol>
 </blockquote>
-<p><br></p>
-<h2 id="1-async-await과-Promise"><a href="#1-async-await과-Promise" class="headerlink" title="1. async await과 Promise"></a>1. async await과 Promise</h2><ul>
-<li>async 함수의 리턴 값은 resolve 된 Promise 객체, 혹은 reject 된 Promise 객체를 암묵적으로 리턴</li>
-<li>function 키워드 앞에 async만 붙여주면 되고 비동기로 처리되는 부분 앞에 await만 붙여주면 됩니다.<br>다만, 몇 가지 주의할 점이 있다면 await 뒷부분이 반드시 promise 를 반환해야 한다는 것과 async function 자체도 promise 를 반환한다는 것</li>
-<li>await는 Promise와 함께 사용되어야 합니다. await를 사용하면 Promise가 종료 될 때까지 함수 실행이 일시 정지 됩니다. 그후 Promise가 종료 되면 함수 실행이 다시 진행 됩니다. await 사용하면 Promise에서 resolve 된 값을 반환 받게 됩니다. await의 Promise가 reject 되면, 예외가 발생됩니다.</li>
-</ul>
+<br>
+## 1. async await과 Promise
+- async 함수의 리턴 값은 resolve 된 Promise 객체, 혹은 reject 된 Promise 객체를 암묵적으로 리턴
+- function 키워드 앞에 async만 붙여주면 되고 비동기로 처리되는 부분 앞에 await만 붙여주면 됩니다. 
+다만, 몇 가지 주의할 점이 있다면 await 뒷부분이 반드시 promise 를 반환해야 한다는 것과 async function 자체도 promise 를 반환한다는 것
+- await는 Promise와 함께 사용되어야 합니다. await를 사용하면 Promise가 종료 될 때까지 함수 실행이 일시 정지 됩니다. 그후 Promise가 종료 되면 함수 실행이 다시 진행 됩니다. await 사용하면 Promise에서 resolve 된 값을 반환 받게 됩니다. await의 Promise가 reject 되면, 예외가 발생됩니다.
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">goWork</span>(<span class="params">time1, timeStartWork</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> time2 = <span class="keyword">await</span> wakeUp(time1);</span><br><span class="line">  <span class="keyword">const</span> time3 = <span class="keyword">await</span> takeSubway(time2);</span><br><span class="line">  <span class="keyword">const</span> time4 = <span class="keyword">await</span> takeOffSubway(time3);</span><br><span class="line">  <span class="keyword">const</span> arrivalTime = <span class="keyword">await</span> arriveWork(time4);</span><br><span class="line">  <span class="keyword">if</span> (arrivalTime &gt; timeStartWork) &#123;</span><br><span class="line">    fire();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><a href="https://beomy.tistory.com/45" target="_blank" rel="noopener">참고 버미노트 https://beomy.tistory.com/45</a></p>
 </section>
     <!-- Tags START -->
