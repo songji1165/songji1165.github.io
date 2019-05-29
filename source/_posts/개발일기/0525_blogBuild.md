@@ -17,7 +17,9 @@ tags: 개발일기
 
    > [npm 글로벌 설치 문제 참고](https://geonlee.tistory.com/32)
 
-> [나와 같은 문제를 겪은 블로그 글을 발견했다.. 나도 이것저것 해본다고 하다 캐시를 잘못 건드려 무언가 많이 꼬인 것 같다. (클릭)](https://ellapresso.tistory.com/m/27?category=777454) > ![](https://github.com/hexojs/hexo/issues/3546)
+- [나와 같은 문제를 겪은 블로그 글을 발견했다.. 나도 이것저것 해본다고 하다 캐시를 잘못 건드려 무언가 많이 꼬인 것 같다. (클릭)](https://ellapresso.tistory.com/m/27?category=777454)
+
+- [hexo issue github (클릭)](https://github.com/hexojs/hexo/issues/3546)
 
 ![npmErr](/images/npmEr0.png)
 ![npmErr](/images/npmEr1.png)
