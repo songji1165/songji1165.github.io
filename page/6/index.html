@@ -193,7 +193,7 @@ js study git 업로드 및 수정
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2019/04/25/Javascript/javascript11(this)/">Javascript THIS</a>
+        <a href="/2019/04/25/Javascript/javascript12(module).1/">Javascript Module Pattern</a>
       </h2>
       <p class="article-date">April 25, 2019</p>
       
@@ -208,16 +208,16 @@ js study git 업로드 및 수정
       
       <div class="article-summary">
         
-          THIS
-함수를 호출할 때, 함수가 어떻게 호출되었는지에 따라 this에 바인딩할 객체가 동적으로 결정된다.
+          모듈패턴 (Module Pattern)
+변수가 섞일 수 있기 때문에 전역변수는 지양한다! -&gt; 지역변수로 만들자!
 
-렉시컬스코프 : 함수를 선언할 때 함수의 스코프를 결정
+1. 네임 스페이스 (Name Space)
+누구나 접근이 가능하다. (Public)
 
-
-12345678function foo(number) &#123;  console.log(ar ...
+1234567891011121314151617var x ...
         
       </div>
-      <a class="more" href="/2019/04/25/Javascript/javascript11(this)/">Read more</a>
+      <a class="more" href="/2019/04/25/Javascript/javascript12(module).1/">Read more</a>
     </article>
   
     <article class="article-card">
@@ -253,7 +253,7 @@ vue를 이용해서 두더지게임을 만들어 보았다. 초기화 과정까�
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2019/04/25/Javascript/javascript12(module).1/">Javascript Module Pattern</a>
+        <a href="/2019/04/25/Javascript/javascript11(this)/">Javascript THIS</a>
       </h2>
       <p class="article-date">April 25, 2019</p>
       
@@ -268,16 +268,16 @@ vue를 이용해서 두더지게임을 만들어 보았다. 초기화 과정까�
       
       <div class="article-summary">
         
-          모듈패턴 (Module Pattern)
-변수가 섞일 수 있기 때문에 전역변수는 지양한다! -&gt; 지역변수로 만들자!
+          THIS
+함수를 호출할 때, 함수가 어떻게 호출되었는지에 따라 this에 바인딩할 객체가 동적으로 결정된다.
 
-1. 네임 스페이스 (Name Space)
-누구나 접근이 가능하다. (Public)
+렉시컬스코프 : 함수를 선언할 때 함수의 스코프를 결정
 
-1234567891011121314151617var x ...
+
+12345678function foo(number) &#123;  console.log(ar ...
         
       </div>
-      <a class="more" href="/2019/04/25/Javascript/javascript12(module).1/">Read more</a>
+      <a class="more" href="/2019/04/25/Javascript/javascript11(this)/">Read more</a>
     </article>
   
     <article class="article-card">
@@ -376,7 +376,7 @@ vue cli를 이용해서 설문조사 폼을 구현해 ...
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2019/04/22/Javascript/javascript7(hoisting)/">Javascript Hoisting</a>
+        <a href="/2019/04/22/Javascript/javascript8(scope)/">Javascript Scope</a>
       </h2>
       <p class="article-date">April 22, 2019</p>
       
@@ -391,18 +391,21 @@ vue cli를 이용해서 설문조사 폼을 구현해 ...
       
       <div class="article-summary">
         
-          호이스팅 Hoisting
-
-hoisting : 끌어올리다 (자바스크립트 엔진의 기능)
-함수나 변수 선언문을 어디에 쓰더라도 실행 단계에서 Scope 맨 위로 끌어올린다. =&gt; 어디선든 순서 상관없이 호출 가능
+          스코프 ScopeScope : 변수에 접근할수 있는 범위 (변수의 유효범위)
 
 
+1. 전역스코프, 지역스코프
+Global Scope ( 전역변수 , 전역함수 )
 
 
-1. 변수 호이스팅1234567// 변수 ...
+함수 밖에서 선언된 변수
+자바스크립트 어디에서나 사용 가능
+
+
+Local Scope ( 지역변수  ...
         
       </div>
-      <a class="more" href="/2019/04/22/Javascript/javascript7(hoisting)/">Read more</a>
+      <a class="more" href="/2019/04/22/Javascript/javascript8(scope)/">Read more</a>
     </article>
   
 
