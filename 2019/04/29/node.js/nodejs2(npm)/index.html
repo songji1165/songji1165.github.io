@@ -10,7 +10,7 @@
   
   <title>
     
-      node.js란 | SONG&#39;s 개발 블로그
+      npm (JSON, HTTP server) | SONG&#39;s
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
   <div class="header-container">
     <a class="home-link" href="/">
       <div class="logo"></div>
-      <span>SONG's 개발 블로그</span>
+      <span>SONG's</span>
     </a>
     <ul class="right-list">
       
@@ -101,8 +101,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>node.js란</h2>
-  <p class="post-date">2019-04-18</p>
+  <h2>npm (JSON, HTTP server)</h2>
+  <p class="post-date">2019-04-29</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -110,32 +110,30 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><blockquote>
-<p>웹브라우저 환경 : html을 이용 &gt; <u>웹 어플리케이션</u>을 만든다.</p>
-</blockquote>
+    <section class="markdown-content"><h1 id="JSON-server-HTTP-server"><a href="#JSON-server-HTTP-server" class="headerlink" title="JSON server, HTTP server"></a>JSON server, HTTP server</h1><blockquote>
+<p>npm (Node Package Manager)</p>
 <ul>
-<li><mark>node.js환경 &gt; javascript를 이용 &gt; <u>웹어플리케이션</u>을 만든다.</mark></li>
-<li>node.js를 사용해서 웹어플리케이션을 만든 것<br>
+<li>말그대로, <strong>node.js의 패키지 관리자</strong></li>
+<li>node.js기반의 javascript로 만든 오픈소스 모듈의 저장소</li>
+<li><u><strong>node.js 설치 시</strong> 자동으로 함께 설치 된다!</u></li>
+</ul>
+</blockquote>
+<br>
 
-</li>
+<h2 id="1-npm-설치-확인"><a href="#1-npm-설치-확인" class="headerlink" title="1. npm 설치 확인"></a>1. npm 설치 확인</h2><ul>
+<li><code>npm -v</code></li>
 </ul>
-<h3 id="1-자바스크립트-런타임-환경"><a href="#1-자바스크립트-런타임-환경" class="headerlink" title="1. 자바스크립트 런타임 환경"></a>1. <strong>자바스크립트 런타임 환경</strong></h3><ul>
-<li>런타임 : 프로그래밍 언어가 구동되는 환경</li>
-<li>런타임 환경 : 프로그램을 위한 소프트웨어 서비스를 제공하는 가상 머신의 상태</li>
-</ul>
-<h3 id="2-javascript라는-언어로-gt-node-js-런타임-프로그램을-실행시켜-gt-node-js-애플리케이션을-만든다"><a href="#2-javascript라는-언어로-gt-node-js-런타임-프로그램을-실행시켜-gt-node-js-애플리케이션을-만든다" class="headerlink" title="2. javascript라는 언어로 -&gt; node.js 런타임 프로그램을 실행시켜 -&gt; node.js 애플리케이션을 만든다."></a>2. <strong>javascript라는 언어</strong>로 -&gt; <strong>node.js 런타임 프로그램을 실행</strong>시켜 -&gt; <strong>node.js 애플리케이션</strong>을 만든다.</h3><ul>
-<li>node.js를 통해 웹어플리케이션을 만든 것</li>
-</ul>
-<h3 id="3-node-js-설치하기"><a href="#3-node-js-설치하기" class="headerlink" title="3. node.js 설치하기"></a>3. node.js 설치하기</h3><ol>
-<li><p>node.js홈페이지에서 파일 다운로드</p>
-</li>
-<li><p>node.js가 잘 설치되있는지 확인</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. cmd 터미널콘솔을 실행시키기</span><br><span class="line"></span><br><span class="line">2. `node -v`</span><br><span class="line">   : 버전정보가 뜨면 설치 성공!</span><br><span class="line"></span><br><span class="line">3. `node`</span><br><span class="line">   : node런타임환경을 이용해 javascrip를 입력할 수 있다.</span><br><span class="line"></span><br><span class="line">4. console.log(1+1) 을 써본 후 화면 출력이 잘되는 지 실행해 본다.</span><br><span class="line"></span><br><span class="line">5. node 런타임 환경을 나갈 때에는 ctrl+c를 누르거나 .exit을 치면된다.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>javscript 파일 실행시키기</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. `cd`</span><br><span class="line">   (change directory)</span><br><span class="line">   (예 : cd C:\Users\eumji\Desktop\vue-todo)</span><br><span class="line"></span><br><span class="line">2. `dir`</span><br><span class="line">   : 현재 디렉토리에 존재하는 파일들을 보여준다.</span><br><span class="line"></span><br><span class="line">3. `node 파일이름.js`</span><br><span class="line">   : js파일을 실행시켜서 런타임 환경에서 보여준다.</span><br></pre></td></tr></table></figure>
+<br>
 
-</li>
+<h2 id="2-npm-기반의-프로젝트-설치"><a href="#2-npm-기반의-프로젝트-설치" class="headerlink" title="2. npm 기반의 프로젝트 설치"></a>2. npm 기반의 프로젝트 설치</h2><h5 id="1-해당-파일로-이동"><a href="#1-해당-파일로-이동" class="headerlink" title="1. 해당 파일로 이동"></a>1. 해당 파일로 이동</h5><h5 id="2-npm-init"><a href="#2-npm-init" class="headerlink" title="2. npm init"></a>2. <code>npm init</code></h5><pre><code>- `npm init -y` : 기본 값으로 설정</code></pre><h5 id="3-package-json-파일이-생성"><a href="#3-package-json-파일이-생성" class="headerlink" title="3. package.json 파일이 생성"></a>3. <mark><strong>package.json</strong> 파일이 생성</mark></h5><ul>
+<li>package.json : 해당 프로젝트에 설치된 모듈, 모듈관리, 버정 등의 다양한 정보를 알 수 있다.</li>
+</ul>
+<br>
+
+<h2 id="3-npm-install-or-npm-i"><a href="#3-npm-install-or-npm-i" class="headerlink" title="3. npm install or npm i"></a>3. <code>npm install</code> or <code>npm i</code></h2><ol>
+<li>npm install은 해당 프로젝트에서 모듈들을 사용하기 위한 것이다. (global이 아님)</li>
+<li>새로운 프로젝트에서는 npm install을 통해 모듈을 다운 받아야 한다.</li>
+<li><strong><code>npm i *</code> 를 통해 다양한 패키지를 설치할 수 있다!</strong></li>
 </ol>
 </section>
     <!-- Tags START -->
@@ -158,17 +156,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/18/개발일기/0418_blogBuild/">
+      <a class="nav-left" href="/2019/04/29/node.js/nodejs1(npm)/">
         <span class="nav-arrow">← </span>
         
-          0418 study
+          npm
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/19/개발일기/0419_blogBuild/">
+      <a class="nav-right" href="/2019/04/30/개발일기/0430_blogBuild/">
         
-          0419 study
+          0430 study
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -194,7 +192,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/18/node.js/nodejs/';
+    var url = 'http://yoursite.com/2019/04/29/node.js/nodejs2(npm)/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({

@@ -10,7 +10,7 @@
   
   <title>
     
-      Javascript 객체 Object | SONG&#39;s 개발 블로그
+      Javascript 객체 Object | SONG&#39;s
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@
   <div class="header-container">
     <a class="home-link" href="/">
       <div class="logo"></div>
-      <span>SONG's 개발 블로그</span>
+      <span>SONG's</span>
     </a>
     <ul class="right-list">
       
@@ -133,16 +133,20 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 프로퍼티</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  key1: <span class="string">"value1"</span>,</span><br><span class="line">  key2: <span class="string">"value2"</span>,</span><br><span class="line">  key1: <span class="string">"value3"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.key1); <span class="comment">// key1의 값은 value3이 된다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 메서드</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  key: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"객체의 값이 함수면 메서드이다."</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj2.key();</span><br></pre></td></tr></table></figure>
 
 <br>
-### 2. 객체 : 참조 타입
-- 변수 : 일정한 메모리에 값을 저장 
-- 객체 : 한 덩어리로 메모리 영역에 저장
-- 변수 = 객체 타입 
-    - 객체 타입을 변수에 대입(저장)
-      - 변수는 객체가 저장되어 있는 메모리 영역의 참조(위치 정보)가 저장된다.
-![img](/images/object.jpg)
-<br>
 
-<h3 id="2-객체-생성법"><a href="#2-객체-생성법" class="headerlink" title="2. 객체 생성법"></a>2. 객체 생성법</h3><blockquote>
+<h3 id="2-객체-참조-타입"><a href="#2-객체-참조-타입" class="headerlink" title="2. 객체 : 참조 타입"></a>2. 객체 : 참조 타입</h3><ul>
+<li>변수 : 일정한 메모리에 값을 저장 </li>
+<li>객체 : 한 덩어리로 메모리 영역에 저장</li>
+<li>변수 = 객체 타입 <ul>
+<li>객체 타입을 변수에 대입(저장)<ul>
+<li>변수는 객체가 저장되어 있는 메모리 영역의 참조(위치 정보)가 저장된다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/object.jpg" alt="img"><br><br></p>
+<h3 id="3-객체-생성법"><a href="#3-객체-생성법" class="headerlink" title="3. 객체 생성법"></a>3. 객체 생성법</h3><blockquote>
 <ol>
 <li>리터럴방식 {}</li>
 <li>생성자 함수(사용자 정의 함수)<br>=&gt; <strong>es6이전에 많이 사용 되었음</strong></li>
@@ -235,17 +239,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/14/vue/vue6(vueDirective)/">
+      <a class="nav-left" href="/2019/04/15/개발일기/0415_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          6. Vue 디렉티브
+          0415 study
         
       </a>
     
     
-      <a class="nav-right" href="/2019/04/15/개발일기/0415_blogBuild/">
+      <a class="nav-right" href="/2019/04/18/node.js/nodejs0/">
         
-          0415 study
+          node.js란
         
         <span class="nav-arrow"> →</span>
       </a>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="나만의 개발 블로그">
+  <meta name="keyword" content="javascript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      node.js란 | SONG&#39;s
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>SONG's</span>
+    </a>
+    <ul class="right-list">
+      
+      <li class="list-item">
+        
+        <a href="/tags/" class="item-link">Menu</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/about/" class="item-link">About</a>
+        
+      </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+        <li class="menu-item">
+          
+          <a href="/tags/" class="menu-link">Menu</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/about/" class="menu-link">About</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>node.js란</h2>
+  <p class="post-date">2019-04-18</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><blockquote>
+<p>웹브라우저 환경 : html을 이용 &gt; <u>웹 어플리케이션</u>을 만든다.</p>
+</blockquote>
+<ul>
+<li><mark>node.js환경 &gt; javascript를 이용 &gt; <u>웹어플리케이션</u>을 만든다.</mark></li>
+<li>node.js를 사용해서 웹어플리케이션을 만든 것<br>
+
+</li>
+</ul>
+<h3 id="1-자바스크립트-런타임-환경"><a href="#1-자바스크립트-런타임-환경" class="headerlink" title="1. 자바스크립트 런타임 환경"></a>1. <strong>자바스크립트 런타임 환경</strong></h3><ul>
+<li>런타임 : 프로그래밍 언어가 구동되는 환경</li>
+<li>런타임 환경 : 프로그램을 위한 소프트웨어 서비스를 제공하는 가상 머신의 상태</li>
+</ul>
+<h3 id="2-javascript라는-언어로-gt-node-js-런타임-프로그램을-실행시켜-gt-node-js-애플리케이션을-만든다"><a href="#2-javascript라는-언어로-gt-node-js-런타임-프로그램을-실행시켜-gt-node-js-애플리케이션을-만든다" class="headerlink" title="2. javascript라는 언어로 -&gt; node.js 런타임 프로그램을 실행시켜 -&gt; node.js 애플리케이션을 만든다."></a>2. <strong>javascript라는 언어</strong>로 -&gt; <strong>node.js 런타임 프로그램을 실행</strong>시켜 -&gt; <strong>node.js 애플리케이션</strong>을 만든다.</h3><ul>
+<li>node.js를 통해 웹어플리케이션을 만든 것</li>
+</ul>
+<h3 id="3-node-js-설치하기"><a href="#3-node-js-설치하기" class="headerlink" title="3. node.js 설치하기"></a>3. node.js 설치하기</h3><ol>
+<li><p>node.js홈페이지에서 파일 다운로드</p>
+</li>
+<li><p>node.js가 잘 설치되있는지 확인</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. cmd 터미널콘솔을 실행시키기</span><br><span class="line"></span><br><span class="line">2. `node -v`</span><br><span class="line">   : 버전정보가 뜨면 설치 성공!</span><br><span class="line"></span><br><span class="line">3. `node`</span><br><span class="line">   : node런타임환경을 이용해 javascrip를 입력할 수 있다.</span><br><span class="line"></span><br><span class="line">4. console.log(1+1) 을 써본 후 화면 출력이 잘되는 지 실행해 본다.</span><br><span class="line"></span><br><span class="line">5. node 런타임 환경을 나갈 때에는 ctrl+c를 누르거나 .exit을 치면된다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>javscript 파일 실행시키기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. `cd`</span><br><span class="line">   (change directory)</span><br><span class="line">   (예 : cd C:\Users\eumji\Desktop\vue-todo)</span><br><span class="line"></span><br><span class="line">2. `dir`</span><br><span class="line">   : 현재 디렉토리에 존재하는 파일들을 보여준다.</span><br><span class="line"></span><br><span class="line">3. `node 파일이름.js`</span><br><span class="line">   : js파일을 실행시켜서 런타임 환경에서 보여준다.</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        <!--  -->
+
+<a href="/tags#node.js">
+  <span class="tag-code">node.js</span>
+</a>
+<!-- <span class="tag-code"></span> -->
+
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/04/15/Javascript/javascript5(object)/">
+        <span class="nav-arrow">← </span>
+        
+          Javascript 객체 Object
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/04/18/개발일기/0418_blogBuild/">
+        
+          0418 study
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/04/18/node.js/nodejs0/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
