@@ -1,7 +1,7 @@
 ---
 title: npm
-date: 2019-04-29 16:07:12
-tags: node.js
+date: 2019-05-29 16:07:12
+tags: nodejs
 ---
 
 # npm (Node Package Manager)
