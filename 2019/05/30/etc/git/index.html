@@ -10,7 +10,7 @@
   
   <title>
     
-      npm (JSON, HTTP server) | SONG&#39;s
+      Git | SONG&#39;s
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -101,8 +101,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>npm (JSON, HTTP server)</h2>
-  <p class="post-date">2019-05-29</p>
+  <h2>Git</h2>
+  <p class="post-date">2019-05-30</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -110,15 +110,101 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="JSON-server-HTTP-server"><a href="#JSON-server-HTTP-server" class="headerlink" title="JSON server, HTTP server"></a>JSON server, HTTP server</h1></section>
+    <section class="markdown-content"><h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><p><mark><a href="https://backlog.com/git-tutorial/kr/intro/intro1_1.html" target="_blank" rel="noopener">git backlogo 참고</a></mark></p>
+<blockquote>
+<ul>
+<li>컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템</li>
+<li>소스 코드가 변경된 이력을 쉽게 확인할 수 있고, 특정 시점에 저장된 버전과 비교하거나 특정 시점으로 되돌아갈 수 있다.</li>
+</ul>
+</blockquote>
+<h2 id="1-Git-기본"><a href="#1-Git-기본" class="headerlink" title="1. Git 기본"></a>1. Git 기본</h2><ol>
+<li>원격 저장소(Remote Repository)<ul>
+<li>파일이 원격 저장소 전용 서버에서 관리되며 여러 사람이 함께 공유하기 위한 저장소</li>
+<li><mark>github</mark></li>
+</ul>
+</li>
+<li>로컬 저장소(Local Repository)<ul>
+<li>내 PC에 파일이 저장되는 개인 전용 저장소</li>
+<li><mark>git</mark></li>
+</ul>
+</li>
+<li>Commit<ul>
+<li>변경을 기록</li>
+<li>시간 순으로 기록되어 과거 변경 이력을 알 수 있다.</li>
+<li>커밋 메시지 : 변경하는 내용에 대해 메시지를 남기자 ! 꼭 !
+<img src="https://backlog.com/git-tutorial/kr/img/post/intro/capture_intro1_3_1.png" alt="커밋"></li>
+</ul>
+</li>
+<li>작업트리와 인덱스<ol>
+<li>작업트리(work tree) : 작업하고 있는 영역, 상태</li>
+<li>인덱스/STAGE : 저장소에 올리기 전 STAGE단계에 올려 commit을 준비하는 가상 공간 - commit시 원치 않는 파일을 분리 할 수 있다!
+<img src="https://backlog.com/git-tutorial/kr/img/post/intro/capture_intro1_4_1.png" alt="작업트리 인덱스"></li>
+</ol>
+</li>
+</ol>
+<br>
+
+<h2 id="2-GIT-버전관리-하기"><a href="#2-GIT-버전관리-하기" class="headerlink" title="2. GIT 버전관리 하기"></a>2. GIT 버전관리 하기</h2><h4 id="1-cd-디렉토릭경로-해당-디렉티로-이동"><a href="#1-cd-디렉토릭경로-해당-디렉티로-이동" class="headerlink" title="1. cd 디렉토릭경로 : 해당 디렉티로 이동"></a>1. <code>cd 디렉토릭경로</code> : 해당 디렉티로 이동</h4><ul>
+<li><code>pwd</code> : 현재 위치 알려줌</li>
+<li><code>git</code> : 사용 가능한 명령어 리스트</li>
+</ul>
+<h4 id="2-git-init-git의-저장소-초기화"><a href="#2-git-init-git의-저장소-초기화" class="headerlink" title="2. git init : git의 저장소 초기화"></a>2. <strong><code>git init</code></strong> : git의 저장소 초기화</h4><ul>
+<li><strong>.git</strong> 파일 생성됨 : 현재 디렉토리에 git 작업을 진행할 준비가 됬다.</li>
+</ul>
+<h4 id="4-git-버전관리-하기"><a href="#4-git-버전관리-하기" class="headerlink" title="4. git 버전관리 하기"></a>4. git 버전관리 하기</h4><ol>
+<li><strong><code>git pull origin master</code></strong> : 로컬저장소 local master 최신상태로 만들기</li>
+<li><strong><code>git add 파일이름</code></strong><ul>
+<li><strong><code>git add .</code></strong> : git이 버전관리 할 수 있도록 명령</li>
+</ul>
+</li>
+<li><strong><code>git status</code></strong> : 현재 버전관리 상태를 나타냄</li>
+<li><strong><code>git commit -m &quot;message&quot;</code></strong> : 커밋 메시지 입력과 함께 커밋</li>
+</ol>
+<blockquote>
+<p>[ 처음 사용시 자신의 정보 셋팅 필요 ]</p>
+<ol>
+<li>git config –global user.name</li>
+<li>git config –global user.email</li>
+</ol>
+</blockquote>
+<br>
+
+<h2 id="3-github-원격-저장소-와-git"><a href="#3-github-원격-저장소-와-git" class="headerlink" title="3. github(원격 저장소)와 git"></a>3. github(원격 저장소)와 git</h2><ol>
+<li><p>github repository(원격 저장소)와 연결<br><strong><code>git remote add origin github주소</code></strong> - 해당 github repository의 http나 ssh 주소 입력</p>
+</li>
+<li><p>github repository(원격 저장소)와 복제<br><strong><code>git clone github주소</code></strong> - 협업시에 원격 저장소에 push하는 것 주의! -&gt; commit 충돌이 될 수 있다! -&gt; <strong>git branch</strong> 사용 권장 - <mark>pull -&gt; commit -&gt; push</mark></p>
+</li>
+<li><p>github repository(원격 저장소) PULL<br><strong><code>git pull origin master</code></strong> - 협업 시 원격 저장소에서 최신 변경 이력을 다운로드하여 내 로컬 저장해주어야 한다.</p>
+</li>
+<li><p>github repository(원격 저장소)에 push<br><strong><code>git push origin master</code></strong> or <strong><code>git push origin branch-name</code></strong></p>
+</li>
+</ol>
+<br>
+
+<h4 id="3-git-branch"><a href="#3-git-branch" class="headerlink" title="3. git branch"></a>3. git branch</h4><ul>
+<li><strong>작업공간(work tree)를 분리</strong>하여 같은 소스코드를 갖고 다른 작업을 수행할 수 있게 한다.</li>
+<li>각 브랜치는 다른 브랜치에 영향을 받지 않는다.</li>
+<li><strong>master</strong> : git의 메인 브랜치</li>
+</ul>
+<ol>
+<li>git branch 생성</li>
+<li><strong><code>git checkout -b 브랜치네임</code></strong> : 새로운 브랜치 생성</li>
+<li><strong><code>git checkout 브랜치네임</code></strong> : 행당 브랜치로 이동</li>
+<li><strong><code>git branch</code></strong> : 현재 checkout하고 있는 branch 확인</li>
+<li>git branch push<ul>
+<li>github에서 <strong>merge</strong>를 해줘야 최종적으로 메인 저장소에 저장된다.</li>
+</ul>
+</li>
+</ol>
+</section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         <!--  -->
 
-<a href="/tags#nodejs">
-  <span class="tag-code">nodejs</span>
+<a href="/tags#etc">
+  <span class="tag-code">etc</span>
 </a>
 <!-- <span class="tag-code"></span> -->
 
@@ -131,17 +217,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/05/29/node.js/nodejs1(npm)/">
+      <a class="nav-left" href="/2019/05/30/node.js/nodejs2(lint)/">
         <span class="nav-arrow">← </span>
         
-          npm
+          ESLint
         
       </a>
     
     
-      <a class="nav-right" href="/2019/05/29/개발일기/0529_blogBuild/">
+      <a class="nav-right" href="/2019/05/30/개발일기/0530_blogBuild/">
         
-          0529 study
+          0530 study
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -167,7 +253,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/05/29/node.js/nodejs2(npm)/';
+    var url = 'http://yoursite.com/2019/05/30/etc/git/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
