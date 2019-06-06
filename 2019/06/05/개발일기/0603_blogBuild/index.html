@@ -10,7 +10,7 @@
   
   <title>
     
-      0419 study | SONG&#39;s
+      0603 - 0605 study | SONG&#39;s
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -101,8 +101,8 @@
   </div>
 </header>
     <div id="article-banner">
-  <h2>0419 study</h2>
-  <p class="post-date">2019-04-19</p>
+  <h2>0603 - 0605 study</h2>
+  <p class="post-date">2019-06-05</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -111,17 +111,27 @@
   <!-- Article START -->
   <article class="post-article">
     <section class="markdown-content"><h3 id="오늘-할-것"><a href="#오늘-할-것" class="headerlink" title="오늘 할 것"></a>오늘 할 것</h3><ol>
-<li>javascript component 이론 정리, javascript 문제 풀어보기</li>
-<li>vue cli 공부</li>
+<li>프로젝트(Vue study Trello)</li>
+<li>프로젝트shoppingmall aws 서버 만들기</li>
 </ol>
 <h3 id="공부한-것"><a href="#공부한-것" class="headerlink" title="공부한 것"></a>공부한 것</h3><ol>
-<li>javascript component에 대해 집중적으로 이론정리를 다시 했다. 여전히 완벽히 이해되지는 않지만 javascript의 component의 역할과 생성자 객체의 생성과정등에 대해서 어느정도 이해하게 된 것 같다.</li>
-<li>vue cli는 .vue를 실행할 수 있는 환경을 구축하는 것으로 .vue에서는 컴포넌트간의 통신을 더욱 응용하는 과정인 것 같다. 프로젝트를 만들어보며 cli를 이해하도록 해야겠다.</li>
+<li>트렐로 보드부분에서 데이터를 전역으로 사용하기 위해 vuex를 사용했다. vuex 사용과정에서 며칠을 버벅거렸다. 헬퍼함수를 통해 actions를 사용해주었다. 이렇게 간단하게 사용해도 되는건가 싶지만 일단 vuex actions으로 서버통신을 하여 보드리스트를 불러오는데 성공했다..</li>
+<li>shopping mall 프로젝트의 서버를 계속 켜두고 있기 어려워서 aws에 서버를 연동시키는걸 시도해보았다. 데이터를 올리는 것까지는 성공했지만 netlify에서는 http가 지원되지 않아 이 부분에서 HTTP 접근제어 CORS 문제가 발생했다.. 이부분은 해결하기 어려운 것 같다….. 우선 shopping mall 프로젝트의 서버부분은 아쉽지만 이대로 끝내야겠다.</li>
 </ol>
-<h3 id="내일-할-것"><a href="#내일-할-것" class="headerlink" title="내일 할 것"></a>내일 할 것</h3><ol>
-<li>vue cli 계산기 만들기</li>
-<li>vue cli 설문조사 폼 만들기</li>
+<blockquote>
+<ol>
+<li>AWS EC2 로그인</li>
+<li>인스턴스 시작</li>
+<li>해당 서버 선택 후 기본값으로 ‘다음’ 클릭클릭</li>
+<li>다음 클릭 후 ‘검토및시작’클릭 -&gt; ‘시작하기’</li>
+<li>키페어 할당 받기 (저장한 곳 잘 기억해두기! (보안 키값 같은거..))</li>
+<li>이제 aws 서버를 사용할 준비가 되었다. 터미널이나 git bash등을 이용해서 git clone해주고 사용하기!<ul>
+<li>해당 파일로 이동해여 node설치 등을 하면 된다.. (아마존 서버의 공간에 나의 DB를 저장(공유)하게 되는것 .. 기존 서버 설치시 필요한 모듈을 설치해주는 것처럼 똑같이 하면 된다.)</li>
+<li>aws에서는 내가 접속하게 될 포트를 열어주는 설정을 해주어야 접근 권한이 생긴다.</li>
+</ul>
+</li>
 </ol>
+</blockquote>
 </section>
     <!-- Tags START -->
     
@@ -143,20 +153,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/18/개발일기/0418_blogBuild/">
+      <a class="nav-left" href="/2019/06/02/개발일기/0602_blogBuild/">
         <span class="nav-arrow">← </span>
         
-          0418 study
+          0602 study
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/04/19/vue/vue7(cli)/">
-        
-          7. Vue CLI
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -179,7 +182,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/04/19/개발일기/0419_blogBuild/';
+    var url = 'http://yoursite.com/2019/06/05/개발일기/0603_blogBuild/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
