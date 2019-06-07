@@ -70,7 +70,10 @@ tags: etc
 4. github repository(원격 저장소)에 push
    **`git push origin master`** or **`git push origin branch-name`**
 
-<br>
+5. github push된 branch 삭제
+   **`git push origin --delete 삭제할 브랜치명`**
+
+   <br>
 
 #### 3. git branch
 
@@ -84,3 +87,6 @@ tags: etc
 1. **`git branch`** : 현재 checkout하고 있는 branch 확인
 1. git branch push
    - github에서 **merge**를 해줘야 최종적으로 메인 저장소에 저장된다.
+
+> git branch 삭제
+> `git branch -d 브랜치네임`
