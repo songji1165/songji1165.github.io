@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="나만의 개발 블로그">
+  <meta name="keyword" content="javascript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      DB(데이터베이스) | SONG&#39;s
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>SONG's</span>
+    </a>
+    <ul class="right-list">
+      
+      <li class="list-item">
+        
+        <a href="/tags/" class="item-link">Menu</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/about/" class="item-link">About</a>
+        
+      </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+        <li class="menu-item">
+          
+          <a href="/tags/" class="menu-link">Menu</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/about/" class="menu-link">About</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>DB(데이터베이스)</h2>
+  <p class="post-date">2019-05-30</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="DB-DataBase"><a href="#DB-DataBase" class="headerlink" title="DB (DataBase)"></a>DB (DataBase)</h1><hr>
+<h2 id="1-DataBase-란"><a href="#1-DataBase-란" class="headerlink" title="1. DataBase 란"></a>1. DataBase 란</h2><h4 id="1-데이터의-저장소"><a href="#1-데이터의-저장소" class="headerlink" title="1. 데이터의 저장소"></a>1. 데이터의 저장소</h4><h4 id="2-특징"><a href="#2-특징" class="headerlink" title="2. 특징"></a>2. 특징</h4><ol>
+<li>사용자의 질의에 대한 즉각적인 처리와 응답</li>
+<li>생성, 수정, 삭제를 통해 항상 최신의 데이터 유지</li>
+<li>사용자들이 원하는 데이터를 주소가 아닌 내용에 따라 참조 가능</li>
+<li>응용프로그램과 데이터베이스는 독립되어 있어, 데이터의 논리적 구조와 응용프로그램은 별개로 동작</li>
+</ol>
+<h2 id="2-DataBase의-종류"><a href="#2-DataBase의-종류" class="headerlink" title="2. DataBase의 종류"></a>2. DataBase의 종류</h2><ol>
+<li>계층형 데이터베이스<ul>
+<li>데이터 관계 : 트리 구조 (부모, 자식 형태)</li>
+<li>데이터 중복 문제</li>
+</ul>
+</li>
+<li>네트워크형 데이터베이스<ul>
+<li>데이터 관계 : 그물형 구조</li>
+<li>데이터 중복 문제 해소, 데이터 간 다양한 관계를 갖음</li>
+<li>복잡한 구조로 인한 수정의 어려움</li>
+</ul>
+</li>
+</ol>
+<h5 id="3-관계형-데이터베이스"><a href="#3-관계형-데이터베이스" class="headerlink" title="3. 관계형 데이터베이스"></a>3. <strong>관계형 데이터베이스</strong></h5><ul>
+<li>데이터 관계 : Table 관계</li>
+<li>SQL을 사용해 데이터 관리 및 접근</li>
+</ul>
+<h5 id="4-NoSQL-데이터베이스"><a href="#4-NoSQL-데이터베이스" class="headerlink" title="4. NoSQL 데이터베이스"></a>4. <strong>NoSQL 데이터베이스</strong></h5><ul>
+<li>데이터 관계 : key, value의 형태 ( 일관성 모델 )</li>
+<li>관계형 DB보다 덜 제한적</li>
+<li>키를 사용해 데이터 관리 및 접근</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="center">_</th>
+<th align="left">SQL</th>
+<th align="left">NoSQL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">특징</td>
+<td align="left">1. 데이터 사이 관계가 있다. <br> 2. Table 구조</td>
+<td align="left">1. 데이터 관계가 필요치 않다. (SQL 개선/ 보완) <br> 2. key, value로 정의</td>
+</tr>
+<tr>
+<td align="center">장점</td>
+<td align="left">1. 범용적, 고성능 <br> 2. 데이터의 일관성 <br> 3. 정규화에 따른 갱신 비용 최소화</td>
+<td align="left">1. 대용량 데이터에 적합 <br> 2. 데이터 분산 처리 <br> 3. cloud computing <br> 4. 빠른 읽기 / 쓰기 <br> 5. 유연한 데이터 모델링</td>
+</tr>
+<tr>
+<td align="center">단점</td>
+<td align="left">1. 대량의 데이터 입력 처리 <br> 2. 갱신이 발생한 테이블의 인댁스 생성 및 스키마 변경 <br> 3. 컬럼의 확장 어려움 <br> 4. 단순히 빠른 결과</td>
+<td align="left">1. 데이터 중복 발생이 쉬움 <br> 2. 불필요한 중복으로 인한 비용 발생</td>
+</tr>
+<tr>
+<td align="center">종류</td>
+<td align="left">Oracle, MySQL, SQLite, Apache ..</td>
+<td align="left">MongoDB, Flare ..</td>
+</tr>
+</tbody></table>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        <!--  -->
+
+<a href="/tags#db">
+  <span class="tag-code">db</span>
+</a>
+<!-- <span class="tag-code"></span> -->
+
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/30/node.js/nodejs2(lint)/">
+        <span class="nav-arrow">← </span>
+        
+          ESLint
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/05/30/etc/git/">
+        
+          Git
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/05/30/DB/1_DB/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

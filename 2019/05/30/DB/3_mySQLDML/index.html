@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="나만의 개발 블로그">
+  <meta name="keyword" content="javascript">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      MySQL 기본 문법 | SONG&#39;s
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>SONG's</span>
+    </a>
+    <ul class="right-list">
+      
+      <li class="list-item">
+        
+        <a href="/tags/" class="item-link">Menu</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/about/" class="item-link">About</a>
+        
+      </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+        <li class="menu-item">
+          
+          <a href="/tags/" class="menu-link">Menu</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/about/" class="menu-link">About</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>MySQL 기본 문법</h2>
+  <p class="post-date">2019-05-30</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="MySQL-문법"><a href="#MySQL-문법" class="headerlink" title="MySQL 문법"></a>MySQL 문법</h1><h2 id="1-SQL-Structured-Query-Language"><a href="#1-SQL-Structured-Query-Language" class="headerlink" title="1. SQL(Structured Query Language)"></a>1. <strong>SQL(Structured Query Language)</strong></h2><ol>
+<li>DML(Data Manipulation Language)<ul>
+<li>데이터베이스에 저장된 데이터를 처리하거나 조회, 검색하기 위한 명령어</li>
+<li>INSERT, UPDATE, DELETE, SELECT 등</li>
+</ul>
+</li>
+<li>DDL(Data Definition Language)<ul>
+<li>데이터베이스나 테이블 등을 생성, 삭제하거나 그 구조를 변경하기 위한 명령어    </li>
+<li>CREATE, ALTER, DROP 등</li>
+</ul>
+</li>
+<li>DCL(Data Control Language)<ul>
+<li>데이터베이스에 저장된 데이터를 관리하기 위하여 데이터의 보안성 및 무결성 등을 제어하기 위한 명령어    </li>
+<li>GRANT, REVOKE 등</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-기본-구문"><a href="#2-기본-구문" class="headerlink" title="2. 기본 구문"></a>2. 기본 구문</h2><ol>
+<li>일반적인 구문 뒤에는 세미콜론(<code>;</code>)으로 구분한다. <ul>
+<li>서버와의 연결을 끊는 구문인 QUIT같은 경우는 제외</li>
+</ul>
+</li>
+<li>대소문자를 구별하지 않는다.<ul>
+<li><strong>테이블명, 필드의 이름은 대소문자 구문한다 !!</strong></li>
+</ul>
+</li>
+<li>주석<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. # 한 줄 주석</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> -- 한 줄 주석</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> <span class="comment">/* 두 줄</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   이상의</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   주석 */</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="3-기본-DML"><a href="#3-기본-DML" class="headerlink" title="3. 기본 DML"></a>3. 기본 DML</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">create table cust (</span><br><span class="line">    cust_no number(<span class="number">10</span>),</span><br><span class="line">    cust_name varcher2(<span class="number">15</span>),</span><br><span class="line">    phone varcher2(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into tb_cust ( <span class="number">1</span>, <span class="string">'song'</span>, <span class="string">'01012341234'</span> );</span><br><span class="line">insert into tb_cust ( <span class="number">2</span>, <span class="string">'song'</span>, <span class="string">'01012341234'</span> );</span><br><span class="line"></span><br><span class="line">update cust </span><br><span class="line"><span class="keyword">set</span> cust_name = 'songji'</span><br><span class="line">where cust_no = 2;</span><br><span class="line"></span><br><span class="line">delete from cust</span><br><span class="line">where cust_no = 1;</span><br><span class="line"></span><br><span class="line">commit;</span><br><span class="line"></span><br><span class="line">select * from cust;</span><br></pre></td></tr></table></figure>
+
+<p><code># DB 조회 결과</code><br>_ | cust_no | cust_name | phone<br>—| :—: | :—: | :—:<br>1 | 2 | songji | 01012341234</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        <!--  -->
+
+<a href="/tags#db">
+  <span class="tag-code">db</span>
+</a>
+<!-- <span class="tag-code"></span> -->
+
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/05/30/개발일기/0530_blogBuild/">
+        <span class="nav-arrow">← </span>
+        
+          0530 study
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/06/01/개발일기/0601_blogBuild/">
+        
+          0601 study
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/05/30/DB/3_mySQLDML/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
