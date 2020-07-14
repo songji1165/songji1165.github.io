@@ -24,8 +24,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
   
-    <script src="/js/qrious.js"></script>
-  
   
     <script src="/js/gitment.js"></script>
   
@@ -72,25 +70,13 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link">Home</a>
+            <a href="/tags/" class="item-link">Home</a>
           
         </li>
       
         <li class="list-item">
           
             <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/archives/" class="item-link">Archives</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/project/" class="item-link">Projects</a>
           
         </li>
       
@@ -111,25 +97,13 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link">Home</a>
+              <a href="/tags/" class="menu-link">Home</a>
             
           </li>
         
           <li class="menu-item">
             
               <a href="/tags/" class="menu-link">Tags</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/archives/" class="menu-link">Archives</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/project/" class="menu-link">Projects</a>
             
           </li>
         
@@ -285,10 +259,10 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/04/14/개발일기/0414_blogBuild/">
+      <a class="nav-left" href="/2019/04/14/Javascript/javascript4(function)/">
         <span class="nav-arrow">← </span>
         
-          0414 study
+          Javascript 함수 Function
         
       </a>
     
@@ -305,30 +279,8 @@
     <!-- NAV END -->
     <!-- 打赏 START -->
     
-      <div class="money-like">
-        <div class="reward-btn">
-          赏
-          <span class="money-code">
-            <span class="alipay-code">
-              <div class="code-image"></div>
-              <b>使用支付宝打赏</b>
-            </span>
-            <span class="wechat-code">
-              <div class="code-image"></div>
-              <b>使用微信打赏</b>
-            </span>
-          </span>
-        </div>
-        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
-      </div>
-    
     <!-- 打赏 END -->
     <!-- 二维码 START -->
-    
-      <div class="qrcode">
-        <canvas id="share-qrcode"></canvas>
-        <p class="notice">扫描二维码，分享此文章</p>
-      </div>
     
     <!-- 二维码 END -->
     
@@ -402,13 +354,6 @@
   })();
 </script>
 
-
-  <script>
-    var qr = new QRious({
-      element: document.getElementById('share-qrcode'),
-      value: document.location.href
-    });
-  </script>
 
 
 

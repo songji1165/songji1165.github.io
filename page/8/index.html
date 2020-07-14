@@ -24,8 +24,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
   
-    <script src="/js/qrious.js"></script>
-  
   
     <script src="/js/gitment.js"></script>
   
@@ -72,25 +70,13 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/tags/" class="item-link">Home</a>
           
         </li>
       
         <li class="list-item">
           
             <a href="/tags/" class="item-link">Tags</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/archives/" class="item-link">Archives</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/project/" class="item-link">Projects</a>
           
         </li>
       
@@ -111,25 +97,13 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/tags/" class="menu-link">Home</a>
             
           </li>
         
           <li class="menu-item">
             
               <a href="/tags/" class="menu-link">Tags</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/archives/" class="menu-link">Archives</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/project/" class="menu-link">Projects</a>
             
           </li>
         
@@ -178,7 +152,7 @@ vue cli를 이용해서 설문조사 폼을 구현해 ...
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2019/04/22/Javascript/javascript8(scope)/">Javascript Scope</a>
+        <a href="/2019/04/22/Javascript/javascript10(DOM)/">Javascript DOM</a>
       </h2>
       <p class="article-date">April 22, 2019</p>
       
@@ -190,21 +164,13 @@ vue cli를 이용해서 설문조사 폼을 구현해 ...
       
       <div class="article-summary">
         
-          스코프 ScopeScope : 변수에 접근할수 있는 범위 (변수의 유효범위)
+          DOM (Document Object Model)
 
-
-1. 전역스코프, 지역스코프
-Global Scope ( 전역변수 , 전역함수 )
-
-
-함수 밖에서 선언된 변수
-자바스크립트 어디에서나 사용 가능
-
-
-Local Scope ( 지역변수  ...
+브라우저의 렌더링 엔진이 HTML을 브라우저가 이해할 수 있는 구조로 메모리에 적재
+브라우저의 렌더링 엔진이 HTML의 계층적 구조를 브라우저가 이해할 수 있는 객체로 만들어 트리구조(DOM TREE)로 구조화 ...
         
       </div>
-      <a class="more" href="/2019/04/22/Javascript/javascript8(scope)/">Read more</a>
+      <a class="more" href="/2019/04/22/Javascript/javascript10(DOM)/">Read more</a>
     </article>
   
     <article class="article-card">
@@ -263,7 +229,7 @@ hoisting : 끌어올리다 (자바스크립트 엔진의 기능)
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/2019/04/22/Javascript/javascript10(DOM)/">Javascript DOM</a>
+        <a href="/2019/04/22/Javascript/javascript8(scope)/">Javascript Scope</a>
       </h2>
       <p class="article-date">April 22, 2019</p>
       
@@ -275,13 +241,21 @@ hoisting : 끌어올리다 (자바스크립트 엔진의 기능)
       
       <div class="article-summary">
         
-          DOM (Document Object Model)
+          스코프 ScopeScope : 변수에 접근할수 있는 범위 (변수의 유효범위)
 
-브라우저의 렌더링 엔진이 HTML을 브라우저가 이해할 수 있는 구조로 메모리에 적재
-브라우저의 렌더링 엔진이 HTML의 계층적 구조를 브라우저가 이해할 수 있는 객체로 만들어 트리구조(DOM TREE)로 구조화 ...
+
+1. 전역스코프, 지역스코프
+Global Scope ( 전역변수 , 전역함수 )
+
+
+함수 밖에서 선언된 변수
+자바스크립트 어디에서나 사용 가능
+
+
+Local Scope ( 지역변수  ...
         
       </div>
-      <a class="more" href="/2019/04/22/Javascript/javascript10(DOM)/">Read more</a>
+      <a class="more" href="/2019/04/22/Javascript/javascript8(scope)/">Read more</a>
     </article>
   
     <article class="article-card">
