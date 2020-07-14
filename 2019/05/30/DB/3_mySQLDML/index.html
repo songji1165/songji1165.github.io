@@ -6,7 +6,7 @@
   <meta name="description" content="나만의 개발 블로그">
   <meta name="keyword" content="javascript">
   
-    <link rel="shortcut icon" href="/css/images/logo.png">
+    <link rel="shortcut icon" href="/tags/css/images/logo.png">
   
   <title>
     
@@ -16,7 +16,7 @@
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
   <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/tags/css/style.css">
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
@@ -57,7 +57,7 @@
   <body>
     <header class="header fixed-header">
   <div class="header-container">
-    <a class="home-link" href="/">
+    <a class="home-link" href="/tags/">
       <div class="logo"></div>
       <span>SONG's</span>
     </a>
@@ -65,13 +65,13 @@
       
       <li class="list-item">
         
-        <a href="/tags/" class="item-link">Menu</a>
+        <a href="/tags/tags/" class="item-link">Menu</a>
         
       </li>
       
       <li class="list-item">
         
-        <a href="/about/" class="item-link">About</a>
+        <a href="/tags/about/" class="item-link">About</a>
         
       </li>
       
@@ -86,13 +86,13 @@
         
         <li class="menu-item">
           
-          <a href="/tags/" class="menu-link">Menu</a>
+          <a href="/tags/tags/" class="menu-link">Menu</a>
           
         </li>
         
         <li class="menu-item">
           
-          <a href="/about/" class="menu-link">About</a>
+          <a href="/tags/about/" class="menu-link">About</a>
           
         </li>
         
@@ -117,18 +117,18 @@
 </ul>
 </li>
 <li>DDL(Data Definition Language)<ul>
-<li>데이터베이스나 테이블 등을 생성, 삭제하거나 그 구조를 변경하기 위한 명령어    </li>
+<li>데이터베이스나 테이블 등을 생성, 삭제하거나 그 구조를 변경하기 위한 명령어</li>
 <li>CREATE, ALTER, DROP 등</li>
 </ul>
 </li>
 <li>DCL(Data Control Language)<ul>
-<li>데이터베이스에 저장된 데이터를 관리하기 위하여 데이터의 보안성 및 무결성 등을 제어하기 위한 명령어    </li>
+<li>데이터베이스에 저장된 데이터를 관리하기 위하여 데이터의 보안성 및 무결성 등을 제어하기 위한 명령어</li>
 <li>GRANT, REVOKE 등</li>
 </ul>
 </li>
 </ol>
 <h2 id="2-기본-구문"><a href="#2-기본-구문" class="headerlink" title="2. 기본 구문"></a>2. 기본 구문</h2><ol>
-<li>일반적인 구문 뒤에는 세미콜론(<code>;</code>)으로 구분한다. <ul>
+<li>일반적인 구문 뒤에는 세미콜론(<code>;</code>)으로 구분한다.<ul>
 <li>서버와의 연결을 끊는 구문인 QUIT같은 경우는 제외</li>
 </ul>
 </li>
@@ -136,13 +136,29 @@
 <li><strong>테이블명, 필드의 이름은 대소문자 구문한다 !!</strong></li>
 </ul>
 </li>
-<li>주석<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. # 한 줄 주석</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> -- 한 줄 주석</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> <span class="comment">/* 두 줄</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   이상의</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   주석 */</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>주석</li>
 </ol>
-<h2 id="3-기본-DML"><a href="#3-기본-DML" class="headerlink" title="3. 기본 DML"></a>3. 기본 DML</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">create table cust (</span><br><span class="line">    cust_no number(<span class="number">10</span>),</span><br><span class="line">    cust_name varcher2(<span class="number">15</span>),</span><br><span class="line">    phone varcher2(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into tb_cust ( <span class="number">1</span>, <span class="string">'song'</span>, <span class="string">'01012341234'</span> );</span><br><span class="line">insert into tb_cust ( <span class="number">2</span>, <span class="string">'song'</span>, <span class="string">'01012341234'</span> );</span><br><span class="line"></span><br><span class="line">update cust </span><br><span class="line"><span class="keyword">set</span> cust_name = 'songji'</span><br><span class="line">where cust_no = 2;</span><br><span class="line"></span><br><span class="line">delete from cust</span><br><span class="line">where cust_no = 1;</span><br><span class="line"></span><br><span class="line">commit;</span><br><span class="line"></span><br><span class="line">select * from cust;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. # 한 줄 주석</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> -- 한 줄 주석</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> <span class="comment">/* 두 줄</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   이상의</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   주석 */</span></span><br></pre></td></tr></table></figure>
 
-<p><code># DB 조회 결과</code><br>_ | cust_no | cust_name | phone<br>—| :—: | :—: | :—:<br>1 | 2 | songji | 01012341234</p>
+<h2 id="3-기본-DML"><a href="#3-기본-DML" class="headerlink" title="3. 기본 DML"></a>3. 기본 DML</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">create table cust (</span><br><span class="line">    cust_no number(<span class="number">10</span>),</span><br><span class="line">    cust_name varcher2(<span class="number">15</span>),</span><br><span class="line">    phone varcher2(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into tb_cust ( <span class="number">1</span>, <span class="string">'song'</span>, <span class="string">'01012341234'</span> );</span><br><span class="line">insert into tb_cust ( <span class="number">2</span>, <span class="string">'song'</span>, <span class="string">'01012341234'</span> );</span><br><span class="line"></span><br><span class="line">update cust</span><br><span class="line"><span class="keyword">set</span> cust_name = 'songji'</span><br><span class="line">where cust_no = 2;</span><br><span class="line"></span><br><span class="line">delete from cust</span><br><span class="line">where cust_no = 1;</span><br><span class="line"></span><br><span class="line">commit;</span><br><span class="line"></span><br><span class="line">select * from cust;</span><br></pre></td></tr></table></figure>
+
+<p><code># DB 조회 결과</code></p>
+<table>
+<thead>
+<tr>
+<th>_</th>
+<th align="center">cust_no</th>
+<th align="center">cust_name</th>
+<th align="center">phone</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="center">2</td>
+<td align="center">songji</td>
+<td align="center">01012341234</td>
+</tr>
+</tbody></table>
 </section>
     <!-- Tags START -->
     
@@ -150,7 +166,7 @@
         <span>Tags:</span>
         <!--  -->
 
-<a href="/tags#db">
+<a href="/tags/tags/tags#db">
   <span class="tag-code">db</span>
 </a>
 <!-- <span class="tag-code"></span> -->
@@ -164,17 +180,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/05/30/개발일기/0530_blogBuild/">
+      <a class="nav-left" href="/tags/2019/05/30/DB/2_mySQL/">
         <span class="nav-arrow">← </span>
         
-          0530 study
+          MySQL
         
       </a>
     
     
-      <a class="nav-right" href="/2019/06/01/개발일기/0601_blogBuild/">
+      <a class="nav-right" href="/tags/2019/05/30/DB/4_mySQLJOIN/">
         
-          0601 study
+          MySQL JOIN
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -259,7 +275,7 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
     Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
   </p>
@@ -302,6 +318,6 @@
 </script>
 <!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
+<script src="/tags/js/script.js"></script>
   </body>
 </html>

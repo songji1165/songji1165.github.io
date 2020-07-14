@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="나만의 개발 블로그">
+  <meta name="keyword" content="javascript">
+  
+    <link rel="shortcut icon" href="/tags/css/images/logo.png">
+  
+  <title>
+    
+      MySQL JOIN | SONG&#39;s
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/tags/css/style.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/tags/">
+      <div class="logo"></div>
+      <span>SONG's</span>
+    </a>
+    <ul class="right-list">
+      
+      <li class="list-item">
+        
+        <a href="/tags/tags/" class="item-link">Menu</a>
+        
+      </li>
+      
+      <li class="list-item">
+        
+        <a href="/tags/about/" class="item-link">About</a>
+        
+      </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+        <li class="menu-item">
+          
+          <a href="/tags/tags/" class="menu-link">Menu</a>
+          
+        </li>
+        
+        <li class="menu-item">
+          
+          <a href="/tags/about/" class="menu-link">About</a>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+    <div id="article-banner">
+  <h2>MySQL JOIN</h2>
+  <p class="post-date">2019-05-30</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="MySQL-JOIN"><a href="#MySQL-JOIN" class="headerlink" title="MySQL JOIN"></a>MySQL JOIN</h1><h2 id="1-JOIN"><a href="#1-JOIN" class="headerlink" title="1. JOIN"></a>1. JOIN</h2><ul>
+<li>여러 테이블에서 가져온 레코드를 조합하여 하나의 테이블이나 결과 집합으로 표현</li>
+<li>보통 SELECT문과 함께 사용</li>
+</ul>
+<h2 id="2-JOIN-종류"><a href="#2-JOIN-종류" class="headerlink" title="2. JOIN 종류"></a>2. JOIN 종류</h2><ol>
+<li><strong>Inner JOIN</strong> </li>
+<li><strong>Left JOIN</strong></li>
+<li><strong>Right JOIN</strong>    </li>
+</ol>
+<h4 id="1-INNER-JOIN"><a href="#1-INNER-JOIN" class="headerlink" title="1. INNER JOIN"></a>1. INNER JOIN</h4><img src="http://tcpschool.com/lectures/img_mysql_inner_join.png" width="300">
+
+<ol>
+<li><code>첫번째테이블 inner join 두번째테이블 on 조건</code><br><code>첫번째테이블 join 두번째테이블 on 조건</code> </li>
+<li>ON 조건에 만족하는 테이터 출력</li>
+<li>일반적으로 많이 사용됨</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>_</th>
+<th align="center">cust_no</th>
+<th align="center">cust_name</th>
+<th align="center">phone</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="center">2</td>
+<td align="center">songji</td>
+<td align="center">01012341234</td>
+</tr>
+<tr>
+<td>_</td>
+<td align="center">cust_no</td>
+<td align="center">cust_name</td>
+<td align="center">phone</td>
+</tr>
+<tr>
+<td>—</td>
+<td align="center">:—–:</td>
+<td align="center">:——-:</td>
+<td align="center">:———:</td>
+</tr>
+<tr>
+<td>1</td>
+<td align="center">2</td>
+<td align="center">songji</td>
+<td align="center">01012341234</td>
+</tr>
+</tbody></table>
+<h4 id="2-LEFT-JOIN"><a href="#2-LEFT-JOIN" class="headerlink" title="2. LEFT JOIN"></a>2. LEFT JOIN</h4><ol>
+<li><code>첫번째테이블 left join 두번째테이블 on 조건</code></li>
+<li>ON 절의 조건을 만족하지 않는 경우, 첫 번째 테이블의 필드 값은 그대로 출력,<br>두 번째 테이블의 필드 값은 모두 NULL로 출력</li>
+</ol>
+<h4 id="3-RIGHT-JOIN"><a href="#3-RIGHT-JOIN" class="headerlink" title="3. RIGHT JOIN"></a>3. RIGHT JOIN</h4><ol>
+<li><code>첫번째테이블 right join 두번째테이블 on 조건</code></li>
+<li>left와 반대, 두번째 테이블 값은 그대로 출력, 첫번째 테이블은 NULL로 출력</li>
+</ol>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        <!--  -->
+
+<a href="/tags/tags/tags#db">
+  <span class="tag-code">db</span>
+</a>
+<!-- <span class="tag-code"></span> -->
+
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/tags/2019/05/30/DB/3_mySQLDML/">
+        <span class="nav-arrow">← </span>
+        
+          MySQL 기본 문법
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/tags/2019/06/01/개발일기/0601_blogBuild/">
+        
+          0601 study
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- No Comment -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/05/30/DB/4_mySQLJOIN/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/tags/js/script.js"></script>
+  </body>
+</html>
