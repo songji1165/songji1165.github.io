@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="나만의 개발 블로그">
-  <meta name="keyword" content="javascript">
+  <meta name="keyword" content="hexo-theme, vuejs">
   
     <link rel="shortcut icon" href="/css/images/logo.png">
   
@@ -18,10 +18,16 @@
   <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
+    <link rel="stylesheet" href="/css/plugins/gitment.css">
+  
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
   
+    <script src="/js/qrious.js"></script>
+  
+  
+    <script src="/js/gitment.js"></script>
   
   
   
@@ -49,6 +55,7 @@
   
 
 
+  
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -63,17 +70,35 @@
     </a>
     <ul class="right-list">
       
-      <li class="list-item">
-        
-        <a href="/tags/" class="item-link">Menu</a>
-        
-      </li>
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">Home</a>
+          
+        </li>
       
-      <li class="list-item">
-        
-        <a href="/about/" class="item-link">About</a>
-        
-      </li>
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
       
     </ul>
     <div class="menu">
@@ -84,22 +109,41 @@
     <div class="menu-mask">
       <ul class="menu-list">
         
-        <li class="menu-item">
-          
-          <a href="/tags/" class="menu-link">Menu</a>
-          
-        </li>
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">Home</a>
+            
+          </li>
         
-        <li class="menu-item">
-          
-          <a href="/about/" class="menu-link">About</a>
-          
-        </li>
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
         
       </ul>
     </div>
   </div>
 </header>
+
     <main class="app-body">
   
     <article class="article-card">
@@ -108,13 +152,10 @@
       </h2>
       <p class="article-date">May 22, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -140,13 +181,10 @@ trello에서 각자 맡은 컴포넌트 부분들을 함께 수정하였고, 서
       </h2>
       <p class="article-date">May 21, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -173,13 +211,10 @@ trello 프로젝트 레이아웃 부분의 컴포넌트를 더 세분화 시키�
       </h2>
       <p class="article-date">May 20, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#javascript">
-  <span class="tag-code">javascript</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#javascript">
+    <span class="tag-code">javascript</span>
+  </a>
 
       
       <div class="article-summary">
@@ -204,13 +239,10 @@ trello 프로젝트 레이아웃 부분의 컴포넌트를 더 세분화 시키�
       </h2>
       <p class="article-date">May 20, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -233,13 +265,10 @@ git pages 배포하는 것을 다시 정리하였다. git에 대해서도 제대
       </h2>
       <p class="article-date">May 20, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#javascript">
-  <span class="tag-code">javascript</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#javascript">
+    <span class="tag-code">javascript</span>
+  </a>
 
       
       <div class="article-summary">
@@ -266,13 +295,10 @@ XMLHttpRequest
       </h2>
       <p class="article-date">May 19, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -294,13 +320,10 @@ weather project 일지 정리, github pages 배포
       </h2>
       <p class="article-date">May 19, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#Vue">
-  <span class="tag-code">Vue</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#Vue">
+    <span class="tag-code">Vue</span>
+  </a>
 
       
       <div class="article-summary">
@@ -327,13 +350,10 @@ github repositories의 소스코드를 기반으로 웹사이트 생성
       </h2>
       <p class="article-date">May 18, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#nodejs">
-  <span class="tag-code">nodejs</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#nodejs">
+    <span class="tag-code">nodejs</span>
+  </a>
 
       
       <div class="article-summary">
@@ -361,13 +381,10 @@ dotenv npm 참고
       </h2>
       <p class="article-date">May 18, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -388,13 +405,10 @@ dotenv npm 참고
       </h2>
       <p class="article-date">May 18, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#Vue">
-  <span class="tag-code">Vue</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#Vue">
+    <span class="tag-code">Vue</span>
+  </a>
 
       
       <div class="article-summary">

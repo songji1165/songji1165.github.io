@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="나만의 개발 블로그">
-  <meta name="keyword" content="javascript">
+  <meta name="keyword" content="hexo-theme, vuejs">
   
     <link rel="shortcut icon" href="/css/images/logo.png">
   
@@ -18,10 +18,16 @@
   <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   
+    <link rel="stylesheet" href="/css/plugins/gitment.css">
+  
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
   
+    <script src="/js/qrious.js"></script>
+  
+  
+    <script src="/js/gitment.js"></script>
   
   
   
@@ -49,6 +55,7 @@
   
 
 
+  
 </head>
 <div class="wechat-share">
   <img src="/css/images/logo.png">
@@ -63,17 +70,35 @@
     </a>
     <ul class="right-list">
       
-      <li class="list-item">
-        
-        <a href="/tags/" class="item-link">Menu</a>
-        
-      </li>
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">Home</a>
+          
+        </li>
       
-      <li class="list-item">
-        
-        <a href="/about/" class="item-link">About</a>
-        
-      </li>
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
       
     </ul>
     <div class="menu">
@@ -84,22 +109,41 @@
     <div class="menu-mask">
       <ul class="menu-list">
         
-        <li class="menu-item">
-          
-          <a href="/tags/" class="menu-link">Menu</a>
-          
-        </li>
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">Home</a>
+            
+          </li>
         
-        <li class="menu-item">
-          
-          <a href="/about/" class="menu-link">About</a>
-          
-        </li>
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
         
       </ul>
     </div>
   </div>
 </header>
+
     <main class="app-body">
   
     <article class="article-card">
@@ -108,13 +152,10 @@
       </h2>
       <p class="article-date">May 30, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#nodejs">
-  <span class="tag-code">nodejs</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#nodejs">
+    <span class="tag-code">nodejs</span>
+  </a>
 
       
       <div class="article-summary">
@@ -134,13 +175,10 @@ Lint : 소스코드를 분석하여 프로그램 오류, 버그, 스타일 오�
       </h2>
       <p class="article-date">May 29, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -162,13 +200,10 @@ Vue trello의 레이아웃부분은 거의 완성이고 서버와 연동하는 �
       </h2>
       <p class="article-date">May 29, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#nodejs">
-  <span class="tag-code">nodejs</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#nodejs">
+    <span class="tag-code">nodejs</span>
+  </a>
 
       
       <div class="article-summary">
@@ -191,13 +226,10 @@ node.js 설치 시 자 ...
       </h2>
       <p class="article-date">May 28, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#javascript">
-  <span class="tag-code">javascript</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#javascript">
+    <span class="tag-code">javascript</span>
+  </a>
 
       
       <div class="article-summary">
@@ -214,13 +246,10 @@ node.js 설치 시 자 ...
       </h2>
       <p class="article-date">May 28, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -243,13 +272,10 @@ javascript 이론 study
       </h2>
       <p class="article-date">May 27, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -274,13 +300,10 @@ javascript 이론 study
       </h2>
       <p class="article-date">May 26, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -308,13 +331,10 @@ javascript 이론 study
       </h2>
       <p class="article-date">May 25, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -335,13 +355,10 @@ hexo 오류 해결 -&gt; node 재설치
       </h2>
       <p class="article-date">May 24, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
@@ -365,13 +382,10 @@ trello sidebar 컴포넌트를 추가해주고 router 연결부분을 수정해�
       </h2>
       <p class="article-date">May 23, 2019</p>
       
-        <!--  -->
-
-<a href="/tags#개발일기">
-  <span class="tag-code">개발일기</span>
-</a>
-<!-- <span class="tag-code"></span> -->
-
+        
+  <a href="/tags#개발일기">
+    <span class="tag-code">개발일기</span>
+  </a>
 
       
       <div class="article-summary">
