@@ -1,0 +1,153 @@
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import { FcSettings } from "react-icons/fc";
+import styled from "styled-components";
+import Box from "../styles/articleCss";
+import imgArr from "../assets";
+
+const S = {
+    Ul : styled.ul`
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    flex-wrap :wrap;
+    justify-content: space-between;
+  `,
+  Li : styled.li`
+  width: 100%;
+ height: 25px;
+ margin: 8px 0;
+  flex : 0 0 48%;
+  background: #f9f9f9;
+  position: relative;
+
+  @media (max-width: 860px) {
+    flex : 0 0 100%;
+    }
+    `,
+    Score : styled.span`
+    position : absolute;
+    right : 3px;
+    font-size : 0.8rem;
+    height: 25px;
+    line-height:25px;
+    `,
+    Graph : styled.div`
+    width: ${(props) => (props.score ? props.score + "%" : 0)};
+    display: inline-block;
+    height: 100%;
+    transition: 1s;
+    perspective: 100px;
+    background: #f49842;
+    box-shadow: 1px -1px #d88a41, 
+      2px -2px #d88a41, 
+      3px -3px #d88a41,   
+      4px -4px #d88a41, 
+      5px -5px #d88a41, 
+      6px -6px #d88a41, 
+      7px -7px   #d88a41, 
+      8px -8px #d88a41, 
+      9px -9px #d88a41, 
+      10px -10px #d88a41;
+    `,
+    Span : styled.span`
+    line-height: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    margin:0 8px;
+    font-size: ${(props) => (props.size ? props.size + "rem" : "1rem")};
+    float: ${(props) => (props.float ? props.float : "none")};
+        `,
+    }
+
+function Tech({ tech }) {
+    const element = useRef();
+    const [count, setCount] = useState(0);
+
+
+        const handleScroll = useCallback(([entry]) => {
+            // const currentTranslate = current.style.transform;
+            //현재 교차되고 있는지 여부 (0: 안 보임, 1: 완전 다 보임)
+            if (entry.isIntersecting) {
+                setCount(80);
+            } 
+    
+          },
+          []);
+
+        useEffect(() => {
+            /*
+            // count가 0이되면 끝낸다.
+            if (count === 80) return;
+        
+            // intervalId를 보관한다.
+            const intervalId = setInterval(() => {
+              setCount(count + 1);
+            }, 0.1);
+        
+            // 함수 종료시에 인터벌을 클리어한다.
+            return () => clearInterval(intervalId);
+            // count에 변동이 있을 때마다 한다.
+            */
+
+            let observer;
+            const { current } = element;
+          
+            if (current) {  
+               // threshold : 타겟의 교차되는 지점의 점수를 지정 => isIntersecting property 의 true, false 반환                                                             
+              observer = new IntersectionObserver(handleScroll, { threshold: 0.6 });
+              observer.observe(current);
+          
+              return () => observer && observer.disconnect();
+            }
+
+
+
+
+          }, [handleScroll]);
+    
+   
+
+
+
+  return (
+    <Box.Article>
+      <Box.Div>
+        <Box.DivItem>
+          <Box.Label>
+            <FcSettings /> 기술능력
+          </Box.Label>
+          <Box.HR />
+          <div>
+            <S.Ul>
+              {tech.map((item, idx) => {
+                // console.log("?????", imgArr);
+
+                return (
+                  <S.Li key={idx}>
+                    <S.Graph  
+                        realscore={item.score}
+                        score={count}
+                        img={item.Lang}
+                        ref={element}
+                    >
+                        <S.Span>
+                            <img src={imgArr[item.Lang]} width="25" height="25" alt={imgArr[item.Lang]}/>
+                        </S.Span>
+                        <S.Span size="0.8"> {item.Lang}</S.Span>
+                    </S.Graph>
+                    <S.Score > {item.score}%</S.Score>
+                  </S.Li>
+                );
+              })}
+            </S.Ul>
+          </div>
+        </Box.DivItem>
+      </Box.Div>
+    </Box.Article>
+  );
+}
+
+export default Tech;

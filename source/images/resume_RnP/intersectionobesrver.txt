@@ -1,0 +1,31 @@
+const [isScroll, setIsScroll] = useState(false);
+
+  function handleKeyDown(e) {
+    console.log("++TextArea HandleKeyDown", e.target.scrollHeight);
+  }
+
+  const dom = useRef();
+
+  const handleScroll = useCallback(([entry]) => {
+    // const { current } = dom;
+
+    //현재 교차되고 있는지 여부 (0: 안보임, 1: 완전 다 보임)
+    if (entry.isIntersecting) {
+      setIsScroll(true);
+    } else {
+      setIsScroll(false);
+    }
+    console.log("scroll 교차 여부");
+  }, []);
+
+  useEffect(() => {
+    let observer;
+    const { current } = dom;
+
+    if (current) {
+      observer = new IntersectionObserver(handleScroll, { threshold: 0.5 });
+      observer.observe(current);
+
+      return () => observer && observer.disconnect();
+    }
+  }, [handleScroll]);
